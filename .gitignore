@@ -14,3 +14,23 @@ nbactions.xml
 
 # Ignore all generic character images
 res/images/characters/generic/
+
+#
+# Explicitly allow some files from IntelliJ IDEA
+#
+!.idea
+
+# User-specific data.
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/workspace.xml
+
+# Auto-generated files.
+.idea/**/compiler.xml
+.idea/**/contentModel.xml
+.idea/**/jarRepositories.xml
+.idea/**/libraries
+.idea/**/modules.xml
+
