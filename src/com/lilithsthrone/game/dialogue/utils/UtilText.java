@@ -20,8 +20,12 @@ import java.util.regex.Pattern;
 
 import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
+import com.oracle.truffle.js.scriptengine.GraalJSScriptEngine;
+import org.graalvm.polyglot.Context;
+import org.graalvm.polyglot.HostAccess;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -211,8 +215,7 @@ public class UtilText {
 	private static boolean parseCapitalise;
 	private static boolean parseAddPronoun;
 
-	private static NashornScriptEngineFactory factory = new NashornScriptEngineFactory();
-	private static ScriptEngine engine;
+	private static ScriptEngine engine = null;
 	
 	private static List<String> specialParsingStrings = new ArrayList<>();
 	private static List<GameCharacter> parsingCharactersForSpeech = new ArrayList<>();
@@ -9203,8 +9206,16 @@ public class UtilText {
 	}
 	
 	public static void initScriptEngine() {
-		// http://hg.openjdk.java.net/jdk8/jdk8/nashorn/rev/eb7b8340ce3a
-		engine = factory.getScriptEngine("-strict", "--no-java", "--no-syntax-extensions");//, "-scripting");
+		if(engine != null) return;
+
+		//engine = factory.getScriptEngine("-strict", "--no-java", "--no-syntax-extensions");//, "-scripting");
+		//engine = new ScriptEngineManager().getEngineByName("graal.js");
+		engine = GraalJSScriptEngine.create(null,
+				Context.newBuilder("js")
+						.allowHostAccess(HostAccess.ALL)
+						.option("js.ecmascript-version", "6")
+						.option("js.strict", "true"));
+
 		try {
 			engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("exit");
 			engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("quit");
