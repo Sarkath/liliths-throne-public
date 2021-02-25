@@ -8,23 +8,25 @@
 	<version>1</version>
 	<name>lilithsthrone</name>
 	<properties>
+		<javafx.version>11</javafx.version>
+		<jdk.version>11</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-fxml</artifactId>
-			<version>11.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-graphics</artifactId>
-			<version>11.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-web</artifactId>
-			<version>11.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -56,7 +58,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<release>11</release>
+					<release>${jdk.version}</release>
 				</configuration>
 			</plugin>
 			<plugin>
