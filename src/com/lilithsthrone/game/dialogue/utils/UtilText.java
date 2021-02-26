@@ -20,7 +20,6 @@ import java.util.regex.Pattern;
 
 import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 import com.oracle.truffle.js.scriptengine.GraalJSScriptEngine;
@@ -191,8 +190,6 @@ import com.lilithsthrone.world.places.AbstractPlaceType;
 import com.lilithsthrone.world.places.AbstractPlaceUpgrade;
 import com.lilithsthrone.world.places.PlaceType;
 import com.lilithsthrone.world.places.PlaceUpgrade;
-
-import jdk.nashorn.api.scripting.NashornScriptEngineFactory;
 
 /**
  * @since 0.1.0
@@ -418,6 +415,9 @@ public class UtilText {
 		
 		return builder.toString();
 	}
+
+	private static boolean jsObjectLoadComplete = false;
+	private static boolean jsNpcLoadComplete = false;
 	
 	public static String parsePlayerThought(String text) {
 		return parseThought(text, Main.game.getPlayer());
@@ -9206,32 +9206,31 @@ public class UtilText {
 	}
 	
 	public static void initScriptEngine() {
-		if(engine != null) return;
+		if(engine == null) {
+			engine = GraalJSScriptEngine.create(null,
+					Context.newBuilder("js")
+							.allowHostAccess(HostAccess.ALL)
+							.option("js.ecmascript-version", "6")
+							.option("js.strict", "true"));
 
-		//engine = factory.getScriptEngine("-strict", "--no-java", "--no-syntax-extensions");//, "-scripting");
-		//engine = new ScriptEngineManager().getEngineByName("graal.js");
-		engine = GraalJSScriptEngine.create(null,
-				Context.newBuilder("js")
-						.allowHostAccess(HostAccess.ALL)
-						.option("js.ecmascript-version", "6")
-						.option("js.strict", "true"));
-
-		try {
-			engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("exit");
-			engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("quit");
-			engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("load");
-			engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("loadWithNewGlobal");
-			engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("bindProperties");
-			engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("Object.bindProperties");
-		} catch(Exception ex) {
-			System.err.println("ENGINE_SCOPE binding removal error.");
+			try {
+				engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("exit");
+				engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("quit");
+				engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("load");
+				engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("loadWithNewGlobal");
+				engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("bindProperties");
+				engine.getBindings(ScriptContext.ENGINE_SCOPE).remove("Object.bindProperties");
+			} catch(Exception ex) {
+				System.err.println("ENGINE_SCOPE binding removal error.");
+			}
 		}
-		
+
+
 //		ScriptEngineManager manager = new ScriptEngineManager();
 //		engine = manager.getEngineByName("javascript");
 		
 		// Parser targets:
-		if(Main.game.isStarted()) {
+		if(Main.game.isStarted() && !jsNpcLoadComplete) {
 			for(ParserTarget target : ParserTarget.values()) {
 				if(target!=ParserTarget.STYLE && target!=ParserTarget.UNIT && target!=ParserTarget.NPC && target!=ParserTarget.COMPANION) {
 					for(String tag : target.getTags()) {
@@ -9239,10 +9238,14 @@ public class UtilText {
 					}
 				}
 			}
+			jsNpcLoadComplete = true;
 		}
 //		for(int i=0; i<specialParsingStrings.size(); i++) {
 //			engine.put("SPECIAL_PARSE_"+i, specialParsingStrings.get(i));
 //		}
+
+		// Ensure that these classes are only pushed into the JS engine once.
+		if(jsObjectLoadComplete) return;
 		
 		// Core classes:
 		engine.put("game", Main.game);
@@ -9547,23 +9550,7 @@ public class UtilText {
 			engine.put("PLACE_UPGRADE_"+PlaceUpgrade.getIdFromPlaceUpgrade(upgrade), upgrade);
 		}
 
-		
-		
-		// static methods don't work unless initialised like so:
-//		try {
-//			engine.eval("var sex = Java.type('com.lilithsthrone.game.sex.Sex');");
-//		} catch (ScriptException e) {
-//			e.printStackTrace();
-//		}
-		// This requires the flag "--no-java" to be removed from the engine init line up above, and I'm not sure if that's a good idea or not...
-
-//		engine.put("Packages.com.lilithsthrone.utils.Util");
-		
-//		StringBuilder sb = new StringBuilder();
-//		for(Entry<String, Object> entry : engine.getBindings(ScriptContext.ENGINE_SCOPE).entrySet()) {
-//			sb.append(entry.getKey()+", "+entry.getValue().toString()+"\n");
-//		}
-//		System.out.println(sb.toString());
+		jsObjectLoadComplete = true;
 	}
 	
 	private static String parseConditionalSyntaxNew(List<GameCharacter> specialNPCs, Map<String, String> conditionals, boolean hasXmlVariables) {
