@@ -30,12 +30,12 @@
 	
 	<!-- Tags which are associated with this tail type.
 	You should most likely only be using the 'tail' tags for your tail type.
-	You should define ONE of the 'tailType("X")' tags.
+	You should define ONE of the 'TAIL_TYPE_X' tags.
 	You should define ONE of the 'TAIL_TAPERING_X' tags.
 	The other tags are optional.
 	Values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/character/body/tags/BodyPartTag.java -->
 	<tags>
-		<tag>tailType("FUR")</tag>
+		<tag>TAIL_TYPE_FUR</tag>
 		<tag>TAIL_TAPERING_NONE</tag>
 		<tag>TAIL_SLEEP_HUGGING</tag>
 	</tags>

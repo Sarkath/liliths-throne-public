@@ -19,7 +19,7 @@
 		As you approach the door to Lilaya's lab, you notice that it's been firmly pulled shut. A little piece of paper has been stuck on it, and you see that your demonic [lilaya.relation(pc)] has left you a handwritten note:
 	</p>
 	<p style='text-align:center;'>
-		#IF lilaya.isCondomBroke()
+		#IF #lilaya.isCondomBroke()
 		#THEN
 			<i>Hey [pc.name], I know the condom breaking wasn't your fault, but I need some time alone. I don't want anyone seeing me pregnant. Come back later after I've given birth.</i>
 		#ELSE
@@ -40,7 +40,7 @@
 		As you approach the door to Lilaya's lab, you notice that it's been firmly pulled shut. A little piece of paper has been stuck on it, and you see that demonic [lilaya.relation(pc)] has left you a handwritten note:
 	</p>
 	<p style='text-align:center;'>
-		#IF lilaya.isCondomBroke()
+		#IF #lilaya.isCondomBroke()
 		#THEN
 			<i>Hey [pc.name], I may have overreacted a little, but this really is all your fault for buying cheap crappy condoms. I'm keeping this door locked until I know if I'm pregnant or not.</i>
 		#ELSE
@@ -102,7 +102,7 @@
 	</p>
 	<p>
 		Although most of her anger seems directed at your now-shared mother, Lilaya is definitely more than a little upset with you. As you're wondering whether to agree with her demands and convince Lyssieth to transform her into a full demon, she continues,
-		#IF lilaya.getTotalTimesHadSex(pc)>0
+		#IF #lilaya.getTotalTimesHadSex(pc)>0
 		#THEN [lilaya.speech(And don't think for <i>one second</i> that I'm going to let you fuck me again until you agree to do as I say!)]
 		#ELSE [lilaya.speech(And don't think for <i>one second</i> that I'm going to offer you any special tests until you agree to do as I say!)]
 		#ENDIF
@@ -123,7 +123,7 @@
 	</p>
 	<p>
 		[lilaya.speech(Yes, that's right!)] she angrily shouts, before marching over towards you.
-		#IF lilaya.isCondomBroke()
+		#IF #lilaya.isCondomBroke()
 		#THEN [lilaya.speech(You ended up getting me pregnant! This is all your fault for using such cheap, crappy condoms! Why couldn't you have just pulled out instead?!)]
 		#ELSE [lilaya.speech(You ended up getting me pregnant! I <i>told</i> you to pull out! I knew this would happen!)]		
 		#ENDIF
@@ -154,7 +154,7 @@
 		[lilaya.speech(You're a very lucky [pc.girl],)] she firmly states as she approaches, [lilaya.speech(As you can see, I'm not pregnant. You'd have been in so much trouble if I was!)]
 	</p>
 	<p>
-		#IF lilaya.isCondomBroke()
+		#IF #lilaya.isCondomBroke()
 		#THEN
 			[pc.speech(Well, it wasn't my fault the condom broke. Everything worked out fine in the end anyway,)] you say, sensing that Lilaya's anger won't last.
 		#ELSE
@@ -166,7 +166,7 @@
 	</p>
 	<p>
 		Reassuring your [lilaya.relation(pc)] that everything's ok, you walk her back over to her lab table, where she lets out one final sigh and says that she forgives you for not pulling out like she asked. As her thoughts turn back to the sex which the two of you had, Lilaya starts hungrily staring at your body, and, with a sultry tone in her voice, she traces a finger over your chest and asks,
-		#IF lilaya.isCondomBroke()
+		#IF #lilaya.isCondomBroke()
 		#THEN [lilaya.speech(Now that you're here, would you like me to run some more <i>tests</i>? With the condition that you've got a proper condom this time, or that you'll be sure to pull out...)]
 		#ELSE [lilaya.speech(Now that you're here, would you like me to run some more <i>tests</i>? With the condition that you'll be sure to pull out, of course...)]
 		#ENDIF
@@ -191,7 +191,7 @@
 		[pc.speech(Sorry for the trouble,)] you say.
 	</p>
 	<p>
-		#IF lilaya.isCondomBroke()
+		#IF #lilaya.isCondomBroke()
 		#THEN
 			Your [lilaya.relation(pc)] lets out a resigned sigh as you say that, and, lowering her voice, she continues, [lilaya.speech(Yes, well, I've already forgiven you. It wasn't really your fault that the condom broke. Just know now that I <i>hate</i> being pregnant, so don't let this happen again.)]
 		#ELSE
@@ -200,7 +200,7 @@
 	</p>
 	<p>
 		Reassuring your [lilaya.relation(pc)] that you now appreciate how much she dislikes being pregnant, you walk her back over to her lab table, where she lets out one final sigh and says that she really did try to warn you about pulling out. As her thoughts turn back to the sex which the two of you had, Lilaya starts hungrily staring at your body, and, with a sultry tone in her voice, she traces a finger over your chest and asks,
-		#IF lilaya.isCondomBroke()
+		#IF #lilaya.isCondomBroke()
 		#THEN [lilaya.speech(Now that you're here, and that whole business is behind us, would you like me to run some more <i>tests</i>? With the condition that you've got a proper condom this time, or that you'll be sure to pull out...)]
 		#ELSE [lilaya.speech(Now that you're here, and that whole business is behind us, would you like me to run some more <i>tests</i>? With the condition that you'll be sure to pull out, of course...)]
 		#ENDIF
@@ -305,16 +305,16 @@
 		[rose.speech(Yes, Mistress!)] Rose squeaks in agreement, [rose.speech(That's right!)]
 	</p>
 	<p>
-	#IF !lilaya.isCharacterReactedToPregnancy(pc) && !lilaya.getBaseFetishDesire(FETISH_PREGNANCY).isNegative() && lilaya.isVisiblyPregnant()
+	#IF !#lilaya.isCharacterReactedToPregnancy(pc) && !#lilaya.getBaseFetishDesire(fetish("FETISH_PREGNANCY")).isNegative() && #lilaya.isVisiblyPregnant()
 	#THEN
-		#IF lilaya.getPregnantLitter().isFatherId(pc.getId())
+		#IF #lilaya.getPregnantLitter().isFatherId(pc.getId())
 		#THEN
 			As Lilaya brushes down her skirt, you can't help but notice the visible bulge in her belly. As she sees what it is you're looking at, your [lilaya.relation(pc)] clears her throat and confirms, [lilaya.speech(~Ahem!~ Yes, [pc.name], you got me pregnant. As I'm a full demon now, it's really no big deal... As I'm not going to be birthing any imps, I don't mind it at all. But anyway, it's a good job that you came here to see me, [pc.name]. Rose has already told me all about your little adventure in my room with my underwear. So, what do you have to say for yourself?)]
 		#ELSE
 			As Lilaya brushes down her skirt, you can't help but notice the visible bulge in her belly. As she sees what it is you're looking at, your [lilaya.relation(pc)] clears her throat and confirms, [lilaya.speech(~Ahem!~ Yes, [pc.name], mommy got me pregnant. As I'm a full demon now, it's really no big deal... As I'm not going to be birthing any imps, I don't mind it at all. But anyway, it's a good job that you came here to see me, [pc.name]. Rose has already told me all about your little adventure in my room with my underwear. So, what do you have to say for yourself?)]
 		#ENDIF
 	#ELSE
-		#IF !lilaya.getBaseFetishDesire(FETISH_PREGNANCY).isNegative() && lilaya.isVisiblyPregnant()
+		#IF !#lilaya.getBaseFetishDesire(fetish("FETISH_PREGNANCY")).isNegative() && #lilaya.isVisiblyPregnant()
 		#THEN
 			As Lilaya brushes down her skirt, you can't help but notice that she's still got a very visible bulge in her belly. As she sees what it is you're looking at, your [lilaya.relation(pc)] clears her throat and confirms, [lilaya.speech(~Ahem!~ Yes, [pc.name], I'm still pregnant... But anyway, it's a good job that you came here to see me. Rose has already told me all about your little adventure in my room with my underwear. So, what do you have to say for yourself?)]
 		#ELSE
@@ -348,17 +348,17 @@
 		[rose.speech(Yes, Mistress!)] Rose squeaks in agreement, [rose.speech(That's right!)]
 	</p>
 	<p>
-	#IF !lilaya.isCharacterReactedToPregnancy(pc) && !lilaya.getBaseFetishDesire(FETISH_PREGNANCY).isNegative() && lilaya.isVisiblyPregnant()
+	#IF !#lilaya.isCharacterReactedToPregnancy(pc) && !#lilaya.getBaseFetishDesire(fetish("FETISH_PREGNANCY")).isNegative() && #lilaya.isVisiblyPregnant()
 	#THEN
-		#IF(lilaya.getPregnantLitter().isFatherId(pc.getId()))
+		#IF(#lilaya.getPregnantLitter().isFatherId(pc.getId()))
 			As Lilaya brushes down her skirt, you can't help but notice the visible bulge in her belly. As she sees what it is you're looking at, your [lilaya.relation(pc)] clears her throat and confirms, [lilaya.speech(~Ahem!~ Yes, [pc.name], you got me pregnant. As I'm a full demon now, it's really no big deal... As I'm not going to be birthing any imps, I don't mind it at all. So, what is it you want?)]
-		#ELSEIF(lilaya.getPregnantLitter().isFatherId(lyssieth.getId()))
+		#ELSEIF(#lilaya.getPregnantLitter().isFatherId(lyssieth.getId()))
 			As Lilaya brushes down her skirt, you can't help but notice the visible bulge in her belly. As she sees what it is you're looking at, your [lilaya.relation(pc)] clears her throat and confirms, [lilaya.speech(~Ahem!~ Yes, [pc.name], mommy got me pregnant. As I'm a full demon now, it's really no big deal... As I'm not going to be birthing any imps, I don't mind it at all. So, what is it you want?)]
 		#ELSE
 			As Lilaya brushes down her skirt, you can't help but notice the visible bulge in her belly. As she sees what it is you're looking at, your [lilaya.relation(pc)] clears her throat and confirms, [lilaya.speech(~Ahem!~ Yes, [pc.name], [daddy.name] got me pregnant. As I'm a full demon now, it's really no big deal... As I'm not going to be birthing any imps, I don't mind it at all. So, what is it you want?)]
 		#ENDIF
 	#ELSE
-		#IF !lilaya.getBaseFetishDesire(FETISH_PREGNANCY).isNegative() && lilaya.isVisiblyPregnant()
+		#IF !#lilaya.getBaseFetishDesire(fetish("FETISH_PREGNANCY")).isNegative() && #lilaya.isVisiblyPregnant()
 		#THEN
 			As Lilaya brushes down her skirt, you can't help but notice that she's still got a very visible bulge in her belly. As she sees what it is you're looking at, your [lilaya.relation(pc)] clears her throat and confirms, [lilaya.speech(~Ahem!~ Yes, I'm still pregnant... So, what is it you need, [pc.name]?)]
 		#ELSE
@@ -769,7 +769,7 @@
 		You can't resist an offer like that, and, stepping forwards, you pull your demonic [lilaya.relation(pc)] into your embrace. [pc.speech(~Mmm!~ Yes Lilaya, that sounds good to me!)]
 	</p>
 	<p>
-		#IF(pc.hasPenisIgnoreDildo() && !lilaya.isVisiblyPregnant() && lilaya.getFetishDesire(FETISH_PREGNANCY).isNegative())
+		#IF(pc.hasPenisIgnoreDildo() && !#lilaya.isVisiblyPregnant() && #lilaya.getFetishDesire(fetish("FETISH_PREGNANCY")).isNegative())
 		[lilaya.speech(Mmm, yes! Just, if you want to fuck me, make sure you pull out, ok? I'm <b>not</b> getting pregnant!)] she demands.
 		#ELSE
 		[lilaya.speech(Mmm, yes!)] she giggles.
@@ -786,7 +786,7 @@
 		You can't resist an offer like that, and, stepping forwards, you allow your demonic [lilaya.relation(pc)] to reach up and pull you into her embrace. [pc.speech(~Mmm!~ Yes Lilaya, that sounds good to me!)]
 	</p>
 	<p>
-		#IF(pc.hasPenisIgnoreDildo() && !lilaya.isVisiblyPregnant() && lilaya.getFetishDesire(FETISH_PREGNANCY).isNegative())
+		#IF(pc.hasPenisIgnoreDildo() && !#lilaya.isVisiblyPregnant() && #lilaya.getFetishDesire(fetish("FETISH_PREGNANCY")).isNegative())
 		[lilaya.speech(Mmm, yes! Just, if you want to fuck me, make sure you pull out, ok? I'm <b>not</b> getting pregnant!)] she demands.
 		#ELSE
 		[lilaya.speech(Mmm, yes!)] she giggles.
@@ -1380,7 +1380,7 @@
 		You briefly wonder if it's your aura that's making Lilaya so horny, but whatever it is, you're feeling the same effects. You've never wanted someone as badly as you want her right now, and you feel your heart pounding as her soft, delicate lips press against yours. Before you can make the next move, Lilaya suddenly pulls back and takes the initiative. Pushing you down into the chair she recently vacated, she then throws one leg over yours, before sliding down to sit in your lap, bringing the two of you face-to-face.
 	</p>
 	<p>
-		#IF(pc.hasPenisIgnoreDildo() && !lilaya.isVisiblyPregnant() && lilaya.getFetishDesire(FETISH_PREGNANCY).isNegative())
+		#IF(pc.hasPenisIgnoreDildo() && !#lilaya.isVisiblyPregnant() && #lilaya.getFetishDesire(fetish("FETISH_PREGNANCY")).isNegative())
 			[lilaya.speech(Mmm, yes! Just, if you want to fuck me, make sure you pull out, ok? I'm <b>not</b> getting pregnant!)] she demands.
 		#ELSE
 			[lilaya.speech(Mmm, yes!)] she giggles.
@@ -1397,7 +1397,7 @@
 		You briefly wonder if it's your aura that's making Lilaya so horny, but whatever it is, you're feeling the same effects. You've never wanted someone as badly as you want her right now, and you feel your heart pounding as her soft, delicate lips press against yours. Before you can make the next move, Lilaya suddenly pulls back and takes the initiative. Stepping around to one side of your [pc.legRace]-like lower body, she sinks to her knees and reaches up to run her fingers up and over your animalistic groin.
 	</p>
 	<p>
-		#IF(pc.hasPenisIgnoreDildo() && !lilaya.isVisiblyPregnant() && lilaya.getFetishDesire(FETISH_PREGNANCY).isNegative())
+		#IF(pc.hasPenisIgnoreDildo() && !#lilaya.isVisiblyPregnant() && #lilaya.getFetishDesire(fetish("FETISH_PREGNANCY")).isNegative())
 			[lilaya.speech(Mmm, yes! Just, if you want to fuck me, make sure you pull out, ok? I'm <b>not</b> getting pregnant!)] she demands.
 		#ELSE
 			[lilaya.speech(Mmm, yes!)] she giggles.
@@ -1536,7 +1536,7 @@
 		You briefly wonder if it's your aura that's making Lilaya so horny, but whatever it is, you're feeling the same effects. You've never wanted someone as badly as you want her right now, and you feel your heart pounding as her soft, delicate fingers stroke over your lips. Before you can make the next move, Lilaya suddenly pulls back and takes the initiative. Stepping around to one side, she quickly throws one leg over yours and slides down to sit in your lap, bringing the two of you face-to-face.
 	</p>
 	<p>
-		#IF(pc.hasPenisIgnoreDildo() && !lilaya.isVisiblyPregnant() && lilaya.getFetishDesire(FETISH_PREGNANCY).isNegative())
+		#IF(pc.hasPenisIgnoreDildo() && !#lilaya.isVisiblyPregnant() && #lilaya.getFetishDesire(fetish("FETISH_PREGNANCY")).isNegative())
 			[lilaya.speech(Mmm, yes! Just, if you want to fuck me, make sure you pull out, ok? I'm <b>not</b> getting pregnant!)] she demands.
 		#ELSE
 			[lilaya.speech(Mmm, yes!)] she giggles.
@@ -1553,7 +1553,7 @@
 		You briefly wonder if it's your aura that's making Lilaya so horny, but whatever it is, you're feeling the same effects. You've never wanted someone as badly as you want her right now, and you feel your heart pounding as her soft, delicate fingers stroke over your lips. Before you can make the next move, Lilaya suddenly pulls back and takes the initiative. Stepping around to one side of your [pc.legRace]-like lower body, she sinks to her knees and reaches up to run her fingers once again over your animalistic groin.
 	</p>
 	<p>
-		#IF(pc.hasPenisIgnoreDildo() && !lilaya.isVisiblyPregnant() && lilaya.getFetishDesire(FETISH_PREGNANCY).isNegative())
+		#IF(pc.hasPenisIgnoreDildo() && !#lilaya.isVisiblyPregnant() && #lilaya.getFetishDesire(fetish("FETISH_PREGNANCY")).isNegative())
 			[lilaya.speech(Mmm, yes! Just, if you want to fuck me, make sure you pull out, ok? I'm <b>not</b> getting pregnant!)] she demands.
 		#ELSE
 			[lilaya.speech(Mmm, yes!)] she giggles.

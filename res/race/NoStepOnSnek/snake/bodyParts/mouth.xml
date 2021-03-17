@@ -30,6 +30,6 @@
 		 [npc.Her] throat is [npc.mouthColourSecondary(true)] in colour.
 	]]></bodyDescription>
 	<defaultOrificeModifiers>
-		<modifier>muscle("CONTROL")</modifier>
+		<modifier>MUSCLE_CONTROL</modifier>
 	</defaultOrificeModifiers>
 </mouth>
