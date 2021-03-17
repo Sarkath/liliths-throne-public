@@ -4,7 +4,7 @@
 	<!-- OUTSIDE -->
 	
 	<htmlContent tag="OUTSIDE"><![CDATA[
-	#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
+	#IF(game.getCurrentWeather()==weather("MAGIC_STORM"))
 		<p>
 			The fear of falling prey to the ongoing arcane storm's effects has caused the vast majority of Dominion's residents to take shelter. As a result, the streets that you find yourself walking down are all eerily quiet, with only the occasional demon to be seen wandering about.
 		</p>
@@ -94,11 +94,11 @@
 	
 	<htmlContent tag="ARCADE_WES_REMINDER"><![CDATA[
 	<p><i>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_wesQuestMet))
+		#IF(game.getDialogueFlags().hasFlag(flag("wesQuestMet")))
 			While this is the place where you can meet Wes, you've already refused to help him today, and so you'll be unable to see him again until tomorrow at the earliest...
 		#ELSEIF(game.getHourOfDay()==13)
 			This is both the time and place in which to
-			#IF(game.getDialogueFlags().hasFlag(FLAG_wesQuestRefused))
+			#IF(game.getDialogueFlags().hasFlag(flag("wesQuestRefused")))
 				 [style.colourMinorGood(meet Wes)],
 			#ELSE
 				 [style.colourMinorGood(meet the mysterious Enforcer)],
@@ -106,7 +106,7 @@
 			 so if you were to look around for him for a while, you'd likely be able to get in contact with him...
 		#ELSE
 			While this is the place where 
-			#IF(game.getDialogueFlags().hasFlag(FLAG_wesQuestRefused))
+			#IF(game.getDialogueFlags().hasFlag(flag("wesQuestRefused")))
 				 Wes
 			#ELSE
 				 the mysterious Enforcer
@@ -138,7 +138,7 @@
 		Tucked away in one corner of the Shopping Arcade, the restaurant 'The Oaken Glade' proudly displays its name in flowing gold lettering above its front door. The establishment's large windows allow you to look in on an incredible scene; the vast interior has been manipulated by some form of arcane-powered illusion, making it appear as though the restaurant is a portal directly into the middle of a summer-time forest clearing.
 		#IF(game.isDayTime())
 			 Bright sunlight shines down through the leaves of the huge oak trees which border this clearing, covering the tables and chairs in a soft, dappled-green glow.
-		#ELSEIF(game.getCurrentDayPeriod()==DAY_PERIOD_NIGHT)
+		#ELSEIF(game.getCurrentDayPeriod()==dayPeriod("NIGHT"))
 			 Glowing lanterns have been hung from the branches of the huge oak trees which border this clearing, casting the tables and chairs in a soft, orange glow.
 		#ENDIF
 	</p>
@@ -506,7 +506,7 @@
 	<htmlContent tag="TOILETS_GLORY_HOLE_SUB_START"><![CDATA[
 	<p>
 		Having already waited long enough, you quickly kneel down in front of the glory hole,
-		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 			 before opening your mouth and leaning in towards [npc.namePos] [npc.cock+].
 		#ELSE
 			 but as your mouth is blocked, all you can prepare to do is give [npc.name] a handjob.

@@ -14,7 +14,7 @@
 	<aquatic>false</aquatic>
 	<applySubspeciesChanges></applySubspeciesChanges>
 	<subspeciesWeighting><![CDATA[
-		#IF(targetedRace==RACE_NoStepOnSnek_octopus)
+		#IF(targetedRace==race("NoStepOnSnek_octopus"))
 			100
 		#ELSE
 			0

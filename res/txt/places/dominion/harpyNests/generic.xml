@@ -60,7 +60,7 @@
 	<p>
 		You find yourself standing in yet another large, open-plan lobby, but this one has quite a different atmosphere than the one on the ground floor. Everywhere you look, uniformed Enforcers are standing guard, carefully tracking each passer-by with a suspicious gaze. A large desk, manned by yet more Enforcers, sits between you and the door marked <i>'Harpy Nests Entrance'</i>.
 	</p>
-	#IF(!game.getDialogueFlags().hasFlag(FLAG_hasHarpyNestAccess))
+	#IF(!game.getDialogueFlags().hasFlag(flag("hasHarpyNestAccess")))
 		<p>
 			Although none of them are really paying you any attention at the moment, it looks like you're going to have to talk to one of these Enforcers if you want to get past that desk and out into the Harpy Nests.
 		</p>
@@ -79,7 +79,7 @@
 	<p>
 		As you approach the desk, a wolf-girl Enforcer catches your eye and calls out, [style.speechFeminine(Hey you, yeah <i>you</i>, come here!)]
 	</p>
-	#IF(pc.getQuest(QUEST_LINE_MAIN)==QUEST_MAIN_1_E_REPORT_TO_HELENA)
+	#IF(pc.getQuest(questLine("MAIN"))==quest("MAIN_1_E_REPORT_TO_HELENA"))
 		<p>
 			You do as the wolf-girl asks and walk over to where she's sitting behind the desk. Flashing you a suspicious glance, she says that if you're planning on entering the Harpy Nests, you'll have to tell her what your business here is. Not seeing any reason to lie, you inform the Enforcer that you're here to find a harpy matriarch called 'Helena'.
 		</p>
@@ -234,14 +234,14 @@
 	<p>
 		Although these walkways don't lead directly through any nests, you're still able to observe them as you pass. Each nest takes the form of a series of platforms, built on top of, and into, the roofs and upper floors of Dominion's residences. While most are confined to a single building, you see that a few span multiple houses, and have several tiers of platforms built on top of one another; evidence that the matriarch of that particular nest is extremely important.
 	</p>
-	#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
+	#IF(game.getCurrentWeather()==weather("MAGIC_STORM"))
 		<p>
 			Due to the ongoing arcane storm, each flock has taken shelter in the building below their nest. The only movement to be seen in the deserted nests takes the form of canvas coverings, erected to protect the harpies from the elements, billowing in the wind. Peering over the side of the railing, you see that the streets below are similarly abandoned, with only the occasional demon to be seen wandering through the area.
 		</p>
 		<p>
 			#IF(!game.getNonCompanionCharactersPresent().isEmpty() && npc.isRelatedTo(pc))
 				Despite the potential for a lust-crazed to swoop down and attack you, you feel quite [style.colourGood(safe)] in this area, as the only person you're likely to encounter is your [npc.relation(pc)], [npc.name]...
-			#ELSEIF(!game.getNonCompanionCharactersPresent().isEmpty() && !npc.getAffectionLevel(pc).isLessThan(AFFECTION_POSITIVE_ONE_FRIENDLY))
+			#ELSEIF(!game.getNonCompanionCharactersPresent().isEmpty() && !npc.getAffectionLevel(pc).isLessThan(affection("POSITIVE_ONE_FRIENDLY")))
 				Despite the potential for a lust-crazed harpy to swoop down and attack you, you feel quite [style.colourGood(safe)] in this area, as the only person you're likely to encounter is [npc.name], who is on friendly terms with you...
 			#ELSE
 				While the arcane storm raging overhead has sent most harpies into hiding, there's a chance that you'll run into one which is being affected by its lust-inducing effects, making the Nests a [style.colourBad(dangerous)] place to be travelling through for as long as it lasts...
@@ -249,7 +249,7 @@
 		</p>
 	#ELSE
 		<p>
-			#IF(game.getCurrentWeather()==WEATHER_RAIN)
+			#IF(game.getCurrentWeather()==weather("RAIN"))
 				Due to the ongoing rain, each flock has taken shelter in the building below their nest, or beneath the canvas coverings that have been erected to protect the harpies from the elements. The matriarch of each nest is clearly visible, even from a great distance, as they're always surrounded by other harpies eager to gain the favour of their leader. Peering over the side of the railing, you see that the people walking down the streets below are similarly huddling beneath any shelter they can find, desperate to get out of the rain.
 			#ELSEIF(game.isDayTime())
 				The members of each flock are sprawled out over their nest's platforms. Most are simply lounging about beneath canvas coverings, but there are plenty to be seen sunbathing or talking in little groups. The matriarch of each nest is clearly visible, even from a great distance, as they're always surrounded by other harpies eager to gain the favour of their leader. Peering over the side of the railing, you see the people walking down the streets below, oblivious to what's going on high above them.
@@ -262,9 +262,9 @@
 				As you continue travelling down the [style.colourBad(dangerous)] walkways, you can't help but shake the feeling that you're being watched. An occasional flash of colour out of the corner of your [pc.eye] confirms your suspicions, but each time you turn to face your elusive stalker, they quickly fly off back to their nest. It's probably only a matter of time before one of them decides to openly confront you...
 			#ELSEIF(npc.isRelatedTo(pc))
 				Despite the potential for a harpy to swoop down and attack you, you feel quite [style.colourGood(safe)] in this area, as the only person you're likely to encounter is your [npc.relation(pc)], [npc.name]...
-			#ELSEIF(!npc.getAffectionLevel(pc).isLessThan(AFFECTION_POSITIVE_ONE_FRIENDLY))
+			#ELSEIF(!npc.getAffectionLevel(pc).isLessThan(affection("POSITIVE_ONE_FRIENDLY")))
 				Despite the potential for a harpy to swoop down and attack you, you feel quite [style.colourGood(safe)] in this area, as the only person you're likely to encounter is [npc.name], who is on friendly terms with you...
-			#ELSEIF(pc.isQuestCompleted(QUEST_LINE_SIDE_HARPY_PACIFICATION))
+			#ELSEIF(pc.isQuestCompleted(questLine("SIDE_HARPY_PACIFICATION")))
 				You sometimes see an Enforcer patrolling a walkway off in the distance, reminding you that it's now [style.colourGood(safe)] for people to be travelling throughout the Harpy Nests. Although there's no risk of being attacked, harpies are still quite touchy by nature, and you imagine that it wouldn't be too hard to cause a confrontation if you were to go looking for trouble...
 			#ELSE
 				As you continue travelling down the [style.colourBad(dangerous)] walkways, you can't help but shake the feeling that you're being watched. An occasional flash of colour out of the corner of your [pc.eye] confirms your suspicions, but each time you turn to face your elusive stalker, they quickly fly off back to their nest. It's probably only a matter of time before one of them decides to openly confront you...

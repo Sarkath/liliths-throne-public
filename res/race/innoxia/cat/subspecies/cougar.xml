@@ -13,18 +13,18 @@
 	<bipedalSubspecies>true</bipedalSubspecies>
 	<aquatic>false</aquatic>
 	<applySubspeciesChanges><![CDATA[
-		[#targetedBody.setCovering(BODY_COVERING_TYPE_FELINE_FUR, COVERING_PATTERN_NONE, COVERING_MODIFIER_SHORT, COLOUR_COVERING_TAN, false, COLOUR_COVERING_BLACK, false)]
-		[#targetedBody.setCovering(BODY_COVERING_TYPE_HAIR_FELINE_FUR, COVERING_PATTERN_NONE, COLOUR_COVERING_TAN, false, COLOUR_COVERING_BLACK, false)]
+		[#targetedBody.setCovering(bodyCoveringType("FELINE_FUR"), coveringPattern("NONE"), coveringModifier("SHORT"), colour("COVERING_TAN"), false, colour("COVERING_BLACK"), false)]
+		[#targetedBody.setCovering(bodyCoveringType("HAIR_FELINE_FUR"), coveringPattern("NONE"), colour("COVERING_TAN"), false, colour("COVERING_BLACK"), false)]
 		[#targetedBody.updateCoverings(true, true, true, true)]
 		[#targetedBody.setBodySize(55)]
 		[#targetedBody.setMuscle(75)]
 	]]></applySubspeciesChanges>
 	<subspeciesWeighting><![CDATA[
-		#IF(targetedRace==RACE_CAT_MORPH
-		&& targetedBody.getCovering(BODY_COVERING_TYPE_FELINE_FUR, true).getPrimaryColour()==COLOUR_COVERING_TAN
-		&& targetedBody.getCovering(BODY_COVERING_TYPE_FELINE_FUR, true).getPattern()==COVERING_PATTERN_NONE
-		&& targetedBody.getMuscle()>=MUSCLE_THREE_MUSCULAR.getMinimumValue()
-		&& targetedBody.getBodySize()>=BODY_SIZE_TWO_AVERAGE.getMinimumValue())
+		#IF(targetedRace==race("CAT_MORPH")
+		&& targetedBody.getCovering(bodyCoveringType("FELINE_FUR"), true).getPrimaryColour()==colour("COVERING_TAN")
+		&& targetedBody.getCovering(bodyCoveringType("FELINE_FUR"), true).getPattern()==coveringPattern("NONE")
+		&& targetedBody.getMuscle()>=muscle("THREE_MUSCULAR").getMinimumValue()
+		&& targetedBody.getBodySize()>=bodySize("TWO_AVERAGE").getMinimumValue())
 			120
 		#ELSE
 			0
@@ -43,7 +43,7 @@
 	<singularFemaleName><![CDATA[cougar-girl]]></singularFemaleName>
 	<pluralMaleName><![CDATA[cougar-boys]]></pluralMaleName>
 	<pluralFemaleName><![CDATA[cougar-girls]]></pluralFemaleName>
-	<description><![CDATA[An anthropomorphic cougar, known as a 'cougar-morph' when bipedal, and a 'cougartaur' when the lower body is that of a feral cougar. To be identified as a cougar-morph, a character must be a cat-morph with plain, tan-coloured fur, as well as muscles of at least '[#MUSCLE_THREE_MUSCULAR.getName(false)]' and a body size of least '[#BODY_SIZE_TWO_AVERAGE.getName(false)]'.]]></description>
+	<description><![CDATA[An anthropomorphic cougar, known as a 'cougar-morph' when bipedal, and a 'cougartaur' when the lower body is that of a feral cougar. To be identified as a cougar-morph, a character must be a cat-morph with plain, tan-coloured fur, as well as muscles of at least '[#muscle("THREE_MUSCULAR").getName(false)]' and a body size of least '[#bodySize("TWO_AVERAGE").getName(false)]'.]]></description>
 	<feralAttributes>
 		<feralName><![CDATA[cougar]]></feralName>
 		<feralNamePlural><![CDATA[cougars]]></feralNamePlural>

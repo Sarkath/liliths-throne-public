@@ -100,7 +100,7 @@
 	The parsing target of 'npc' corresponds to the character who is being checked to see if they have this move available to them.
 	All whitespace is stripped from the returned String before it is parsed into a Boolean. -->
 	<availabilityCondition><![CDATA[
-		[#npc.getLegConfiguration()==LEG_CONFIGURATION_QUADRUPEDAL]
+		[#npc.getLegConfiguration()==legConfiguration("QUADRUPEDAL")]
 	]]>
 	</availabilityCondition>
 	

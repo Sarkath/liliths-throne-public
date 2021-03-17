@@ -21,7 +21,7 @@
 		<p>
 			Continuing to question Nyan about these books, you're reminded of the fact that she's quite the bibliophile, and while she's happy to read books of any genre, she has a particular love for romance novels. From what she says, it sounds as though she's read almost everything ever published in this genre, and has a signed copy of every book ever written by her favourite author.
 		</p>
-		#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 			<p style='text-align:center;'>
 				<i>From your conversation with Nyan, you're reminded that [style.italicsMinorGood(her favourite book is called 'One Night in June')].</i>
 			</p>
@@ -41,7 +41,7 @@
 		</p>
 	#ENDIF
 	<p>
-		#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 			In her excitement at being able to talk with you about this topic, Nyan's stutter almost completely disappears. Encouraged by this sign, you happily continue talking with your girlfriend about books, and before you know it, almost an hour has passed by.
 		#ELSE
 			In her excitement at being able to talk with you about this topic, Nyan starts enthusiastically recounting the storylines of all of her favourite books. Happy to see your girlfriend enjoying herself, you continue talking with her about her books for quite some time, and before you know it, almost an hour has passed by.
@@ -55,13 +55,13 @@
 		<p>
 			Deciding that it would be a good idea to find out how how Nyan's work has been going lately, you ask her how she's coping with being this store's owner and manager.
 		</p>
-		#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 			<p>
 				[nyan.speechNoEffects(O-Oh, well, I try my best, but I'm still not v-very good at dealing with customers,)] Nyan admits once again. Looking down at the floor and shuffling her feet, she continues, [nyan.speechNoEffects(I-I asked all the staff the other d-day if they'd like me to get m-more involved on the shop floor, b-but they all said that I can s-stick to doing the finances and ordering s-stock. They know how n-nervous I get around people, and they're a-all so considerate...)]
 			</p>
 			<p>
 				Curious to hear more about Nyan's role in her business, you continue talking with her about this topic for quite some time. While most of what she tells you is relatively mundane, she again reveals a hint at how she came to own this business, and says how she given it by someone close to her.
-				#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateRequested))
+				#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateRequested")))
 					 Not wanting to reveal much more than that, however, the nervous cat-girl quickly shifts the topic and starts talking about her long work-hours, and how at some point in the future she'd like to start taking weekends off.
 				#ELSE
 					 Not wanting to reveal much more than that, however, the nervous cat-girl quickly shifts the topic and starts talking about her long work-hours, and how that her decision to start taking weekends off will give her more time in which to relax.
@@ -93,7 +93,7 @@
 		</p>
 	#ENDIF
 	<p>
-		#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 			Soon enough, Nyan is enthusiastically talking about the finer details of her work, and you can't help but notice how her stutter almost completely disappears. Encouraged by this sign, you happily continue talking with your girlfriend about her store, and before you know it, almost an hour has passed by.
 		#ELSE
 			Soon enough, Nyan is enthusiastically talking about the finer details of her work. Happy to see your girlfriend enjoying herself, you continue talking with her about her store for quite some time, and before you know it, almost an hour has passed by.
@@ -107,13 +107,13 @@
 		<p>
 			Wanting to once again talk about a topic which she'll surely enjoy, you ask your girlfriend about her old hobbies of fashion and baking again.
 		</p>
-		#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 			<p>
 				[nyan.speechNoEffects(O-Oh, well, I still d-don't really have any time in w-which to enjoy fashion or baking,)] she reveals, [nyan.speechNoEffects(A-And anyway, I-I wouldn't feel comfortable w-wearing anything other t-than what I've got on right now...)]
 			</p>
 			<p>
 				Questioning Nyan further, you once again end up talking about how her interest in fashion led her to her first job as a seamstress, and although she enjoyed that work, she eventually gave it up in order to assume her current role as owner and manager of this store. It was due to this change in career, and the subsequent longer work-hours which she's taken on, that she now doesn't have as much free time as she used to.
-				#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateRequested))
+				#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateRequested")))
 					 Regretting the fact that she only has time for keeping up with fashion trends directly related to her work, your girlfriend says that she'd like to start taking weekends off at some point.
 				#ELSE
 					 Regretting the fact that she used to only have time for keeping up with fashion trends directly related to her work, your girlfriend says that she's going to use some of her free time at the weekends in which to get back into reading about trends in fashion.
@@ -142,7 +142,7 @@
 		</p>
 	#ENDIF
 	<p>
-		#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 			Asking questions about her favourite dresses and cakes, you've soon got Nyan enthusiastically talking about her old hobbies, and you can't help but notice how her stutter almost completely disappears. Encouraged by this sign, you happily continue talking with your girlfriend about fashion and baking, and before you know it, almost an hour has passed by.
 		#ELSE
 			Asking questions about her favourite dresses and cakes, you've soon got Nyan enthusiastically talking about her hobbies. Happy to see your girlfriend enjoying herself, you continue talking with her about fashion and baking for quite some time, and before you know it, almost an hour has passed by.
@@ -153,7 +153,7 @@
 	
 	<htmlContent tag="NYAN_TALK_NYAN_HOME"><![CDATA[
 	#IF(game.getDialogueFlags().getSavedLong('NYAN_HOME')>-1)
-		#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 			<p>
 				Wanting to talk with Nyan about her family and her life here in Dominion, you begin by asking her if she's recently heard from her mother.
 			</p>
@@ -198,7 +198,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="NYAN_TALK_FINAL"><![CDATA[
-	#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+	#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 		<p>
 			Glancing down at her watch and seeing the time, Nyan lets out a little eek and declares, [nyan.speechNoEffects(Oh no! I've still got so much work to do t-today! Sorry, [pc.name], but I think we'll h-have to continue this topic another time... I-I really enjoyed talking with you, though!)]
 		</p>
@@ -390,7 +390,7 @@
 	<!-- ROMANCE_WALK -->
 	
 	<htmlContent tag="ROMANCE_WALK_INITIAL"><![CDATA[
-	#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+	#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 		<p>
 			Having by now spent a decent amount of time getting to know one another, you feel as though Nyan might be ready to go out on a walk with you, and so you openly suggest this idea to her.
 		</p>
@@ -428,7 +428,7 @@
 	
 	<htmlContent tag="ROMANCE_WALK_REPEAT_START"><![CDATA[
 	<p>
-		#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 			Wanting to get out of the storeroom and spend some time with Nyan out in the Arcade, you ask her if she'd like to go out for a walk. Happily smiling at you, your cute girlfriend eagerly replies, [nyan.speechNoEffects(I-I'd like that, [pc.name]! Come on, let's g-go!)]
 		#ELSE
 			Wanting to get out of the storeroom and spend some time with Nyan out in the Arcade, you ask her if she'd like to go out for a walk. Happily smiling at you, your cute girlfriend eagerly replies, [nyan.speech(I'd like that, [pc.name]! Come on, let's go!)]
@@ -493,7 +493,7 @@
 	<htmlContent tag="ROMANCE_WALK_REPEAT_RESTAURANT"><![CDATA[
 	<p>
 		With Nyan by your side, you travel around the entire Arcade in a circuitous route, and end up passing by the restaurant, 'The Oaken Glade'. Gazing longingly at the arcane illusion of a summer-time forest glade, your girlfriend wistfully sighs,
-		#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(!game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
 			 [nyan.speech(I've got a lot of good memories of being here with mum...)]
 		#ELSE
 			 [nyan.speech(I've got a lot of good memories of being here with mum... And now I've got good memories of going here with you, too!)]
@@ -589,7 +589,7 @@
 		Following Nyan over to stand in front of this restaurant, you see that the name 'The Oaken Glade' is proudly written in flowing gold lettering above its front door. The establishment's large windows allow the two of you to look in on an incredible scene; the vast interior has been manipulated by some form of arcane-powered illusion, making it appear as though the restaurant is a portal directly into the middle of a summer-time forest clearing.
 		#IF(game.isDayTime())
 			 Bright sunlight shines down through the leaves of the huge oak trees which border this clearing, covering the tables and chairs in a soft, dappled-green glow.
-		#ELSEIF(game.getCurrentDayPeriod()==DAY_PERIOD_NIGHT)
+		#ELSEIF(game.getCurrentDayPeriod()==dayPeriod("NIGHT"))
 			 Glowing lanterns have been hung from the branches of the huge oak trees which border this clearing, casting the tables and chairs in a soft, orange glow.
 		#ENDIF
 	</p>
@@ -642,7 +642,7 @@
 	
 	<htmlContent tag="ROMANCE_WALK_INITIAL_END_NO_KISS"><![CDATA[
 	<p>
-		#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(!pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 			With your mouth being blocked, there's no way that you can give Nyan the kiss she's obviously craving, and so you don't make any move in response to hers. Detecting your inability to give her what she wants, the cat-girl pulls back, and within seconds, the moment's passed. 
 		#ELSE
 			Deciding that now's not the best time in which to take things to the next level and give Nyan the kiss she's obviously craving, you don't make any move in response to hers. Detecting your reluctance to give her what she wants, the cat-girl pulls back, and within seconds, the moment's passed.

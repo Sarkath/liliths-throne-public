@@ -13,30 +13,30 @@
 	<bipedalSubspecies>true</bipedalSubspecies>
 	<aquatic>false</aquatic>
 	<applySubspeciesChanges><![CDATA[
-		#IF(targetedBody.getFace().getType()!=FACE_TYPE_HUMAN)
-			[#targetedBody.getFace().setType(null, FACE_TYPE_charisma_spider_faceFluffy)]
+		#IF(targetedBody.getFace().getType()!=faceType("HUMAN"))
+			[#targetedBody.getFace().setType(null, faceType("charisma_spider_faceFluffy"))]
 		#ENDIF
-		#IF(targetedBody.getArm().getType()==ARM_TYPE_charisma_spider_arm)
-			[#targetedBody.getArm().setType(null, ARM_TYPE_charisma_spider_armFluffy)]
+		#IF(targetedBody.getArm().getType()==armType("charisma_spider_arm"))
+			[#targetedBody.getArm().setType(null, armType("charisma_spider_armFluffy"))]
 		#ENDIF
-		#IF(targetedBody.getLeg().getType()==LEG_TYPE_charisma_spider_leg)
-			[#targetedBody.getLeg().setType(null, LEG_TYPE_charisma_spider_legFluffy)]
+		#IF(targetedBody.getLeg().getType()==legType("charisma_spider_leg"))
+			[#targetedBody.getLeg().setType(null, legType("charisma_spider_legFluffy"))]
 		#ENDIF
-		#IF(targetedBody.getTail().getType()==TAIL_TYPE_charisma_spider_tail)
-			[#targetedBody.getTail().setType(null, TAIL_TYPE_charisma_spider_tailFluffy)]
+		#IF(targetedBody.getTail().getType()==tailType("charisma_spider_tail"))
+			[#targetedBody.getTail().setType(null, tailType("charisma_spider_tailFluffy"))]
 		#ENDIF
-		#IF(targetedBody.getTorso().getType()==TORSO_TYPE_charisma_spider_torso)
-			[#targetedBody.getTorso().setType(null, TORSO_TYPE_charisma_spider_torsoFluffy)]
+		#IF(targetedBody.getTorso().getType()==torsoType("charisma_spider_torso"))
+			[#targetedBody.getTorso().setType(null, torsoType("charisma_spider_torsoFluffy"))]
 		#ENDIF
-		#IF(targetedBody.getVagina().getType()!=VAGINA_TYPE_NONE)
-			#IF(targetedBody.getPenis().getType()!=PENIS_TYPE_NONE)
-				[#targetedBody.getPenis().addPenisModifier(null, PENETRATION_MODIFIER_OVIPOSITOR)]
+		#IF(targetedBody.getVagina().getType()!=vaginaType("NONE"))
+			#IF(targetedBody.getPenis().getType()!=penisType("NONE"))
+				[#targetedBody.getPenis().addPenisModifier(null, penetrationModifier("OVIPOSITOR"))]
 			#ENDIF
 		#ENDIF
-		[#targetedBody.getCovering(BODY_COVERING_TYPE_charisma_spider_chitinFluffy, true).setModifier(COVERING_MODIFIER_FLUFFY)]
+		[#targetedBody.getCovering(bodyCoveringType("charisma_spider_chitinFluffy"), true).setModifier(coveringModifier("FLUFFY"))]
 	]]></applySubspeciesChanges>
 	<subspeciesWeighting><![CDATA[
-		#IF(targetedRace==RACE_charisma_spider && (targetedBody.getFace().getType()==FACE_TYPE_charisma_spider_faceFluffy || targetedBody.getArm().getType()==ARM_TYPE_charisma_spider_armFluffy || targetedBody.getLeg().getType()==LEG_TYPE_charisma_spider_legFluffy || targetedBody.getTail().getType()==TAIL_TYPE_charisma_spider_tailFluffy || targetedBody.getTorso().getType()==TORSO_TYPE_charisma_spider_torsoFluffy))
+		#IF(targetedRace==race("charisma_spider") && (targetedBody.getFace().getType()==faceType("charisma_spider_faceFluffy") || targetedBody.getArm().getType()==armType("charisma_spider_armFluffy") || targetedBody.getLeg().getType()==legType("charisma_spider_legFluffy") || targetedBody.getTail().getType()==tailType("charisma_spider_tailFluffy") || targetedBody.getTorso().getType()==torsoType("charisma_spider_torsoFluffy")))
 			200
 		#ELSE
 			0

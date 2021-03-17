@@ -8,7 +8,7 @@
 		Lying flat on the floor in this area of the enclosure is the teleportation pad which you and Claire arrived on. Lacking the specially-shaped essence cells which the pad requires in order to function, you and Claire are unable to use it to return to the Enforcer post in Submission.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_claireEnclosureEscaped))
+		#IF(game.getDialogueFlags().hasFlag(flag("claireEnclosureEscaped")))
 			There's really nothing more that can be done here; you're going to have to escape by sneaking through the warehouse.
 		#ELSE
 			[claire.speech(It's a shame that these things can't be powered directly by aura, or even by absorbing freed essences,)] Claire sighs as she tinkers with the control panel, [claire.speech(I really don't think I'm going to be able to get this working again...)]
@@ -101,7 +101,7 @@
 		Towering stacks of wooden crates surround you on all four sides, forming what is sure to present an all-but-impassable barrier to your top-heavy cat-girl companion. A closer look at these containers reveals that each one has been stamped both with a serial number and with the words <i>'SWORD: Special Weapons and Operations Response Department'</i>.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_claireEnclosureEscaped))
+		#IF(game.getDialogueFlags().hasFlag(flag("claireEnclosureEscaped")))
 			You can't see any gap at all in the stacks of crates in this area. It seems as though the only way in or out of this small enclosure is via the passage you opened up by moving those shelves...
 		#ELSE
 			You can't see any gap at all in the stacks of crates in this area, but surely there must be a way out somewhere nearby...
@@ -114,7 +114,7 @@
 	<!-- ENCLOSURE_SHELVING -->
 	
 	<htmlContent tag="ENCLOSURE_SHELVING"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_claireEnclosureEscaped))
+	#IF(game.getDialogueFlags().hasFlag(flag("claireEnclosureEscaped")))
 		<p>
 			By pulling the wheeled shelving units back into the crate-encircled enclosure, you've managed to open up a path linking it to the warehouse proper. Although it was in this location where you were fortunate enough to find a fabled spell book containing the secrets of teleportation, these shelves really don't seem to contain anything else of value.
 		</p>
@@ -138,7 +138,7 @@
 	<htmlContent tag="ENCLOSURE_SHELVING_MOVE"><![CDATA[
 	<p>
 		With only these wheeled shelving units blocking what looks to be the way out, you step over towards the nearest one, and, grabbing it by the end, start to pull it out.
-		#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)<5)
+		#IF(pc.getAttributeValue(attribute("MAJOR_PHYSIQUE"))<5)
 				Despite it having wheels, you're so weak that you're completely unable to move it. Thankfully, having seen what it is you're doing, Claire quickly walks over to give you a helping hand.
 			</p>
 			<p>
@@ -382,7 +382,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="CRATES_LUST_WEAPON_SEARCHED"><![CDATA[
+	<htmlContent tag="CRATES_LUST_weapon("SEARCHED")"><![CDATA[
 	<p>
 		Solid red lines have been marked out on the floor of this particular part of the warehouse, and within the area which they encompass, you see that the words 'Restricted Area' have been spray-painted in regular intervals. The crate marked as 'Top Secret', which contained the arcane lightning globe, is sitting in the middle of this forbidden zone, and as you were careful to leave it exactly as you found it, you don't think that whoever carts it off into storage will discover that its contents are missing...
 	</p>
@@ -390,9 +390,9 @@
 	</htmlContent>
 	
 	
-	<!-- CRATES_LUST_WEAPON_SEARCH -->
+	<!-- CRATES_LUST_weapon("SEARCH") -->
 	
-	<htmlContent tag="CRATES_LUST_WEAPON_SEARCH"><![CDATA[
+	<htmlContent tag="CRATES_LUST_weapon("SEARCH")"><![CDATA[
 	<p>
 		There's no way that you're not going to take the opportunity to search through a 'Top Secret' crate locked away in a guarded warehouse like this. Stepping forwards over the solid red line that's painted on the floor, you enter the 'Restricted Area' and head directly over to this curious container.
 	</p>
@@ -433,9 +433,9 @@
 	</htmlContent>
 	
 	
-	<!-- CRATES_LUST_WEAPON_OBTAINED -->
+	<!-- CRATES_LUST_weapon("OBTAINED") -->
 	
-	<htmlContent tag="CRATES_LUST_WEAPON_OBTAINED"><![CDATA[
+	<htmlContent tag="CRATES_LUST_weapon("OBTAINED")"><![CDATA[
 	<p>
 		Concerned with how Claire has suddenly been affected by the arcane lightning, you step forwards and ask her if she's ok. As though woken from a dream, she seems to suddenly become aware of what she's doing, and, pulling her hand out of her trousers, she blushes and stammers, [claire.speech(Y-Yes, I-I'm fine! That lightning's just... Well... You can see how it's made me feel!)]
 	</p>
@@ -456,7 +456,7 @@
 	</p>
 	<p>
 		Looking back into the crate, you see that a few of the bottled essences are still intact.
-		#IF(!pc.hasQuest(QUEST_LINE_SIDE_ENCHANTMENT_DISCOVERY))
+		#IF(!pc.hasQuest(questLine("SIDE_ENCHANTMENT_DISCOVERY")))
 			 You get the feeling that if you were to open them, you'd be able to absorb the energy contained within, and could then channel that energy into the lightning globe in order to shoot a single bolt at a target.
 		#ELSE
 			 You get the feeling that arcane essences must be used as some sort of ammunition for this curious weapon, and that by channelling them into the lightning globe, you'd be able to shoot a single bolt at a target.
@@ -473,9 +473,9 @@
 	</htmlContent>
 	
 	
-	<!-- CRATES_LUST_WEAPON_OBTAINED_CONTINUE -->
+	<!-- CRATES_LUST_weapon("OBTAINED_CONTINUE") -->
 	
-	<htmlContent tag="CRATES_LUST_WEAPON_OBTAINED_CONTINUE"><![CDATA[
+	<htmlContent tag="CRATES_LUST_weapon("OBTAINED_CONTINUE")"><![CDATA[
 	<p>
 		Trusting that Claire will be able to control herself, you step back from the 'Top Secret' crate and prepare to continue on your way...
 	</p>
@@ -483,16 +483,16 @@
 	</htmlContent>
 	
 	
-	<!-- SHELVES_SPELL_BOOK -->
+	<!-- SHELVES_spell("BOOK") -->
 	
-	<htmlContent tag="SHELVES_SPELL_BOOK"><![CDATA[
+	<htmlContent tag="SHELVES_spell("BOOK")"><![CDATA[
 	<p>
 		Instead of the usual wooden crates which fill the rest of the warehouse, this particular section is home to dozens of wheeled shelving units, of the same sort which were blocking your way when you first arrived here. At first glance they all seem to be filled with nothing more than miscellaneous documents and old accounting books, but perhaps if you were to take a closer look, you'd find something of value...
 	</p>
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="SHELVES_SPELL_BOOK_SEARCHED"><![CDATA[
+	<htmlContent tag="SHELVES_spell("BOOK_SEARCHED")"><![CDATA[
 	<p>
 		Instead of the usual wooden crates which fill the rest of the warehouse, this particular section is home to dozens of wheeled shelving units, of the same sort which were blocking your way when you first arrived here. Having already searched through them all, you know that there's nothing else in this area that's of any value to you...
 	</p>
@@ -500,9 +500,9 @@
 	</htmlContent>
 	
 	
-	<!-- CRATES_SPELL_BOOK_SEARCH -->
+	<!-- CRATES_spell("BOOK_SEARCH") -->
 	
-	<htmlContent tag="CRATES_SPELL_BOOK_SEARCH"><![CDATA[
+	<htmlContent tag="CRATES_spell("BOOK_SEARCH")"><![CDATA[
 	<p>
 		Deciding that it would be worth your time to conduct a thorough search of this area, you move forwards between the nearest shelves and start taking a look at the documents stored here.
 	</p>
@@ -893,13 +893,13 @@
 	<htmlContent tag="AFTER_COMBAT_DEFEAT_SENT_TO_STOCKS"><![CDATA[
 	<p>
 		After about a twenty-minute walk, during which time you've received all sorts of strange looks and comments from members of the public, you and the [npc.race] Enforcer finally reach your destination, which turns out to be none other than Slaver Alley.
-		#IF(game.getDialogueFlags().hasFlag(FLAG_seanIntroduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("seanIntroduced")))
 			 Leading you up to the public stocks which are prominently positioned just a short way in from the entrance, your captor calls out to [sean.name], who, as ever, is standing guard in this area, [npc.speech(Hey, Constable, I've a soon-to-be slave here. You got room for [pc.herHim] for the next twenty-four hours or so?)]
 		#ELSE
 			 Leading you up to the public stocks which are prominently positioned just a short way in from the entrance, your captor calls out to the Enforcer assigned to guard duty here, [npc.speech(Hey, Constable, I've a soon-to-be slave here. You got room for [pc.herHim] for the next twenty-four hours or so?)]
 		#ENDIF
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_seanIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("seanIntroduced")))
 		<p>
 			[sean.speech([pc.Name]?! What have you gotten yourself into?)] [sean.name] exclaims as he sees that it's you.
 		</p>
@@ -928,7 +928,7 @@
 		[npc.speech(You see, this is why nobody fucks with SWORD; <i>we're</i> the ones who always end up doing the fucking!)] [npc.name] laughs, reaching down to grope your body as [npc.she] continues, [npc.speech(Once I've had my fun with you, I'll have you marked as being fully available for public use. Welcome to your new life, bitch.)]
 	</p>
 	<p>
-		#IF(npc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(npc.hasPenis() || !pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 			With that, [npc.name] steps around behind you, reaching down to give your [pc.ass+] a rough squeeze before taunting,
 		#ELSE
 			With that, [npc.name] steps up in front of you, bringing [npc.her] groin right up to your [pc.face] as [npc.she] taunts,
@@ -948,7 +948,7 @@
 	<p>
 		After [npc.sheHas] sorted [npc.her] uniform out, the [npc.race] lets an evil grin settle on [npc.her] face, and in a voice loud enough for the crowd to hear, [npc.she] says, [npc.speech(That was a good fuck, bitch. I'll be back tomorrow to get you registered as a slave. Until then, I'll leave you marked as being fully available for public use, just like I promised.)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_seanIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("seanIntroduced")))
 		<p>
 			With one last evil laugh, [npc.she] walks over to [sean.name], and after exchanging a few brief words with him, heads off back to her post at the SWORD warehouse. As [npc.she] departs, [sean.name] walks up to you, before making some marks on your set of stocks with a white chalk. Letting out a sigh, he says, [sean.speech(I don't know exactly what it is you've done, but if I don't do as I'm told and mark you up as being free for public use, then I'll end up in the stocks as well. Sorry about this...)]
 		</p>
@@ -1009,7 +1009,7 @@
 		Having had their fun with you, [npc.name] and [npc2.name] put their clothes back on, and without even a backwards glance, they walk off together, speculating on the sorts of slaves that'll be available for them to fuck tomorrow.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_seanIntroduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("seanIntroduced")))
 			Just as you're wondering what will happen next, another pair step up before you, and, to your amazement, you look up to see that it's none other than Claire and [sean.name]. With a deep sigh, your busty cat-girl friend places her hands on her hips and states, [claire.speech(Yes, that's [pc.herHim]. Please release [pc.herHim] at once.)]
 		#ELSE
 			Just as you're wondering what will happen next, another pair step up before you, and, to your amazement, you look up to see that it's none other than Claire and the Enforcer overseer. With a deep sigh, your busty cat-girl friend places her hands on her hips and states, [claire.speech(Yes, that's [pc.herHim]. Please release [pc.herHim] at once.)]
@@ -1022,7 +1022,7 @@
 	<!-- STOCKS_SET_FREE -->
 	
 	<htmlContent tag="STOCKS_SET_FREE"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_seanIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("seanIntroduced")))
 		<p>
 			Doing as he's told, [sean.name] wipes the chalk markings off your stocks, before unlocking and removing the heavy padlock. Pulling up the wooden device, he frees your head and [pc.hands], before turning to Claire and saying, [sean.speech(Right, there you go. As I said, it was SWORD who told me to do it. I'm not exactly going to say no to them.)]
 		</p>

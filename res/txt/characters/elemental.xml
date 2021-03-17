@@ -45,7 +45,7 @@
 	<htmlContent tag="ELEMENTAL_START_SEX_DOMINANT"><![CDATA[
 	<p>
 		Whether due to [el.name] planting the idea in your subconscious, or perhaps just from the sight of [el.her] active form, you suddenly find yourself feeling desperately turned-on. [pc.Stepping] forwards to dominantly take hold of your elemental, you pull [el.herHim] into
-		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, false) && el.isAbleToAccessCoverableArea(CA_MOUTH, false))
+		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), false) && el.isAbleToAccessCoverableArea(ca("MOUTH"), false))
 			 a passionate kiss, and as you push your [pc.tongue+] into [el.her] mouth, [el.she] projects [el.her] voice into your mind, [el.thought(~Ooh!~ Yes! That's it... ~Mmm!~ Let's give in to our desires...)]
 		#ELSE	
 			 your embrace, and as you press yourself against [el.herHim], [el.she] excitedly [el.moans], [el.speech(~Ooh!~ Yes! That's it... ~Mmm!~ Let's give in to our desires...)]
@@ -60,7 +60,7 @@
 	<htmlContent tag="ELEMENTAL_START_SEX_SUBMISSIVE"><![CDATA[
 	<p>
 		Whether due to [el.name] planting the idea in your subconscious, or perhaps just from the sight of [el.her] active form, you suddenly find yourself feeling desperately turned-on. Knowing exactly what it is that you want, [el.name] [el.steps] forwards and firmly takes hold of your waist, before pulling you into
-		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, false) && el.isAbleToAccessCoverableArea(CA_MOUTH, false))
+		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), false) && el.isAbleToAccessCoverableArea(ca("MOUTH"), false))
 			 a passionate kiss. As [el.she] forcefully pushes [el.her] [el.tongue+] into your mouth, [el.she] projects [el.her] voice into your mind,
 			#IF(el.isSummonerServant())
 				 [el.thought(~Mmm!~ Good servant... ~Aah!~ I'll show you what it means to pledge your subservience to me!)]

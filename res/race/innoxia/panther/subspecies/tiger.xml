@@ -14,31 +14,31 @@
 	<aquatic>false</aquatic>
 	<applySubspeciesChanges><![CDATA[
 		#IF(RND.nextInt(100)<75)
-			[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_fur, COVERING_PATTERN_STRIPED, COVERING_MODIFIER_SHORT, COLOUR_COVERING_ORANGE, false, COLOUR_COVERING_BLACK, false)]
-			[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_hair, COVERING_PATTERN_NONE, COLOUR_COVERING_ORANGE, false, COLOUR_COVERING_BLACK, false)]
+			[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_fur"), coveringPattern("STRIPED"), coveringModifier("SHORT"), colour("COVERING_ORANGE"), false, colour("COVERING_BLACK"), false)]
+			[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_hair"), coveringPattern("NONE"), colour("COVERING_ORANGE"), false, colour("COVERING_BLACK"), false)]
 		#ELSE
 			#IF(RND.nextInt(100)<75)
 				#IF(RND.nextInt(100)<50)
-					[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_fur, COVERING_PATTERN_STRIPED, COVERING_MODIFIER_SHORT, COLOUR_COVERING_AUBURN, false, COLOUR_COVERING_BLACK, false)]
-					[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_hair, COVERING_PATTERN_NONE, COLOUR_COVERING_AUBURN, false, COLOUR_COVERING_BLACK, false)]
+					[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_fur"), coveringPattern("STRIPED"), coveringModifier("SHORT"), colour("COVERING_AUBURN"), false, colour("COVERING_BLACK"), false)]
+					[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_hair"), coveringPattern("NONE"), colour("COVERING_AUBURN"), false, colour("COVERING_BLACK"), false)]
 				#ELSE
-					[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_fur, COVERING_PATTERN_STRIPED, COVERING_MODIFIER_SHORT, COLOUR_COVERING_AMBER, false, COLOUR_COVERING_BLACK, false)]
-					[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_hair, COVERING_PATTERN_NONE, COLOUR_COVERING_AMBER, false, COLOUR_COVERING_BLACK, false)]
+					[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_fur"), coveringPattern("STRIPED"), coveringModifier("SHORT"), colour("COVERING_AMBER"), false, colour("COVERING_BLACK"), false)]
+					[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_hair"), coveringPattern("NONE"), colour("COVERING_AMBER"), false, colour("COVERING_BLACK"), false)]
 				#ENDIF
 			#ELSE
 				#IF(RND.nextInt(100)<75)
-					[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_fur, COVERING_PATTERN_STRIPED, COVERING_MODIFIER_SHORT, COLOUR_COVERING_WHITE, false, COLOUR_COVERING_BLACK, false)]
-					[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_hair, COVERING_PATTERN_NONE, COLOUR_COVERING_WHITE, false, COLOUR_COVERING_BLACK, false)]
+					[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_fur"), coveringPattern("STRIPED"), coveringModifier("SHORT"), colour("COVERING_WHITE"), false, colour("COVERING_BLACK"), false)]
+					[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_hair"), coveringPattern("NONE"), colour("COVERING_WHITE"), false, colour("COVERING_BLACK"), false)]
 				#ELSE
-					[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_fur, COVERING_PATTERN_STRIPED, COVERING_MODIFIER_SHORT, COLOUR_COVERING_BLACK, false, COLOUR_COVERING_BLACK, false)]
-					[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_hair, COVERING_PATTERN_NONE, COLOUR_COVERING_BLACK, false, COLOUR_COVERING_BLACK, false)]
+					[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_fur"), coveringPattern("STRIPED"), coveringModifier("SHORT"), colour("COVERING_BLACK"), false, colour("COVERING_BLACK"), false)]
+					[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_hair"), coveringPattern("NONE"), colour("COVERING_BLACK"), false, colour("COVERING_BLACK"), false)]
 				#ENDIF
 			#ENDIF
 		#ENDIF
 		[#targetedBody.updateCoverings(true, true, true, true)]
 	]]></applySubspeciesChanges>
 	<subspeciesWeighting><![CDATA[
-		#IF(targetedRace==RACE_innoxia_panther && targetedBody.getCovering(BODY_COVERING_TYPE_innoxia_panther_fur, true).getPattern()==COVERING_PATTERN_STRIPED)
+		#IF(targetedRace==race("innoxia_panther") && targetedBody.getCovering(bodyCoveringType("innoxia_panther_fur"), true).getPattern()==coveringPattern("STRIPED"))
 			100
 		#ELSE
 			0

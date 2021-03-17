@@ -93,7 +93,7 @@
 	<p>
 		Deciding that you'd be best at shovelling snow, you tell [npc.name] that that's what you'd like to do. [npc.She] then leads you over to a cart that's parked on one side of the street, where [npc.she] grabs a shovel and hands it over to you. [npc.speech(With your help, we should be finished in a few more hours. Thanks for the assistance!)]
 	</p>
-	#IF(pc.hasStatusEffect(SE_PHYSIQUE_PERK_0) || pc.hasStatusEffect(SE_PHYSIQUE_PERK_1))
+	#IF(pc.hasStatusEffect(SE_PHYSIQUE_perk("0")) || pc.hasStatusEffect(SE_PHYSIQUE_perk("1")))
 		<p>
 			Setting off to where the other reindeer-morphs are working, you get stuck in and start shovelling snow. Although it didn't seem too hard at first, you're not able to keep up with the stamina or strength of the reindeer-morphs, and before long you find yourself having to take a break.
 		</p>
@@ -106,7 +106,7 @@
 		<p>
 			[npc.speech(Hi, [pc.name]! Good work today!)] [npc.name] calls out, mercifully not mentioning your sub-par performance as [npc.she] pays you. [npc.speech(Here's the [#SPECIAL_PARSE_0] flames you've earned today!)]
 		</p>
-	#ELSEIF(pc.hasStatusEffect(SE_PHYSIQUE_PERK_2) || pc.hasStatusEffect(SE_PHYSIQUE_PERK_3))
+	#ELSEIF(pc.hasStatusEffect(SE_PHYSIQUE_perk("2")) || pc.hasStatusEffect(SE_PHYSIQUE_perk("3")))
 		<p>
 			Setting off to where the other reindeer-morphs are working, you get stuck in and start shovelling snow. Although it's harder work than you first though it would be, you're able to keep up with the reindeer-morphs, and even manage to shovel a little more snow than a couple of them.
 		</p>
@@ -140,7 +140,7 @@
 	<p>
 		Deciding that you'd work best by using your arcane power to harness [npc.namePos] 'heat-stave', you tell the [npc.race] that that's what you'd like to do. [npc.She] then leads you over to a cart that's parked on one side of the street, where [npc.she] grabs a tall, wooden staff with a curious orange gemstone fixed into one end, before handing it over to you. [npc.speech(Just focus your arcane energy into the stave while pointing the bottom at the ground. With your help, we should be finished in a few more hours. Thanks for the assistance!)]
 	</p>
-	#IF(pc.hasStatusEffect(SE_INTELLIGENCE_PERK_0) || pc.hasStatusEffect(SE_INTELLIGENCE_PERK_1))
+	#IF(pc.hasStatusEffect(SE_INTELLIGENCE_perk("0")) || pc.hasStatusEffect(SE_INTELLIGENCE_perk("1")))
 		<p>
 			Setting off to the area where the reindeer-morphs will need to clear next, you do as [npc.name] instructed, and point the bottom of the staff at the mounds of snow while focusing your arcane energy into it. A little jet of hot air shoots out of the staff, and by slowly tracing a path over the snow, you're able to melt it into pre-cut sections, ready for the reindeer-morphs to shovel.
 		<p>
@@ -152,7 +152,7 @@
 		<p>
 			[npc.speech(Hi [pc.name]! Good work today!)] [npc.name] says as [npc.she] pays you. [npc.speech(Here's the [#SPECIAL_PARSE_0] flames you've earned!)]
 		</p>
-	#ELSEIF(pc.hasStatusEffect(SE_INTELLIGENCE_PERK_2) || pc.hasStatusEffect(SE_INTELLIGENCE_PERK_3))
+	#ELSEIF(pc.hasStatusEffect(SE_INTELLIGENCE_perk("2")) || pc.hasStatusEffect(SE_INTELLIGENCE_perk("3")))
 		<p>
 			Setting off to the area where the reindeer-morphs will need to clear next, you do as [npc.name] instructed, and point the bottom of the staff at the mounds of snow while focusing your arcane energy into it. A small jet of flames shoots out of the staff, and by tracing a path over the snow, you're able to quickly melt it into pre-cut sections, ready for the reindeer-morphs to shovel.
 		<p>
@@ -184,7 +184,7 @@
 	<p>
 		Deciding that you'd work best by delivering drinks and 'encouraging' the workers, you tell the [npc.race] that that's what you'd like to do. [npc.She] then leads you over to a cart that's parked on one side of the street, and after revealing that this is where the drinks are stored, [npc.she] explains, [npc.speech(Just go around asking the workers if they need a drink, and if they do, fetch them one from here. With your help, we should be finished in a few more hours. Thanks for the assistance!)]
 	</p>
-	#IF(pc.hasStatusEffect(SE_CORRUPTION_PERK_0) || pc.hasStatusEffect(SE_CORRUPTION_PERK_1))
+	#IF(pc.hasStatusEffect(SE_CORRUPTION_perk("0")) || pc.hasStatusEffect(SE_CORRUPTION_perk("1")))
 		<p>
 			Setting off to the area where the reindeer-morphs are working, you do as [npc.name] instructed and start asking each one if they'd like a drink. The workers are far less appreciative of your efforts than you'd expected, and before long you find yourself regretting your decision to help out in this manner.
 		<p>
@@ -196,7 +196,7 @@
 		<p>
 			[npc.speech(Hi, [pc.name]! Good work today!)] [npc.name] says as [npc.she] pays you. [npc.speech(Here's the [#SPECIAL_PARSE_0] flames you've earned!)]
 		</p>
-	#ELSEIF(pc.hasStatusEffect(SE_CORRUPTION_PERK_2) || pc.hasStatusEffect(SE_CORRUPTION_PERK_3))
+	#ELSEIF(pc.hasStatusEffect(SE_CORRUPTION_perk("2")) || pc.hasStatusEffect(SE_CORRUPTION_perk("3")))
 		<p>
 			Setting off to the area where the reindeer-morphs are working, you do as [npc.name] instructed and start asking each one if they'd like a drink. The workers seem to appreciate your efforts, especially when you take time out to flirt with them each time you bring them their requested beverages.
 		<p>

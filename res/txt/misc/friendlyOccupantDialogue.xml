@@ -5,7 +5,7 @@
 	<p>
 		Wanting to take a break, and knowing that [npc.namePos] apartment is in this area, you suggest to [npc.herHim] that the two of you should stop off there for a while.
 	</p>
-	#IF (npc.getAffection(pc) < AFFECTION_NEGATIVE_TWO_DISLIKE.getMaximumValue())
+	#IF (npc.getAffection(pc) < affection("NEGATIVE_TWO_DISLIKE").getMaximumValue())
 		<p>
 			[npc.speech(Yeah, I guess we could go back to my place for a while,)] [npc.name] replies, doing [npc.her] best to hide [npc.her] animosity towards you as [npc.she] strides off in the direction of [npc.her] home. After just a couple of minutes, the two of you arrive at [npc.her] front door, and, opening it and stepping inside, [npc.name] turns back to face you and says, [npc.speech(Don't take this the wrong way, but can we make this quick?)]
 		</p>
@@ -48,13 +48,13 @@
 	</p>
 	<p>
 		#IF (npc.getPregnantLitter()!=null && npc.getPregnantLitter().isFatherId(pc.getId()))
-			#IF (npc.hasFetish(FETISH_PREGNANCY))
+			#IF (npc.hasFetish(fetish("FETISH_PREGNANCY")))
 				[npc.speech(That's right, you got me pregnant!)] [npc.name] excitedly cries out, stepping forwards and taking hold of your [pc.hand] in [npc.hers], before rubbing it over [npc.her] swollen belly. [npc.speech(I love being pregnant so much! Thank you so much, [npc.pcName]!)]
 			#ELSE
 				[npc.speech(That's right, you got me pregnant...)] [npc.name] mumbles, stepping forwards and shuffling [npc.her] [npc.feet] as [npc.she] smiles at you. [npc.speech(I-I'll make sure to take care of myself, don't worry!)]
 			#ENDIF
 		#ELSE
-			#IF (npc.hasFetish(FETISH_PREGNANCY))
+			#IF (npc.hasFetish(fetish("FETISH_PREGNANCY")))
 				[npc.speech(That's right, [#npc.getPregnantLitter().getFatherName()] got me pregnant!)] [npc.name] cries out, excitedly rubbing [npc.her] [npc.hands] over [npc.her] swollen belly. [npc.speech(I love being pregnant so much!)]
 			#ELSE
 				[npc.speech(That's right, [#npc.getPregnantLitter().getFatherName()] got me pregnant...)] [npc.name] mumbles, shuffling [npc.her] [npc.feet] as [npc.she] smiles at you. [npc.speech(I-I'll make sure to take care of myself, don't worry!)]
@@ -77,13 +77,13 @@
 	<htmlContent tag="OCCUPANT_START_PLAYER_PREGNANCY"><![CDATA[
 	<p>
 		#IF (pc.getPregnantLitter()!=null && pc.getPregnantLitter().isFatherId(npc.getId()))
-			#IF (npc.hasFetish(FETISH_IMPREGNATION))
+			#IF (npc.hasFetish(fetish("FETISH_IMPREGNATION")))
 				[npc.speech(Wait... You're pregnant!)] [npc.name] excitedly shouts, gazing down at your rounded belly for a moment, before stepping forwards and rubbing [npc.her] [npc.hands] all over it. [npc.speech(I made you a mommy, huh, [npc.pcName]?! Isn't this exciting? And pretty hot as well... It's like I've claimed your womb...)]
 			#ELSE
 				[npc.speech(Wait... You're pregnant!)] [npc.name] shouts, stepping forwards and nervously placing [npc.her] [npc.hand] on your rounded belly. [npc.speech(I got you pregnant... I can't believe it! I-I'm going to be [npc.a_father]...)]
 			#ENDIF
 		#ELSE
-			#IF (npc.hasFetish(FETISH_IMPREGNATION))
+			#IF (npc.hasFetish(fetish("FETISH_IMPREGNATION")))
 				[npc.speech(Wait... You're pregnant!)] [npc.name] excitedly shouts, gazing down at your rounded belly for a moment, before looking up at you and smiling. [npc.speech(Congratulations, [npc.pcName]! You're going to be a mommy, huh? That lucky stud who knocked you up... Fuck, I wish it'd have been me...)]
 			#ELSE
 				[npc.speech(Wait... You're pregnant!)] [npc.name] shouts, gazing down at your rounded belly for a moment, before looking up at you and smiling. [npc.speech(Congratulations, [npc.pcName]! You'll make a fantastic mother!)]
@@ -170,7 +170,7 @@
 	<htmlContent tag="SEX_SPITROAST_FRONT_START"><![CDATA[
 	#VAR
 		var positioning = "";
-		if(npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL) {
+		if(npc.getLegConfiguration()==legConfiguration("BIPEDAL")) {
 			positioning = "onto [npc.her] hands and knees ";
 		}
 		var playerPositioning = "Falling to your knees in front of [npc.name], you say,";
@@ -214,7 +214,7 @@
 	<htmlContent tag="SEX_SPITROAST_BEHIND_START"><![CDATA[
 	#VAR
 		var positioning = "";
-		if(npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL) {
+		if(npc.getLegConfiguration()==legConfiguration("BIPEDAL")) {
 			positioning = "onto [npc.her] hands and knees ";
 		}
 		var playerPositioning = "Falling to your knees behind [npc.name], you say,";
@@ -438,7 +438,7 @@
 	
 	<htmlContent tag="OCCUPANT_TALK_SLAVES"><![CDATA[
 	<p>
-		#IF (npc2.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
+		#IF (npc2.hasSlavePermissionSetting(slavePermissionSetting("GENERAL_SILENCE")))
 			You ask [npc.name] if [npc.sheHas] talked to or interacted with any of your slaves recently. Answering in the affirmative, [npc.she] says that [npc.she] recently spent some time trying to talk with [npc2.name], but as [npc2.she] had been ordered to remain silent, the conversation was completely one-sided.
 		#ELSE
 			You ask [npc.name] if [npc.sheHas] talked to or interacted with any of your slaves recently. Answering in the affirmative, [npc.she] says that [npc.she] recently spent some time talking with [npc2.name].
@@ -814,13 +814,13 @@
 	</p>
 	<p>
 		#IF (npc.getPregnantLitter()!=null && npc.getPregnantLitter().isFatherId(pc.getId()))
-			#IF (npc.hasFetish(FETISH_PREGNANCY))
+			#IF (npc.hasFetish(fetish("FETISH_PREGNANCY")))
 				[npc.speech(That's right, you got me pregnant!)] [npc.name] excitedly cries out, stepping forwards and taking hold of your [pc.hand] in [npc.hers], before rubbing it over [npc.her] swollen belly. [npc.speech(I love being pregnant so much! Thank you so much, [npc.pcName]!)]
 			#ELSE
 				[npc.speech(That's right, you got me pregnant...)] [npc.name] mumbles, stepping forwards shuffling [npc.her] [npc.feet] as [npc.she] smiles at you. [npc.speech(I-I'll make sure to take care of myself, don't worry!)]
 			#ENDIF
 		#ELSE
-			#IF (npc.hasFetish(FETISH_PREGNANCY))
+			#IF (npc.hasFetish(fetish("FETISH_PREGNANCY")))
 				[npc.speech(That's right, [#npc.getPregnantLitter().getFatherName()] got me pregnant!)] [npc.name] cries out, excitedly rubbing [npc.her] [npc.hands] over [npc.her] swollen belly. [npc.speech(I love being pregnant so much!)]
 			#ELSE
 				[npc.speech(That's right, [#npc.getPregnantLitter().getFatherName()] got me pregnant...)] [npc.name] mumbles, shuffling [npc.her] [npc.feet] as [npc.she] smiles at you. [npc.speech(I-I'll make sure to take care of myself, don't worry!)]
@@ -843,13 +843,13 @@
 	<htmlContent tag="OCCUPANT_APARTMENT_START_PLAYER_PREGNANCY"><![CDATA[
 	<p>
 		#IF (pc.getPregnantLitter()!=null && pc.getPregnantLitter().isFatherId(npc.getId()))
-			#IF (npc.hasFetish(FETISH_IMPREGNATION))
+			#IF (npc.hasFetish(fetish("FETISH_IMPREGNATION")))
 				 [npc.speech(Wait... You're pregnant!)] [npc.name] excitedly shouts, gazing down at your rounded belly for a moment, before stepping forwards and rubbing [npc.her] [npc.hands] all over it. [npc.speech(I made you a mommy, huh, [npc.pcName]?! Isn't this exciting? And pretty hot as well... It's like I've claimed your womb...)]
 			#ELSE
 				 [npc.speech(Wait... You're pregnant!)] [npc.name] shouts, stepping forwards and nervously placing [npc.her] [npc.hand] on your rounded belly. [npc.speech(I got you pregnant... I can't believe it! I-I'm going to be a father...)]
 			#ENDIF
 		#ELSE
-			#IF (npc.hasFetish(FETISH_IMPREGNATION))
+			#IF (npc.hasFetish(fetish("FETISH_IMPREGNATION")))
 				 [npc.speech(Wait... You're pregnant!)] [npc.name] excitedly shouts, gazing down at your rounded belly for a moment, before looking up at you and smiling. [npc.speech(Congratulations, [npc.pcName]! You're going to be a mommy, huh? That lucky stud who knocked you up... Fuck, I wish it'd have been me...)]
 			#ELSE
 				 [npc.speech(Wait... You're pregnant!)] [npc.name] shouts, gazing down at your rounded belly for a moment, before looking up at you and smiling. [npc.speech(Congratulations, [npc.pcName]! You'll make a fantastic mother!)]

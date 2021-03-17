@@ -45,7 +45,7 @@
 				[claire.speech(Oh, hello again, [pc.name]!)] Claire cheerfully exclaims as she sees that it's you who's calling out to her, [claire.speech(What can I do for you this time?)]
 		#ENDIF
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_claireAskedWarehouseEscape))
+	#IF(game.getDialogueFlags().hasFlag(flag("claireAskedWarehouseEscape")))
 	<p>
 		Before you can answer, the busty cat-girl suddenly steps up closer to you, and, batting her eyelids, she seductively whispers, [claire.speech(You know, that storeroom behind me would be the perfect place to go and have a quick fuck... We'd <i>probably</i> not be discovered in there...)]
 	</p>
@@ -121,7 +121,7 @@
 	<p>
 		[pc.speech(You must have worked hard in order to be chosen as the one to be using them then,)] you reply, hoping to encourage the proud cat-girl to reveal some more information about teleportation.
 	</p>
-	#IF(pc.isQuestCompleted(QUEST_LINE_SIDE_SLIME_QUEEN))
+	#IF(pc.isQuestCompleted(questLine("SIDE_SLIME_QUEEN")))
 		<p>
 			[claire.speech(Thank you, yes I did!)] she replies, letting out a happy, contented little sigh as she hears you recognising her hard work, [claire.speech(I really put everything I've got into this job, and it all paid off when I was the one chosen to have such an important assignment! Hey, you know what, how about I show you the pads some time? I can tell you're really interested in them, and seeing as you've helped us out with that slime queen problem, my superior is sure to give you special permission to see them!)]
 		</p>
@@ -150,7 +150,7 @@
 		[pc.speech(You mentioned 'SWORD' and 'ORICL' when talking about the teleportation pads before,)] you say, [pc.speech(Could you tell me more about them?)]
 	</p>
 	<p>
-		#IF(pc.isQuestCompleted(QUEST_LINE_SIDE_TELEPORTATION))
+		#IF(pc.isQuestCompleted(questLine("SIDE_TELEPORTATION")))
 			[claire.speech(Well, after that business in their warehouse, I think you already know enough about SWORD,)] Claire replies with sigh, [claire.speech(But just to give you a rundown again, the 'Special Weapons and Operations Response Department' are the ones who get all the heavy weapons and dangerous assignments. They're the guys who deal with stuff like hostage rescue, tracking down serious criminals, and conducting raids on criminal hideouts. They've got a pretty well-earned reputation for being trigger-happy, and it's us Frontline Patrol units who end up getting all the flak from members of the public when we have to go in and clean up after they've finished their operations...)]
 		#ELSE
 			[claire.speech(Yeah, of course,)] Claire replies, [claire.speech(The 'Special Weapons and Operations Response Department', just as their name suggests, are the ones who get all the heavy weapons and dangerous assignments. They're the guys who deal with stuff like hostage rescue, tracking down serious criminals, and conducting raids on criminal hideouts. They've got a pretty well-earned reputation for being trigger-happy, and it's us Frontline Patrol units who end up getting all the flak from members of the public when we have to go in and clean up after they've finished their operations...)]
@@ -237,7 +237,7 @@
 		[pc.speech(You're welcome,)] you reply, smiling at the little cat-girl.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_claireAskedTeleportation))
+		#IF(game.getDialogueFlags().hasFlag(flag("claireAskedTeleportation")))
 			[claire.speech(Hey, now that you've helped us Enforcers out with this, I'm sure that I could get permission from my superior to let you see the teleportation pads!)] Claire happily exclaims, before asking, [claire.speech(So, would you like to see them now, or is there anything else I can help you with?)]
 		#ELSE
 			[claire.speech(So, is there anything else I can help you with?)] Claire happily asks.
@@ -272,7 +272,7 @@
 		[pc.speech(You're welcome,)] you reply, smiling at the little cat-girl.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_claireAskedTeleportation))
+		#IF(game.getDialogueFlags().hasFlag(flag("claireAskedTeleportation")))
 			[claire.speech(Hey, now that you've helped us Enforcers out with this, I'm sure that I could get permission from my superior to let you see the teleportation pads!)] Claire happily exclaims, before asking, [claire.speech(So, would you like to see them now, or is there anything else I can help you with?)]
 		#ELSE
 			[claire.speech(So, is there anything else I can help you with?)] Claire happily asks.
@@ -440,7 +440,7 @@
 		Looking back down, you see that the teleportation pad which you just arrived on has been tipped up onto its side and then leant against the closest stack of crates, which would explain why you and Claire appeared horizontally. There doesn't seem to be anyone nearby, nor, rather worryingly, any way to get out of the four-sided enclave the two of you are currently standing in.
 	</p>
 	<p>
-		#IF(pc.hasPerkAnywhereInTree(PERK_OBSERVANT))
+		#IF(pc.hasPerkAnywhereInTree(perk("OBSERVANT")))
 				[pc.speech(What are these markings?)] you ask, noticing that each of the wooden crates have a black-inked serial number and accompanying stamp on their side, [pc.speech(Is that 'SWORD'?)]
 			</p>
 			<p>
@@ -695,11 +695,11 @@
 	<p>
 		After just a few moments, you hear sounds of movement coming from beyond, followed by the noise of a heavy metal bolt sliding to one side. With a deafening creak of rusted hinges, the weathered doors slowly open inwards to reveal a small hallway, with yet another pair of wooden doors built into the far wall. Set into the stone on either side of this interior pair of doors, you see a couple of small, open hatches, and as you step forwards, cocked crossbows suddenly poke out from them, aiming in your general direction.
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensEntryWhore))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensEntryWhore")))
 		<p>
 			[npc.speech('Ey, you's that whore wot was here ta get fucked by Vengar!)] the rough voice of [npc.name] calls out from one of the hatches, [npc.speech(Ya back ta get some more o' 'is cock? Come on in!)]
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensEntry))
+	#ELSEIF(game.getDialogueFlags().hasFlag(flag("ratWarrensEntry")))
 		<p>
 			[npc.speech('Ey, you's that person wot was here doin' business with Vengar!)] the rough voice of [npc.name] calls out from one of the hatches, [npc.speech(Ya back ta see 'im again? Come on in!)]
 		</p>
@@ -812,7 +812,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="LILIN_PALACE_GATE_ENTRY_BLOCKED_QUEST_COMPLETED"><![CDATA[
+	<htmlContent tag="LILIN_PALACE_GATE_ENTRY_BLOCKED_quest("COMPLETED")"><![CDATA[
 	<p>
 		Walking up to the drawbridge, you smile at Elizabeth as she calls out, [elizabeth.speech(Well, if it isn't the [pc.hero] of the hour [pc.herself]. Her Highness has already sent word that her daughter is safely locked in her room, awaiting her punishment. Now, as a formality, I'll need to take a statement of how you defeated her before I can allow you to enter the palace.)]
 	</p>
@@ -822,7 +822,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="LILIN_PALACE_GATE_ENTRY_BLOCKED_QUEST_GAINED"><![CDATA[
+	<htmlContent tag="LILIN_PALACE_GATE_ENTRY_BLOCKED_quest("GAINED")"><![CDATA[
 	<p>
 		As you approach, you see the familiar figure of Elizabeth standing at the head of her group of guards. Catching sight of you, she narrows her eyes, before stating, [elizabeth.speech(We've had no news of the capture of Her Highness's daughter. Until you're able to deal with her, I'm afraid that you're not going to be getting past us.)]
 	</p>
@@ -844,7 +844,7 @@
 	
 	<htmlContent tag="LILIN_PALACE_GATE_ENTRY_BLOCKED"><![CDATA[
 	<p>
-		As you approach, a light-skinned half-succubus, with crimson-skinned demonic parts, steps forwards to bar your passage. [elizabeth.speech(Stop right there#IF(pc.getRace()==RACE_HUMAN)!#ELSE, [pc.race].#ENDIF Her Highness, Lyssieth, isn't receiving visitors at the moment, and it's quite out of the ordinary for someone to just waltz up to us like this. Identify yourself!)]
+		As you approach, a light-skinned half-succubus, with crimson-skinned demonic parts, steps forwards to bar your passage. [elizabeth.speech(Stop right there#IF(pc.getRace()==race("HUMAN"))!#ELSE, [pc.race].#ENDIF Her Highness, Lyssieth, isn't receiving visitors at the moment, and it's quite out of the ordinary for someone to just waltz up to us like this. Identify yourself!)]
 	</p>
 	<p>
 		You notice that the small army of demons around you are alert and ready for a fight, and, realising that it would be best to cooperate, you decide to do as the half-succubus asks.
@@ -963,7 +963,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="LILIN_PALACE_GATE_COMPLETED_QUEST_WITH_COMBAT"><![CDATA[
+	<htmlContent tag="LILIN_PALACE_GATE_COMPLETED_quest("WITH_COMBAT")"><![CDATA[
 	<p>
 		[pc.speech(Ok, I can deliver that report now,)] you say to Elizabeth, who nods and produces a small notepad and pen.
 	</p>
@@ -988,7 +988,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="LILIN_PALACE_GATE_COMPLETED_QUEST_WITH_TRICKERY"><![CDATA[
+	<htmlContent tag="LILIN_PALACE_GATE_COMPLETED_quest("WITH_TRICKERY")"><![CDATA[
 	<p>
 		[pc.speech(Ok, I can deliver that report now,)] you say to Elizabeth, who nods and produces a small notepad and pen.
 	</p>
@@ -997,14 +997,14 @@
 	</p>
 	<p>
 		You spend the next fifteen minutes or so explaining your methods, starting at how you got an arcane key from one of the surrounding imp fortress, and finishing with a description of how you tricked Lyssieth's daughter into wearing the enslavement ring.
-		#IF(pc.hasTraitActivated(PERK_CHUUNI))
+		#IF(pc.hasTraitActivated(perk("CHUUNI")))
 		 As you recount the conversation the two of you had in the stone keep, Elizabeth rolls her eyes and starts impatiently tapping her foot on the ground. As your story comes to an end, she sighs, [elizabeth.speech(I can't imagine what it must be like to be in the presence of the two of you at once...)]
 		#ELSE
 		 As your story comes to an end, Elizabeth raises an eyebrow and says, [elizabeth.speech(I can't believe she actually fell for that...)]
 		#ENDIF
 	</p>
 	<p>
-		#IF(pc.hasTraitActivated(PERK_CHUUNI))
+		#IF(pc.hasTraitActivated(perk("CHUUNI")))
 			Taking that as a compliment, you smirk as you reply, [pc.speech(I suppose that it must be rather hard for you to picture such a cataclysmic encounter between two of the greatest arcane-wielders to ever have lived! But anyway, enough of that! I have a lot of questions that I need Lyssieth to answer. Can I please enter the palace now?)]
 		#ELSE
 			[pc.speech(It <i>was</i> easier than I expected,)] you reply, [pc.speech(Anyway, as I said before, I have a lot of questions that I need Lyssieth to answer. Can I please enter the palace now?)]

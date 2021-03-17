@@ -51,31 +51,31 @@
 	The character's body that's being changed can be accessed via using 'targetedBody'.
 	The code here is redundant, as clitoris girth & size is set to 4 & 18 in both the race.xml and the racialBody.xml files, but I've added it in here to show a working example. -->
 	<applySubspeciesChanges><![CDATA[
-		#IF(!targetedBody.isFaceHuman() && targetedBody.getFaceType()!=FACE_TYPE_dsg_dragon_faceCoatl)
-			[#targetedBody.setFaceType(FACE_TYPE_dsg_dragon_faceCoatl)]
+		#IF(!targetedBody.isFaceHuman() && targetedBody.getFaceType()!=faceType("dsg_dragon_faceCoatl"))
+			[#targetedBody.setFaceType(faceType("dsg_dragon_faceCoatl"))]
 		#ENDIF
-		#IF(!targetedBody.hasTongueModifier(TONGUE_MODIFIER_BIFURCATED))
-			[#targetedBody.addTongueModifier(TONGUE_MODIFIER_BIFURCATED)]
+		#IF(!targetedBody.hasTongueModifier(tongueModifier("BIFURCATED")))
+			[#targetedBody.addTongueModifier(tongueModifier("BIFURCATED"))]
 		#ENDIF
-		#IF(targetedBody.getEarType()!=EAR_TYPE_dsg_dragon_ear)
-			[#targetedBody.setEarType(EAR_TYPE_dsg_dragon_ear)]
+		#IF(targetedBody.getEarType()!=earType("dsg_dragon_ear"))
+			[#targetedBody.setEarType(earType("dsg_dragon_ear"))]
 		#ENDIF
-		#IF(targetedBody.getHairType()!=HAIR_TYPE_dsg_dragon_hairFeathers)
-			[#targetedBody.setHairType(HAIR_TYPE_dsg_dragon_hairFeathers)]
+		#IF(targetedBody.getHairType()!=hairType("dsg_dragon_hairFeathers"))
+			[#targetedBody.setHairType(hairType("dsg_dragon_hairFeathers"))]
 		#ENDIF
-		#IF(targetedBody.getWingType()!=WING_TYPE_dsg_dragon_wingFeathered)
-			[#targetedBody.setWingType(WING_TYPE_dsg_dragon_wingFeathered)]
+		#IF(targetedBody.getWingType()!=wingType("dsg_dragon_wingFeathered"))
+			[#targetedBody.setWingType(wingType("dsg_dragon_wingFeathered"))]
 		#ENDIF
-		#IF(targetedBody.getWingSizeValue() < WING_SIZE_THREE_LARGE)
-			[#targetedBody.setWingSize(WING_SIZE_THREE_LARGE)]
+		#IF(targetedBody.getWingSizeValue() < wingSize("THREE_LARGE"))
+			[#targetedBody.setWingSize(wingSize("THREE_LARGE"))]
 		#ENDIF
-		#IF(targetedBody.getHornType()!=HORN_TYPE_NONE)
-			[#targetedBody.setHornType(HORN_TYPE_NONE)]
+		#IF(targetedBody.getHornType()!=hornType("NONE"))
+			[#targetedBody.setHornType(hornType("NONE"))]
 		#ENDIF
-		#IF(targetedBody.getTailType()!=TAIL_TYPE_dsg_dragon_tail && !targetedBody.isFeral() && targetedBody.getLegConfiguration()!=LEG_CONFIGURATION_TAIL_LONG)
-			[#targetedBody.setTailType(TAIL_TYPE_dsg_dragon_tail)]
-		#ELSEIF(targetedBody.getTailType()!=TAIL_TYPE_NONE && (targetedBody.isFeral() || targetedBody.getLegConfiguration()==LEG_CONFIGURATION_TAIL_LONG))
-			[#targetedBody.setTailType(TAIL_TYPE_NONE)]
+		#IF(targetedBody.getTailType()!=tailType("dsg_dragon_tail") && !targetedBody.isFeral() && targetedBody.getLegConfiguration()!=legConfiguration("TAIL_LONG"))
+			[#targetedBody.setTailType(tailType("dsg_dragon_tail"))]
+		#ELSEIF(targetedBody.getTailType()!=tailType("NONE") && (targetedBody.isFeral() || targetedBody.getLegConfiguration()==legConfiguration("TAIL_LONG")))
+			[#targetedBody.setTailType(tailType("NONE"))]
 		#ENDIF
 	]]></applySubspeciesChanges>
 	
@@ -85,13 +85,13 @@
 	The body that's being checked can be accessed via using 'targetedBody'.
 	The race of the body that's being checked SHOULD NOT be accessed via targetedBody.getRace(), and should instead be accessed via using 'targetedRace'. -->
 	<subspeciesWeighting><![CDATA[
-		#IF(targetedRace==RACE_dsg_dragon && 
-		targetedBody.hasTongueModifier(TONGUE_MODIFIER_BIFURCATED) &&
-		targetedBody.getHairType()==HAIR_TYPE_dsg_dragon_hairFeathers &&
-		targetedBody.getHornType()==HORN_TYPE_NONE &&
-		((targetedBody.getTailType()==TAIL_TYPE_dsg_dragon_tail && !targetedBody.isFeral() && targetedBody.getLegConfiguration()!=LEG_CONFIGURATION_TAIL_LONG) ||
-		(targetedBody.getTailType()==TAIL_TYPE_NONE && (targetedBody.isFeral() || targetedBody.getLegConfiguration()==LEG_CONFIGURATION_TAIL_LONG))) &&
-		targetedBody.getWingType()==WING_TYPE_dsg_dragon_wingFeathered)
+		#IF(targetedRace==race("dsg_dragon") && 
+		targetedBody.hasTongueModifier(tongueModifier("BIFURCATED")) &&
+		targetedBody.getHairType()==hairType("dsg_dragon_hairFeathers") &&
+		targetedBody.getHornType()==hornType("NONE") &&
+		((targetedBody.getTailType()==tailType("dsg_dragon_tail") && !targetedBody.isFeral() && targetedBody.getLegConfiguration()!=legConfiguration("TAIL_LONG")) ||
+		(targetedBody.getTailType()==tailType("NONE") && (targetedBody.isFeral() || targetedBody.getLegConfiguration()==legConfiguration("TAIL_LONG")))) &&
+		targetedBody.getWingType()==wingType("dsg_dragon_wingFeathered"))
 			200
 		#ELSE
 			0

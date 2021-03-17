@@ -108,7 +108,7 @@
 	
 	<!-- BET_NEED_REACT -->
 	
-	<htmlContent tag="BET_NEED_REACT_CALL"><![CDATA[
+	<htmlContent tag="BET_NEED_REAclothing("CALL")"><![CDATA[
 	[#SPECIAL_PARSE_1]
 	<p>
 		[pc.speech(I'll call that,)] you say, placing [#SPECIAL_PARSE_0] on the table.
@@ -123,7 +123,7 @@
 	]]>
 	</htmlContent>
 
-	<htmlContent tag="BET_NEED_REACT_FOLD"><![CDATA[
+	<htmlContent tag="BET_NEED_REAclothing("FOLD")"><![CDATA[
 	<p>
 		[pc.speech(That's too steep for me,)] you sigh. [pc.speech(I fold.)]
 	</p>

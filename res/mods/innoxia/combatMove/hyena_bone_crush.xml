@@ -37,7 +37,7 @@
 	<!-- The amount of damage this move does to the target, assuming that no modifiers are taken into account.
 	The parsing target of 'npc' corresponds to the character who is performing the move. -->
 	<baseDamage><![CDATA[
-		#IF(!npc.isCoverableAreaExposed(CA_MOUTH))
+		#IF(!npc.isCoverableAreaExposed(ca("MOUTH")))
 			0
 		#ELSE
 			[#npc.getUnarmedDamage() * 3]
@@ -96,7 +96,7 @@
 	The parsing target of 'npc' corresponds to the character who is being checked to see if they have this move available to them.
 	All whitespace is stripped from the returned String before it is parsed into a Boolean. -->
 	<availabilityCondition><![CDATA[
-		[#npc.getFaceType()==FACE_TYPE_innoxia_hyena_face]
+		[#npc.getFaceType()==faceType("innoxia_hyena_face")]
 	]]>
 	</availabilityCondition>
 	
@@ -112,7 +112,7 @@
 	Note that this weighting is parsed for every combatant, enemy and ally alike, so the method npc2.isCombatAlly(npc) (or npc2.isCombatEnemy(npc)) should most likely be used to differentiate between friend and foe (if you have set this move as being able to be used on both allies and enemies).
 	For an interesting example, see the 'spinneret_webbing.xml' file. -->
 	<weighting><![CDATA[
-		#IF(!npc.isCoverableAreaExposed(CA_MOUTH))
+		#IF(!npc.isCoverableAreaExposed(ca("MOUTH")))
 			0
 		#ELSE
 			1.0
@@ -128,7 +128,7 @@
 	'damageType' will parse to this move's DamageType.
 	-->
 	<criticalCondition><![CDATA[
-		[#npc2.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE) < npc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)*0.5]
+		[#npc2.getAttributeValue(attribute("MAJOR_PHYSIQUE")) < npc.getAttributeValue(attribute("MAJOR_PHYSIQUE"))*0.5]
 	]]></criticalCondition>
 	
 	<!-- A short description to let the player know what the conditions are for this move to inflict a critical hit. -->
@@ -146,7 +146,7 @@
 	-->
 	<movePredictionDescriptionWithTarget><![CDATA[
 		Use [npc.her] powerful hyena jaws to deliver a bone-crushing bite to [npc2.name], dealing formattedDamageInflicted damage.
-		#IF(!npc.isCoverableAreaExposed(CA_MOUTH))
+		#IF(!npc.isCoverableAreaExposed(ca("MOUTH")))
 			 [style.italicsTerrible(Damage is reduced to 0 as [npc.her] mouth is blocked!)]
 		#ENDIF
 	]]></movePredictionDescriptionWithTarget>
@@ -154,7 +154,7 @@
 	<!-- This is almost identical to the defined description above, with the difference being that there is no targeted character. As such, the description cannot use any 'npc2' parsing. -->
 	<movePredictionDescriptionNoTarget><![CDATA[
 		Use [npc.her] powerful hyena jaws to deliver a bone-crushing bite to [npc.her] target, dealing formattedDamageInflicted damage.
-		#IF(!npc.isCoverableAreaExposed(CA_MOUTH))
+		#IF(!npc.isCoverableAreaExposed(ca("MOUTH")))
 			 [style.italicsTerrible(Damage is reduced to 0 as [npc.her] mouth is blocked!)]
 		#ENDIF
 	]]></movePredictionDescriptionNoTarget>
@@ -170,7 +170,7 @@
 		<!-- The 'execute' section should be used for the main description of the attack, as well as any extra effects you want to apply.
 		NOTE: The damage is automatically applied to the target, so you don't need to handle parsing of that. -->
 		<execute><![CDATA[
-			#IF(!npc.isCoverableAreaExposed(CA_MOUTH))
+			#IF(!npc.isCoverableAreaExposed(ca("MOUTH")))
 				As [npc.her] mouth is blocked, [npc.name] [npc.verb(fail)] to bite [npc2.name], and [npc.verb(end)] up doing no damage at all...
 			#ELSE
 				[npc.Name] [npc.verb(open)] [npc.her] mouth, and after letting out a hyena-like laugh, [npc.verb(lunge)] at [npc2.name] and [npc.verb(succeed)] in delivering a bone-crushing bite!

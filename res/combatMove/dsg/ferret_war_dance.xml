@@ -92,7 +92,7 @@
 	The parsing target of 'npc' corresponds to the character who is being checked to see if they have this move available to them.
 	All whitespace is stripped from the returned String before it is parsed into a Boolean. -->
 	<availabilityCondition><![CDATA[
-		[#npc.getTorsoType()==TORSO_TYPE_dsg_ferret_torso]
+		[#npc.getTorsoType()==torsoType("dsg_ferret_torso")]
 	]]>
 	</availabilityCondition>
 	
@@ -120,7 +120,7 @@
 	'damageType' will parse to this move's DamageType.
 	-->
 	<criticalCondition><![CDATA[
-		[#npc2.hasStatusEffect(SE_DAZED)]
+		[#npc2.hasStatusEffect(se("DAZED"))]
 	]]></criticalCondition>
 	
 	<!-- A short description to let the player know what the conditions are for this move to inflict a critical hit. -->
@@ -158,7 +158,7 @@
 		<execute><![CDATA[
 			[npc.Name] [npc.verb(jump)] back and forth unpredictably in a zig-zag pattern, forcing [npc2.name] to spend extra time targeting [npc.herHim].
 			<p>
-			[#npc2.incrementAttribute(ATTRIBUTE_ACTION_POINTS, -2, true)]
+			[#npc2.incrementAttribute(attribute("ACTION_POINTS"), -2, true)]
 			</p>
 		]]></execute>
 		<critDescription><![CDATA[
@@ -167,7 +167,7 @@
 		<critEffectDescription><![CDATA[
 			[npc2.Name] [npc2.has] wasted [npc2.her] whole turn targeting [npc.name].
 			<p>
-			[#npc2.incrementAttribute(ATTRIBUTE_ACTION_POINTS, -1, true)]
+			[#npc2.incrementAttribute(attribute("ACTION_POINTS"), -1, true)]
 			</p>
 		]]></critEffectDescription>
 	</performMove>

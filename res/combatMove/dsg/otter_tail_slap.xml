@@ -92,7 +92,7 @@
 	The parsing target of 'npc' corresponds to the character who is being checked to see if they have this move available to them.
 	All whitespace is stripped from the returned String before it is parsed into a Boolean. -->
 	<availabilityCondition><![CDATA[
-		[#npc.getTailType()==TAIL_TYPE_dsg_otter_tail]
+		[#npc.getTailType()==tailType("dsg_otter_tail")]
 	]]>
 	</availabilityCondition>
 	
@@ -120,7 +120,7 @@
 	'damageType' will parse to this move's DamageType.
 	-->
 	<criticalCondition><![CDATA[
-		[#npc2.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE) < npc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)*0.66]
+		[#npc2.getAttributeValue(attribute("MAJOR_PHYSIQUE")) < npc.getAttributeValue(attribute("MAJOR_PHYSIQUE"))*0.66]
 	]]></criticalCondition>
 	
 	<!-- A short description to let the player know what the conditions are for this move to inflict a critical hit. -->

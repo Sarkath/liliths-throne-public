@@ -27,7 +27,7 @@
 	<generationAttributes>
 		<clothingConditional1 constant="true"><![CDATA[npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL && npc.getFootStructure()==FOOT_STRUCTURE_PLANTIGRADE]]></clothingConditional1> <!-- is bipedal -->
 		<clothingConditional2 constant="true"><![CDATA[RND.nextInt(100)<=50]]></clothingConditional2> <!-- Fishnet top -->
-		<clothingConditional3 constant="true"><![CDATA[npc.hasFetish(FETISH_EXHIBITIONIST)]]></clothingConditional3> <!-- Exhibitionist -->
+		<clothingConditional3 constant="true"><![CDATA[npc.hasFetish(fetish("FETISH_EXHIBITIONIST"))]]></clothingConditional3> <!-- Exhibitionist -->
 		
 		<!-- Fishnets: -->
 		<presetColourGroup1 singleColour="true">

@@ -28,15 +28,15 @@
 		<enchantmentEffectId>ATTRIBUTE_CORRUPTION</enchantmentEffectId>
 		
 		<effectTooltipLines>
-			<line><![CDATA[[style.boldGood(Restores)] 100% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
-			<line><![CDATA[[style.boldGood(Restores)] 100% [style.boldMana([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 100% [style.boldHealth([#attribute("HEALTH_MAXIMUM").getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 100% [style.boldMana([#attribute("MANA_MAXIMUM").getName()])]]]></line>
 			<line><![CDATA[[style.boldExcellent(Lowers)] [style.boldLust(lust)] to resting level]]></line>
-			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_LUST.getFormattedValue(50)] to 'potion effects']]></line>
+			<line><![CDATA[[#attribute("RESISTANCE_LUST").getFormattedValue(50)] to 'potion effects']]></line>
 		</effectTooltipLines>
 		
 		<applyEffects><![CDATA[
-			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM))]
-			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM))]
+			[##npc.incrementHealth(npc.getAttributeValue(attribute("HEALTH_MAXIMUM")))]
+			[##npc.incrementMana(npc.getAttributeValue(attribute("MANA_MAXIMUM")))]
 			
 			<p style='margin-bottom:0; padding-bottom:0;'>
 				A soothing wave of pure energy washes over [npc.name]...
@@ -44,11 +44,11 @@
 			#IF(npc.getLust()>npc.getRestingLust)
 				[#npc.setLust(npc.getRestingLust())]
 			#ENDIF
-			[#npc.addPotionEffect(ATTRIBUTE_RESISTANCE_LUST, 50)]
+			[#npc.addPotionEffect(attribute("RESISTANCE_LUST"), 50)]
 		]]></applyEffects>
 		
 		<itemTags>
-			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>attribute("TF_ITEM")</tag>
 		</itemTags>
 	</coreAttributes>
 

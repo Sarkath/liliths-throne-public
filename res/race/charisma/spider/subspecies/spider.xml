@@ -13,14 +13,14 @@
 	<bipedalSubspecies>true</bipedalSubspecies>
 	<aquatic>false</aquatic>
 	<applySubspeciesChanges><![CDATA[
-		#IF(targetedBody.getVagina().getType()!=VAGINA_TYPE_NONE)
-			#IF(targetedBody.getPenis().getType()!=PENIS_TYPE_NONE)
-				[#targetedBody.getPenis().addPenisModifier(null, PENETRATION_MODIFIER_OVIPOSITOR)]
+		#IF(targetedBody.getVagina().getType()!=vaginaType("NONE"))
+			#IF(targetedBody.getPenis().getType()!=penisType("NONE"))
+				[#targetedBody.getPenis().addPenisModifier(null, penetrationModifier("OVIPOSITOR"))]
 			#ENDIF
 		#ENDIF
 	]]></applySubspeciesChanges>
 	<subspeciesWeighting><![CDATA[
-		#IF(targetedRace==RACE_charisma_spider)
+		#IF(targetedRace==race("charisma_spider"))
 			100
 		#ELSE
 			0

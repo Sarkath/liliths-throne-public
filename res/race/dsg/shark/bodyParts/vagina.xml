@@ -42,7 +42,7 @@
 	<!-- The orifice modifiers which this vagina has when first created (such as when a new hyena-morph is spawned).
 	Values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/character/body/valueEnums/OrificeModifier.java -->
 	<defaultOrificeModifiers>
-		<modifier>MUSCLE_CONTROL</modifier>
+		<modifier>muscle("CONTROL")</modifier>
 	</defaultOrificeModifiers>
 	
 	<!-- The description which is shown when a character transforms to obtain this vagina type.

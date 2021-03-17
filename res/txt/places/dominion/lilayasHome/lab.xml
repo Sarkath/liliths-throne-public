@@ -523,7 +523,7 @@
 		[pc.speech(Go on, it'll be fun,)] you reply. [pc.speech(I got it from one of the reindeer-morphs who're working to keep the streets clear of snow. The contents are a surprise, so I guess we'll find out what's in there together!)]
 	</p>
 	<p>
-		Lilaya sets the present down on the table behind her, before pulling off the ribbon and tearing off the wrapping paper. Opening the top of the box, she gasps as she sees what's inside, and then just a moment later you see it too, as she reaches in and lifts out a beautiful pink [#CT_KIMONO_HAIR_KANZASHI.getName()].
+		Lilaya sets the present down on the table behind her, before pulling off the ribbon and tearing off the wrapping paper. Opening the top of the box, she gasps as she sees what's inside, and then just a moment later you see it too, as she reaches in and lifts out a beautiful pink [#clothing("KIMONO_HAIR_KANZASHI").getName()].
 	</p>
 	<p>
 		Lilaya turns towards you, a huge smile on her face as she exclaims, [lilaya.speech(Oh, [pc.name]! It's beautiful! Thank you so much!)]
@@ -532,14 +532,14 @@
 		Before you can react, your demonic [lilaya.relation(pc)] leaps forwards and pulls you into a loving hug; a gesture that you instantly reciprocate. You feel the warmth of her body as she presses herself tightly against you, squashing her [lilaya.breastSize] breasts into your chest as she sighs, [lilaya.speech(Really, thank you so much.)]
 	</p>
 	<p>
-		After a few moments, Lilaya pulls back, placing the [#CT_KIMONO_HAIR_KANZASHI.getName()] to one side and waiting to see what you'd like to discuss next.
+		After a few moments, Lilaya pulls back, placing the [#clothing("KIMONO_HAIR_KANZASHI").getName()] to one side and waiting to see what you'd like to discuss next.
 	</p>
 	]]>
 	</htmlContent>
 	
 	<htmlContent tag="LILAYA_PRESENT_2"><![CDATA[
 	<p>
-		[pc.speech(After I saw how happy you were to receive that [#CT_KIMONO_HAIR_KANZASHI.getName()], I decided to get you another Yuletide gift,)] you say, holding out another wrapped gift towards Lilaya, [pc.speech(so here you go. Happy Yuletide again, Lilaya!)]
+		[pc.speech(After I saw how happy you were to receive that [#clothing("KIMONO_HAIR_KANZASHI").getName()], I decided to get you another Yuletide gift,)] you say, holding out another wrapped gift towards Lilaya, [pc.speech(so here you go. Happy Yuletide again, Lilaya!)]
 	</p>
 	<p>
 		Your [lilaya.relation(pc)]'s cheeks flush bright red as you give her another gift. [lilaya.speech([pc.name]! Y-You didn't have to! O-One gift was more than enough!)]
@@ -548,7 +548,7 @@
 		[pc.speech(I know I didn't have to, but I wanted to,)] you smile, handing the gift over to Lilaya, [pc.speech(so go on, open it and let's find out what it is this time!)]
 	</p>
 	<p>
-		Doing as you suggest, Lilaya places the gift down on the table beside her, before pulling off the ribbon and wrapping paper. Taking off the lid, she reaches inside and produces a pair of [#CT_KIMONO_GETA.getNamePlural()], before turning and smiling lovingly at you, [lilaya.speech(Thank you, [pc.name]! These will go perfectly with the [#CT_KIMONO_HAIR_KANZASHI.getName()] you got me before!)]
+		Doing as you suggest, Lilaya places the gift down on the table beside her, before pulling off the ribbon and wrapping paper. Taking off the lid, she reaches inside and produces a pair of [#clothing("KIMONO_GETA").getNamePlural()], before turning and smiling lovingly at you, [lilaya.speech(Thank you, [pc.name]! These will go perfectly with the [#clothing("KIMONO_HAIR_KANZASHI").getName()] you got me before!)]
 	</p>
 	<p>
 		[pc.speech(Now all you need is the kimono itself,)] you reply, [pc.speech(and then you've got the full set!)]
@@ -557,7 +557,7 @@
 		[lilaya.speech(P-Please,)] Lilaya stutters a little, [lilaya.speech(don't feel obliged to get me any more gifts! This is already far more than I ever would have dreamed of!)]
 	</p>
 	<p>
-		Almost as if to hide her sudden embarrassment, your demonic [lilaya.relation(pc)] steps forwards and pulls you into another tight hug; her [lilaya.breastSize] breasts pressing up against you as she holds you close. After a moment, she then pulls back, and, placing the [#CT_KIMONO_GETA.getNamePlural()] to one side, she waits to see what you'd like to discuss next.
+		Almost as if to hide her sudden embarrassment, your demonic [lilaya.relation(pc)] steps forwards and pulls you into another tight hug; her [lilaya.breastSize] breasts pressing up against you as she holds you close. After a moment, she then pulls back, and, placing the [#clothing("KIMONO_GETA").getNamePlural()] to one side, she waits to see what you'd like to discuss next.
 	</p>
 	]]>
 	</htmlContent>
@@ -573,10 +573,10 @@
 		[pc.speech(I know, I know,)] you laugh, pressing the gift into Lilaya's hands, [pc.speech(but I really wanted to get you the whole set!)]
 	</p>
 	<p>
-		[lilaya.speech(W-Well, these are random gifts, right? S-So it's probably not even going to be a kimono, b-but thank you anyway,)] Lilaya says, placing the gift down on the table beside her, before pulling off the ribbon and wrapping paper. Lifting off the lid, your easily-embarrassed [lilaya.relation(pc)] fails to contain an excited little cry as she sees what's inside. Your suspicions as to what it is are proven correct, as she quickly lifts out a beautiful pink [#CT_KIMONO_DRESS.getName()], before turning and beaming at you in delight. [lilaya.speech(Thank you so, so much, [pc.name]! This is the best Yuletide ever!)]
+		[lilaya.speech(W-Well, these are random gifts, right? S-So it's probably not even going to be a kimono, b-but thank you anyway,)] Lilaya says, placing the gift down on the table beside her, before pulling off the ribbon and wrapping paper. Lifting off the lid, your easily-embarrassed [lilaya.relation(pc)] fails to contain an excited little cry as she sees what's inside. Your suspicions as to what it is are proven correct, as she quickly lifts out a beautiful pink [#clothing("KIMONO_DRESS").getName()], before turning and beaming at you in delight. [lilaya.speech(Thank you so, so much, [pc.name]! This is the best Yuletide ever!)]
 	</p>
 	<p>
-		Before you can say anything, your demonic [lilaya.relation(pc)] leaps forwards and pulls you into the most loving hug yet; her [lilaya.breastSize] breasts squishing up against your body as she holds you close. After a moment, she then pulls back, and, placing the [#CT_KIMONO_DRESS.getName()] to one side, she waits to see what you'd like to discuss next.
+		Before you can say anything, your demonic [lilaya.relation(pc)] leaps forwards and pulls you into the most loving hug yet; her [lilaya.breastSize] breasts squishing up against your body as she holds you close. After a moment, she then pulls back, and, placing the [#clothing("KIMONO_DRESS").getName()] to one side, she waits to see what you'd like to discuss next.
 	</p>
 	]]>
 	</htmlContent>
@@ -587,7 +587,7 @@
 	<htmlContent tag="LAB_DEMON_TF_AGREE"><![CDATA[
 	<p>
 		Having been convinced by Lilaya's passionate plea, you agree to do as she asks,
-		#IF pc.hasFetish(FETISH_INCEST)
+		#IF pc.hasFetish(fetish("FETISH_INCEST"))
 		#THEN [pc.speech(Ok, Lilaya, use the resonance stone to contact mommy, and I'll help you to convince her.)]
 		#ELSE [pc.speech(Ok, Lilaya, use the resonance stone to contact Lyssieth, and I'll help you to convince her.)]
 		#ENDIF
@@ -598,7 +598,7 @@
 	<htmlContent tag="LAB_DEMON_TF_AGREE_AFTER_REPEAT"><![CDATA[
 	<p>
 		Wanting to let Lilaya know that you've changed your mind, you say,
-		#IF pc.hasFetish(FETISH_INCEST)
+		#IF pc.hasFetish(fetish("FETISH_INCEST"))
 		#THEN [pc.speech(Go on, use the resonance stone to contact mommy, and I'll help you to convince her to turn you into a full demon.)]
 		#ELSE [pc.speech(Go on, use the resonance stone to contact Lyssieth, and I'll help you to convince her to turn you into a full demon.)]
 		#ENDIF
@@ -618,7 +618,7 @@
 	</p>
 	<p>
 		Having already agreed to help Lilaya, you ask your mother,
-		#IF pc.hasFetish(FETISH_INCEST)
+		#IF pc.hasFetish(fetish("FETISH_INCEST"))
 		#THEN [pc.speech(There'd be no harm in making Lilaya a full demon, would there mommy? It's what she really wants...)]
 		#ELSE [pc.speech(There'd be no harm in making Lilaya a full demon, would there? It's what she really wants...)]
 		#ENDIF
@@ -635,7 +635,7 @@
 	<htmlContent tag="LAB_DEMON_TF_REFUSE"><![CDATA[
 	<p>
 		Shaking your head, you reply,
-		#IF pc.hasFetish(FETISH_INCEST)
+		#IF pc.hasFetish(fetish("FETISH_INCEST"))
 		#THEN [pc.speech(This issue is between you and mommy. I don't want to get between the two of you like this, so I can't do as you ask. Sorry, Lilaya.)]
 		#ELSE [pc.speech(This issue is between you and mother. I don't want to get between the two of you like this, so I can't do as you ask. Sorry, Lilaya.)]
 		#ENDIF
@@ -871,7 +871,7 @@
 	
 	<htmlContent tag="LAB_LILAYA_HUG"><![CDATA[
 	<p>
-		#IF(pc.isQuestProgressGreaterThan(QUEST_LINE_MAIN, QUEST_MAIN_2_D_MEETING_A_LILIN))
+		#IF(pc.isQuestProgressGreaterThan(questLine("MAIN"), quest("MAIN_2_D_MEETING_A_LILIN")))
 			Although she's no longer the same person you knew before Lilith's spell altered this reality, you know that Lilaya is sure to love the same sort of big hug which you used to give her when she was your aunt Lily.
 		#ELSE
 			Although she's not the same person as the Lily from your world, you know that Lilaya is sure to love the same sort of big hug which you used to give your aunt.
@@ -901,7 +901,7 @@
 	<!-- LILAYA_EXPLAINS_ESSENCES -->
 	
 	<htmlContent tag="LILAYA_EXPLAINS_ESSENCES"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_jinxedClothingDiscovered))
+	#IF(game.getDialogueFlags().hasFlag(flag("jinxedClothingDiscovered")))
 		#IF(!pc.isAnyEquippedClothingSealed())
 			<p>
 				[pc.speech(I managed to take it off already, but some clothing that I put on a little while ago sort of stuck onto me,)] you explain. [pc.speech(Every time I tried to take it off, some kind of weird enchantment stopped me. I was wondering if you knew what was causing that?)]
@@ -926,7 +926,7 @@
 		<p>
 			[lilaya.speech(Sorry, I didn't mean to be so stern, it's just that I don't want you to get hurt out there... Anyway, if that's all it is, the solution to sealed clothing is actually quite simple!)]
 		</p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_essenceOrgasmDiscovered) || game.getDialogueFlags().hasFlag(FLAG_essencePostCombatDiscovered))
+		#IF(game.getDialogueFlags().hasFlag(flag("essenceOrgasmDiscovered")) || game.getDialogueFlags().hasFlag(flag("essencePostCombatDiscovered")))
 			<p>
 				[pc.speech(Actually, there <i>is</i> something else as well. I recently had this weird experience, where I saw someone's arcane aura. A piece of it broke off and shot <i>into</i> me, and I'm not sure if it needs to be removed or anything...)] your voice trails off as you see an extremely concerned look flash across Lilaya's face.
 			</p>
@@ -945,7 +945,7 @@
 			<p>
 				Once again, you find yourself surrounded by the shimmering pink outline of your arcane aura. This time, however, you see a strange ball of energy orbiting your body, which looks to be the same sort of size as the shard of energy that you remember shooting into you. Looking up at Lilaya, you see that her cheeks have completely drained of colour, and she's looking down at you with an extremely worried expression on her face.
 			</p>
-		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_essenceBottledDiscovered))
+		#ELSEIF(game.getDialogueFlags().hasFlag(flag("essenceBottledDiscovered")))
 			<p>
 				[pc.speech(Actually, there <i>is</i> something else as well. I had this little bottle with a swirling light in it, and when I took out the stopper, the light sort of shot <i>into</i> me...)] you explain, hoping that Lilaya can tell you what that was all about as well.
 			</p>
@@ -1004,7 +1004,7 @@
 			</p>
 		#ENDIF
 	#ELSE
-		#IF(game.getDialogueFlags().hasFlag(FLAG_essenceOrgasmDiscovered) || game.getDialogueFlags().hasFlag(FLAG_essencePostCombatDiscovered))
+		#IF(game.getDialogueFlags().hasFlag(flag("essenceOrgasmDiscovered")) || game.getDialogueFlags().hasFlag(flag("essencePostCombatDiscovered")))
 			<p>
 				[pc.speech(I wanted to ask you about this weird experience I recently had, where I saw someone's arcane aura. A piece of it broke off and shot <i>into</i> me, and I'm not sure if it needs to be removed or anything...)] your voice trails off as you see an extremely concerned look flash across Lilaya's face.
 			</p>
@@ -1024,7 +1024,7 @@
 				Once again, you find yourself surrounded by the shimmering pink outline of your arcane aura. This time, however, you see a strange ball of energy orbiting your body, which looks to be the same sort of size as the shard of energy that you remember shooting into you. Looking up at Lilaya, you see that her cheeks have completely drained of colour, and she's looking down at you with an extremely worried expression on her face.
 			</p>
 			
-		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_essenceBottledDiscovered))
+		#ELSEIF(game.getDialogueFlags().hasFlag(flag("essenceBottledDiscovered")))
 			<p>
 				[pc.speech(Well, you see, I had this little bottle with a swirling light in it, and when I took out the stopper, the light sort of shot <i>into</i> me...)] you explain, hoping that Lilaya can tell you what that was all about as well.
 			</p>
@@ -1052,7 +1052,7 @@
 	<!-- LILAYA_EXPLAINS_ESSENCES_2 -->
 	
 	<htmlContent tag="LILAYA_EXPLAINS_ESSENCES_2"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_essenceOrgasmDiscovered) || game.getDialogueFlags().hasFlag(FLAG_essencePostCombatDiscovered))
+	#IF(game.getDialogueFlags().hasFlag(flag("essenceOrgasmDiscovered")) || game.getDialogueFlags().hasFlag(flag("essencePostCombatDiscovered")))
 		<p>
 			[pc.speech(You look like you've seen a ghost, what's wrong?)] you ask, concerned by Lilaya's reaction.
 		</p>
@@ -1072,7 +1072,7 @@
 			Lilaya flicks a switch on one of the instruments, and the shimmering pink aura instantly vanishes from sight. Stepping forwards, she takes you by the [pc.arm] once more, and quickly leads you over to another corner of the lab, where a long, sturdy table is covered in all sorts of alchemical-looking apparatus. Large glass bottles filled with brightly coloured liquids bubble away without any apparent source of heat, and all manner of strange looking ingredients lie scattered over the table's surface. Coming to a halt in front of the workspace, Lilaya turns to face you. [lilaya.speech(Right, I can explain as we go...)]
 		</p>
 
-	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_essenceBottledDiscovered))
+	#ELSEIF(game.getDialogueFlags().hasFlag(flag("essenceBottledDiscovered")))
 		<p>
 			[pc.speech(You look like you've seen a ghost, what's wrong?)] you ask, concerned by Lilaya's reaction.
 		</p>
@@ -1143,7 +1143,7 @@
 	<p>
 		[lilaya.speech(You have to sort of feel how much essence you want to pour into the enchantment. The more you put in, the better the resulting item!)] Lilaya picks up the little potion and places it off to one side. [lilaya.speech(And that's all there is to it!)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_jinxedClothingDiscovered) && pc.isAnyEquippedClothingSealed())
+	#IF(game.getDialogueFlags().hasFlag(flag("jinxedClothingDiscovered")) && pc.isAnyEquippedClothingSealed())
 		<p>
 			Just as your about to thank her for explaining about essences, Lilaya suddenly exclaims, [lilaya.speech(Oh, and this is also how items can be identified, as well as how that sealed clothing of yours needs to be removed! All you need to do is channel some of your absorbed essences into an unidentified item to discover the enchantment, or into sealed clothing to allow you to remove it. Sealed clothing is a major problem for people without demonic-strength auras, as they need to pay demons to remove the seal for them, but for you and I, sealed clothing is no more than a minor inconvenience.)]
 		</p>
@@ -1180,7 +1180,7 @@
 	<!-- ESSENCE_EXTRACTION -->
 	
 	<htmlContent tag="ESSENCE_EXTRACTION"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_essenceExtractionKnown))
+	#IF(game.getDialogueFlags().hasFlag(flag("essenceExtractionKnown")))
 		<p>
 			Turning towards Lilaya, you get her attention before asking, [pc.speech(Is it ok if I extract some more essences?)]
 		</p>
@@ -1274,7 +1274,7 @@
 	<p>
 		Stepping forwards, you smile at your demonic [lilaya.relation(pc)]. [pc.speech(Hi, Lilaya, I'm here for those tests you mentioned.)]
 	</p>
-	#IF(game.getPlayer().isVisiblyPregnant() && !game.getDialogueFlags().hasFlag(FLAG_reactedToPregnancyLilaya))
+	#IF(game.getPlayer().isVisiblyPregnant() && !game.getDialogueFlags().hasFlag(flag("reactedToPregnancyLilaya")))
 		<p>
 			[lilaya.speech(Excellent! Let's just... Wait... Are you <i>pregnant</i>?! Well, nevermind, I can help you deal with that later! For now, let's just get these tests done, come over here!)]
 		</p>
@@ -1323,7 +1323,7 @@
 	<p>
 		Stepping forwards, you smile at your demonic [lilaya.relation(pc)]. [pc.speech(Hi, Lilaya, I'm here for some more of those tests...)]
 	</p>
-	#IF(pc.isVisiblyPregnant() && !game.getDialogueFlags().hasFlag(FLAG_reactedToPregnancyLilaya))
+	#IF(pc.isVisiblyPregnant() && !game.getDialogueFlags().hasFlag(flag("reactedToPregnancyLilaya")))
 		<p>
 			[lilaya.speech(Excellent! Let's just... Wait... Are you <i>pregnant</i>?! Well, if you want help with that, all you have to do is ask! For now, let's just get these... Erm... <i>tests</i> done, come over here!)]
 		</p>
@@ -1519,7 +1519,7 @@
 	</p>
 	<p>
 		You've become so caught up in the moment that you haven't even considered putting an end to all this, but as Lilaya draws her fingers from your mouth, you have a sudden moment of clarity in which you find yourself once again thinking of how similar Lilaya looks and sounds to your aunt Lily.
-		#IF(pc.hasFetish(FETISH_INCEST))
+		#IF(pc.hasFetish(fetish("FETISH_INCEST")))
 			 As you've got a serious kink for incestuous sex, you can't help but find this fact immensely arousing, and buck your groin even harder into your demonic [lilaya.relation(pc)]'s hand.
 		#ELSE
 			 Then again, she <i>is</i> a half-demon in this reality, so there's no real relation between the two of you... right?

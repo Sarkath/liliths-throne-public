@@ -30,20 +30,20 @@
 		<enchantmentEffectId/>
 		
 		<effectTooltipLines>
-			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#attribute("HEALTH_MAXIMUM").getName()])]]]></line>
 			<line><![CDATA[[style.italicsSex(+10)] [style.italicsFeminine(femininity)]]]></line>
 		</effectTooltipLines>
 		
 		<applyEffects><![CDATA[
-		#IF(npc.getOccupation()==OCCUPATION_TOURIST)
-			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/5)]
+		#IF(npc.getOccupation()==occupation("TOURIST"))
+			[##npc.incrementHealth(npc.getAttributeValue(attribute("HEALTH_MAXIMUM"))/5)]
 			
 			<p style='margin-bottom:0; padding-bottom:0;'>
 				The taste of the burger reminds [npc.name] of home, and [npc.she] [npc.verb(start)] to feel a lot more energetic!
 			</p>
 			[#npc.incrementFemininity(10)]
 		#ELSE
-			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			[##npc.incrementHealth(npc.getAttributeValue(attribute("HEALTH_MAXIMUM"))/10)]
 			
 			<p style='margin-bottom:0; padding-bottom:0;'>
 				[npc.Name] [npc.verb(feel)] the burger's side effects kicking in almost immediately...

@@ -8,7 +8,7 @@
 		#IF(game.isExtendedWorkTime())
 		<p>
 			Most of the gym's frontage is made up of large glass panels, allowing you to take a good look inside. From what you can see, the interior consists of a wide open space, filled with an impressive variety of gym equipment.
-			#IF(game.getDialogueFlags().hasFlag(FLAG_gymIntroduced))
+			#IF(game.getDialogueFlags().hasFlag(flag("gymIntroduced")))
 				 Moving your gaze over to look through the main entrance's glass doors, you see Pix sitting behind the lobby's front desk.
 			#ELSE
 				 Moving your gaze over to look through the main entrance's glass doors, you see a border-collie-girl sitting behind the lobby's front desk.
@@ -196,7 +196,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="PERK_PROGRESS_COMPLETE"><![CDATA[
+	<htmlContent tag="perk("PROGRESS_COMPLETE")"><![CDATA[
 	<p style='text-align:center;'><i>
 		You feel completely exhausted from your workout, and will be unable to do any more exercise until you've had time to recover.
 		<br/>
@@ -206,7 +206,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="PERK_PROGRESS"><![CDATA[
+	<htmlContent tag="perk("PROGRESS")"><![CDATA[
 	<p style='text-align:center;'><i>
 		You feel completely exhausted from your workout, and will be unable to do any more exercise until you've had time to recover.
 		<br/>

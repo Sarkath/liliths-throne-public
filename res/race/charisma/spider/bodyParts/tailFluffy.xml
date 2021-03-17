@@ -7,7 +7,7 @@
 	<defaultGirth>6</defaultGirth>
 	<defaultLengthAsPercentageOfHeight>0.2</defaultLengthAsPercentageOfHeight>
 	<tags>
-		<tag>TAIL_TYPE_GENERIC</tag>
+		<tag>tailType("GENERIC")</tag>
 		<tag>TAIL_TAPERING_BULBOUS</tag>
 	</tags>
 	<determiner><![CDATA[]]></determiner>

@@ -360,9 +360,9 @@
 	</p>
 	<p>
 		Telling Helena that you'd be prepared to do whatever it is that she asks of you, you wait patiently as she thinks to herself for a moment, before saying,
-		#IF(pc.getRace().equals(RACE_HARPY))
+		#IF(pc.getRace().equals(race("HARPY")))
 			 [helena.speech(I suppose that as you are a harpy, it would be socially acceptable for me to receive your help, even if you aren't a member of my flock...)]
-		#ELSEIF(pc.getRace().equals(RACE_DEMON))
+		#ELSEIF(pc.getRace().equals(race("DEMON")))
 			 [helena.speech(Normally, I wouldn't consider accepting help from someone who isn't a harpy, but I do find myself in a rather desperate situation... Besides, considering the fact that you are a demon, I suppose that my reputation wouldn't suffer if it were to be found out that you were working for me...)]
 		#ELSE
 			 [helena.speech(Normally, I wouldn't consider accepting help from someone who isn't a harpy, but I do find myself in a rather desperate situation... I suppose that I can always have you transformed later on if need be...)]
@@ -549,7 +549,7 @@
 	<!-- ROMANCE_PAINTING -->
 	
 	<htmlContent tag="ROMANCE_PAINTING_1"><![CDATA[
-	#IF(pc.isSpellSchoolSpecialAbilityUnlocked(SPELL_SCHOOL_EARTH))
+	#IF(pc.isSpellSchoolSpecialAbilityUnlocked(spellSchool("EARTH")))
 		<p>
 			As you've already agreed to do whatever it is that Helena asks of you, there's not much else to do except to get started on stripping the paint from her store's frontage. Thanks to your mastery of the arcane school of Earth, you at least don't have to bother with using the ladders, as you can instead use some basic telekinesis to manipulate the sheets of sandpaper with your mind.
 		</p>
@@ -633,7 +633,7 @@
 		#ELSE
 			Seeing no reason to delay, you quickly get started on painting the parts of the shop's frontage which you've previously stripped down to the bare woodwork.
 		#ENDIF
-		#IF(pc.isSpellSchoolSpecialAbilityUnlocked(SPELL_SCHOOL_EARTH))
+		#IF(pc.isSpellSchoolSpecialAbilityUnlocked(spellSchool("EARTH")))
 			#IF(pc.hasCompanions())
 				 Thanks to your telekinetic abilities, the work progresses at an incredible speed, and just one hour later, the two of you are stepping back and admiring your handiwork.
 			#ELSE
@@ -881,7 +881,7 @@
 	<!-- ROMANCE_PAINTING_FURNITURE_DELIVERY_FOLLOW_SUBMIT_POST_SEX -->
 	
 	<htmlContent tag="ROMANCE_PAINTING_FURNITURE_DELIVERY_FOLLOW_SUBMIT_POST_SEX"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_playerReceivedNatalyaFacial))
+	#IF(game.getDialogueFlags().hasFlag(flag("playerReceivedNatalyaFacial")))
 		<p>
 			Now that Natalya has had her fun, she smirks down at you and arrogantly remarks, [natalya.speech(With a little more training, you'll make a fine filly. Now, remove my dildo for me; I want to hurry back and check on my boys.)]
 		</p>
@@ -957,7 +957,7 @@
 	
 	<htmlContent tag="ROMANCE_PAINTING_C_PAINT_SIGN"><![CDATA[
 	<p>
-		#IF(pc.isSpellSchoolSpecialAbilityUnlocked(SPELL_SCHOOL_EARTH))
+		#IF(pc.isSpellSchoolSpecialAbilityUnlocked(spellSchool("EARTH")))
 			Thanks to your mastery of the arcane school of Earth, you're once again able to use some basic telekinesis to get the job done, and under the harpy's instruction, you set about painting the words 'Helena's Boutique' in flowing gold lettering above the entrance to her shop. While you're sometimes interrupted by the matriarch's commentary and decidedly-unhelpful tips, you're able to completely finish the task in just ten minutes.
 		#ELSE
 			#IF(pc.isTaur())
@@ -969,7 +969,7 @@
 		#ENDIF
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaCheapPaint))
+		#IF(game.getDialogueFlags().hasFlag(flag("helenaCheapPaint")))
 			[helena.speech(It would appear as though you were correct in your judgement of paint quality; the golden hue is most pleasing to one's eyes,)] Helena concedes, before flashing you another of her rare smiles and continuing,
 		#ELSE
 			[helena.speech(You must now surely see why I insisted upon the 'Purple-star' brand of paint; the golden hue is most pleasing to one's eyes, is it not?)] Helena rhetorically asks, before flashing you another of her rare smiles and continuing,
@@ -977,7 +977,7 @@
 		 [helena.speech(I must also say that I am most pleased with the excellent quality of your calligraphy. Once again, [pc.name], you have exceeded my expectations. Now let us head back inside before I am mobbed by this gathering crowd.)]
 	</p>
 	<p>
-		#IF(pc.hasTraitActivated(PERK_OBSERVANT))
+		#IF(pc.hasTraitActivated(perk("OBSERVANT")))
 			While you were working, you couldn't help but notice that quite a few people had stopped to stare in admiration at the harpy matriarch,
 		#ELSE
 			Due to the fact that you were concentrating on your work, you hadn't noticed until now that quite a few people have stopped to stare in admiration at the harpy matriarch,
@@ -1105,7 +1105,7 @@
 				It seems as though Helena is assuming that you will do as she asks and sell [scarlett.name] to her for the offered price. While you could always refuse the beautiful matriarch, you get the feeling that this will end with your relationship in tatters...
 			</p>
 		#ENDIF
-	#ELSEIF(scarlett.getHomeWorldLocation()==WORLD_TYPE_HARPY_NEST)
+	#ELSEIF(scarlett.getHomeWorldLocation()==worldType("HARPY_NEST"))
 		<p>
 			As you set the letter back down on the coffee table, Helena lets out a small sigh and confirms what you've just read, [helena.speech(Yes, my dear Scarlett is the sister of my old etiquette tutor. If I am to ever to realise my plans, I must once again take that insolent harpy under my wing...)]
 		</p>
@@ -1595,7 +1595,7 @@
 		</p>
 		<p>
 			Without any further warning, the harpy suddenly stands up, and after staggering a little from the effects of the alcohol in her system, she reaches down to slip off her boyshorts.
-			#IF(scarlett.getGenitalArrangement()==GENITALS_CLOACA)
+			#IF(scarlett.getGenitalArrangement()==genitals("CLOACA"))
 				 With her bird-like cloaca fully on display, Scarlett clumsily staggers forwards and
 				#IF(scarlett.hasVagina())
 					 reaches down to spread it open, presenting you with her dripping-wet pussy.
@@ -1612,17 +1612,17 @@
 			#ENDIF
 			 Lustfully grinning down at you, she starts to drunkenly slur her words a little as she dominantly orders,
 			#IF(scarlett.hasVagina())
-				#IF(pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true))
+				#IF(pc.hasPenis() && pc.isAbleToAccessCoverableArea(ca("PENIS"), true))
 					 [scarlett.speechNoEffects(Get ya cock out! It's your fault I'm drippin' wet, so I'm gonna ride you 'till I cum!)]
-				#ELSEIF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+				#ELSEIF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 					 [scarlett.speechNoEffects(I hope yer feelin' hungry! It's your fault I'm drippin' wet, so you're gonna eat me out 'till I cum all over ya face!)]
 				#ELSE
 					 [scarlett.speechNoEffects(I hope ya know how ta work a cunt with yer [pc.fingers]! It's your fault I'm drippin' wet, so you're gonna finger me 'till ya make me cum!)]
 				#ENDIF
 			#ELSE
-				#IF(game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))
+				#IF(game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(ca("ANUS"), true))
 					 [scarlett.speechNoEffects(Show me yer ass! It's your fault I'm so turned on, so I'm gonna fuck your butt 'till I cum!)]
-				#ELSEIF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+				#ELSEIF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 					 [scarlett.speechNoEffects(I hope yer feelin' hungry! It's your fault I'm so turned on, so I'm gonna fuck your face 'till I cum down ya throat!)]
 				#ELSE
 					 [scarlett.speechNoEffects(I hope ya know how ta work a cock with yer [pc.fingers]! It's your fault I'm so turned on, so you're gonna give me a handjob 'till ya make me cum!)]
@@ -1774,9 +1774,9 @@
 	</p>
 	<p>
 		With a loud flap of her wings, she does just that, and violently slams her hips forwards to drive her [scarlett.cock+] fully into your [pc.asshole+].
-		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			 Keeping her throbbing shaft hilted in your back door, the sadistic harpy reaches down to cruelly pinch your exposed clit, before roughly driving her feathered fingers into your [pc.pussy+]. As you let out a desperate moan, she leans forwards to tease,
-		#ELSEIF(pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true))
+		#ELSEIF(pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(ca("PENIS"), true))
 			 Keeping her throbbing shaft hilted in your back door, the sadistic harpy reaches down to cruelly squeeze your exposed cock, before starting to give you a rough handjob. As you let out a desperate moan, she leans forwards to tease,
 		#ELSE
 			 Roughly gripping your hips, the sadistic harpy pulls back, before roughly slamming her throbbing shaft fully into your back door once again. As you let out a desperate moan, she leans forwards to tease,
@@ -1862,7 +1862,7 @@
 	<htmlContent tag="ROMANCE_7_AFTER_SEX"><![CDATA[
 	<p>
 		Letting out a satisfied sigh, Scarlett stands up and staggers over to her sofa, before crashing down on top of the blankets. With a big grin on her face, she sleepily mumbles,
-		#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(!pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 			 [scarlett.speech(Mmm... That was fun... See you tomorrow, bitch...)]
 		#ELSEIF(scarlett.hasVagina())
 			 [scarlett.speech(Mmm... That was fun... I wanna wake up tomorrow morning with your face between my legs, bitch...)]
@@ -1884,7 +1884,7 @@
 		Several hours later, you wake up to the sound of Scarlett still gently snoring away on the sofa opposite to yours. Looking over at her, you see that she's rolled over onto her back, and while her blankets are pulled over the top of her, one of her bird-like legs is loosely hanging out from beneath them. As she lets out yet another soft snore, you find your eyes opening wide in shock as you see that instead of her usual scowl, there's a peaceful, almost-angelic expression on her pretty face.
 	</p>
 	<p>
-		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true) && game.getDialogueFlags().hasFlag(FLAG_helenaScarlettSleepoverSex))
+		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true) && game.getDialogueFlags().hasFlag(flag("helenaScarlettSleepoverSex")))
 			Yawning and rubbing the sleep from your eyes as you stand up, you notice that Scarlett's bra and boyshorts are still lying in the same spot as where they were hastily discarded last night. Remembering her order to wake up her by performing oral on her, you wonder if you should kneel down and duck under her blankets to do just that, or simply shake her awake instead...
 		#ELSE
 			Yawning and rubbing the sleep from your eyes as you stand up, you feel as though it'd be a shame to wake the sleeping harpy and risk being on the receiving end of yet another of her foul rants. Letting out a sigh, you remind yourself that Helena is due to arrive sometime soon, and so you really have little choice but to go ahead and get it over with...
@@ -1896,7 +1896,7 @@
 	<htmlContent tag="ROMANCE_7_MORNING_CUNNILINGUS_START"><![CDATA[
 	<p>
 		Not wanting to disappoint her, you drop down onto your knees in front of the sleeping harpy, before delicately lifting her blankets and ducking your head down into the warm, humid darkness beneath them. Slowly moving your head forwards, you soon feel your hot breath being reflected back at you as your mouth inches ever nearer to Scarlett's naked pussy.
-		#IF(scarlett.getGenitalArrangement()==GENITALS_CLOACA)
+		#IF(scarlett.getGenitalArrangement()==genitals("CLOACA"))
 			 Pressing your [pc.lips] against her cloaca, you dart out your [pc.tongue] to start eagerly kissing and licking her labia, and can't help but let out a quiet, muffled [pc.moan] in surprise as you discover that her cunt is still dripping wet even while she sleeps.
 		#ELSE
 			 Eagerly darting out your [pc.tongue], you find yourself making contact with her labia, and you can't help but let out a quiet, muffled [pc.moan] in surprise as you discover that her cunt is still dripping wet even while she sleeps.
@@ -1917,7 +1917,7 @@
 	<htmlContent tag="ROMANCE_7_MORNING_BLOWJOB_START"><![CDATA[
 	<p>
 		Not wanting to disappoint her, you drop down onto your knees in front of the sleeping harpy, before delicately lifting her blankets and ducking your head down into the warm, humid darkness beneath them. Slowly moving your head forwards, you soon feel your hot breath being reflected back at you as your mouth inches ever nearer to Scarlett's groin.
-		#IF(scarlett.getGenitalArrangement()==GENITALS_CLOACA)
+		#IF(scarlett.getGenitalArrangement()==genitals("CLOACA"))
 			 Pressing your [pc.lips] against her cloaca, you dart out your [pc.tongue] to start eagerly licking the head of her retracted cock, and can't help but let out a quiet, muffled [pc.moan] in excitement as you feel it starting to harden.
 		#ELSE
 			 Darting out your [pc.tongue], you start eagerly licking the head of her cock, and can't help but let out a quiet, muffled [pc.moan] in excitement as you feel it starting to harden and get erect.

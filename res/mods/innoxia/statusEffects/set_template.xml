@@ -111,7 +111,7 @@
 	To parse something without returning a String (which would most likely not be used in this element), use two '#' characters, such as: [##npc.isFeminine()]
 	As a final note, all whitespace is stripped from the returned String before it is parsed into a Boolean. -->
 	<applicationCondition><![CDATA[
-		#IF(SET_BONUS_innoxia_template.isCharacterWearingCompleteSet(npc))
+		#IF(setBonus("innoxia_template").isCharacterWearingCompleteSet(npc))
 			true
 		#ELSE
 			false
@@ -119,7 +119,7 @@
 	]]></applicationCondition>
 	<!--The above example is meant to show that you can use the parser to create more "complex" conditionals, but an alternate, simpler example to achieve the same effect would be to just do:
 	<applicationCondition shortConditionalCheck="true"><![CDATA[
-		SET_BONUS_innoxia_kitty.isCharacterWearingCompleteSet(npc)
+		setBonus("innoxia_kitty").isCharacterWearingCompleteSet(npc)
 	]]></applicationCondition>
 	-->
 	

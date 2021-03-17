@@ -41,7 +41,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="DOMINION_STREET_FIND_HAPPINESS"><![CDATA[
-	#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
+	#IF(game.getCurrentWeather()==weather("MAGIC_STORM"))
 		<p>
 			Making your way down the wide, deserted streets of Dominion, you make sure to keep a look-out for any sign of danger. The bright flash of purple-hued arcane lightning occasionally illuminates your surroundings, and it's just as one of these happens to strike that you spot something strange up ahead.
 		</p>
@@ -127,7 +127,7 @@
 	<p>
 		With this unsolicited information now having been delivered to you, the [#SPECIAL_PARSE_0] reaches into the bum bag which he's got strapped around his waist, before grabbing a handful of little purple pills and forcefully thrusting them into your [pc.hands].
 		#IF(pc.isFeminine())
-			#IF(pc.isCoverableAreaExposed(CA_PENIS) && pc.hasPenisIgnoreDildo())
+			#IF(pc.isCoverableAreaExposed(ca("PENIS")) && pc.hasPenisIgnoreDildo())
 			 [genericMale.speech(Here you go, babe! I see you're packing, so just pop one of these before you give your next fuck a nice big creampie, and you're sure to become a father!)]
 			#ELSE
 			 [genericMale.speech(Here you go, babe! Just get your next fuck to pop one of these before he gives you a creampie, and you're sure to make him a father!

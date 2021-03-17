@@ -35,7 +35,7 @@
 	<p>
 		[lilaya.speech(Oh, yes, thank you, Rose!)] Lilaya thanks her maid, before stepping up to the cat-girl and lowering her voice to a whisper. Despite her attempt at concealing her words, however, you're still able to overhear your [lilaya.relation(pc)] as she excitedly teases, [lilaya.speech(I'll be a good girl for you later tonight...)]
 	</p>
-	#IF(pc.getTrueRace()==RACE_DEMON && lilaya.getSubspeciesOverride()!=SUBSPECIES_DEMON)
+	#IF(pc.getTrueRace()==race("DEMON") && lilaya.getSubspeciesOverride()!=subspecies("DEMON"))
 		<p>
 			After flashing a quick smirk at her supposed 'Mistress', Rose makes one last respectful curtsy and hurries out of the room. With the cat-girl having left to get construction of the private spa organised, your half-demon aunt places her hands on her hips and uses this opportunity to once again demand, [lilaya.speech(I'm still expecting you to convince Mommy to turn me into a full demon, you know! I appreciate you spending your money on having this spa built, but I'm not going to let you have sex with me until I'm every bit of a demon as you are!)]
 		</p>
@@ -137,7 +137,7 @@
 	]]>
 	</htmlContent>
 
-	<htmlContent tag="SPA_RECEPTION_CLOTHING_CLEAN"><![CDATA[
+	<htmlContent tag="SPA_RECEPTION_clothing("CLEAN")"><![CDATA[
 	<p style='text-align:center;'><i>
 		Any clothing which you unequip and leave in this area will be [style.italicsGood(automatically cleaned)] when you enter the spa!
 	</i></p>
@@ -258,7 +258,7 @@
 	<p>
 		[pc.Walking] over the polished marble floor towards these pools, you wonder whether you should slip into one and take some time to relax and unwind...
 	</p>
-	#IF(!game.getWorlds().get(WORLD_TYPE_LILAYAS_HOUSE_GROUND_FLOOR).getCells(PLACE_UPGRADE_LILAYA_SPA_BAR).isEmpty())
+	#IF(!game.getWorlds().get(worldType("LILAYAS_HOUse")("GROUND_FLOOR")).getCells(placeUpgrade("LILAYA_SPA_BAR")).isEmpty())
 		<p>
 			[style.boldOrange(Bar)]<b>:</b>
 			<br/>A sleek bar has been constructed beside the entrance to the spa, and is stocked full of all sorts of soft and hard drinks. If you wanted to, you could take a moment to make use of this bar and pour out a drink
@@ -422,9 +422,9 @@
 	<p>
 		Calling [npc.name] over to where you're standing, you tell [npc.herHim] that you want [npc.herHim] to give you a massage, before lying down on the lounger and ordering [npc.herHim] to get started.
 	</p>
-	#IF(npc.getObedienceBasic()!=OBEDIENCE_BASIC_OBEDIENT && npc.getAffectionLevelBasic(pc)!=AFFECTION_BASIC_LIKE)
+	#IF(npc.getObedienceBasic()!=obedienceBasic("OBEDIENT") && npc.getAffectionLevelBasic(pc)!=affectionBasic("LIKE"))
 		<p>
-			#IF(npc.isMute() || npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
+			#IF(npc.isMute() || npc.hasSlavePermissionSetting(slavePermissionSetting("GENERAL_SILENCE")))
 				Frowning and letting out an annoyed sigh, [npc.name] makes it clear that [npc.she] doesn't want to be doing this, but nevertheless does as [npc.sheIs] told and starts giving you a rather unenthusiastic massage. Continuing to sigh and whine as [npc.she] presses down on your back and shoulders, [npc.namePos] behaviour makes it obvious that [npc.she] wants to be finished with this as soon as possible.
 			#ELSE
 				Grumbling to [npc.herself] about how [npc.she] really doesn't want to be doing this, [npc.name] nevertheless does as [npc.sheIs] told and starts giving you a rather unenthusiastic massage. Continuing to sigh and whine as [npc.she] presses down on your back and shoulders, [npc.she] mutters, [npc.speech(This sucks... Hurry up and tell me you've had enough already...)]
@@ -438,11 +438,11 @@
 				 Thanks to the fact that you've demanded a full-body massage from [npc.herHim], it takes your slave quite some time to completely finish working [npc.her] way down all the way to your [pc.feet+], and by the time [npc.she] finally gets there, you look back to see [npc.herHim]
 			#ENDIF
 			#IF(npc.isAttractedTo(pc))
-				#IF(pc.isCoverableAreaVisible(CA_VAGINA) && pc.hasVagina())
+				#IF(pc.isCoverableAreaVisible(ca("VAGINA")) && pc.hasVagina())
 					 hungrily staring at your [pc.pussy+].
-				#ELSEIF(pc.isCoverableAreaVisible(CA_PENIS) && pc.hasPenisIgnoresDildo())
+				#ELSEIF(pc.isCoverableAreaVisible(ca("PENIS")) && pc.hasPenisIgnoresDildo())
 					 hungrily staring at your [pc.cock+].
-				#ELSEIF(pc.isCoverableAreaVisible(CA_ANUS) && game.isAnalContentEnabled())
+				#ELSEIF(pc.isCoverableAreaVisible(ca("ANUS")) && game.isAnalContentEnabled())
 					 hungrily staring at your [pc.asshole+].
 				#ELSE
 					 hungrily staring at your [pc.ass+].
@@ -460,26 +460,26 @@
 	#ELSE
 		<p>
 			Doing as [npc.sheIsFull] told, [npc.name] obediently hurries over to stand beside you, before leaning down and starting to give you a massage.
-			#IF(npc.isMute() || npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
-				#IF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_PROFESSIONAL))
+			#IF(npc.isMute() || npc.hasSlavePermissionSetting(slavePermissionSetting("GENERAL_SILENCE")))
+				#IF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_PROFESSIONAL")))
 					 Acting in a very professional manner, [npc.she] silently starts by massaging your neck and shoulders, before slowly working [npc.her] way down the rest of your body.
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SEDUCTIVE))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_SEDUCTIVE")))
 					 Seductively teasing [npc.her] [npc.fingers+] over your back, [npc.she] starts by massaging your neck and shoulders, before silently working [npc.her] way down the rest of your body.
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SLUTTY))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_SLUTTY")))
 					 After shamelessly groping your [pc.ass+], [npc.name] moves [npc.her] attention up to your neck and shoulders, and after giving them a good massage, [npc.she] silently works [npc.her] way down the rest of your body.
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_WHOLESOME))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_WHOLESOME")))
 					 Flashing you a loving smile, [npc.name] starts by massaging your neck and shoulders, before silently working [npc.her] way down the rest of your body.
 				#ELSE
 					 Flashing you a quick smile, [npc.name] starts by massaging your neck and shoulders, before silently working [npc.her] way down the rest of your body.
 				#ENDIF
 			#ELSE
-				#IF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_PROFESSIONAL))
+				#IF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_PROFESSIONAL")))
 					 Acting in a very professional manner, [npc.she] starts by massaging your neck and shoulders, before slowly working [npc.her] way down the rest of your body and saying, [npc.speech(I hope this is to your satisfaction, [pc.name]...)]
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SEDUCTIVE))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_SEDUCTIVE")))
 					 Seductively tracing [npc.her] [npc.fingers+] over your back, [npc.she] starts by massaging your neck and shoulders, before working [npc.her] way down the rest of your body and teasing, [npc.speech(Perhaps you'd like even more physical contact once I've finished...)]
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SLUTTY))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_SLUTTY")))
 					 After shamelessly groping your [pc.ass+], [npc.name] moves [npc.her] attention up to your neck and shoulders, and after giving them a good massage, [npc.she] works [npc.her] way down the rest of your body while crudely exclaiming, [npc.speech(I hope you're planning on having a good fuck after this!)]
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_WHOLESOME))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_WHOLESOME")))
 					 Flashing you a loving smile, [npc.name] starts by massaging your neck and shoulders, before working [npc.her] way down the rest of your body and sighing, [npc.speech(Thank you for letting me do this, [pc.name]! I hope it feels good...)]
 				#ELSE
 					 Flashing you a quick smile, [npc.name] starts by massaging your neck and shoulders, before working [npc.her] way down the rest of your body and saying, [npc.speech(I hope this feels good, [pc.name]...)]
@@ -494,11 +494,11 @@
 				 Thanks to the fact that you've demanded a full-body massage from [npc.herHim], it takes your slave quite some time to completely finish working [npc.her] way down all the way to your [pc.feet+], and by the time [npc.she] finally gets there, you look back to see [npc.herHim]
 			#ENDIF
 			#IF(npc.isAttractedTo(pc))
-				#IF(pc.isCoverableAreaVisible(CA_VAGINA) && pc.hasVagina())
+				#IF(pc.isCoverableAreaVisible(ca("VAGINA")) && pc.hasVagina())
 					 hungrily staring at your [pc.pussy+].
-				#ELSEIF(pc.isCoverableAreaVisible(CA_PENIS) && pc.hasPenisIgnoresDildo())
+				#ELSEIF(pc.isCoverableAreaVisible(ca("PENIS")) && pc.hasPenisIgnoresDildo())
 					 hungrily staring at your [pc.cock+].
-				#ELSEIF(pc.isCoverableAreaVisible(CA_ANUS) && game.isAnalContentEnabled())
+				#ELSEIF(pc.isCoverableAreaVisible(ca("ANUS")) && game.isAnalContentEnabled())
 					 hungrily staring at your [pc.asshole+].
 				#ELSE
 					 hungrily staring at your [pc.ass+].
@@ -521,7 +521,7 @@
 	<p>
 		Calling [npc.name] over to where you're standing, you tell [npc.herHim] that you want [npc.herHim] to give you a massage, before lying down on the lounger and ordering [npc.herHim] to get started.
 	</p>
-	#IF(npc.getObedienceBasic()!=OBEDIENCE_BASIC_OBEDIENT && npc.getAffectionLevelBasic(pc)!=AFFECTION_BASIC_LIKE)
+	#IF(npc.getObedienceBasic()!=obedienceBasic("OBEDIENT") && npc.getAffectionLevelBasic(pc)!=affectionBasic("LIKE"))
 		<p>
 			Grumbling to [npc.herself] about how [npc.she] really doesn't want to be doing this, [npc.name] nevertheless does as [npc.sheIs] told and starts giving you a rather unenthusiastic massage. As [npc.she] starts pressing [npc.her] [npc.hands+] down against your shoulders, however, [npc.her] attitude slowly starts to shift, and [npc.her] annoyed tuts quickly turn into hungry [npc.moans].
 		</p>
@@ -531,9 +531,9 @@
 			#ELSE
 				Moving [npc.her] way down the length of your body, your slave suddenly pushes your over onto your back. Smirking down at you, [npc.she] gives
 			#ENDIF
-			#IF(pc.isCoverableAreaVisible(CA_VAGINA) && pc.hasVagina())
+			#IF(pc.isCoverableAreaVisible(ca("VAGINA")) && pc.hasVagina())
 				 your [pc.pussy+] a good grope,
-			#ELSEIF(pc.isCoverableAreaVisible(CA_PENIS) && pc.hasPenisIgnoresDildo())
+			#ELSEIF(pc.isCoverableAreaVisible(ca("PENIS")) && pc.hasPenisIgnoresDildo())
 				 your [pc.cock+] a good grope,
 			#ELSE
 				 your [pc.ass+] a good grope,
@@ -551,7 +551,7 @@
 					 before dropping down between your [pc.legs] and tightly gripping your [pc.hips+].
 				#ENDIF
 			#ENDIF
-			#IF(npc.isMute() || npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
+			#IF(npc.isMute() || npc.hasSlavePermissionSetting(slavePermissionSetting("GENERAL_SILENCE")))
 					 Letting out a chuckle, [npc.she] [npc.moansVerb], [npc.speech(Ready for a good fuck, <i>[pc.name]</i>?)]
 				</p>
 				<p>
@@ -562,26 +562,26 @@
 	#ELSE
 		<p>
 			Doing as [npc.sheIsFull] told, [npc.name] obediently hurries over to stand beside you, before leaning down and starting to give you a massage.
-			#IF(npc.isMute() || npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
-				#IF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_PROFESSIONAL))
+			#IF(npc.isMute() || npc.hasSlavePermissionSetting(slavePermissionSetting("GENERAL_SILENCE")))
+				#IF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_PROFESSIONAL")))
 					 Acting in a very professional manner, [npc.she] silently starts by massaging your neck and shoulders, before slowly working [npc.her] way down the rest of your body.
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SEDUCTIVE))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_SEDUCTIVE")))
 					 Seductively teasing [npc.her] [npc.fingers+] over your back, [npc.she] starts by massaging your neck and shoulders, before silently working [npc.her] way down the rest of your body.
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SLUTTY))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_SLUTTY")))
 					 After shamelessly groping your [pc.ass+], [npc.name] moves [npc.her] attention up to your neck and shoulders, and after giving them a good massage, [npc.she] silently works [npc.her] way down the rest of your body.
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_WHOLESOME))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_WHOLESOME")))
 					 Flashing you a loving smile, [npc.name] starts by massaging your neck and shoulders, before silently working [npc.her] way down the rest of your body.
 				#ELSE
 					 Flashing you a quick smile, [npc.name] starts by massaging your neck and shoulders, before silently working [npc.her] way down the rest of your body.
 				#ENDIF
 			#ELSE
-				#IF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_PROFESSIONAL))
+				#IF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_PROFESSIONAL")))
 					 Acting in a very professional manner, [npc.she] starts by massaging your neck and shoulders, before slowly working [npc.her] way down the rest of your body and saying, [npc.speech(I hope this is to your satisfaction, [pc.name]...)]
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SEDUCTIVE))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_SEDUCTIVE")))
 					 Seductively tracing [npc.her] [npc.fingers+] over your back, [npc.she] starts by massaging your neck and shoulders, before working [npc.her] way down the rest of your body and teasing, [npc.speech(Perhaps you'd like even more physical contact once I've finished...)]
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SLUTTY))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_SLUTTY")))
 					 After shamelessly groping your [pc.ass+], [npc.name] moves [npc.her] attention up to your neck and shoulders, and after giving them a good massage, [npc.she] works [npc.her] way down the rest of your body while crudely exclaiming, [npc.speech(I hope you're planning on having a good fuck after this!)]
-				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_WHOLESOME))
+				#ELSEIF(npc.hasSlavePermissionSetting(slavePermissionSetting("BEHAVIOUR_WHOLESOME")))
 					 Flashing you a loving smile, [npc.name] starts by massaging your neck and shoulders, before working [npc.her] way down the rest of your body and sighing, [npc.speech(Thank you for letting me do this, [pc.name]! I hope it feels good...)]
 				#ELSE
 					 Flashing you a quick smile, [npc.name] starts by massaging your neck and shoulders, before working [npc.her] way down the rest of your body and saying, [npc.speech(I hope this feels good, [pc.name]...)]
@@ -595,9 +595,9 @@
 			#ELSE
 				 moving [npc.her] touch down the length of your body, [npc.she] suddenly pushes your over onto your back. Letting out a hungry whine, [npc.she] gives
 			#ENDIF
-			#IF(pc.isCoverableAreaVisible(CA_VAGINA) && pc.hasVagina())
+			#IF(pc.isCoverableAreaVisible(ca("VAGINA")) && pc.hasVagina())
 				 your [pc.pussy+] a good grope,
-			#ELSEIF(pc.isCoverableAreaVisible(CA_PENIS) && pc.hasPenisIgnoresDildo())
+			#ELSEIF(pc.isCoverableAreaVisible(ca("PENIS")) && pc.hasPenisIgnoresDildo())
 				 your [pc.cock+] a good grope,
 			#ELSE
 				 your [pc.ass+] a good grope,
@@ -615,7 +615,7 @@
 					 before dropping down between your [pc.legs] and tightly gripping your [pc.hips+].
 				#ENDIF
 			#ENDIF
-			#IF(npc.isMute() || npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
+			#IF(npc.isMute() || npc.hasSlavePermissionSetting(slavePermissionSetting("GENERAL_SILENCE")))
 					 Letting out [npc.a_moan+], [npc.she] exclaims, [npc.speech(Sorry, [pc.name], I need to fuck you right now!)]
 				</p>
 				<p>

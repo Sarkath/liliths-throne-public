@@ -28,23 +28,23 @@
 		<enchantmentEffectId>ATTRIBUTE_SEXUAL</enchantmentEffectId>
 		
 		<effectTooltipLines>
-			<line><![CDATA[[#ATTRIBUTE_FERTILITY.getFormattedValue(5)] to 'potion effects']]></line>
-			<line><![CDATA[[#ATTRIBUTE_VIRILITY.getFormattedValue(5)] to 'potion effects']]></line>
-			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_LUST.getFormattedValue(-10)] to 'potion effects']]></line>
+			<line><![CDATA[[#attribute("FERTILITY").getFormattedValue(5)] to 'potion effects']]></line>
+			<line><![CDATA[[#attribute("VIRILITY").getFormattedValue(5)] to 'potion effects']]></line>
+			<line><![CDATA[[#attribute("RESISTANCE_LUST").getFormattedValue(-10)] to 'potion effects']]></line>
 		</effectTooltipLines>
 		
 		<applyEffects><![CDATA[
 			<p style='margin-bottom:0; padding-bottom:0;'>
 				A warm wave of arcane energy washes over [npc.name]...
 			</p>
-			[#npc.addPotionEffect(ATTRIBUTE_FERTILITY, 5)]
-			[#npc.addPotionEffect(ATTRIBUTE_VIRILITY, 5)]
-			[#npc.addPotionEffect(ATTRIBUTE_RESISTANCE_LUST, -10)]
+			[#npc.addPotionEffect(attribute("FERTILITY"), 5)]
+			[#npc.addPotionEffect(attribute("VIRILITY"), 5)]
+			[#npc.addPotionEffect(attribute("RESISTANCE_LUST"), -10)]
 		]]></applyEffects>
 		
 		<itemTags>
 			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
-			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>attribute("TF_ITEM")</tag>
 			<tag>SOLD_BY_RALPH</tag>
 		</itemTags>
 	</coreAttributes>

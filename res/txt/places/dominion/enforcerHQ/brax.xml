@@ -16,7 +16,7 @@
 	<p>
 		Staring right at you, [brax.name] angrily slams his fist on the desk. You see his huge muscles bulge underneath his Enforcer's shirt as he growls at you, [brax.speech(I told that stupid slut to stop handing out passes! Who the hell are you?!)]
 	</p>
-	#IF(pc.getRace()==RACE_WOLF_MORPH && pc.isFeminine())
+	#IF(pc.getRace()==race("WOLF_MORPH") && pc.isFeminine())
 		<p>
 			As he finishes barking out his question, you see his hungry eyes drop down to roam over your wolf-like body, and you wonder if he has a weakness for wolf-girls. Wanting to test your theory, you turn back to face the door, pushing it firmly shut while not-so-subtly sticking out your ass towards [brax.name]. Turning back to face him, your suspicions are proven to be correct as you see his eyes fogged over with lust...
 		</p>
@@ -27,7 +27,7 @@
 	<!-- INTERIOR_BRAX_REPEAT -->
 
 	<htmlContent tag="INTERIOR_BRAX_REPEAT"><![CDATA[
-	#IF(!pc.isQuestProgressGreaterThan(QUEST_LINE_MAIN, QUEST_MAIN_1_C_WOLFS_DEN))
+	#IF(!pc.isQuestProgressGreaterThan(questLine("MAIN"), quest("MAIN_1_C_WOLFS_DEN")))
 		<p>
 			As he sees that it's you who's entering his office once again, [brax.namePos] jaw drops and he exclaims, [brax.speech(What the hell are you doing back here?! Did that braindead bimbo give you <i>another</i> pass?!)]
 		</p>
@@ -166,7 +166,7 @@
 	</p>
 	<p>
 		You can't help but laugh at [brax.namePos] stuttering denial of his all-too-apparent weakness,
-		#IF(pc.getRace()==RACE_WOLF_MORPH && pc.isFeminine())
+		#IF(pc.getRace()==race("WOLF_MORPH") && pc.isFeminine())
 			 [pc.speech(Oh, please! I see the way you keep glancing at my body! You couldn't make it any more obvious if you painted a big sign on your head reading '[brax.name] is a bitch for wolf-girls'!)]
 		#ELSE
 			 [pc.speech(Oh, please! You couldn't make it any more obvious if you painted a big sign on your head reading '[brax.name] is a bitch for wolf-girls'!)]
@@ -407,7 +407,7 @@
 	</p>
 	<p>
 		You obediently do as Brax commands and drop down on all fours right there in the middle of his office.
-		#IF(pc.getTailType().getRace()==RACE_WOLF_MORPH)
+		#IF(pc.getTailType().getRace()==race("WOLF_MORPH"))
 			 You can't help but shake your ass at the dominant wolf-boy, and you playfully flick your wolf-like tail back and forth, making pitiful little whining noises as you eagerly plead for Brax's thick cock.
 		#ELSE
 			 You can't help but shake your ass at the dominant wolf-boy, and you turn your head and make a show of biting your lip, making pitiful little whining noises as you eagerly plead for Brax's thick cock.
@@ -434,7 +434,7 @@
 	<!-- AFTER_COMBAT_DEFEAT -->
 
 	<htmlContent tag="AFTER_COMBAT_DEFEAT"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_braxTransformedPlayer))
+	#IF(game.getDialogueFlags().hasFlag(flag("braxTransformedPlayer")))
 		<p>
 			You can't carry on fighting any longer, and your legs give out from beneath you as you sink down onto your knees. As Brax lets out a deep laugh, you find yourself looking down at the floor, trying to avoid his powerful gaze.
 		</p>
@@ -534,15 +534,15 @@
 	<p>
 		As that thought crosses your mind, your eyes open wide, and you get your lust under control for a moment as you step back, looking down at your body to see what's changed. You hear Brax let out a laugh as he notices that you're trying to find out what he's done to you, and, with a powerful grip, he grabs your shoulders and spins you around to face a mirror hanging on one wall.
 	</p>
-	#IF(properties.getForcedTFPreference() == FURRY_PREF_HUMAN)
+	#IF(properties.getForcedTFPreference() == furryPref("HUMAN"))
 		<p>
 			As you see your new reflection, you let out a little gasp. Brax has transformed you into his perfect vision of a woman, and your [pc.eyes+] open wide in shock as you feel the weight of your [pc.breastSize], [pc.cupSize]-cup tits that are now sitting on your chest. As Brax steps up behind you, you feel his shaggy fur brushing up against your vulnerable, feminine body.
 		</p>
-	#ELSEIF(properties.getForcedTFPreference() == FURRY_PREF_MINIMUM)
+	#ELSEIF(properties.getForcedTFPreference() == furryPref("MINIMUM"))
 		<p>
 			As you see your new reflection, you let out a little gasp. Brax has transformed you into his perfect vision of a partial wolf-girl, and your yellow, predatory eyes open wide in shock as you feel the weight of your huge, E-cup tits that are now sitting on your chest. Up on top of your head, white, wolf-like fur is covering your new pair of upright ears, while just above your [pc.ass+], a long, shaggy wolf's tail drops down to almost brush the floor.
 		</p>
-	#ELSEIF(properties.getForcedTFPreference() == FURRY_PREF_REDUCED)
+	#ELSEIF(properties.getForcedTFPreference() == furryPref("REDUCED"))
 		<p>
 			As you see your new reflection, you let out a little gasp. Brax has transformed you into his perfect vision of a lesser wolf-girl, and your yellow, predatory eyes open wide in shock as you feel the weight of your [pc.breastRows] [pc.breastSize], [pc.cupSize]-cup tits. White fur covers your wolf-like arms and legs, and you notice that your face and the skin covering your torso are the only parts of your that haven't transformed into anthropomorphic wolf-like counterparts. Up on top of your head, the same white, wolf-like fur is covering your new pair of upright ears, while just above your [pc.ass+], a long, shaggy wolf's tail drops down to almost brush the floor.
 		</p>
@@ -566,7 +566,7 @@
 	<htmlContent tag="AFTER_DEFEAT_TRANSFORMATION_OBEY"><![CDATA[
 	<p>
 		You obediently do as Brax commands and drop down on all fours right there in the middle of his office.
-		#IF(pc.getTailType().getRace()==RACE_WOLF_MORPH)
+		#IF(pc.getTailType().getRace()==race("WOLF_MORPH"))
 			 You can't help but shake your ass at the dominant wolf-boy, and you playfully flick your wolf-like tail back and forth, making pitiful little whining noises as you eagerly plead for Brax's thick cock.
 		#ELSE
 			 You can't help but shake your ass at the dominant wolf-boy, and you turn your head and make a show of biting your lip, making pitiful little whining noises as you eagerly plead for Brax's thick cock.
@@ -593,7 +593,7 @@
 	<p>
 		With a soft moan, you slowly open your eyes, the memory of Brax's rough fucking filling your groggy mind. After a few moments, your head starts to clear, and you see that you've been unceremoniously dumped out the back of the Enforcer HQ.
 	</p>
-	#IF(pc.isQuestProgressGreaterThan(QUEST_LINE_MAIN, QUEST_MAIN_1_C_WOLFS_DEN))
+	#IF(pc.isQuestProgressGreaterThan(questLine("MAIN"), quest("MAIN_1_C_WOLFS_DEN")))
 		<p>
 			Although you've been thrown out without so much as a goodbye, you feel a big smile spreading across your face. You found out where Arthur is, and what's more, you got to have a good fuck with that hunk of a wolf-boy.
 		</p>

@@ -21,7 +21,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="SHOP_WEAPONS"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_vickyIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("vickyIntroduced")))
 		<p>
 			Pushing open the door to Arcane Arts once again, your arrival is announced by the familiar sound of a little bell ringing above you. Just like the other times you've visited, only one other person is inside; the greater wolf-girl Vicky, who's standing behind the shop's counter.
 		</p>

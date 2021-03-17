@@ -4,7 +4,7 @@
 	<!-- HARPY_ATTACK -->
 	
 	<htmlContent tag="HARPY_ATTACK"><![CDATA[
-	#IF(pc.isQuestCompleted(QUEST_LINE_SIDE_HARPY_PACIFICATION))
+	#IF(pc.isQuestCompleted(questLine("SIDE_HARPY_PACIFICATION")))
 		<p>
 			Thanks to your efforts, most of the surrounding harpy nests are very calm, and you end up having to travel out of your way in search of a suitably-angry-looking harpy. After a short while, you spot a suitable target. A harpy is walking around in little circles, kicking at the air and cursing under [npc.her] breath. As you walk by, you smirk up at [npc.herHim], which seems to be all the provocation that's required; [npc.she] suddenly swoops down in front of you, blocking your path.
 		</p>
@@ -46,7 +46,7 @@
 					As [npc.she] steps out from the shadows, however, you notice that there's definitely something different about [npc.herHim] this time. The consequence of ejaculating inside of [npc.herHim] is staring you right in the face, and you gulp as you see [npc.herHim] pointing down at [npc.her] [style.colourSex(pregnant belly)].
 				</p>
 				<p>
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						[npc.speech(That's right, you got me knocked up!)] [npc.name] shouts, the excitement in [npc.her] voice clearly giving away the fact that [npc.sheHasFull] a fetish for being pregnant.
 						#IF(npc.isAttractedTo(pc))
 							 [npc.speech(Just 'cause I love being a mommy, don't think I'm letting you off the hook! I'm so fucking horny all the time, and you're gonna take responsibility for that!)]
@@ -67,7 +67,7 @@
 					As [npc.she] steps out from the shadows, however, you notice that there's definitely something different about [npc.herHim] this time. The consequence of [com.name] having ejaculating inside of [npc.herHim] is staring you both right in the face, and your [com.companion] gulps as [com.she] sees [npc.name] pointing down at [npc.her] [style.colourSex(pregnant belly)].
 				</p>
 				<p>
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						[npc.speech(That's right, you got me knocked up!)] she shouts, the excitement in [npc.her] voice giving away the fact that [npc.sheHas] clearly got a fetish for being pregnant. [npc.speech(I love carrying our kids around, I'm so glad you didn't pull out!)]
 					#ELSE
 						[npc.speech(Look what you did, you asshole!)] [npc.she] shouts, confirming that [com.nameIs] the father of [npc.her] children. [npc.speech(Do you know how annoying it is being pregnant?! You're gonna pay for this!)]
@@ -78,7 +78,7 @@
 					As [npc.she] steps out from the shadows, however, you notice that there's definitely something different about [npc.herHim] this time. The consequence of your old companion having ejaculating inside of [npc.herHim] is staring the two of you right in the face, and you gulp as [npc.name] points down at [npc.her] [style.colourSex(pregnant belly)].
 				</p>
 				<p>
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						[npc.speech(That's right, [#npc.getPregnantLitter().getFatherName()] got me knocked up!)] [npc.name] shouts, the excitement in [npc.her] voice clearly giving away the fact that [npc.sheHasFull] a fetish for being pregnant.
 						#IF(npc.isAttractedTo(pc))
 							 [npc.speech(Just 'cause I love being a mommy, don't think I'm letting you off the hook! I'm so fucking horny all the time, and you're gonna take responsibility for that!)]
@@ -98,19 +98,19 @@
 		#ELSE
 			<p>
 				#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						You see that [npc.sheIs] still sporting a round, [style.colourSex(pregnant belly)], and [npc.she] absent-mindedly strokes [npc.her] swollen bump as [npc.she] laughs, [npc.speech(That's right, I'm still pregnant, all thanks to you!)]
 					#ELSE
 						You see that [npc.sheIs] still sporting a round, [style.colourSex(pregnant belly)], and [npc.she] absent-mindedly strokes [npc.her] swollen bump as [npc.she] scowls, [npc.speech(That's right, I'm still pregnant,and it's all your fault!)]
 					#ENDIF
 				#ELSEIF(companions && npc.getPregnantLitter().isFatherId(com.getId()))
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						You see that [npc.sheIs] still sporting a round, [style.colourSex(pregnant belly)], and [npc.she] absent-mindedly strokes [npc.her] swollen bump as [npc.she] laughs, [npc.speech(That's right, I'm still pregnant, all thanks to you, [com.name]!)]
 					#ELSE
 						You see that [npc.sheIs] still sporting a round, [style.colourSex(pregnant belly)], and [npc.she] absent-mindedly strokes [npc.her] swollen bump as [npc.she] scowls, [npc.speech(That's right, I'm still pregnant, and it's all your fault, [com.name]!)]
 					#ENDIF
 				#ELSE
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						You see that [npc.sheIs] still sporting a round, [style.colourSex(pregnant belly)], and [npc.she] absent-mindedly strokes [npc.her] swollen bump as [npc.she] laughs, [npc.speech(That's right, I'm still pregnant, all thanks to [#npc.getPregnantLitter().getFatherName()]!)]
 					#ELSE
 						You see that [npc.sheIs] still sporting a round, [style.colourSex(pregnant belly)], and [npc.she] absent-mindedly strokes [npc.her] swollen bump as [npc.she] scowls, [npc.speech(That's right, I'm still pregnant,and it's all your and [#npc.getPregnantLitter().getFatherName()]'s fault!)]
@@ -225,7 +225,7 @@
 					As you step forwards and start to say hello, you immediately notice that there's something very different about [npc.name]. [npc.SheIs] cradling [npc.her] stomach with both [npc.hands], and as you look down, you see the consequence of ejaculating inside of [npc.herHim], as [npc.sheIs] now sporting a [style.colourSex(pregnant belly)].
 				</p>
 				<p>
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						[npc.speech(Yeah, before you ask, it was you! You got me knocked up! It feels so fantastic to be pregnant!)] she explains, the excitement in [npc.her] voice clearly giving away the fact that [npc.sheHasFull] a fetish for being pregnant. After confirming that you're the father of [npc.her] children, [npc.she] continues,
 						#IF(npc.isAttractedTo(pc))
 							 [npc.speech(If you wanted to take responsibility, then some flames would always be appreciated. Then again, if you wanted to spend some time with me, that'd be great too! And, well, if anything, now that I'm pregnant, I'm hornier than ever, so if you've got a thing for pregnant [npc.girls], then just say the word...)]
@@ -246,7 +246,7 @@
 					As you step forwards and start to say hello, you immediately notice that there's something very different about [npc.name]. [npc.SheIs] cradling [npc.her] stomach with both [npc.hands], and as you look down, you see the consequence of [com.name] having ejaculated inside of [npc.herHim], as [npc.sheIs] now sporting a [style.colourSex(pregnant belly)].
 				</p>
 				<p>
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						[npc.speech(Yeah, before you ask, it was you, [com.name]! You got me knocked up! It feels so fantastic to be pregnant!)] she explains, the excitement in [npc.her] voice clearly giving away the fact that [npc.sheHasFull] a fetish for being pregnant. After confirming that [com.nameIs] the father of [npc.her] children, [npc.she] continues,
 						#IF(npc.isAttractedTo(pc))
 							 [npc.speech(If you wanted to take responsibility, then some flames would always be appreciated. Then again, if you wanted to spend some time with me, that'd be great too! And, well, if anything, now that I'm pregnant, I'm hornier than ever, so if you've got a thing for pregnant [npc.girls], then just say the word...)]
@@ -267,7 +267,7 @@
 					As you step forwards and start to say hello, you immediately notice that there's something very different about [npc.name]. [npc.SheIs] cradling [npc.her] stomach with both [npc.hands], and as you look down, you see the consequence of your previous companion having ejaculated inside of [npc.herHim], as [npc.sheIs] now sporting a [style.colourSex(pregnant belly)].
 				</p>
 				<p>
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						[npc.speech(Yeah, before you ask, it was [#npc.getPregnantLitter().getFatherName()]! They got me knocked up! It feels so fantastic to be pregnant!)] she explains, the excitement in [npc.her] voice clearly giving away the fact that [npc.sheHasFull] a fetish for being pregnant. After confirming that your old companion is the father of [npc.her] children, [npc.she] continues,
 						#IF(npc.isAttractedTo(pc))
 							 [npc.speech(If you wanted to take responsibility, then some flames would always be appreciated. Then again, if you wanted to spend some time with me, that'd be great too! And, well, if anything, now that I'm pregnant, I'm hornier than ever, so if you've got a thing for pregnant [npc.girls], then just say the word...)]
@@ -287,7 +287,7 @@
 		#ELSE
 			<p>
 				#IF(npc.isCharacterPossiblyFather(pc.getId()))
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						As you step forwards and start to say hello, you see that [npc.name] still sporting a round, [style.colourSex(pregnant belly)], and [npc.she] absent-mindedly strokes [npc.her] swollen bump as [npc.she] laughs,
 						#IF(npc.isAttractedTo(pc))
 							 [npc.speech(That's right, I'm still pregnant, all thanks to you! If you wanted to take responsibility, then some flames would always be appreciated. Then again, if you wanted to spend some time with me, that would be great too! And, well, if anything, now that I'm pregnant, I'm hornier than ever, so if you've got a thing for pregnant [npc.girls], then just say the word...)]
@@ -303,7 +303,7 @@
 						#ENDIF
 					#ENDIF
 				#ELSEIF(companions && npc.isCharacterPossiblyFather(com.getId()))
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						As you step forwards and start to say hello, you see that [npc.name] still sporting a round, [style.colourSex(pregnant belly)], and [npc.she] absent-mindedly strokes [npc.her] swollen bump as [npc.she] laughs,
 						#IF(npc.isAttractedTo(com))
 							 [npc.speech(That's right, I'm still pregnant, all thanks to you, [com.name]! If you wanted to take responsibility, then some flames would always be appreciated. Then again, if you wanted to spend some time with me, that would be great too! And, well, if anything, now that I'm pregnant, I'm hornier than ever, so if you've got a thing for pregnant [npc.girls], then just say the word...)]
@@ -319,7 +319,7 @@
 						#ENDIF
 					#ENDIF
 				#ELSE
-					#IF(npc.hasFetish(FETISH_PREGNANCY))
+					#IF(npc.hasFetish(fetish("FETISH_PREGNANCY")))
 						As you step forwards and start to say hello, you see that [npc.name] still sporting a round, [style.colourSex(pregnant belly)], and [npc.she] absent-mindedly strokes [npc.her] swollen bump as [npc.she] laughs,
 						#IF(npc.isAttractedTo(pc))
 							 [npc.speech(That's right, I'm still pregnant, all thanks to [#npc.getPregnantLitter().getFatherName()]! If you wanted to take responsibility, then some flames would always be appreciated. Then again, if you wanted to spend some time with me, that would be great too! And, well, if anything, now that I'm pregnant, I'm hornier than ever, so if you've got a thing for pregnant [npc.girls], then just say the word...)]
@@ -345,7 +345,7 @@
 					#IF(pc.getPregnantLitter().isFatherId(npc.getId()))
 						#IF(com.getPregnantLitter().isFatherId(npc.getId()))
 							<p>
-								#IF(!npc.hasFetish(FETISH_IMPREGNATION))
+								#IF(!npc.hasFetish(fetish("FETISH_IMPREGNATION")))
 									Smiling fondly at you and [com.name] as you approach, [npc.name] suddenly notices that you're both sporting swollen bellies, and [npc.she] gasps as [npc.she] looks back and forth between each of your pregnant bumps. [npc.speech(I got you both pregnant?! I really should have pulled out... I don't have any money to support either of you or anything, but you'll be ok, right?)]
 								#ELSE
 									Smiling fondly at you and [com.name] as you approach, [npc.name] suddenly notices that you're both sporting swollen bellies, and [npc.she] gasps in delight as [npc.she] looks back and forth between each of your pregnant bumps. [npc.speech(I got you both pregnant?! Fuck, that turns me on so much... I knew I'd get the two of you knocked up when I cummed in your hot little pussies!)]
@@ -356,7 +356,7 @@
 							</p>
 						#ELSE
 							<p>
-								#IF(!npc.hasFetish(FETISH_IMPREGNATION))
+								#IF(!npc.hasFetish(fetish("FETISH_IMPREGNATION")))
 									Smiling fondly at you and [com.name] as you approach, [npc.name] suddenly notices that you're both sporting swollen bellies, and [npc.she] gasps as [npc.she] looks back and forth between each of your pregnant bumps. [npc.speech(I got you pregnant, [pc.name]?! And you're going to be a mother as well, [com.name]?! Oh, [pc.name], I really should have pulled out... I don't have any money to support you or anything, but you'll be ok, right?)]
 								#ELSE
 									Smiling fondly at you and [com.name] as you approach, [npc.name] suddenly notices that you're both sporting swollen bellies, and [npc.she] gasps in delight as [npc.she] looks back and forth between each of your pregnant bumps. [npc.speech(I got you pregnant, [pc.name]?! Fuck, that turns me on so much... And you're going to be a mother as well, [com.name]?! I knew I'd get you knocked up, [pc.name], right from the moment when I cummed in your hot little pussy!)]
@@ -368,7 +368,7 @@
 						#ENDIF
 					#ELSEIF(com.getPregnantLitter().isFatherId(npc.getId()))
 						<p>
-							#IF(!npc.hasFetish(FETISH_IMPREGNATION))
+							#IF(!npc.hasFetish(fetish("FETISH_IMPREGNATION")))
 								Smiling fondly at you and [com.name] as you approach, [npc.name] suddenly notices that you're both sporting swollen bellies, and [npc.she] gasps as [npc.she] looks back and forth between each of your pregnant bumps. [npc.speech(I-I got you pregnant, [com.name]?! And you're going to be a mother as well, [pc.name]?! Oh, [com.name], I really should have pulled out... I don't have any money to support you or anything, but you'll be ok, right?)]
 							#ELSE
 								Smiling fondly at you and [com.name] as you approach, [npc.name] suddenly notices that you're both sporting swollen bellies, and [npc.she] gasps in delight as [npc.she] looks back and forth between each of your pregnant bumps. [npc.speech(I got you pregnant, [com.name]?! Fuck, that turns me on so much... And you're going to be a mother as well, [pc.name]?! I knew I'd get you knocked up, [com.name], right from the moment when I cummed in your hot little pussy!)]
@@ -384,7 +384,7 @@
 					#ENDIF
 				#ELSEIF(pc.getPregnantLitter().isFatherId(npc.getId()))
 					<p>
-						#IF(!npc.hasFetish(FETISH_IMPREGNATION))
+						#IF(!npc.hasFetish(fetish("FETISH_IMPREGNATION")))
 							Smiling fondly at you as you approach, [npc.name] suddenly notices that you're sporting a swollen belly, and [npc.she] gasps as [npc.she] looks down at your pregnant bump. [npc.speech(I-I got you pregnant?! I really should have pulled out... I don't have any money to support you or anything, but you'll be ok, right?)]
 						#ELSE
 							Smiling fondly at you as you approach, [npc.name] suddenly notices that you're sporting a swollen belly, and [npc.she] gasps in delight as [npc.she] looks down at your pregnant bump. [npc.speech(I got you pregnant?! Fuck, that turns me on so much... I knew I'd get you knocked up when I cummed in your hot little pussy!)]
@@ -400,7 +400,7 @@
 				#ENDIF
 			#ELSEIF(com.getPregnantLitter().isFatherId(npc.getId()))
 				<p>
-					#IF(!npc.hasFetish(FETISH_IMPREGNATION))
+					#IF(!npc.hasFetish(fetish("FETISH_IMPREGNATION")))
 						Smiling fondly at you as you approach, [npc.name] suddenly notices that [com.namePos] sporting a swollen belly, and [npc.she] gasps as [npc.she] looks down at [com.her] pregnant bump. [npc.speech(I-I got you pregnant?! I really should have pulled out... I don't have any money to support you or anything, but you'll be ok, right?)]
 					#ELSE
 						Smiling fondly at you as you approach, [npc.name] suddenly notices that [com.namePos] sporting a swollen belly, and [npc.she] gasps in delight as [npc.she] looks down at [com.her] pregnant bump. [npc.speech(I got you pregnant?! Fuck, that turns me on so much... I knew I'd get you knocked up when I cummed in your hot little pussy!)]
@@ -891,7 +891,7 @@
 		Having had enough of this joke of a friendship between you and [npc.name], you step forwards and sneer, [pc.speech(You know, I never really expected much of you, being the worthless trash that you are, yet somehow I'm still disappointed by how pathetic you are.)]
 	</p>
 	<p>
-		#IF(pc.hasFetish(FETISH_SADIST))
+		#IF(pc.hasFetish(fetish("FETISH_SADIST")))
 			You see tears start to well up in [npc.namePos] [npc.eyes] as you deliver the crushing insult, and, feeling particularly sadistic today, you continue, [pc.speech(Aww, what's the matter? Going to cry? You disgust me. To think that your matriarch puts up with the likes of you skulking around her nest. All you're really good for is being a slave. At least then someone could make use of you as a cock-sleeve.)]
 		#ELSE
 			You see tears start to well up in [npc.namePos] [npc.eyes] as you deliver the crushing insult, and you continue, [pc.speech(Knock it off. You don't get to play the victim here, having attacked countless innocent people passing by your nest!)]
@@ -1411,7 +1411,7 @@
 	
 	<htmlContent tag="TF_SWALLOW"><![CDATA[
 	<p>
-		#IF(pc.hasFetish(FETISH_TRANSFORMATION_RECEIVING) || pc.hasFetish(FETISH_KINK_RECEIVING))
+		#IF(pc.hasFetish(fetish("FETISH_TRANSFORMATION_RECEIVING")) || pc.hasFetish(fetish("FETISH_KINK_RECEIVING")))
 			Loving the sound of being transformed by [npc.name], you obediently swallow down the strange liquid that's in your mouth. Seeing that you've obeyed [npc.herHim], [npc.name] grins and exclaims, [npc.speech(Now for the fun part!)]
 		#ELSE
 			Thinking that it would be best to do as [npc.name] says, you obediently swallow down the strange liquid that's in your mouth. Seeing that you've obeyed [npc.herHim], [npc.name] grins and exclaims, [npc.speech(Now for the fun part!)]
@@ -1429,7 +1429,7 @@
 	
 	<htmlContent tag="TF_COMPANION_SWALLOW"><![CDATA[
 	<p>
-		#IF(com.hasFetish(FETISH_TRANSFORMATION_RECEIVING) || com.hasFetish(FETISH_KINK_RECEIVING))
+		#IF(com.hasFetish(fetish("FETISH_TRANSFORMATION_RECEIVING")) || com.hasFetish(fetish("FETISH_KINK_RECEIVING")))
 			Clearly more than happy to drink down the unknown potion that's in [com.her] mouth, [com.name] immediately swallows it all down. With a delighted grin on [npc.her] face, [npc.name] happily exclaims, [npc.speech(That's a good [com.girl]!)]
 		#ELSE
 			Clearly deciding that it would be best to do as [com.sheIs] told, [com.name] quickly swallows the liquid that's in [com.her] mouth. With a delighted grin on [npc.her] face, [npc.name] happily exclaims, [npc.speech(That's a good [com.girl]!)]

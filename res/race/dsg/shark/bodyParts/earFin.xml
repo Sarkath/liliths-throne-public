@@ -48,7 +48,7 @@
 	This description immediately follows a brief description of the ear type beginning to transform. -->
 	<transformationDescription><![CDATA[
 		They quickly begin to narrow and grow longer while shifting to sit higher up on [npc.her] head than normal human ears would until they resemble a pair of swept, pointed fins.
-		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+		#IF(npc.getBodyMaterial()==bodyMaterial("FLESH"))
 		 A layer of [npc.earFullDescriptionColour] quickly grows to cover them,
 		#ELSE
 		 Just like the rest of [npc.her] body, they're made out of [npc.earFullDescription],

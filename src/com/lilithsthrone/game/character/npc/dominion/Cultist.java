@@ -291,7 +291,7 @@ public class Cultist extends NPC {
 					return new Value<>(true,
 							"<p>"
 								+ UtilText.parse(user, target,
-									"Holding out a '[#ITEM_innoxia_pills_sterility.getName(false)]' to [npc2.name], you tell [npc2.herHim] to swallow it so that you don't have to worry about any unexpected pregnancies."
+									"Holding out a '[#item('innoxia_pills_sterility').getName(false)]' to [npc2.name], you tell [npc2.herHim] to swallow it so that you don't have to worry about any unexpected pregnancies."
 									+ " [npc2.She] lets out an angry huff, but as [npc2.sheIs] in no position to refuse, [npc2.she] reluctantly does as you ask,"
 									+ " [npc2.speech(This is an insult to Lilith herself...)]")
 							+ "</p>");
@@ -300,7 +300,7 @@ public class Cultist extends NPC {
 					return new Value<>(true,
 							"<p>"
 								+ UtilText.parse(user, target,
-									"Holding out a '[#ITEM_innoxia_pills_sterility.getName(false)]' to [npc2.name], you ask [npc2.herHim] to swallow it so that you don't have to worry about any unexpected pregnancies."
+									"Holding out a '[#item('innoxia_pills_sterility').getName(false)]' to [npc2.name], you ask [npc2.herHim] to swallow it so that you don't have to worry about any unexpected pregnancies."
 									+ " With an angry huff, [npc2.she] slaps the pill out of your hand,"
 									+ " [npc2.speech(How dare you! Lilith demands that her followers' seed remain strong!)]")
 							+ "</p>");

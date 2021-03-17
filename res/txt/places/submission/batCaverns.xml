@@ -182,7 +182,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="FIND_ITEM_LIGHT"><![CDATA[
+	<htmlContent tag="FIND_item("LIGHT")"><![CDATA[
 	<p>
 		As you travel through the underground mushroom forest, you see a splash of bright purple slime sprayed up the side of a nearby mushroom-tree. First glancing around to check that the slime who left this mark is long gone, you then take a step towards this purple goo in order to investigate further.
 	</p>
@@ -195,7 +195,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="FIND_ITEM_DARK"><![CDATA[
+	<htmlContent tag="FIND_item("DARK")"><![CDATA[
 	<p>
 		As you walk through the dark caverns, your footsteps causing the bioluminescent lichen underfoot to illuminate your way, you see a splash of bright pink slime sprayed up the side of the wall up ahead. First glancing around to check that the slime who left this mark is long gone, you then take a step towards this pink goo in order to investigate further.
 	</p>

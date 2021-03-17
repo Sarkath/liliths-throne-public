@@ -136,9 +136,9 @@
 	<htmlContent tag="CAPTIVE_DAY_1_WAKE"><![CDATA[
 	#IF(pc.hasVagina())
 		<p>
-			#IF(pc.hasFetish(FETISH_SUBMISSIVE) || pc.hasFetish(FETISH_MASOCHIST))
+			#IF(pc.hasFetish(fetish("FETISH_SUBMISSIVE")) || pc.hasFetish(fetish("FETISH_MASOCHIST")))
 				Thanks to your submissive nature, the forceful manner in which this rat-boy is treating you is massively turning you on, and you can't help but let out an aroused, high-pitched moan as he roughly rubs two of his fat, greasy fingers over your exposed pussy. Chuckling in amusement at your reaction, Murk sneers, [murk.speechNoEffects(What an 'orny slut! Yer moanin' already an' ya ain't even 'ad a feel o' me fat cock poundin' yer dirty twat!)]
-			#ELSEIF(pc.hasFetish(FETISH_DOMINANT))
+			#ELSEIF(pc.hasFetish(fetish("FETISH_DOMINANT")))
 				Thanks to your dominant nature, you find yourself scowling and pulling away from the rat-boy as he starts groping your rear-end, but any protestations which you were about to make are cut short as you feel Murk roughly rub two of his fat, greasy fingers over your exposed pussy. Chuckling in amusement as you let out a shocked cry, Murk sneers, [murk.speechNoEffects(Settle down, ya dumb slut! You's just wait until ya get a feel o' me fat cock poundin' yer dirty cunt, an' <i>then</i> you'll be havin' somethin' ta moan about!)]
 			#ELSE
 				Being restrained in your stall, you're powerless to resist as the crass rat-boy starts groping your rear-end, and you can't help but let out a high-pitched cry as he roughly rubs two of his fat, greasy fingers over your exposed pussy. Chuckling in amusement at your reaction, Murk sneers, [murk.speechNoEffects(What an 'orny slut! Yer moanin' already an' ya ain't even 'ad a feel o' me fat cock poundin' yer dirty twat!)]
@@ -153,9 +153,9 @@
 		</p>
 	#ELSEIF(pc.hasPenis())
 		<p>
-			#IF(pc.hasFetish(FETISH_SUBMISSIVE) || pc.hasFetish(FETISH_MASOCHIST))
+			#IF(pc.hasFetish(fetish("FETISH_SUBMISSIVE")) || pc.hasFetish(fetish("FETISH_MASOCHIST")))
 				Thanks to your submissive nature, the rough manner in which this rat-boy is treating you is massively turning you on, and you can't help but let out an aroused, high-pitched moan as he unceremoniously wraps his fat fingers around your exposed cock and gives it a rough stroke. Chuckling in amusement at your reaction, Murk sneers, [murk.speechNoEffects(What an 'orny slut! You's just wait 'til I give yer a nice tight twat an' stuff me fat cock into it! <i>Then</i> you'll be havin' somethin' ta moan about!)]
-			#ELSEIF(pc.hasFetish(FETISH_DOMINANT))
+			#ELSEIF(pc.hasFetish(fetish("FETISH_DOMINANT")))
 				Thanks to your dominant nature, you find yourself scowling and pulling away from the rat-boy as he starts groping your rear-end, but any protestations which you were about to make are cut short as you feel Murk unceremoniously wrap his fat fingers around your exposed cock and give it a rough stroke. Chuckling in amusement as you let out a shocked cry, Murk sneers, [murk.speechNoEffects(Settle down, ya dumb slut! You's just wait 'til I give yer a nice tight twat an' stuff me fat cock into it! <i>Then</i> you'll be havin' somethin' ta moan about!)]
 			#ELSE
 				Being restrained in your stall, you're powerless to resist as the rough rat-boy unceremoniously wraps his fat fingers around your exposed cock and gives it a rough stroke. Chuckling in amusement at the surprised gasp which you let out in response to this, Murk sneers, [murk.speechNoEffects(What an 'orny slut! You's just wait 'til I give yer a nice tight twat an' stuff me fat cock into it! <i>Then</i> you'll be havin' somethin' ta moan about!)]
@@ -175,9 +175,9 @@
 	<htmlContent tag="CAPTIVE_DAY_1_WAKE_MASCULINE"><![CDATA[
 	#IF(pc.hasVagina())
 		<p>
-			#IF(pc.hasFetish(FETISH_SUBMISSIVE) || pc.hasFetish(FETISH_MASOCHIST))
+			#IF(pc.hasFetish(fetish("FETISH_SUBMISSIVE")) || pc.hasFetish(fetish("FETISH_MASOCHIST")))
 				Thanks to your submissive nature, the rough manner in which this rat-boy is treating you is massively turning you on, and you can't help but let out an aroused, high-pitched moan as he unceremoniously stuffs two of his fat fingers into your exposed cunt. Chuckling in amusement at your reaction, Murk sneers,
-			#ELSEIF(pc.hasFetish(FETISH_DOMINANT))
+			#ELSEIF(pc.hasFetish(fetish("FETISH_DOMINANT")))
 				Thanks to your dominant nature, you find yourself scowling and pulling away from the rat-boy as he starts groping your rear-end, but any protestations which you were about to make are cut short as you feel Murk unceremoniously stuff two of his fat fingers into your exposed cunt. Chuckling in amusement as you let out a shocked cry, Murk sneers,
 			#ELSE
 				Being restrained in your stall, you're powerless to resist as the rough rat-boy runs his fat fingers over your [pc.labia+], and you can't help but let out a high-pitched cry as he unceremoniously stuffs two of them into your exposed cunt. Chuckling in amusement at your reaction, Murk sneers,
@@ -192,9 +192,9 @@
 		</p>
 	#ELSEIF(pc.hasPenis())
 		<p>
-			#IF(pc.hasFetish(FETISH_SUBMISSIVE) || pc.hasFetish(FETISH_MASOCHIST))
+			#IF(pc.hasFetish(fetish("FETISH_SUBMISSIVE")) || pc.hasFetish(fetish("FETISH_MASOCHIST")))
 				Thanks to your submissive nature, the rough manner in which this rat-boy is treating you is massively turning you on, and you can't help but let out an aroused, high-pitched moan as he unceremoniously wraps his fat fingers around your exposed cock and gives it a rough stroke. Chuckling in amusement at your reaction, Murk sneers, [murk.speechNoEffects(What an 'orny slut! You's just wait 'til ya get a feel o' me fat cock stuffed into yer ass! <i>Then</i> you'll be havin' somethin' ta moan about!)]
-			#ELSEIF(pc.hasFetish(FETISH_DOMINANT))
+			#ELSEIF(pc.hasFetish(fetish("FETISH_DOMINANT")))
 				Thanks to your dominant nature, you find yourself scowling and pulling away from the rat-boy as he starts groping your rear-end, but any protestations which you were about to make are cut short as you feel Murk unceremoniously wrap his fat fingers around your exposed cock and give it a rough stroke. Chuckling in amusement as you let out a shocked cry, Murk sneers, [murk.speechNoEffects(Settle down, ya dumb slut! You's just wait 'til ya get a feel o' me fat cock stuffed into yer ass! <i>Then</i> you'll be havin' somethin' ta moan about!)]
 			#ELSE
 				Being restrained in your stall, you're powerless to resist as the rough rat-boy unceremoniously wraps his fat fingers around your exposed cock and gives it a rough stroke. Chuckling in amusement at the surprised gasp which you let out in response to this, Murk sneers, [murk.speechNoEffects(What an 'orny slut! You's just wait 'til ya get a feel o' me fat cock stuffed into yer ass! <i>Then</i> you'll be havin' somethin' ta moan about!)]
@@ -563,11 +563,11 @@
 		#ELSE
 			 before grabbing your [pc.ass+] with his greasy fingers and giving you a good grope. Finding yourself getting uncontrollably aroused by this dominant behaviour, you can't help but let out [pc.a_moan+] as Murk pulls your cheeks apart and cackles,
 		#ENDIF
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveFeminine))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveFeminine")))
 			 [murk.speechNoEffects(Heh-heh-heh! I's gonna be givin' ya all da real good transformations today! By tonight, you's gonna be lookin' like the rest o' me milkers, with big fat tits an' a droolin' cunt!)]
-		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveFuta))
+		#ELSEIF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveFuta")))
 			 [murk.speechNoEffects(Heh-heh-heh! I's gonna be givin' ya all da real good transformations today! By tonight, you's gonna be havin' big fat tits, a droolin' cunt, an' a big ol' futa cock!)]
-		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveMasculine))
+		#ELSEIF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveMasculine")))
 			 [murk.speechNoEffects(Heh-heh-heh! I's gonna be givin' ya all da real good transformations today! By tonight, you's gonna be lookin' real manly, with a big ol' cock between yer legs!)]
 		#ELSE
 			 [murk.speechNoEffects(Heh-heh-heh! I's gonna be givin' ya all da real good transformations today! By tonight, you's gonna be lookin' like a pathetic sissy, with a tiny little cock an' a big fuckable ass!)]
@@ -599,11 +599,11 @@
 		#ELSE
 			 before grabbing your [pc.ass+] with his greasy fingers and giving you a forceful grope. Thanks to the mind-altering potion which you were forced to swallow yesterday, you find yourself getting uncontrollably aroused by this dominant behaviour, and you can't help but let out [pc.a_moan+] as Murk pulls your cheeks apart and growls,
 		#ENDIF
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveFeminine))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveFeminine")))
 			 [murk.speechNoEffects(There ain't no point in ya tryin' ta resist, ya dumb bitch! I's gonna be givin' ya all da real good transformations today! By tonight, you's gonna be havin' big fat tits an' a pretty little cunt ready fer breakin'!)]
-		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveFuta))
+		#ELSEIF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveFuta")))
 			 [murk.speechNoEffects(There ain't no point in ya tryin' ta resist, ya dumb bitch! I's gonna be givin' ya all da real good transformations today! By tonight, you's gonna be havin' fat tits, a big futa cock, an' a pretty little cunt ready fer breakin!)]
-		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveMasculine))
+		#ELSEIF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveMasculine")))
 			 [murk.speechNoEffects(There ain't no point in ya tryin' ta resist, ya dumb bitch! I's gonna be givin' ya all da real good transformations today! By tonight, you's gonna be lookin' real manly, with a big ol' cock between yer legs!)]
 		#ELSE
 			 [murk.speechNoEffects(There ain't no point in ya tryin' ta resist, ya dumb bitch! I's gonna be givin' ya all da real good transformations today! By tonight, you's gonna be lookin' like a pathetic sissy, with a tiny little cock an' a big fuckable ass!)]
@@ -751,9 +751,9 @@
 	</p>
 	<p>
 		Feeling extremely turned on not only from Murk's dominant treatment of you, but also from the manner in which he's just subjected you to your
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveFeminine) || game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveFuta))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveFeminine")) || game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveFuta")))
 			 feminine transformation, you can't stop yourself from letting out a horny moan and planting a big, wet kiss on his fat cock.
-		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveMasculine))
+		#ELSEIF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveMasculine")))
 			 masculine transformation, you can't stop yourself from letting out a horny groan and planting a hot, wet kiss on his fat cock.
 		#ELSE
 			 sissy transformation, you can't stop yourself from letting out a hungry whine and planting a submissive, wet kiss on his fat cock.
@@ -969,14 +969,14 @@
 	
 	<htmlContent tag="CAPTIVE_DAY_2_AFTERNOON_AFTER_TRANSFORMATION_GROPED"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveFeminine) || game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveFuta))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveFeminine")) || game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveFuta")))
 			Swaggering around to one side of your milking stall, Murk lets out a happy grunt as he looks down at your [pc.breastSize] tits. Not being able to help himself, he reaches down and gives them a good squeeze, and you can't help but let out a submissive whine as you feel his greasy fingers roughly digging in to your pillowy mounds of flesh. Moving his touch down, the chubby rat-boy grabs hold of your [pc.nippleSize] nipples, before giving them a firm squeeze and grunting,
 			#IF(game.isLactationContentEnabled())
 				 [murk.speechNoEffects(We's gonna make these fuckers even bigger tomorrow! They's gonna be swayin' back an' forth an' spurtin' out milk as I pound yer cunt! Heh-heh-heh!)]
 			#ELSE
 				 [murk.speechNoEffects(We's gonna make these fuckers even bigger tomorrow! They's gonna be swayin' back an' forth as I pound yer cunt! Heh-heh-heh!)]
 			#ENDIF
-		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensCaptiveMasculine))
+		#ELSEIF(game.getDialogueFlags().hasFlag(flag("ratWarrensCaptiveMasculine")))
 			Swaggering around to one side of your milking stall, Murk lets out a happy grunt as he looks down at your masculine body. Not being able to help himself, he reaches down and gives your pecs a good grope, and you can't help but let out a deep groan as you feel his greasy fingers roughly pinching your nipples. Grunting in amusement, the rat-boy teases, [murk.speechNoEffects(Yer lookin' real manly, ain't ya! I's lookin' forwards ta breakin' ya an' makin' ya moan when I's fuckin ya tomorrow! Heh-heh-heh!)]
 		#ELSE
 			Swaggering around to one side of your milking stall, Murk lets out a happy grunt as he looks down at your androgynous body. Not being able to help himself, he reaches down and gives your [pc.nippleSize] nipples a good squeeze, and you can't help but let out a submissive whine as you feel his greasy fingers roughly pinching your girly teats. Grunting in amusement, the rat-boy teases, [murk.speechNoEffects(Yer lookin' like a real sissy slut! I's lookin' forwards ta hearin' 'ow ya moan when I's fuckin ya tomorrow! Heh-heh-heh!)]
@@ -2499,7 +2499,7 @@
 	<htmlContent tag="CAPTIVE_GIVE_BIRTH"><![CDATA[
 	<p>
 		Thankfully, you're not left waiting for too long, as just five minutes after leaving the milking room, Murk returns with
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSilenceIntroduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSilenceIntroduced")))
 			 the familiar figure of the white-furred rat-girl, Silence, trailing behind him.
 		#ELSE
 			 a beautiful, white-furred rat-girl, who you assume to be 'Silence', trailing behind him.
@@ -2514,7 +2514,7 @@
 	</p>
 	<p>
 		[shadow.speech(Don't ya worry, hun, Silence 'ere will take good car o' ya,)] a feminine voice suddenly calls out from somewhere behind you. Turning to look back, you see
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSilenceIntroduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSilenceIntroduced")))
 			 the black-furred rat-girl, Shadow, stepping out from a dark recess. Flashing you a wicked grin, she continues, [shadow.speech(We's got a room near 'ere where ya can give birth in peace. Don't ya worry 'bout yer kids; I's gonna make sure they's shown safely up inta Dominion.)]
 		#ELSE
 			 a black-furred rat-girl stepping out from a dark recess. Flashing you a wicked grin, she continues, [shadow.speech(We's got a room near 'ere where ya can give birth in peace. Don't ya worry 'bout yer kids; I's gonna make sure they's shown safely up inta Dominion. Oh, an' the name's Shadow, by the way..)]
@@ -2553,9 +2553,9 @@
 	</htmlContent>
 	
 	
-	<!-- CAPTIVE_GIVE_BIRTH_PROTECT_THE_EGGS -->
+	<!-- CAPTIVE_GIVE_BIRTH_PROTEclothing("THE_EGGS") -->
 	
-	<htmlContent tag="CAPTIVE_GIVE_BIRTH_PROTECT_THE_EGGS"><![CDATA[
+	<htmlContent tag="CAPTIVE_GIVE_BIRTH_PROTEclothing("THE_EGGS")"><![CDATA[
 	<p>
 		A short time later, you awake to discover that there's a freshly-laid clutch of your eggs between your legs. Overwhelmed by a burning need to protect them at all costs, you throw your body over them and shout for the nearby rat-girls, Shadow and Silence, to get away from you.
 	</p>
@@ -2575,7 +2575,7 @@
 		Having succeeded in defending your eggs, you feel your tiredness catching up with you, and as your head collapses down onto the bed, you vaguely see Silence entering the room. A delighted smile breaks out across her face as she sees that your eggs are hatching, and just before you pass out, you see her bending down in order to start taking care of your children.
 	</p>
 	<p>
-		#IF(pc.getBreastRawMilkStorageValue()>0 && pc.isAbleToAccessCoverableArea(CA_NIPPLES, true) && pc.getNippleShape()==NIPPLE_SHAPE_NORMAL && game.isLactationContentEnabled())
+		#IF(pc.getBreastRawMilkStorageValue()>0 && pc.isAbleToAccessCoverableArea(ca("NIPPLES"), true) && pc.getNippleShape()==nippleShape("_NORMAL") && game.isLactationContentEnabled())
 			Some time later, you drift back into consciousness for a moment as you feel a desperate suckling at your nipples, and you're vaguely aware that it's your children who are eagerly drinking down mouthfuls of your [pc.milk]. Letting your eyelids close again, you soon drift off into an exhausted sleep.
 		#ELSE
 			Some time later, you drift back into consciousness for a moment as you feel a weight on your chest, and you're vaguely aware of cradling your children in your arms as they eagerly drink down bottle after bottle of the milk that Lilaya has provided for you. Letting your eyelids close again, you soon drift off into an exhausted sleep.
@@ -2622,7 +2622,7 @@
 	<htmlContent tag="CAPTIVE_LAY_EGGS"><![CDATA[
 	<p>
 		Thankfully, you're not left waiting for too long, as just five minutes after leaving the milking room, Murk returns with
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSilenceIntroduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSilenceIntroduced")))
 			 the familiar figure of the white-furred rat-girl, Silence, trailing behind him.
 		#ELSE
 			 a beautiful, white-furred rat-girl, who you assume to be 'Silence', trailing behind him.
@@ -2637,7 +2637,7 @@
 	</p>
 	<p>
 		[shadow.speech(Don't ya worry, hun, Silence 'ere will take good car o' ya,)] a feminine voice suddenly calls out from somewhere behind you. Turning to look back, you see
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSilenceIntroduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSilenceIntroduced")))
 			 the black-furred rat-girl, Shadow, stepping out from a dark recess. Flashing you a wicked grin, she continues, [shadow.speech(We's got a room near 'ere where ya can lay yer eggs in peace. Don't ya worry 'bout yer kids; I's gonna make sure they's shown safely up inta Dominion.)]
 		#ELSE
 			 a black-furred rat-girl stepping out from a dark recess. Flashing you a wicked grin, she continues, [shadow.speech(We's got a room near 'ere where ya can lay yer eggs in peace. Don't ya worry 'bout yer kids; I's gonna make sure they's shown safely up inta Dominion. Oh, an' the name's Shadow, by the way..)]
@@ -2750,9 +2750,9 @@
 	</p>
 	<p>
 		Thirty minutes of meditation later, and you feel as though you've channelled enough arcane power in order to be able to cast a single spell. Looking down at the heavily-corroded link, you cast a concentrated form of
-		#IF(pc.hasSpell(SPELL_FIREBALL))
+		#IF(pc.hasSpell(spell("FIREBALL")))
 			 'fireball'
-		#ELSEIF(pc.hasSpell(SPELL_ICE_SHARD))
+		#ELSEIF(pc.hasSpell(spell("ICE_SHARD")))
 			 'ice shard'
 		#ELSE
 			 'slam'
@@ -3189,7 +3189,7 @@
 	<p>
 		You're not able to get further than half-way towards the exit, however, before you suddenly find yourself almost jumping out of your [pc.skin] as a voice hisses out from a dark recess in the tunnel's wall, [shadow.speech('Ey! Stop there!)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSilenceIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSilenceIntroduced")))
 		<p>
 			Turning towards the voice and preparing yourself for a fight, you're surprised to see the rat-girls, Shadow and Silence, stepping forwards and holding up their hands to show that they mean no threat. Before you can ask them what they want, Shadow grins and sneers, [shadow.speech(So, you's escapin' from dat fat prick? Good on ya! Me an' Silence 'ere are just as fed up o' this fuckin' place as you are; we's gone an' snitched on Vengar to the Enforcers, 'o are meant ta be showin' up ta raid this place at any moment! If ya ain't wantin' ta be caught up in it an' arrested, then you's betta follow us!)]
 		</p>
@@ -3389,7 +3389,7 @@
 	<p>
 		You're not able to get further than half-way towards the exit before you suddenly find yourself almost jumping out of your [pc.skin] as a voice hisses out from a dark recess in the tunnel's wall, [shadow.speech('Ey! Stop there!)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSilenceIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSilenceIntroduced")))
 		<p>
 			Turning towards the voice and preparing yourself for a fight, you're surprised to see the rat-girls, Shadow and Silence, stepping forwards and holding up their hands to show that they mean no threat. Before you can ask them what they want, Shadow grins and sneers, [shadow.speech(So, you's escapin' from dat fat prick? Good on ya! Me an' Silence 'ere are just as fed up o' this fuckin' place as you are; we's gone an' snitched on Vengar to the Enforcers, 'o are meant ta be showin' up ta raid this place at any moment! If ya ain't wantin' ta be caught up in it an' arrested, then you's betta follow us!)]
 		</p>
@@ -3491,7 +3491,7 @@
 	<p style='text-align:center;'>
 		...
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSilenceIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSilenceIntroduced")))
 		<p>
 			Some time later in the night, you're suddenly awoken by a feminine hand being clasped over your mouth. Opening your eyes, you're surprised to see the rat-girls, Shadow and Silence, crouched down over you. Seeing the state that you're in, Shadow hisses, [shadow.speech(We's gettin' ya out o' 'ere! We's gone an' snitched on Vengar to the Enforcers, 'o are meant ta be showin' up ta raid this place at any moment! We's needin' somethin' as proof that there's illegal shit goin' on in 'ere, an' you's gonna be that proof!)]
 		</p>

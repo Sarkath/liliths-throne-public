@@ -199,7 +199,7 @@
 		[pc.speech(Ok, that seems simple enough,)] you say. [pc.speech(What if the volunteer doesn't get pregnant?)]
 	</p>
 	<p>
-		[epona.speech(Well, in that case, everyone loses their bets,)] Epona replies. [epona.speech(I give the volunteer a [#ITEM_innoxia_pills_fertility.getName(false)] before we start though, so that shouldn't happen!)]
+		[epona.speech(Well, in that case, everyone loses their bets,)] Epona replies. [epona.speech(I give the volunteer a [#item("innoxia_pills_fertility").getName(false)] before we start though, so that shouldn't happen!)]
 	</p>
 	<p>
 		[pc.speech(Alright, thanks for explaining it to me.)]
@@ -246,7 +246,7 @@
 		After only a few minutes, you look through the one-way mirror to see Epona entering the room once more. Trailing in her wake, you see six futas, all of them already stripped naked. Trotting alongside each one of these breeders is a rather excited-looking horse-girl. As this large group finishes entering the room, the horse-girls dutifully drop to their knees beside their partner, and, with a combination of licks and strokes, quickly get their chosen breeder's cock to full hardness.
 	</p>
 	<p>
-		While these horse-girls are getting the breeders warmed up, Epona opens the door beside you and steps forwards into the small room. [epona.speech(Heya! Look at all those cocks lined up just for you! So, which one do you think's gonna be the one to knock you up? Remember, after you've chosen, I'll roll dice to see in what order they get to use your pussy. Oh, and I almost forgot! You need to take a [#ITEM_innoxia_pills_fertility.getName(false)]!)]
+		While these horse-girls are getting the breeders warmed up, Epona opens the door beside you and steps forwards into the small room. [epona.speech(Heya! Look at all those cocks lined up just for you! So, which one do you think's gonna be the one to knock you up? Remember, after you've chosen, I'll roll dice to see in what order they get to use your pussy. Oh, and I almost forgot! You need to take a [#item("innoxia_pills_fertility").getName(false)]!)]
 	</p>
 	<p>
 		Epona hands you a little purple pill, which you quickly swallow. You then turn to look over the six futas before you, and after Epona's pointed out each one and told you her name, you decide upon the futa that you think will be the father of your kids...
@@ -290,7 +290,7 @@
 		After only a few minutes, you look through the one-way mirror to see Epona entering the room once more. Trailing in her wake, you see six guys, all of them already stripped naked. Trotting alongside each one of these breeders is a rather excited-looking horse-girl. As this large group finishes entering the room, the horse-girls dutifully drop to their knees beside their partner, and, with a combination of licks and strokes, quickly get their chosen breeder's cock to full hardness.
 	</p>
 	<p>
-		While these horse-girls are getting the breeders warmed up, Epona opens the door beside you and steps forwards into the small room. [epona.speech(Heya! Look at all those cocks lined up just for you! So, which one do you think's gonna be the one to knock you up? Remember, after you've chosen, I'll roll dice to see in what order they get to use your pussy. Oh, and I almost forgot! You need to take a [#ITEM_innoxia_pills_fertility.getName(false)]!)]
+		While these horse-girls are getting the breeders warmed up, Epona opens the door beside you and steps forwards into the small room. [epona.speech(Heya! Look at all those cocks lined up just for you! So, which one do you think's gonna be the one to knock you up? Remember, after you've chosen, I'll roll dice to see in what order they get to use your pussy. Oh, and I almost forgot! You need to take a [#item("innoxia_pills_fertility").getName(false)]!)]
 	</p>
 	<p>
 		Epona hands you a little purple pill, which you quickly swallow. You then turn to look over the six guys before you, and after Epona's pointed out each one and told you his name, you decide upon the guy that you think will be the father of your kids...
@@ -596,7 +596,7 @@
 	<!-- MURK -->
 	
 	<htmlContent tag="MURK_REPEAT"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_murkMaster))
+	#IF(game.getDialogueFlags().hasFlag(flag("murkMaster")))
 		<p>
 			Knowing that your Master will want to see you again, you ask Epona if she'll let you into the back room to see Murk. Unaware of the sort of relationship you and the rat-boy have, she smiles and asks, [epona.speech(Still trying to reform him, huh? Well, I think that you're wasting your time, but you're more than welcome to try...)]
 		</p>
@@ -648,14 +648,14 @@
 	<p>
 		Pushing open the door, you [pc.step] into the storage room and quickly scan your surroundings. The dimensions of the room are very small, and it's made even smaller by the fact that there are shelving units pushed back against all three sides of the walls in front of you. A single arcane-powered lightbulb hangs from the drab grey ceiling, which illuminates the form of the chubby [murk.race] who's slouched down on a pile of shabby old cushions in front of you.
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_murkMaster) || game.getDialogueFlags().hasFlag(FLAG_eponaMurkSubmitted))
-		#IF(game.getDialogueFlags().hasFlag(FLAG_eponaMurkSeen))
+	#IF(game.getDialogueFlags().hasFlag(flag("murkMaster")) || game.getDialogueFlags().hasFlag(flag("eponaMurkSubmitted")))
+		#IF(game.getDialogueFlags().hasFlag(flag("eponaMurkSeen")))
 			<p>
 				#IF(pc.isVisiblyPregnant())
 					#IF(!pc.isCharacterReactedToPregnancy(murk))
 						#IF(pc.getPregnantLitter().isFatherId(murk.getId()))
 							A wicked grin instantly crosses your Master's face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he looks down at your swollen belly and sneers, [murk.speech(I got ya knocked up, eh, slut? Heh! Shoulda known that all that stinkin' cum I stuffed inta yer womb would get ya pregnant! Anyway, get down an' give me fat cock a
-							#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+							#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 								 kiss,
 							#ELSE
 								 stroke,
@@ -663,7 +663,7 @@
 							 bitch!)]
 						#ELSE
 							A wicked grin instantly crosses your Master's face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he looks down at your swollen belly and sneers, [murk.speech(Someone's gone an' got ya knocked up, eh, slut? Heh! Anyway, get down an' give me fat cock a
-							#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+							#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 								 kiss,
 							#ELSE
 								 stroke,
@@ -673,7 +673,7 @@
 					#ELSE
 						#IF(pc.getPregnantLitter().isFatherId(murk.getId()))
 							A wicked grin instantly crosses your Master's face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he looks down at your still-swollen belly and sneers, [murk.speech(You's still carryin' our kids around? Hurry the fuck up an' get 'em birthed, so I can 'ave a go at breedin' yer ugly cunt again! Anyway, get down an' give me fat cock a
-							#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+							#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 								 kiss,
 							#ELSE
 								 stroke,
@@ -681,7 +681,7 @@
 							 bitch!)]
 						#ELSE
 							A wicked grin instantly crosses your Master's face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he looks down at your still-swollen belly and sneers, [murk.speech(You's still pregnant? Hurry the fuck up an' get 'em birthed, so I can 'ave a go at breedin' yer ugly cunt! Anyway, get down an' give me fat cock a
-							#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+							#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 								 kiss,
 							#ELSE
 								 stroke,
@@ -691,7 +691,7 @@
 					#ENDIF
 				#ELSE
 					A wicked grin instantly crosses your Master's face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he snaps his fingers and points down at his exposed groin, sneering,
-					#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+					#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 						 [murk.speech(Get down an' give me fat cock a kiss, slut!)]
 					#ELSE
 						 [murk.speech(Get down an' give me fat cock a stroke, slut!)]
@@ -699,7 +699,7 @@
 				#ENDIF
 			</p>
 			<p>
-				#IF(game.getDialogueFlags().hasFlag(FLAG_eponaMurkSubmitted))
+				#IF(game.getDialogueFlags().hasFlag(flag("eponaMurkSubmitted")))
 					You can't help but let out a hungry whine as you look down at the rat-boy's fat, sheathed cock, and you wonder whether you should do as he commands, or tell him that things have gone too far...
 				#ELSE
 					Your previous conditioning to obey your Master instantly takes over, and without thinking, you move forwards to obey...
@@ -713,7 +713,7 @@
 				Your previous conditioning to please your Master instantly takes over, and without thinking, you move forwards and ask, [pc.speech(What can I do for you, Master?)]
 			</p>
 			<p>
-				#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+				#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 					[murk.speech(Get down on yer knees an' give me stinkin' cock a nice big kiss!)] your Master commands, before reaching up to scratch his chubby belly and sneer, [murk.speech(I'll 'ave ya make love ta me cock an' then give ya a real 'ard poundin'!)]
 				#ELSE
 					[murk.speech(Get down on yer knees an' give me stinkin' cock sum attention!)] your Master commands, before reaching up to scratch his chubby belly and sneer, [murk.speech(I'll 'ave ya jerk me off an' spurt me cum all over ya face! Heh!)]
@@ -734,13 +734,13 @@
 		#ENDIF
 	#ELSE
 		#IF(!murk.isFeminine())
-			#IF(game.getDialogueFlags().hasFlag(FLAG_eponaMurkSeen))
+			#IF(game.getDialogueFlags().hasFlag(flag("eponaMurkSeen")))
 				<p>
 					#IF(pc.isVisiblyPregnant())
 						#IF(!pc.isCharacterReactedToPregnancy(murk))
 							#IF(pc.getPregnantLitter().isFatherId(murk.getId()))
 								A hungry grin instantly crosses [murk.namePos] face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he looks down at your swollen belly and sneers, [murk.speech(I got ya knocked up, eh, slut? Heh! Shoulda known that all that stinkin' cum I stuffed inta yer womb would get ya pregnant! Anyway, get down an' give me fat cock a
-								#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+								#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 									 kiss,
 								#ELSE
 									 stroke,
@@ -748,7 +748,7 @@
 								 bitch!)]
 							#ELSE
 								A hungry grin instantly crosses [murk.namePos] face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he looks down at your swollen belly and sneers, [murk.speech(Someone's gone an' got ya knocked up, eh, slut? Heh! Anyway, get down an' give me fat cock a
-								#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+								#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 									 kiss,
 								#ELSE
 									 stroke,
@@ -758,7 +758,7 @@
 						#ELSE
 							#IF(pc.getPregnantLitter().isFatherId(murk.getId()))
 								A hungry grin instantly crosses [murk.namePos] face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he looks down at your still-swollen belly and sneers, [murk.speech(You's still carryin' our kids around? Hurry the fuck up an' get 'em birthed, so I can 'ave a go at breedin' yer ugly cunt again! Anyway, get down an' give me fat cock a
-								#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+								#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 									 kiss,
 								#ELSE
 									 stroke,
@@ -766,7 +766,7 @@
 								 bitch!)]
 							#ELSE
 								A hungry grin instantly crosses [murk.namePos] face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he looks down at your still-swollen belly and sneers, [murk.speech(You's still pregnant? Hurry the fuck up an' get 'em birthed, so I can 'ave a go at breedin' yer ugly cunt! Anyway, get down an' give me fat cock a
-								#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+								#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 									 kiss,
 								#ELSE
 									 stroke,
@@ -776,7 +776,7 @@
 						#ENDIF
 					#ELSE
 						A hungry grin instantly crosses [murk.namePos] face as he sees that you've come to pay him a visit again, and after letting out a loud belch, he snaps his fingers and points down at his exposed groin, sneering,
-						#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 							 [murk.speech(Come an' give me fat cock a kiss, slut! I's knowin' ya wantin' it really!)]
 						#ELSE
 							 [murk.speech(Come an' give me fat cock a stroke, slut! I's knowin' ya wantin' it really!)]
@@ -788,16 +788,16 @@
 				</p>
 			#ELSE
 				<p>
-					#IF(game.getDialogueFlags().hasFlag(FLAG_murkCaptiveBlowjob))
+					#IF(game.getDialogueFlags().hasFlag(flag("murkCaptiveBlowjob")))
 						A wicked grin instantly crosses Murk's face as he sees that it's you who's come to pay him a visit, and after letting out a loud belch, he spreads his legs and presents you with his exposed groin, sneering,
-						#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 							 [murk.speech(I's 'appy ta see yer 'ere, slut! Me fat balls ain't been emptied since them Enforcer cunts nabbed me an' 'ad me locked up in 'ere! You's may 'ave escaped from yer milkin' stall, but yer 'ungery fer anotha taste o' me stinkin' cock, ain't ya?! Come on, get down an' give it a kiss, slut!)]
 						#ELSE
 							 [murk.speech(I's 'appy ta see yer 'ere, slut! Me fat balls ain't been emptied since them Enforcer cunts nabbed me an' 'ad me locked up in 'ere! You's may 'ave escaped from yer milkin' stall, but yer 'ungery fer anotha taste o' me stinkin' cum, ain't ya?! Come on, get down an' give it a stroke, slut!)]
 						#ENDIF
 					#ELSE
 						A look of surprise crosses Murk's face as he sees that someone other than Epona has come to pay him a visit, but after letting out a loud belch, he flashes you an arrogant smirk and spreads his legs to present you with his exposed groin. Looking down, you see that although Murk's cock is currently sheathed, it's quite clearly absolutely massive, and you can't help but imagine how disproportionately huge it must look to his relatively short stature when fully erect. Seeing what it is you're glancing at, the rat-boy spits on the floor and sneers,
-						#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 							 [murk.speech(I's can tell that ya wantin' a taste o' it! Come on, get down an' give me fat cock a kiss, slut!)]
 						#ELSE
 							 [murk.speech(I's can tell that ya wantin' a feel o' it! Come on, get down an' give me fat cock a stroke, slut!)]
@@ -854,7 +854,7 @@
 	<htmlContent tag="MURK_SEX_SUB_VAGINA"><![CDATA[
 	<p>
 		Finding yourself madly turned on at the thought of being dominated by this chubby rat-boy, you let out a horny whine and tell him that you want him to fuck you. Letting out a rumbling chuckle as he hears what it is you're saying, Murk teases,
-		#IF(game.getDialogueFlags().hasFlag(FLAG_murkCaptiveBlowjob))
+		#IF(game.getDialogueFlags().hasFlag(flag("murkCaptiveBlowjob")))
 			 [murk.speech(Wot? Ya can't stop thinkin' about 'ow good it were when I was fuckin' yer face an' trainin' ya ta be one o' me milkers? Heh-heh-heh! Go on then, slut, get down on yer knees and give me fat cock a big, lovin' kiss, an' I'll consider fuckin' ya!)]
 		#ELSE
 			 [murk.speech(Wot? Ya can't stop thinkin' about 'ow good it'd feel ta 'ave me fat cock stuffed deep inta yer cunt? Heh-heh-heh! Go on then, slut, get down on yer knees and give me fat dick a big, lovin' kiss, an' I'll consider fuckin' ya!)]
@@ -875,7 +875,7 @@
 	<htmlContent tag="MURK_SEX_SUB_ANUS"><![CDATA[
 	<p>
 		Finding yourself madly turned on at the thought of being dominated by this chubby rat-boy, you let out a horny whine and tell him that you want him to fuck you. Letting out a rumbling chuckle as he hears what it is you're saying, Murk teases,
-		#IF(game.getDialogueFlags().hasFlag(FLAG_murkCaptiveBlowjob))
+		#IF(game.getDialogueFlags().hasFlag(flag("murkCaptiveBlowjob")))
 			 [murk.speech(Wot? Ya can't stop thinkin' about 'ow good it were when I was fuckin' yer face an' trainin' ya ta be one o' me milkers? Heh-heh-heh! Go on then, slut, get down on yer knees and give me fat cock a big, lovin' kiss, an' I'll consider fuckin' ya!)]
 		#ELSE
 			 [murk.speech(Wot? Ya can't stop thinkin' about 'ow good it'd feel ta 'ave me fat cock stuffed deep inta yer ass? Heh-heh-heh! Go on then, slut, get down on yer knees and give me fat dick a big, lovin' kiss, an' I'll consider fuckin' ya!)]
@@ -896,7 +896,7 @@
 	<htmlContent tag="MURK_SEX_SUB_ORAL"><![CDATA[
 	<p>
 		Finding yourself madly turned on at the thought of being dominated by this chubby rat-boy, you let out a horny whine and tell him that you want him to fuck you. Letting out a rumbling chuckle as he hears what it is you're saying, Murk teases,
-		#IF(game.getDialogueFlags().hasFlag(FLAG_murkCaptiveBlowjob))
+		#IF(game.getDialogueFlags().hasFlag(flag("murkCaptiveBlowjob")))
 			 [murk.speech(Wot? Ya can't stop thinkin' about 'ow good it were when I was fuckin' yer face an' trainin' ya ta be one o' me milkers? Heh-heh-heh! Go on then, slut, get down on yer knees and give me fat cock a big, lovin' kiss, an' I'll consider fuckin' yer face!)]
 		#ELSE
 			 [murk.speech(Wot? Ya can't stop thinkin' about 'ow good it'd feel ta 'ave me fat cock stuffed deep down yer throat? Heh-heh-heh! Go on then, slut, get down on yer knees and give me fat dick a big, lovin' kiss, an' I'll consider fuckin' yer face!)]
@@ -917,7 +917,7 @@
 	<htmlContent tag="MURK_SEX_SUB_HANDJOB"><![CDATA[
 	<p>
 		Finding yourself madly turned on at the thought of being dominated by this chubby rat-boy, you let out a horny whine and tell him that you want him to fuck you. Letting out a rumbling chuckle as he hears what it is you're saying, Murk teases,
-		#IF(game.getDialogueFlags().hasFlag(FLAG_murkCaptiveBlowjob))
+		#IF(game.getDialogueFlags().hasFlag(flag("murkCaptiveBlowjob")))
 			 [murk.speech(Wot? Ya can't stop thinkin' about 'ow good it were when I was fuckin' yer face an' trainin' ya ta be one o' me milkers? Heh-heh-heh! Well, slut, seein' as yer 'oles ain't available fer me ta fuck, you's gonna 'ave ta settle fer jerkin' me off! Get down an' start strokin' me cock!)]
 		#ELSE
 			 [murk.speech(Wot? Ya can't stop thinkin' about 'ow good me fat cock would feel stuffed deep inta one o' yer 'oles? Heh-heh-heh! Well, seein' as yer 'oles ain't available fer me ta fuck, you's gonna 'ave ta settle fer jerkin' me off! Get down an' start strokin' me cock!)]
@@ -1015,7 +1015,7 @@
 	<p>
 		Sinking down onto the floor and panting form exertion, you do as the chubby [murk.race] says and sigh, [pc.speech(Yes, Master... I love your big, fat cock...)]
 	</p>
-	#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+	#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 		<p>
 			Chuckling in delight at your display of submission, your Master steps up in front of you and pushes his musky cock into your face. Grabbing the back of your head and pulling your mouth down into his groin, he grunts, [murk.speech(That's me good slut! Now give me fat cock a big kiss, then fuck off an' leave me alone; I's wantin' ta get some rest before that horse bitch makes me do some work.)]
 		</p>
@@ -1075,19 +1075,19 @@
 	
 	<htmlContent tag="MURK_SUBMIT_ACCEPT"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_murkMaster) || game.getDialogueFlags().hasFlag(FLAG_eponaMurkSubmitted))
+		#IF(game.getDialogueFlags().hasFlag(flag("murkMaster")) || game.getDialogueFlags().hasFlag(flag("eponaMurkSubmitted")))
 			Unable to resist your Master's demand, you obediently drop down onto your knees before him and shuffle forwards towards his groin. Letting out a deep grunt as he sees that you're obeying him, the chubby rat-boy sneers,
 		#ELSE
 			Unable to resist Murk's demand, you obediently drop down onto your knees before him and shuffle forwards towards his groin. Letting out a surprised grunt as he sees that you're actually doing what he says, the chubby rat-boy sneers,
 		#ENDIF
-		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 			 [murk.speech(Come on, slut, give me fat cock a nice big kiss! Heh-heh-heh!)]
 		#ELSE
 			 [murk.speech(Come on, slut, give me fat cock sum attention! Heh-heh-heh!)]
 		#ENDIF
 	</p>
 	<p>
-		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
 			Doing as you're told, you lean forwards and plant a big, wet kiss on Murk's sheathed cock. The musky smell of his groin overwhelmes your senses as his fat shaft quickly rises into a full erection, and you can't help but let out a hungry whine as you eagerly lap up the salty precum which starts to ooze from the tip.
 		#ELSE
 			Doing as you're told, you lean forwards and start to lovingly stroke Murk's sheathed cock. The musky smell of his groin overwhelmes your senses as his fat shaft quickly rises into a full erection, and you can't help but let out a hungry whine as you eagerly smear his salty precum over your [pc.fingers+].

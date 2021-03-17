@@ -66,8 +66,8 @@
 		 PLEASE USE THE 'Colour' VALUES THAT START WITH 'CLOTHING-'-->
 		<!--
 		<tertiaryColours>
-			<colour>CLOTHING_PINK</colour>
-			<colour>CLOTHING_PINK_LIGHT</colour>
+			<colour>clothing("PINK")</colour>
+			<colour>clothing("PINK_LIGHT")</colour>
 		</tertiaryColours>
 		-->
 		

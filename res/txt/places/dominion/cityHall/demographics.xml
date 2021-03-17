@@ -39,7 +39,7 @@
 	<p>
 		Turning your attention back to the desk, you see that there's a brass nameplate sitting atop its surface, which mirrors the second line of the sign outside, reading: '<i>Manager: Ms. [vanessa.nameFull(true)]</i>'. Beside this nameplate, there's a silver call bell, along with a sign instructing visitors to ring the bell if she isn't present. It also says that only one person can be seen at a time, and to please only use the bell if you are alone.
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("vanessaIntroduced")))
 		<p>
 			[vanessa.Name] must be cataloguing records in the archive, so if you wanted to get her attention, you could do as the sign says and ring the bell, or simply turn around and leave.
 		</p>
@@ -57,22 +57,22 @@
 			As the sign asks for visitors to be alone, you tell [npc.name] to wait outside. Doing as you say, [npc.she] steps out into the corridor, closing the door behind [npc.herHim].
 		</p>
 	#ENDIF
-	#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaFucked))
+	#IF(game.getDialogueFlags().hasFlag(flag("vanessaFucked")))
 		<p>
 			Stepping up to the desk, you ring the bell, and after about ten seconds or so, the familiar figure of [vanessa.name] appears from behind one of the archive's shelves. In contrast to the first time you met her, you notice that there's a jovial spring to her step, and her bright blue eyes light up in delight as she sees that it's you who's come to visit her. [vanessa.speech([pc.Name]! It's wonderful to see you again!)]
 		</p>
 		<p>
-			#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaDailyMassage))
+			#IF(game.getDialogueFlags().hasFlag(flag("vanessaDailyMassage")))
 				After the intimate affair the two of you had in this very office, you've obviously left quite a lasting impression upon the elderly fox-girl, and instead of striding over and collapsing down into her chair, she rushes up to stand close in front of you, before smiling happily at you and exclaiming, [vanessa.speech(Thanks for that massage you gave me earlier! My feet feel so much better now!)]
 			#ELSE
 				After the intimate affair the two of you had in this very office, you've obviously left quite a lasting impression upon the elderly fox-girl, and instead of striding over and collapsing down into her chair, she rushes up to stand close in front of you, before seductively biting her lip and teasing, [vanessa.speech(You know, I'm still having to be up and about on my feet all day... I couldn't persuade you to give me another of those special massages of yours, could I?)]
 			#ENDIF
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vanessaIntroduced))
+	#ELSEIF(game.getDialogueFlags().hasFlag(flag("vanessaIntroduced")))
 		<p>
-			#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaDailyMassage))
+			#IF(game.getDialogueFlags().hasFlag(flag("vanessaDailyMassage")))
 				Stepping up to the desk, you ring the bell, and after about thirty seconds or so, the familiar figure of [vanessa.name] appears from behind one of the archive's shelves. Walking confidently over to her desk, she smiles happily at you as she sits down, before peering at you over the top of her half-moon glasses and saying, [vanessa.speech(Hello again, [pc.name]. Thank you again for that massage you gave me earlier; my feet are feeling so much better! Now, what can I do for you this time?)]
-			#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vanessaMassaged))
+			#ELSEIF(game.getDialogueFlags().hasFlag(flag("vanessaMassaged")))
 				Stepping up to the desk, you ring the bell, and after about thirty seconds or so, the familiar figure of [vanessa.name] appears from behind one of the archive's shelves. Walking confidently over to her desk, she smiles happily at you as she sits down, before peering at you over the top of her half-moon glasses and saying, [vanessa.speech(Hello again, [pc.name]. Thank you again for that massage you gave me the other day; my feet are feeling so much better! Now, what can I do for you this time?)]
 			#ELSE
 				Stepping up to the desk, you ring the bell, and after about thirty seconds or so, the familiar figure of [vanessa.name] appears from behind one of the archive's shelves. Walking confidently over to her desk, she collapses down into her chair with a sigh, before peering at you over the top of her half-moon glasses and asking, [vanessa.speech(Hello again, what can I do for you this time?)]
@@ -107,12 +107,12 @@
 		[pc.speech(What are you cataloguing? And what's this huge archive used for?)] you ask, curious to hear what it is that [vanessa.name] gets up to in here.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaFucked))
+		#IF(game.getDialogueFlags().hasFlag(flag("vanessaFucked")))
 			Letting out a mildly frustrated huff as she hears that you're not offering her a massage, [vanessa.name] nevertheless replies,
 		#ELSE
 			Letting out a mildly frustrated huff as she hears that you're not getting straight down to business, [vanessa.name] nevertheless replies,
 		#ENDIF
-		#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaAskedAboutCatalogue))
+		#IF(game.getDialogueFlags().hasFlag(flag("vanessaAskedAboutCatalogue")))
 			 [vanessa.speech(Well, as I've already told you once before, everybody has a unique signature to their arcane aura, much in the same way that everyone has a unique fingerprint. One of the larger rooms in the upper floor of this building houses an arcane device which can identify any unique arcane signature within all of the realm of Dominion. As soon as a new signature is detected, the relevant technical information is written down and sent to this department in order to be catalogued for future reference.)]
 		#ELSE
 			 [vanessa.speech(Well, as you may or may not know, everybody has a unique signature to their arcane aura, much in the same way that everyone has a unique fingerprint. One of the larger rooms in the upper floor of this building houses an arcane device which can identify any unique arcane signature within all of the realm of Dominion. As soon as a new signature is detected, the relevant technical information is written down and sent to this department in order to be catalogued for future reference.)]
@@ -135,12 +135,12 @@
 		[pc.speech(Why are you the only one working here?)] you ask, wondering why such a huge department only has a single employee assigned to its management.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaFucked))
+		#IF(game.getDialogueFlags().hasFlag(flag("vanessaFucked")))
 			Pouting at you as she hears that you're not offering her a massage, [vanessa.name] nevertheless replies,
 		#ELSE
 			Impatiently tapping her fingers on her desk as she hears that you're not getting straight down to business, [vanessa.name] nevertheless replies,
 		#ENDIF
-		#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaAskedAboutSolitary))
+		#IF(game.getDialogueFlags().hasFlag(flag("vanessaAskedAboutSolitary")))
 			 [vanessa.speech(I already told you this... There's very little demand for name changes or offspring tracking maps, so this department is considered to only need enough staff to cover cataloguing work. As a result, the higher-ups have determined that it only takes one person to do everything in here. I do manage to get all of my work done on time, so I suppose they're right, but it does get a little lonely...)]
 		#ELSE
 			 [vanessa.speech(Well, there's very little demand for name changes or offspring tracking maps, so this department is considered to only need enough staff to cover cataloguing work. As a result, the higher-ups have determined that it only takes one person to do everything in here. I <i>do</i> manage to get all of my work done on time, so I suppose that they're right, but it does get a little lonely...)]
@@ -156,7 +156,7 @@
 	<!-- OFFER_HELP -->
 	
 	<htmlContent tag="OFFER_HELP"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaFucked))
+	#IF(game.getDialogueFlags().hasFlag(flag("vanessaFucked")))
 		<p>
 			Looking across to the archive's shelves, you see quite a large number of boxes piled up that are marked 'For sorting', and you realise that [vanessa.name] is once again struggling to keep on top of her work. Although she appears to have a lot more energy and enthusiasm since the two of you had sex, you imagine that the elderly fox-girl would still appreciate an offer of help. Smiling fondly at her, you ask, [pc.speech(Would you like some help with your cataloguing work again? I have some time to spare.)]
 		</p>
@@ -219,7 +219,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFER_HELP_FINISH"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaFucked))
+	#IF(game.getDialogueFlags().hasFlag(flag("vanessaFucked")))
 		<p>
 			The two of you spend the next couple of hours cataloguing papers, making small talk, and flirting with one another. [vanessa.NamePos] department is just as quiet as the last time you were here, and for the whole period during which the two of you are working, you're only interrupted by the ring of the front desk's bell once.
 		</p>
@@ -253,14 +253,14 @@
 	<!-- MASSAGE -->
 	
 	<htmlContent tag="FOOT_MASSAGE"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaFucked))
+	#IF(game.getDialogueFlags().hasFlag(flag("vanessaFucked")))
 		<p>
 			[pc.speech(I'd love to give you another massage,)] you say, dropping to your knees in front of the horny fox-girl.
 		</p>
 		<p>
 			[vanessa.speech(Oh, yes, good [pc.girl],)] [vanessa.name] replies, smiling coyly as she swivels her chair to face you. Lifting her feet, she allows you to slip off her flats, and in just a moment, you find yourself presented with her pantyhose-covered feet once again. Wiggling her toes at you, she bites her lip and teases, [vanessa.speech(Go on then, let's get started.)]
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vanessaMassaged))
+	#ELSEIF(game.getDialogueFlags().hasFlag(flag("vanessaMassaged")))
 		<p>
 			[pc.speech(Perhaps I can help get rid of the aches in your feet again?)] you ask.
 		</p>
@@ -325,7 +325,7 @@
 			Encouraged by this, and now certain that you're doing a good job, you move on to [vanessa.namePos] left foot, and repeat the same rubbing, kneading motion on that one. With [vanessa.namePos] sighs and heavy breathing filling the room, you continue massaging her feet, moving from one to the other until eventually both of them have had far more attention than you originally intended to give.
 		</p>
 	#ENDIF
-	#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaFucked))
+	#IF(game.getDialogueFlags().hasFlag(flag("vanessaFucked")))
 		<p>
 			Sensing that your massage is coming to an end, [vanessa.name] lets out a protesting whine, before opening her eyes and panting down at you, [vanessa.speech(Please, [pc.name], do it like you did before! Come on, pull my pantyhose off already!)] 
 		</p>
@@ -373,7 +373,7 @@
 	<p>
 		As she continues to pant and sigh above you, you take note of the fact that the skin of [vanessa.namePos] feet starts to get hard at the lower sides, and is very tough and thick around the heels and balls of her feet. From the nature of her job, having to pace up and down the aisles of the archive all day, you aren't surprised to find that the soles of her feet are tough, but in contrast to this, you are somewhat taken aback by how soft the rest of her feet are. As you work your touch up and over the tops of them, you can't help but remark to yourself how silky-smooth her skin is.
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_vanessaFucked))
+	#IF(game.getDialogueFlags().hasFlag(flag("vanessaFucked")))
 		<p>
 			Just as you start wondering what secret [vanessa.name] has to having such healthy skin, she moans down from above, [vanessa.speech(Mmm, you know, this takes me back again... Back to that time I told you about before, when I was a very special friend to a beautiful bee-girl...)]
 		</p>
@@ -431,7 +431,7 @@
 		Having had enough of being eaten out, [vanessa.name] releases her grip on the back of your head, before gently pushing you back and teasing, [vanessa.speech(I know you just orgasmed, but you're not done yet, are you?)]
 	</p>
 	#IF(!pc.isTaur())
-		#IF(pc.hasPenis() && (pc.isAbleToAccessCoverableArea(CA_PENIS, true) || !pc.hasVagina()))
+		#IF(pc.hasPenis() && (pc.isAbleToAccessCoverableArea(ca("PENIS"), true) || !pc.hasVagina()))
 			<p>
 				Before you can ask what she has in mind, the elderly fox-girl stands up and steps over to her desk, before sitting on top of it and spreading her legs for you. [vanessa.speech(Come on, give my little pussy a good, hard fuck! You can blow your load inside me all you want; I'm not going to get pregnant at my age...)]
 			</p>
@@ -445,7 +445,7 @@
 			</p>
 		#ENDIF
 	#ELSE
-		#IF(pc.hasPenis() && (pc.isAbleToAccessCoverableArea(CA_PENIS, true) || !pc.hasVagina()))
+		#IF(pc.hasPenis() && (pc.isAbleToAccessCoverableArea(ca("PENIS"), true) || !pc.hasVagina()))
 			<p>
 				Before you can ask what she has in mind, the elderly fox-girl stands up and steps over to one side, before dropping down onto all fours and presenting herself to you. [vanessa.speech(Come on, mount me and give my little pussy a good, hard fuck! You can blow your load inside me all you want; I'm not going to get pregnant at my age...)]
 			</p>
@@ -467,7 +467,7 @@
 		Having had enough of being eaten out, [vanessa.name] releases her grip on the back of your head, before gently pushing you back and teasing, [vanessa.speech(Now that I've had my fun, it's only fair that I return the favour...)]
 	</p>
 	#IF(!pc.isTaur())
-		#IF(pc.hasPenis() && (pc.isAbleToAccessCoverableArea(CA_PENIS, true) || !pc.hasVagina()))
+		#IF(pc.hasPenis() && (pc.isAbleToAccessCoverableArea(ca("PENIS"), true) || !pc.hasVagina()))
 			<p>
 				Before you can ask what she has in mind, the elderly fox-girl stands up and steps over to her desk, before sitting on top of it and spreading her legs at you. [vanessa.speech(Come on then, give my wet little pussy a good, hard fuck! You can blow your load inside me all you want; I'm not going to get pregnant at my age...)]
 			</p>
@@ -481,7 +481,7 @@
 			</p>
 		#ENDIF
 	#ELSE
-		#IF(pc.hasPenis() && (pc.isAbleToAccessCoverableArea(CA_PENIS, true) || !pc.hasVagina()))
+		#IF(pc.hasPenis() && (pc.isAbleToAccessCoverableArea(ca("PENIS"), true) || !pc.hasVagina()))
 			<p>
 				Before you can ask what she has in mind, the elderly fox-girl stands up and steps over to one side, before dropping down onto all fours and presenting herself to you. [vanessa.speech(Come on, mount me and give my little pussy a good, hard fuck! You can blow your load inside me all you want; I'm not going to get pregnant at my age...)]
 			</p>

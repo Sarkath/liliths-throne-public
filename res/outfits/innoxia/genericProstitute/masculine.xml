@@ -26,7 +26,7 @@
 	
 	<generationAttributes>
 		<clothingConditional1 constant="true"><![CDATA[npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL && npc.getFootStructure()==FOOT_STRUCTURE_PLANTIGRADE]]></clothingConditional1> <!-- is bipedal -->
-		<clothingConditional2 constant="true"><![CDATA[npc.hasFetish(FETISH_EXHIBITIONIST)]]></clothingConditional2> <!-- Exhibitionist -->
+		<clothingConditional2 constant="true"><![CDATA[npc.hasFetish(fetish("FETISH_EXHIBITIONIST"))]]></clothingConditional2> <!-- Exhibitionist -->
 		
 		<presetColourGroup1 values="ALL_METAL"/>
 		

@@ -645,7 +645,7 @@
 	
 	<htmlContent tag="LAB_ENDING_NOTHING"><![CDATA[
 	<p>
-		#IF pc.getHistory()==OCCUPATION_UNEMPLOYED
+		#IF pc.getHistory()==occupation("UNEMPLOYED")
 		#THEN
 			[pc.speech(It's been nothing but hard work ever since that night at the museum,)] you complain, [pc.speech(I just want to go back to being a NEET, and leave the world-saving to someone else.)]
 		#ELSE
@@ -712,7 +712,7 @@
 		[lilaya.speech(And how exactly will you do that?)] Lilaya angrily asks, [lilaya.speech(By fucking [pc.herHim], I suppose?!)]
 	</p>
 	<p>
-		#IF pc.getRace()==RACE_HUMAN
+		#IF pc.getRace()==race("HUMAN")
 		#THEN
 			[lyssieth.speech(Erm, well, you know, what with the nature of the arcane being as it is, yes, I'll need to orgasm in order to fuse my essence into [pc.namePos] aura,)] Lyssieth says in a rather unconvincing manner, and you can't help but wonder if she's lying just to try and get you to have sex with her.
 		#ELSE
@@ -746,7 +746,7 @@
 	</p>
 	<p>
 		[lyssieth.speech(Mmm, that's right. It won't turn you into a demon or anything like that, it's just going to strengthen your aura,)] Lyssieth says, her arms still wrapped around you,
-		#IF pc.getRace()==RACE_HUMAN
+		#IF pc.getRace()==race("HUMAN")
 		#THEN
 			 [lyssieth.speech(You need to get me to orgasm for it to work... Mmm... Yes... You humans are so sexy... Do you want to use my pussy, or would you like me to grow a nice big cock and fuck you?
 			#IF pc.getSexCount(lilaya)>0
@@ -818,7 +818,7 @@
 		[pc.speech(I want your pussy,)] you say, not too fond of the idea of having Lyssieth grow a cock.
 	</p>
 	<p>
-		#IF pc.hasPenisIgnoreDildo() && pc.getRace()==RACE_HUMAN
+		#IF pc.hasPenisIgnoreDildo() && pc.getRace()==race("HUMAN")
 		#THEN [lyssieth.speech(Mmm, just make sure to cum inside, dear,)] Lyssieth giggles, pulling you with her as she steps back over to her desk. [lyssieth.speech(My womb's made for human seed, and I can't wait for you to give me a nice big creampie!)]
 		#ELSE [lyssieth.speech(Mmm, yeah, I prefer using my pussy as well,)] Lyssieth giggles, pulling you with her as she steps back over to her desk. [lyssieth.speech(Now, come on, fuck me!)]
 		#ENDIF
@@ -834,7 +834,7 @@
 		[pc.speech(I want your cock,)] you say, preferring to be on the receiving end.
 	</p>
 	<p>
-		#IF pc.hasVagina() && pc.getRace()==RACE_HUMAN
+		#IF pc.hasVagina() && pc.getRace()==race("HUMAN")
 		#THEN [lyssieth.speech(Mmm, in which case, I must warn you that I prefer finishing inside, dear,)] Lyssieth giggles, pulling you with her as she steps back over to her desk. [lyssieth.speech(My seed is made for human wombs, and I can't wait to give you a nice big creampie!)]
 		#ELSE [lyssieth.speech(Mmm, in which case, I must warn you that I prefer finishing inside, dear,)] Lyssieth giggles, pulling you with her as she steps back over to her desk. [lyssieth.speech(I just love the look of a nice big creampie!)]
 		#ENDIF

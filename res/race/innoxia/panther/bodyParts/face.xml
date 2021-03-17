@@ -35,7 +35,7 @@
 	
 	<transformationDescription><![CDATA[
 		[npc.Her] nose and mouth twitch and transform as they push out into an anthropomorphic panther-like muzzle, and [npc.her] tongue flattens and grows wider, turning into a similarly animalistic one.
-		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+		#IF(npc.getBodyMaterial()==bodyMaterial("FLESH"))
 			 A layer of [npc.faceSkin+] quickly grows to cover [npc.her] new face, 
 		#ELSE
 			 Just like the rest of [npc.her] body, [npc.her] new face is [npc.materialDescriptor] [npc.faceSkin+], 

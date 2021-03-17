@@ -18,14 +18,14 @@
 		
 		<acceptableLegConfigurations/>
 		
-		<conditional><![CDATA[npc.hasFetish(FETISH_EXHIBITIONIST) || npc.getAttributeValue(ATTRIBUTE_MAJOR_CORRUPTION)>25]]></conditional>
+		<conditional><![CDATA[npc.hasFetish(fetish("FETISH_EXHIBITIONIST")) || npc.getAttributeValue(ATTRIBUTE_MAJOR_CORRUPTION)>25]]></conditional>
 		
 		<weight>100</weight>
 	</coreAttributes>
 	
 	<generationAttributes>
 		<clothingConditional1 constant="true"><![CDATA[npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL && npc.getFootStructure()==FOOT_STRUCTURE_PLANTIGRADE]]></clothingConditional1> <!-- is bipedal -->
-		<clothingConditional2 constant="true"><![CDATA[npc.hasFetish(FETISH_EXHIBITIONIST)]]></clothingConditional2> <!-- exhibitionist -->
+		<clothingConditional2 constant="true"><![CDATA[npc.hasFetish(fetish("FETISH_EXHIBITIONIST"))]]></clothingConditional2> <!-- exhibitionist -->
 		<clothingConditional3 constant="true"><![CDATA[RND.nextInt(100)<=75]]></clothingConditional3> <!-- skirts -->
 		<clothingConditional4 constant="true"><![CDATA[npc.isArmWings()]]></clothingConditional4> <!-- arm-wings -->
 		
@@ -239,7 +239,7 @@
 		</clothingType>
 		
 		<clothingType> <!-- Chastity. -->
-			<conditional><![CDATA[npc.hasPenisIgnoreDildo() && npc.hasFetish(FETISH_DENIAL_SELF)]]></conditional>
+			<conditional><![CDATA[npc.hasPenisIgnoreDildo() && npc.hasFetish(fetish("FETISH_DENIAL_SELF"))]]></conditional>
 			<types>
 				<type>innoxia_bdsm_chastity_cage</type>
 				<type>innoxia_bdsm_ornate_chastity_cage</type>

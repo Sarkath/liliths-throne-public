@@ -58,7 +58,7 @@
 						<tag>CONTRABAND_MEDIUM</tag>
 					</itemTagsRemoved> 
 					<unavailabilityText showDisabledButton="true"><![CDATA[
-						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+						#IF(!pc.hasOccupationTag(occupationTag("ENFORCER_PATROL")))
 							Only Patrol Enforcers can use this cap badge!
 						#ENDIF
 					]]></unavailabilityText> 
@@ -79,7 +79,7 @@
 						<tag>CONTRABAND_MEDIUM</tag>
 					</itemTagsRemoved>
 					<unavailabilityText showDisabledButton="true"><![CDATA[
-						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+						#IF(!pc.hasOccupationTag(occupationTag("ENFORCER_PATROL")))
 							Only Patrol Enforcers can use this cap badge!
 						#ENDIF
 					]]></unavailabilityText>
@@ -100,7 +100,7 @@
 						<tag>CONTRABAND_MEDIUM</tag>
 					</itemTagsRemoved>
 					<unavailabilityText showDisabledButton="true"><![CDATA[
-						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+						#IF(!pc.hasOccupationTag(occupationTag("ENFORCER_PATROL")))
 							Only Patrol Enforcers can use this cap badge!
 						#ENDIF
 					]]></unavailabilityText>
@@ -121,7 +121,7 @@
 						<tag>CONTRABAND_MEDIUM</tag>
 					</itemTagsRemoved>
 					<unavailabilityText showDisabledButton="true"><![CDATA[
-						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+						#IF(!pc.hasOccupationTag(occupationTag("ENFORCER_PATROL")))
 							Only Patrol Enforcers can use this cap badge!
 						#ENDIF
 					]]></unavailabilityText>
@@ -142,7 +142,7 @@
 						<tag>CONTRABAND_MEDIUM</tag>
 					</itemTagsRemoved>
 					<unavailabilityText showDisabledButton="true"><![CDATA[
-						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+						#IF(!pc.hasOccupationTag(occupationTag("ENFORCER_PATROL")))
 							Only Patrol Enforcers can use this cap badge!
 						#ENDIF
 					]]></unavailabilityText>

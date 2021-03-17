@@ -30,12 +30,12 @@
 		<enchantmentEffectId>RACE</enchantmentEffectId>
 		
 		<effectTooltipLines>
-			<line><![CDATA[[style.boldGood(Restores)] 15% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
-			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)] to 'potion effects']]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 15% [style.boldHealth([#attribute("HEALTH_MAXIMUM").getName()])]]]></line>
+			<line><![CDATA[[#attribute("MAJOR_PHYSIQUE").getFormattedValue(1)] to 'potion effects']]></line>
 		</effectTooltipLines>
 		
 		<applyEffects><![CDATA[
-			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/15)]
+			[##npc.incrementHealth(npc.getAttributeValue(attribute("HEALTH_MAXIMUM"))/15)]
 			
 			<p style='margin-bottom:0; padding-bottom:0;'>
 				[npc.Name] [npc.verb(start)] to feel stronger...

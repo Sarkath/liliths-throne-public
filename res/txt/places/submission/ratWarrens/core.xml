@@ -949,7 +949,7 @@
 	<p>
 		Hurrying to do as they're told, all of the other rats run off into the tunnels to tell the rest of the gang that you've been dealt with, while the leader who remains roughly grabs hold you and starts dragging you off in a different direction. Letting out wicked laugh, [npc.name] sneers, [npc.speech(You's gonna love havin' Murk as yer master! I's seen it 'appen a couple o' times now; he's gonna transform ya into an 'orny milkin' bitch, an' get yer broken in an' worshippin' 'is cock! Then once yer nothin' but 'is obedient slut, he'll start rentin' yer out, so all o' us in the gang can come an' 'ave a go fuckin' ya!)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("murkIntroduced")))
 		<p>
 			The [npc.race]'s mocking laughter and cruel taunts echo off of the rough walls of the twisting passageway as [npc.she] continues dragging you towards your fate at the hands of Murk. Knowing all too well the sort of vile character he is, you know that what your captor is saying is true, but you aren't given too long to think about your future, as [npc.she] suddenly comes to a stop and throws you down to the hard ground.
 		</p>
@@ -1035,7 +1035,7 @@
 	<p>
 		Grabbing hold of you one last time, [npc.name] drags you over to the old wooden door that's set into the nearby wall. Stepping in front of you, Murk twists the handle and pushes open the door, before leading the two of you through into the room beyond.
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSeenMilkers")))
 		<p>
 			Once again finding yourself in the small, well-lit grotto which serves as Murk's milking room, you're greeted by the familiar sight of the row of metal-framed milking stalls running parallel to the far wall. After dragging you through the cold, shallow stream which cuts across the cave's floor, [npc.name] stops and waits for Murk's instructions, which allows you to take a good look at the six sturdy, metal frames which are bolted into the ground in front of you.
 		</p>
@@ -1063,7 +1063,7 @@
 		As you look over the human milkers arrayed before you, you see that each of their puffy, milk-dripping nipples are encased in the pressurised cups of their milking machine's breast pumps, while a vibrating pussy-pump is similarly working away at their quivering cunts.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSeenMilkers")))
 			[murk.speechNoEffects(I's bettin' ya never thought yer were gonna end up bein' in the milker's position, did ya?)]
 		#ELSE
 			[murk.speechNoEffects(Ya like the look o' yer new home?)]
@@ -1210,7 +1210,7 @@
 	<p>
 		The entrance to the Rat Warrens is secured by two sets of sturdy wooden doors, separated by a small inner chamber. The opening and closing of both sets of these doors is handled by means of two crude levers, located near to where you're currently standing. Small hatches are located on either side of the inner pair of doors, allowing any guards stationed here to shoot into the inner chamber.  
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensClearedCentre))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensClearedCentre")))
 		<p>
 			Having already beaten the rats guarding the entrance, there are no gang members present in this area right now. What's more, the levers which control the door's operation seem to be broken, trapping
 			#IF(pc.hasCompanions())
@@ -1222,13 +1222,13 @@
 	#ELSE
 		<p>
 			#IF(pc.hasCompanions())
-				#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensEntryWhore))
+				#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensEntryWhore")))
 					Having been told that you and [npc.name] are whores, the two rats give you lustful looks as you enter the area. Hungrily licking [npc2.her] lips, [npc2.name] asks, [npc2.speech(Surely ya ain't gonna leave without 'avin' a quick fuck with the two o' us, are ya?)]
 				#ELSE
 					The two rats on guard duty eye you and [npc.name] suspiciously as you enter the area. Spitting on the ground, [npc2.name] asks, [npc2.speech(You's wantin' ta leave? Or ya just 'angin' around 'ere fer the fun o' it?)]
 				#ENDIF
 			#ELSE
-				#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensEntryWhore))
+				#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensEntryWhore")))
 					Having been told that you're a whore, the two rats give you lustful looks as you enter the area. Hungrily licking [npc2.her] lips, [npc2.name] asks, [npc2.speech(Surely ya ain't gonna leave without 'avin' a quick fuck with the two o' us, are ya?)]
 				#ELSE
 					The two rats on guard duty eye you suspiciously as you enter the area. Spitting on the ground, [npc.name] asks, [npc.speech(You's wantin' ta leave? Or ya just 'angin' around 'ere fer the fun o' it?)]
@@ -1388,7 +1388,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="DICE_DEN_ENTRY"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensHostile))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensHostile")))
 		<p>
 			Having already cleared the gang members out of this area, the entire place is completely deserted...
 		</p>
@@ -1757,7 +1757,7 @@
 	
 	<!-- MILKING_STORAGE -->
 	
-	<htmlContent tag="MILKING_STORAGE_QUEST_COMPLETE"><![CDATA[
+	<htmlContent tag="MILKING_STORAGE_quest("COMPLETE")"><![CDATA[
 	<p>
 		A twisting, narrow passageway branches off from a particularly damp and dingy section of the Rat Warren's tunnels, and after spending a minute travelling down this path, you eventually find yourself [pc.stepping] out into a large, naturally-formed cavern. While the rough walls and stalactite-covered ceiling have been left undisturbed, the floor has been artificially flattened, and a series of free-standing torches have been haphazardly scattered around the area so as to cast the entire cave in a decent amount of flickering, pale-orange light.
 	</p>
@@ -1765,7 +1765,7 @@
 		Taking a closer look at your surroundings, you see that the most striking feature of this area is the dozens of metal milk-pails stacked up on shelving units against the cave's far wall. In front of these shelving units, there's a curious collection of old, tatty-looking furniture arrayed next to a battered wooden door. While the stacks of rotting tables and broken chairs look as though they haven't seen use for many years, there are several crates and cabinets which appear to have been kept in relatively good condition. The most striking feature of this furniture dump is a faded red sofa, which, like the rest of the room, is absent of any sign of life.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("murkIntroduced")))
 			As Murk has been taken away as part of the deal Vengar struck with the Enforcers, there's nobody here to stop you from opening the old wooden door and heading through into the room beyond...
 		#ELSE
 			As there's nobody in this area, there's nothing stopping you from opening the old wooden door and heading through into the room beyond...
@@ -1788,7 +1788,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="MILKING_STORAGE"><![CDATA[
-	#IF(!game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+	#IF(!game.getDialogueFlags().hasFlag(flag("murkIntroduced")))
 		<p>
 			A twisting, narrow passageway branches off from a particularly damp and dingy section of the Rat Warren's tunnels, and after spending a minute travelling down this path, you eventually find yourself [pc.stepping] out into a large, naturally-formed cavern. While the rough walls and stalactite-covered ceiling have been left undisturbed, the floor has been artificially flattened, and a series of free-standing torches have been haphazardly scattered around the area so as to cast the entire cave in a decent amount of flickering, pale-orange light. Attached to one of these torches is a poorly-spelled sign, which reads:
 		</p>
@@ -1901,7 +1901,7 @@
 					#ENDIF)]
 				#ELSE
 					Before you can say anything, the rat-boy calls out, 
-					#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+					#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSeenMilkers")))
 						 [murk.speechNoEffects(It's gonna be five 'undred flames if ya want ta see me milkers again. Just as before, you's got ta pay up before ya gets ta see 'em. I's let ya choose which one ya want ta fuck, but there ain't no refunds if ya don't like any o' 'em. So, ya gonna pay up, or ya gonna go back the way ya came?)]
 					#ELSE
 						 [murk.speechNoEffects(It's still gonna be five 'undred flames ta fuck one o' me milkers. They's through that door behind me, an' you's got ta pay up before ya gets ta see 'em. I's let ya choose which one ya want ta fuck, but there ain't no refunds if ya don't like any o' 'em. So, ya gonna pay up, or ya gonna go back the way ya came?)]
@@ -1961,7 +1961,7 @@
 	
 	<htmlContent tag="MILKING_ROOM"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSeenMilkers")))
 			Wanting to gain access to the milking room again, you tell Murk that you'd like to have some fun with his milkers. The rat-boy's face turns up into a grin as he hears you say this, and after rudely spitting on the floor, he sneers, [murk.speechNoEffects(Ya gots the five 'undred flames then, huh? Ya ain't gettin any o' me milkers' pussy without payin' me first!)]
 		#ELSE
 			Wanting to find out who these 'milkers' are, you tell Murk that you'd like to see them. The rat-boy's face turns up into a grin as he hears you say this, and after rudely spitting on the floor, he sneers, [murk.speechNoEffects(Ya gots the five 'undred flames then, huh? Ya ain't gettin any o' me milkers' pussy without payin' me first!)]
@@ -1970,7 +1970,7 @@
 	<p>
 		Producing the money which Murk is asking for, you hand over the five hundred flames. Snatching the coins and hurrying over to put them away in a nearby chest, the rat-boy then walks over to the nearby wooden door, before pushing it open and stepping through. Calling over his shoulder, he shouts, [murk.speechNoEffects(Come on then! I ain't got all day!)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSeenMilkers")))
 		<p>
 			Following the chubby rat-boy into the small, well-lit grotto which lies beyond, you're greeted by the familiar sight of the row of metal-framed milking stalls running parallel to the far wall. After following Murk's lead as he hops over the shallow, bubbling stream which cuts across the cave's floor, you stop and take a good look at the six sturdy, metal frames which are bolted into the ground in front of you.
 		</p>
@@ -2024,7 +2024,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="MILKING_ROOM_CLEARED"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSeenMilkers")))
 		<p>
 			Heading through the old wooden door into the grotto which serves as Murk's milking room, you're once again greeted by the familiar sight of the row of metal-framed milking stalls running parallel to the far wall. After hopping over the shallow, bubbling stream which cuts across the cave's floor, you stop and take a good look at the six sturdy, metal frames which are bolted into the ground in front of you.
 		</p>
@@ -2041,7 +2041,7 @@
 	#ENDIF
 	<p>
 		Although their exposed rear ends are pointed towards you, these four busty human females must have heard your entrance, as they suddenly all start desperately crying out for
-		#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("murkIntroduced")))
 			 Murk
 		#ELSE
 			 their 'Master'
@@ -2056,7 +2056,7 @@
 	</p>
 	<p>
 		As you look over the human milkers arrayed before you, you see that each of their puffy, milk-dripping nipples are encased in the pressurised cups of their milking machine's breast pumps, while a vibrating pussy-pump is similarly working away at their quivering cunts. With nobody here to stop you,#IF(pc.hasCompanions()) you and [npc.name]#ELSE you#ENDIF could quite easily have some fun with one or more of these milkers.
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensMilkersFreeAttempt))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensMilkersFreeAttempt")))
 			 Having already tried to release them, only to find out that they're unwilling to escape, your only other option is to just turn around and leave...
 		#ELSE
 			 Then again, you could always just turn around and leave, or even try to free them...
@@ -2065,9 +2065,9 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="MILKING_ROOM_QUEST_COMPLETE"><![CDATA[
+	<htmlContent tag="MILKING_ROOM_quest("COMPLETE")"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSeenMilkers")))
 			Heading through the old wooden door into the 'milking room', you're once again greeted by the familiar sight of the long series of metal-framed stalls running down the left-hand wall. There's nobody present in this area, leaving you wondering if this room will ever be used for anything more than temporary storage...
 		#ELSE
 			Curious to see what exactly is behind the wooden door on the far side of the room, you head over to it and push it open. Stepping through into the room beyond, the first thing which you immediately notice is that its proportions are more akin to a wide corridor than a conventional square or rectangular shape. The very next thing you register is that running down alongside the left-hand wall, there are a series of metal-framed stalls, each consisting of a padded bench plus surrounding supports to which an occupant's legs or arms can be chained.  There's nobody present in this area, leaving you wondering if this room will ever be used for anything more than temporary storage...
@@ -2326,7 +2326,7 @@
 		Having cleared this part of the Rat Warrens out, there's nobody here to stop you from attempting to free the captive milkers. Moving up to the nearest stall, you set about unlocking the chain from the occupant's collar, but as you do so, [npc.name] cries out, [npc.speech(Wait, what are you doing?! Get away, I don't want to be freed! Murk! Help!)]
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("murkIntroduced")))
 			As rest of the milkers join the first in crying out for their master, you realise that it's going to take a serious amount of time and effort to convince them to want to escape.
 		#ELSE
 			As rest of the milkers join the first in crying out for who you assume to be their master, you realise that it's going to take a serious amount of time and effort to convince them to want to escape.
@@ -2343,7 +2343,7 @@
 	<p>
 		Linked to the twisting tunnels of the Rat Warrens by a pair of huge, iron-bound wooden doors, the grand hall in which Vengar sits is nothing like the rest of his gang's hideout. With walls being half-carved, half-built out of huge stone blocks, and with a smooth, paved floor, this chamber's construction is far superior to anything you've seen elsewhere down here. Hanging from the high ceiling, a dozen chandeliers combine their light with that given off by flames dancing away in numerous fireplaces, casting the entire area in a warm, pale-orange glow.
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensHostile))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensHostile")))
 		<p>
 			A dozen long, wooden tables run down each side of this spacious chamber, leaving an unobstructed path to run from the open doors to a raised dais built up against the far wall. As you step through the doorway, you immediately take note of the fact that there must be at least fifty gang-members currently standing about these tables, and as you advance forwards, the cavernous hall is quickly filled with their deafening jeers and shouts.
 		</p>
@@ -2358,7 +2358,7 @@
 				 [vengar.speechNoEffects(Ya real full o' confidence, ain't ya? Come on then, get over 'ere an' let's see what ya made of!)]
 			#ENDIF
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vengarIntroduced))
+	#ELSEIF(game.getDialogueFlags().hasFlag(flag("vengarIntroduced")))
 		<p>
 			A dozen long, wooden tables run down each side of this spacious chamber, leaving an unobstructed path to run from the open doors to a raised dais built up against the far wall. Just like the last time you were here, there must be at least fifty gang-members sitting at these tables. The entire hall is filled with their loud chatter, burps, and laughter, while the smell of roasting meat and strong alcohol permeates the air.
 		</p>
@@ -2388,16 +2388,16 @@
 	<!-- VENGARS_HALL_APPROACH -->
 	
 	<htmlContent tag="VENGARS_HALL_APPROACH"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(FLAG_vengarIntroduced))
-		#IF(!pc.isQuestCompleted(QUEST_LINE_SIDE_VENGAR))
+	#IF(game.getDialogueFlags().hasFlag(flag("vengarIntroduced")))
+		#IF(!pc.isQuestCompleted(questLine("SIDE_VENGAR")))
 			<p>
 				Deciding that you'd like to talk to Vengar again, you walk straight down the middle of the hall and head directly to his throne. Before you're able to get there, however, the dark form of his personal bodyguard, Shadow, seems to materialise out of thin air right behind you. Sliding up against you, she teases her tail up against your [pc.legs] while whispering into your ear, [shadow.speechNoEffects('Ello again, me lovely. I's sure ya ain't plannin' anythin', but just as a little reminder, if ya even think 'bout attackin' Vengar, I's gonna make sure ya regret ever bein' born.)]
 			</p>
 			<p>
 				Slipping away just as quickly as she arrived, Shadow retreats a little way behind Vengar's throne, where she's quickly joined by her companion, Silence. Keeping a close watch on your every move, the black-furred rat-girl grins menacingly at you while her albino partner rubs up against her and plants a series of loving kisses on her neck.
-				#IF(game.getDialogueFlags().hasFlag(FLAG_vengarSeduced))
+				#IF(game.getDialogueFlags().hasFlag(flag("vengarSeduced")))
 					 Focusing your attention back on Vengar, you walk up to his throne and tease him with a flirty greeting.
-				#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vengarPersuaded))
+				#ELSEIF(game.getDialogueFlags().hasFlag(flag("vengarPersuaded")))
 					 Focusing your attention back on Vengar, you walk up to his throne and give him a suitably submissive greeting.
 				#ELSE
 					 Focusing your attention back on Vengar, you walk up to his throne and give him a curt greeting.
@@ -2406,26 +2406,26 @@
 		#ELSE
 			<p>
 				Deciding that you'd like to talk to Vengar again, you walk straight down the middle of the hall and head directly to his throne. As the two rat-girl bodyguards are no longer in his employ, there's nobody to stop you walking right up to the gang leader's throne, and, doing just that, you stop before him and
-				#IF(game.getDialogueFlags().hasFlag(FLAG_vengarSeduced))
+				#IF(game.getDialogueFlags().hasFlag(flag("vengarSeduced")))
 					 tease him with a flirty greeting.
-				#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vengarPersuaded))
+				#ELSEIF(game.getDialogueFlags().hasFlag(flag("vengarPersuaded")))
 					 give him a suitably submissive greeting.
 				#ELSE
 					 give him a curt greeting.
 				#ENDIF
 			</p>
 		#ENDIF
-		#IF(game.getDialogueFlags().hasFlag(FLAG_vengarSeduced))
+		#IF(game.getDialogueFlags().hasFlag(flag("vengarSeduced")))
 			<p>
-				#IF(game.getDialogueFlags().hasFlag(FLAG_axelSissified))
+				#IF(game.getDialogueFlags().hasFlag(flag("axelSissified")))
 					[vengar.speechNoEffects(Well, well, well, if it ain't me hot little [pc.race]! Come back ta beg fer me ta stuff ya with me rat cock, have ya?)] Vengar says, while staring hungrily at your body. [vengar.speechNoEffects(I's always ready ta give ya a good, 'ard fuck, so just say the word an' we can go back into me bedroom! Or perhaps we can go pay '[axel.name]' a visit together, hmm? Teamin' up ta fuck that 'gator sounds good, don't it?)]
 				#ELSE
 					[vengar.speechNoEffects(Well, well, well, if it ain't me hot little [pc.race]! Come back ta beg fer me ta stuff ya with me rat cock, have ya?)] Vengar says, while staring hungrily at your body. [vengar.speechNoEffects(I's always ready ta give ya a good, 'ard fuck, so just say the word an' we can go back into me bedroom!)]
 				#ENDIF
 			</p>
-		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vengarPersuaded))
+		#ELSEIF(game.getDialogueFlags().hasFlag(flag("vengarPersuaded")))
 			<p>
-				#IF(game.getDialogueFlags().hasFlag(FLAG_axelSissified))
+				#IF(game.getDialogueFlags().hasFlag(flag("axelSissified")))
 					[vengar.speechNoEffects(Well, well, well, if it ain't me subby little [pc.race]!)] Vengar mockingly calls out, while staring hungrily at your body. [vengar.speechNoEffects(Ya 'ere ta get a good, 'ard fuckin'? If so, just say the word an' we can go back into me bedroom! Or perhaps we can go pay '[axel.name]' a visit together, hmm? Teamin' up ta fuck that 'gator sounds good, don't it?)]
 				#ELSE
 					[vengar.speechNoEffects(Well, well, well, if it ain't me subby little [pc.race]!)] Vengar mockingly calls out, while staring hungrily at your body. [vengar.speechNoEffects(Ya 'ere ta get a good, 'ard fuckin'? If so, just say the word an' we can go back into me bedroom!)]
@@ -2433,7 +2433,7 @@
 			</p>
 		#ELSE
 			<p>
-				#IF(game.getDialogueFlags().hasFlag(FLAG_axelSissified))
+				#IF(game.getDialogueFlags().hasFlag(flag("axelSissified")))
 					[vengar.speechNoEffects(Well, well, well, if it ain't the only [pc.race] who dared ta threaten' me in front o' me whole gang! What ya back 'ere for this time, eh?)] Vengar suspiciously asks, while taking no trouble to conceal the way he's hungrily staring at your body. [vengar.speechNoEffects(If ya ain't 'ere ta cause trouble, then 'ow about we go right ta 'avin' a good, 'ard fuck? Just say the word an' we can go back into me bedroom! Or perhaps we can go pay '[axel.name]' a visit together, hmm? Teamin' up ta fuck that 'gator sounds good, don't it?)]
 				#ELSE
 					[vengar.speechNoEffects(Well, well, well, if it ain't the only [pc.race] who dared ta threaten' me in front o' me whole gang! What ya back 'ere for this time, eh?)] Vengar suspiciously asks, while taking no trouble to conceal the way he's hungrily staring at your body. [vengar.speechNoEffects(If ya ain't 'ere ta cause trouble, then 'ow about we go right ta 'avin' a good, 'ard fuck? Just say the word an' we can go back into me bedroom!)]
@@ -2441,7 +2441,7 @@
 			</p>
 		#ENDIF
 	#ELSE
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensHostile))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensHostile")))
 			<p>
 				Continuing forwards, you approach the dais upon which Vengar is standing, and as you get nearer, you're able to get a better look at the leader of this gang of rats. Standing at [vengar.heightValue] tall, and covered in dark brown fur, the greater rat-boy holds himself confidently, striking an imposing figure as he looks down at you from his higher vantage point. His short-sleeve shirt is unbuttoned, revealing a pair of muscular pecs and a well-defined six-pack. His arms, too, are very muscular, hinting at an ability to cause significant damage with the brass knuckle dusters clenched in his hands. 
 			</p>
@@ -2513,7 +2513,7 @@
 	
 	<htmlContent tag="VENGARS_HALL_FIGHT"><![CDATA[
 	#IF(pc.hasCompanions())
-		#IF(!pc.hasTraitActivated(PERK_OBSERVANT))
+		#IF(!pc.hasTraitActivated(perk("OBSERVANT")))
 			<p>
 				As you prepare to fight Silence, your [npc.companion] suddenly notices a dark blur swiftly moving around in [npc.her] peripheral vision. As [npc.she] spins around to face this new threat, you too turn to see what [npc.sheHas] seen, and find yourself staring at a figure who's the complete opposite in appearance to Silence. With fur as black as pitch, and ebony skin covering her paw pads, nose, and tail, there's not a single inch of the maniacally-grinning rat-girl standing before you that isn't as dark as the night sky.
 			</p>
@@ -2968,12 +2968,12 @@
 		</p>
 	#ENDIF
 	<p>
-		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			Reaching down to take hold of his [vengar.cock+], Vengar takes a moment to tease the head up and down between [npc.namePos] [npc.labia+],
 		#ELSE
 			Reaching down to take hold of his [vengar.cock+], Vengar takes a moment to tease the head up and down over [npc.namePos] [npc.asshole+],
 		#ENDIF
-		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			 before pulling back and moving over to rub the tip of his throbbing cock over your [pc.pussy+].
 		#ELSE
 			 before pulling back and moving over to rub the tip of his throbbing cock over your [pc.asshole+].
@@ -2988,20 +2988,20 @@
 	
 	<htmlContent tag="VENGARS_HALL_SUB_SEX_BOTH_PLAYER_FIRST"><![CDATA[
 	<p>
-		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			Upon feeling the head of Vengar's cock teasing its way up and down between your [pc.labia+], you can't help but let out an exited [pc.moan] and push back against him. More than happy to give you what you want, the rat-boy instantly grabs your hips and slams his thick shaft deep into your hungry cunt, causing you to let out yet another [pc.moan+].
 		#ELSE
 			Upon feeling the head of Vengar's cock teasing its way up and down over your [pc.asshole+], you can't help but let out an exited [pc.moan] and push back against him. More than happy to give you what you want, the rat-boy instantly grabs your hips and slams his thick shaft deep into your hungry ass, causing you to let out yet another [pc.moan+].
 		#ENDIF
 	</p>
-	#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
-		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+	#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			<p>
 				Reaching across to slap [npc.her] ass, Vengar barks out to [npc.name], [vengar.speechNoEffects(Present yerself to yer friend 'ere! I want yer nice an' lubed up so's me cock can slip right inta yer 'ole once I's ready fer ya!)]
 			</p>
 			<p>
 				Moving to obey, your [npc.companion] crawls around in front of you, before pushing [npc.her] [npc.pussy+] back into your face. As Vengar draws back and starts rhythmically thrusting into
-				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					 your [pc.pussy+], you lean forwards and start enthusiastically eating your [npc.companion] out...
 				#ELSE
 					 your [pc.asshole+], you lean forwards and start enthusiastically eating your [npc.companion] out...
@@ -3013,7 +3013,7 @@
 			</p>
 			<p>
 				Moving to obey, your [npc.companion] crawls around in front of you, before pushing [npc.her] [npc.ass+] back into your face. As Vengar draws back and starts rhythmically thrusting into
-				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					 your [pc.pussy+], you lean forwards and start enthusiastically performing anilingus on your [npc.companion]...
 				#ELSE
 					 your [pc.asshole+], you lean forwards and start enthusiastically performing anilingus on your [npc.companion]...
@@ -3022,7 +3022,7 @@
 		#ELSE
 			<p>
 				With little else to do but wait [npc.her] turn, [npc.name] watches as Vengar pulls back and starts rhythmically thrusting into
-				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					 your [pc.pussy+]...
 				#ELSE
 					 your [pc.asshole+]...
@@ -3032,7 +3032,7 @@
 	#ELSE
 		<p>
 			With little else to do but wait [npc.her] turn, [npc.name] watches as Vengar pulls back and starts rhythmically thrusting into
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				 your [pc.pussy+]...
 			#ELSE
 				 your [pc.asshole+]...
@@ -3044,20 +3044,20 @@
 	
 	<htmlContent tag="VENGARS_HALL_SUB_SEX_BOTH_COMPANION_FIRST"><![CDATA[
 	<p>
-		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			Not wanting to go first, you shuffle away from Vengar's cock and let him switch back over to teasing your [npc.companion]. Looking back, you can't help but let out an exited [pc.moan] as you see the rat-boy grabbing [npc.namePos] hips before slamming his thick shaft deep into [npc.her] hungry cunt.
 		#ELSE
 			Not wanting to go first, you shuffle away from Vengar's cock and let him switch back over to teasing your [npc.companion]. Looking back, you can't help but let out an exited [pc.moan] as you see the rat-boy grabbing [npc.namePos] hips before slamming his thick shaft deep into [npc.her] hungry asshole.
 		#ENDIF
 	</p>
-	#IF(npc.isAbleToAccessCoverableArea(CA_MOUTH, true))
-		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+	#IF(npc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			<p>
 				Reaching across to slap your [pc.ass+], Vengar barks out to you, [vengar.speechNoEffects(Present yerself to yer friend 'ere! I want yer nice an' lubed up so's me cock can slip right inta yer 'ole once I's ready fer ya!)]
 			</p>
 			<p>
 				Moving to obey, you crawl around in front of [npc.name], before pushing your [pc.pussy+] back into [npc.her] face. As Vengar draws back and starts rhythmically thrusting into
-				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					 your [npc.companion]'s [npc.pussy+], you feel [npc.herHim] lean forwards and start to enthusiastically eat you out...
 				#ELSE
 					 your [npc.companion]'s [npc.asshole+], you feel [npc.herHim] lean forwards and start to enthusiastically eat you out...
@@ -3069,7 +3069,7 @@
 			</p>
 			<p>
 				Moving to obey, you crawl around in front of [npc.name], before pushing your [pc.ass+] back into [npc.her] face. As Vengar draws back and starts rhythmically thrusting into
-				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					 your [npc.companion]'s [npc.pussy+], you feel [npc.herHim] lean forwards and start to enthusiastically perform anilingus on you...
 				#ELSE
 					 your [npc.companion]'s [npc.asshole+], you feel [npc.herHim] lean forwards and start to enthusiastically perform anilingus on you...
@@ -3078,7 +3078,7 @@
 		#ELSE
 			<p>
 				With little else to do but wait your turn, you watch as Vengar pulls back and starts rhythmically thrusting into
-				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					 your [npc.companion]'s [npc.pussy+]...
 				#ELSE
 					 your [npc.companion]'s [npc.asshole+]...
@@ -3088,7 +3088,7 @@
 	#ELSE
 		<p>
 			With little else to do but wait your turn, you watch as Vengar pulls back and starts rhythmically thrusting into
-			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				 your [npc.companion]'s [npc.pussy+]...
 			#ELSE
 				 your [npc.companion]'s [npc.asshole+]...
@@ -3103,7 +3103,7 @@
 	
 	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_AFTER_SEX_DOUBLE_PLAYER_NEXT"><![CDATA[
 	<p>
-		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			[npc.Name] lets out a deep, satisfied sigh as Vengar slides his thick cock out of her well-fucked and creampied cunt.
 			#IF(npc.isVisiblyPregnant())
 				 Grinning at his handiwork, Vengar delivers a sharp slap to your [npc.companion]'s ass, before growling, [vengar.speechNoEffects(Ya cunt was made fer takin' rat cock! Now get out me way; it's time fer ya friend's turn!)]
@@ -3115,22 +3115,22 @@
 		#ENDIF
 	</p>
 	<p>
-		#IF(npc.isAbleToAccessCoverableArea(CA_MOUTH, true))
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(npc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				Planting one last wet kiss on your saliva-coated [pc.labia], [npc.name] obediently crawls to one side, allowing Vengar to shuffle up behind you. Reaching down, he wastes no time in sliding two of his fingers into your [pc.pussy+], coaxing [pc.a_moan+] out from between your lips. Quickly withdrawing his digits, he moves forwards and starts teasing the cum-coated head of his cock up against your wet pussy, 
 			#ELSE
 				Planting one last wet kiss on your saliva-coated asshole, [npc.name] obediently crawls to one side, allowing Vengar to shuffle up behind you. Reaching down, he wastes no time in sliding two of his fingers into your [pc.ass+], coaxing [pc.a_moan+] out from between your lips. Quickly withdrawing his digits, he moves forwards and starts teasing the cum-coated head of his cock up against your wet asshole, 
 			#ENDIF
 		#ELSE
 			Letting out another satisfied sigh, [npc.name] obediently crawls to one side, allowing Vengar to shuffle up behind you.
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				 Reaching down, he wastes no time in sliding two of his fingers deep into your [pc.pussy+], coaxing [pc.a_moan+] out from between your lips. Quickly withdrawing his digits, he moves forwards and starts teasing the cum-coated head of his cock up against your hungry pussy, 
 			#ELSE
 				 Reaching down, he slides two of his fingers into your [pc.ass+], coaxing [pc.a_moan+] out from between your lips. Quickly withdrawing his digits, he moves forwards and starts teasing the cum-coated head of his cock up against your hungry asshole, 
 			#ENDIF
 		#ENDIF
-		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
-			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				 barking out another order to [npc.name] as he does so, [vengar.speechNoEffects(Get round 'ere, slut! Yer friend can use [pc.her] tongue ta clean me cum out o' yer pussy while I fuck [pc.herHim]!)]
 			#ELSEIF(game.isAnalContentEnabled())
 				 barking out another order to [npc.name] as he does so, [vengar.speechNoEffects(Get round 'ere, slut! Yer friend can use [pc.her] tongue ta clean me cum out o' yer ass while I fuck [pc.herHim]!)]
@@ -3146,7 +3146,7 @@
 	
 	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_AFTER_SEX_DOUBLE_COMPANION_NEXT"><![CDATA[
 	<p>
-		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			You let out a deep, satisfied sigh as Vengar slides his thick cock out of your well-fucked and creampied cunt.
 			#IF(pc.isVisiblyPregnant())
 				 Grinning at his handiwork, Vengar delivers a sharp slap to your ass, before growling, [vengar.speechNoEffects(Ya cunt was made fer takin' rat cock! Now get out me way; it's time fer ya friend's turn!)]
@@ -3158,22 +3158,22 @@
 		#ENDIF
 	</p>
 	<p>
-		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
-			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				Planting one last wet kiss on [npc.namePos] saliva-coated [npc.labia], you obediently crawl to one side, allowing Vengar to shuffle up behind your [npc.companion]. Reaching down, he wastes no time in sliding two of his fingers into [npc.her] [npc.pussy+], coaxing [npc.a_moan+] out from between [npc.her] lips. Quickly withdrawing his digits, he moves forwards and starts teasing the cum-coated head of his cock up against [npc.namePos] wet pussy, 
 			#ELSE
 				Planting one last wet kiss on [npc.namePos] saliva-coated asshole, you obediently crawl to one side, allowing Vengar to shuffle up behind your [npc.companion]. Reaching down, he wastes no time in sliding two of his fingers into [npc.her] [npc.ass+], coaxing [npc.a_moan+] out from between [npc.her] lips. Quickly withdrawing his digits, he moves forwards and starts teasing the cum-coated head of his cock up against [npc.namePos] wet asshole, 
 			#ENDIF
 		#ELSE
 			Letting out another satisfied sigh, you obediently crawl to one side, allowing Vengar to shuffle up behind your [npc.companion].
-			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				 Reaching down, he wastes no time in sliding two of his fingers deep into [npc.her] [npc.pussy+], coaxing [npc.a_moan+] out from between [npc.her] lips. Quickly withdrawing his digits, he moves forwards and starts teasing the cum-coated head of his cock up against [npc.namePos] hungry pussy, 
 			#ELSE
 				 Reaching down, he slides two of his fingers into [npc.her] [npc.ass+], coaxing [npc.a_moan+] out from between [npc.her] lips. Quickly withdrawing his digits, he moves forwards and starts teasing the cum-coated head of his cock up against [npc.namePos] hungry asshole, 
 			#ENDIF
 		#ENDIF
-		#IF(npc.isAbleToAccessCoverableArea(CA_MOUTH, true))
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+		#IF(npc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				 barking out another order to you as he does so, [vengar.speechNoEffects(Get round 'ere, slut! Yer friend can use [npc.her] tongue ta clean me cum out o' yer pussy while I fuck [npc.herHim]!)]
 			#ELSEIF(game.isAnalContentEnabled())
 				 barking out another order to you as he does so, [vengar.speechNoEffects(Get round 'ere, slut! Yer friend can use [npc.her] tongue ta clean me cum out o' yer ass while I fuck [npc.herHim]!)]
@@ -3188,13 +3188,13 @@
 	</htmlContent>
 	
 	<htmlContent tag="VENGARS_HALL_SUB_SEX_BOTH_PLAYER_SECOND_START"><![CDATA[
-	#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
-		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+	#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			<p>
 				Obeying Vengar's command, [npc.name] shuffles around in front of you, before presenting you with [npc.her] cum-dripping pussy. From behind you, the rat-boy growls out, [vengar.speechNoEffects(Get to it, slut, I's wantin' ta see ya lickin' up me cum while I's fuckin' ya from behind!)]
 			</p>
 			<p>
-				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					Craning your neck forwards, you do as Vengar says and start licking his cum out of [npc.namePos] freshly-creampied pussy. From behind, you hear the rat-boy let out an approving growl, which is quickly followed by a rough thrust forwards of his hips. The sudden movement causes you to jolt forwards, and you end up letting out a muffled [pc.moan] into your [npc.companion]'s cum-stuffed pussy as you feel the rat-boy's thick cock pushing its way into your [pc.pussyCapacity] cunt. With a firm grip on your hips, the gang leader calls out, [vengar.speechNoEffects(Yer friend 'ere did a good job o' lubin' ya up! It won't take me long before I's paintin' the inside o' yer cunt white with me thick rat jizz!)]
 				#ELSE
 					Craning your neck forwards, you do as Vengar says and start licking his cum out of [npc.namePos] freshly-creampied pussy. From behind, you hear the rat-boy let out an approving growl, which is quickly followed by a rough thrust forwards of his hips. The sudden movement causes you to jolt forwards, and you end up letting out a muffled [pc.moan] into your [npc.companion]'s cum-stuffed pussy as you feel the rat-boy's thick cock pushing its way into your [pc.assCapacity] asshole. With a firm grip on your hips, the gang leader calls out, [vengar.speechNoEffects(Yer friend 'ere did a good job o' lubin' ya up! It won't take me long before I's paintin' yer insides white with me thick rat jizz!)]
@@ -3205,7 +3205,7 @@
 				Obeying Vengar's command, [npc.name] shuffles around in front of you, before turning around and presenting you with [npc.her] cum-dripping asshole. From behind you, the rat-boy growls out, [vengar.speechNoEffects(Get to it, slut, I's wantin' ta see ya lickin' up me cum while I's fuckin' ya from behind!)]
 			</p>
 			<p>
-				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					Craning your neck forwards, you do as Vengar says and start licking his cum out of [npc.namePos] freshly-creampied ass. From behind, you hear the rat-boy let out an approving growl, which is quickly followed by a rough thrust forwards of his hips. The sudden movement causes you to jolt forwards, and you end up letting out a muffled [pc.moan] into your [npc.companion]'s cum-stuffed ass as you feel the rat-boy's thick cock pushing its way into your [pc.pussyCapacity] cunt. With a firm grip on your hips, the gang leader calls out, [vengar.speechNoEffects(Yer friend 'ere did a good job o' lubin' ya up! It won't take me long before I's paintin' the inside o' yer cunt white with me thick rat jizz!)]
 				#ELSE
 					Craning your neck forwards, you do as Vengar says and start licking his cum out of [npc.namePos] freshly-creampied ass. From behind, you hear the rat-boy let out an approving growl, which is quickly followed by a rough thrust forwards of his hips. The sudden movement causes you to jolt forwards, and you end up letting out a muffled [pc.moan] into your [npc.companion]'s cum-stuffed ass as you feel the rat-boy's thick cock pushing its way into your [pc.assCapacity] butt. With a firm grip on your hips, the gang leader calls out, [vengar.speechNoEffects(Yer friend 'ere did a good job o' lubin' ya up! It won't take me long before I's paintin' yer insides white with me thick rat jizz!)]
@@ -3216,7 +3216,7 @@
 				With nothing more to do, [npc.name] shuffles to one side and looks on as you prepare to get fucked by Vengar. From behind you, the rat-boy growls out, [vengar.speechNoEffects(You's ready ta find out why yer friend was moanin' so much? Ya gonna love the feelin' o' gettin' pounded by me fat cock from behind!)]
 			</p>
 			<p>
-				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					Before you can respond, the rat-bot suddenly thrusts his hips forwards, causing you to let out [pc.a_moan+] as you feel the rat-boy's thick cock pushing its way into your [pc.pussy+]. With a tight grip on your hips, the gang leader calls out, [vengar.speechNoEffects(Yer pussy was made ta take me thick rat cock! It won't take me long before I's paintin' the inside o' yer cunt white with me thick rat jizz!)]
 				#ELSE
 					Before you can respond, the rat-bot suddenly thrusts his hips forwards, causing you to let out [pc.a_moan+] as you feel the rat-boy's thick cock pushing its way into your [pc.asshole+]. With a tight grip on your hips, the gang leader calls out, [vengar.speechNoEffects(Yer butt was made ta take me thick rat cock! It won't take me long before I's paintin' yer insides white with me thick rat jizz!)]
@@ -3228,7 +3228,7 @@
 			With nothing more to do, [npc.name] shuffles to one side and looks on as you prepare to get fucked by Vengar. From behind you, the rat-boy growls out, [vengar.speechNoEffects(You's ready ta find out why yer friend was moanin' so much? Ya gonna love the feelin' o' gettin' pounded by me fat cock from behind!)]
 		</p>
 		<p>
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				Before you can respond, the rat-bot suddenly thrusts his hips forwards, causing you to let out [pc.a_moan+] as you feel the rat-boy's thick cock pushing its way into your [pc.pussy+]. With a tight grip on your hips, the gang leader calls out, [vengar.speechNoEffects(Yer pussy was made ta take me thick rat cock! It won't take me long before I's paintin' the inside o' yer cunt white with me thick rat jizz!)]
 			#ELSE
 				Before you can respond, the rat-bot suddenly thrusts his hips forwards, causing you to let out [pc.a_moan+] as you feel the rat-boy's thick cock pushing its way into your [pc.asshole+]. With a tight grip on your hips, the gang leader calls out, [vengar.speechNoEffects(Yer butt was made ta take me thick rat cock! It won't take me long before I's paintin' yer insides white with me thick rat jizz!)]
@@ -3239,13 +3239,13 @@
 	</htmlContent>
 	
 	<htmlContent tag="VENGARS_HALL_SUB_SEX_BOTH_COMPANION_SECOND_START"><![CDATA[
-	#IF(npc.isAbleToAccessCoverableArea(CA_MOUTH, true))
-		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+	#IF(npc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 			<p>
 				Obeying Vengar's command, you shuffle around in front of [npc.name], before presenting [npc.herHim] with your cum-dripping pussy. From behind your [npc.companion], the rat-boy looks down and growls out, [vengar.speechNoEffects(Get to it, slut, I's wantin' ta see ya lickin' up me cum while I's fuckin' ya from behind!)]
 			</p>
 			<p>
-				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					Craning [npc.her] neck forwards, [npc.name] does as Vengar says and starts licking his cum out of your freshly-creampied pussy. Grinning down at your [npc.companion], the rat-boy let out an approving growl, which is quickly followed by a rough thrust forwards of his hips. The sudden movement causes [npc.name] to jolt forwards, and [npc.she] ends up letting out a muffled [npc.moan] into your cum-stuffed pussy as the rat-boy's thick cock pushes its way into [npc.her] [npc.pussyCapacity] cunt. With a firm grip on your [npc.companion]'s hips, the gang leader calls out, [vengar.speechNoEffects(Yer friend 'ere did a good job o' lubin' ya up! It won't take me long before I's paintin' the inside o' yer cunt white with me thick rat jizz!)]
 				#ELSE
 					Craning [npc.her] neck forwards, [npc.name] does as Vengar says and starts licking his cum out of your freshly-creampied pussy. Grinning down at your [npc.companion], the rat-boy let out an approving growl, which is quickly followed by a rough thrust forwards of his hips. The sudden movement causes [npc.name] to jolt forwards, and [npc.she] ends up letting out a muffled [npc.moan] into your cum-stuffed pussy as the rat-boy's thick cock pushes its way into [npc.her] [npc.assCapacity] ass. With a firm grip on your [npc.companion]'s hips, the gang leader calls out, [vengar.speechNoEffects(Yer friend 'ere did a good job o' lubin' ya up! It won't take me long before I's paintin' yer insides white with me thick rat jizz!)]
@@ -3256,7 +3256,7 @@
 				Obeying Vengar's command, you shuffle around in front of [npc.name], before presenting [npc.herHim] with your cum-dripping asshole. From behind your [npc.companion], the rat-boy looks down and growls out, [vengar.speechNoEffects(Get to it, slut, I's wantin' ta see ya lickin' up me cum while I's fuckin' ya from behind!)]
 			</p>
 			<p>
-				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					Craning [npc.her] neck forwards, [npc.name] does as Vengar says and starts licking his cum out of your freshly-creampied asshole. Grinning down at your [npc.companion], the rat-boy let out an approving growl, which is quickly followed by a rough thrust forwards of his hips. The sudden movement causes [npc.name] to jolt forwards, and [npc.she] ends up letting out a muffled [npc.moan] into your cum-stuffed ass as the rat-boy's thick cock pushes its way into [npc.her] [npc.pussyCapacity] cunt. With a firm grip on your [npc.companion]'s hips, the gang leader calls out, [vengar.speechNoEffects(Yer friend 'ere did a good job o' lubin' ya up! It won't take me long before I's paintin' the inside o' yer cunt white with me thick rat jizz!)]
 				#ELSE
 					Craning [npc.her] neck forwards, [npc.name] does as Vengar says and starts licking his cum out of your freshly-creampied asshole. Grinning down at your [npc.companion], the rat-boy let out an approving growl, which is quickly followed by a rough thrust forwards of his hips. The sudden movement causes [npc.name] to jolt forwards, and [npc.she] ends up letting out a muffled [npc.moan] into your cum-stuffed ass as the rat-boy's thick cock pushes its way into [npc.her] [npc.assCapacity] butt. With a firm grip on your [npc.companion]'s hips, the gang leader calls out, [vengar.speechNoEffects(Yer friend 'ere did a good job o' lubin' ya up! It won't take me long before I's paintin' yer insides white with me thick rat jizz!)]
@@ -3267,7 +3267,7 @@
 				With nothing more to do, you shuffle to one side and look on as [npc.name] prepares to get fucked by Vengar. From behind your [npc.companion], the rat-boy looks down and growls, [vengar.speechNoEffects(You's ready ta find out why yer friend was moanin' so much? Ya gonna love the feelin' o' gettin' pounded by me fat cock from behind!)]
 			</p>
 			<p>
-				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 					Before [npc.she] can respond, the rat-bot suddenly thrusts his hips forwards, causing [npc.name] to let out [npc.a_moan+] as [npc.she] feels the rat-boy's thick cock pushing its way into [npc.her] [npc.pussy+]. With a tight grip on your [npc.companion]'s hips, the gang leader calls out, [vengar.speechNoEffects(Yer pussy was made ta take me thick rat cock! It won't take me long before I's paintin' the inside o' yer cunt white with me thick rat jizz!)]
 				#ELSE
 					Before [npc.she] can respond, the rat-bot suddenly thrusts his hips forwards, causing [npc.name] to let out [npc.a_moan+] as [npc.she] feels the rat-boy's thick cock pushing its way into [npc.her] [npc.asshole+]. With a tight grip on your [npc.companion]'s hips, the gang leader calls out, [vengar.speechNoEffects(Yer butt was made ta take me thick rat cock! It won't take me long before I's paintin' yer insides white with me thick rat jizz!)]
@@ -3279,7 +3279,7 @@
 			With nothing more to do, you shuffle to one side and look on as [npc.name] prepares to get fucked by Vengar. From behind your [npc.companion], the rat-boy looks down and growls, [vengar.speechNoEffects(You's ready ta find out why yer friend was moanin' so much? Ya gonna love the feelin' o' gettin' pounded by me fat cock from behind!)]
 		</p>
 		<p>
-			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
 				Before [npc.she] can respond, the rat-bot suddenly thrusts his hips forwards, causing [npc.name] to let out [npc.a_moan+] as [npc.she] feels the rat-boy's thick cock pushing its way into [npc.her] [npc.pussy+]. With a tight grip on your [npc.companion]'s hips, the gang leader calls out, [vengar.speechNoEffects(Yer pussy was made ta take me thick rat cock! It won't take me long before I's paintin' the inside o' yer cunt white with me thick rat jizz!)]
 			#ELSE
 				Before [npc.she] can respond, the rat-bot suddenly thrusts his hips forwards, causing [npc.name] to let out [npc.a_moan+] as [npc.she] feels the rat-boy's thick cock pushing its way into [npc.her] [npc.asshole+]. With a tight grip on your [npc.companion]'s hips, the gang leader calls out, [vengar.speechNoEffects(Yer butt was made ta take me thick rat cock! It won't take me long before I's paintin' yer insides white with me thick rat jizz!)]
@@ -3337,7 +3337,7 @@
 		Realising that the moment has come for you to reveal your true power, you strike a heroic stance and let out a triumphant laugh, [pc.speech(~Mwhahaha!~ The events set in motion by my arrival here cannot possibly be undone by any power that you mortals might wield! Fate has decreed that you, Vengar, shall either kneel at my feet, or face the full fury of my cosmic powers!)]
 	</p>
 	#IF(pc.hasCompanions())
-		#IF(npc.hasTraitActivated(PERK_CHUUNI))
+		#IF(npc.hasTraitActivated(perk("CHUUNI")))
 			<p>
 				Stepping up beside you, [npc.name] turns to one side and assumes [npc.her] own power-unlocking stance, before calling out, [npc.speech(If you dare to oppose us, you will witness the very ground itself being torn asunder by our fury, and once we're done with you, the heavens themselves will weep at the pure carnage which will have been wrought!)]
 			</p>
@@ -3392,7 +3392,7 @@
 	<!-- VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT -->
 	
 	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT_SLAM"><![CDATA[
-	#IF(pc.hasTraitActivated(PERK_CHUUNI))
+	#IF(pc.hasTraitActivated(perk("CHUUNI")))
 		<p>
 			Smiling to yourself as you see the rat-boy charging forwards, you make sure that everyone nearby knows that you're about to unleash your immense power by calling out, [pc.speech(Tremble in fear, foolish mortals, for you are about to witness the earth-shattering power of the greatest arcane user in the universe! ~Mwhahaha!~)]
 		</p>
@@ -3489,7 +3489,7 @@
 	</p>
 	<p>
 		[shadow.speechNoEffects(Stay still fer a moment, love,)] Shadow hisses to Silence, before standing up and retrieving a small, dark-purple sphere
-		#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_VENGAR, QUEST_VENGAR_OPTIONAL_CLAIRE))
+		#IF(pc.hasQuestInLine(questLine("SIDE_VENGAR"), quest("VENGAR_OPTIONAL_CLAIRE")))
 			, identical to the resonance stone which Claire gave to you,
 		#ENDIF
 		 from her pocket. Holding this sphere up to the Enforcers advancing on your location, she clears her throat, before shouting out to them, [shadow.speech(Ya took yer fuckin' time, didn't ya?! A few moments more, an' me an' Silence 'ere would'a been in serious trouble! These fuckin' rats ain't no joke when tehre's so many o' them!)]
@@ -3554,8 +3554,8 @@
 	</p>
 	<p>
 		Thanking the SWORD Enforcer, Claire places her hands on her hips and sighs,
-		#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_VENGAR, QUEST_VENGAR_OPTIONAL_CLAIRE))
-			#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensUsedResonanceStone))
+		#IF(pc.hasQuestInLine(questLine("SIDE_VENGAR"), quest("VENGAR_OPTIONAL_CLAIRE")))
+			#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensUsedResonanceStone")))
 				 [claire.speech(Thank goodness I gave you that Resonance Stone to use! Thanks to that, you're safe... Anyway, hand it over to me and we can get out of here.)]
 			#ELSE
 				 [claire.speech(I don't know why you didn't use the Resonance Stone I gave to you, but at least you're safe... Anyway, hand it over to me and we can get out of here.)]
@@ -3790,7 +3790,7 @@
 	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_NO_NON_CON"><![CDATA[
 	<p>
 		Seeing that you're out of energy and unable to continue fighting any longer, Shadow dashes forwards, and with one final kick, drives you to the ground. Looking up as the rat-girl looms over you, you see her reach down into her pocket, before producing a small, dark-purple sphere and twisting the two halves in opposite directions.
-		#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_VENGAR, QUEST_VENGAR_OPTIONAL_CLAIRE))
+		#IF(pc.hasQuestInLine(questLine("SIDE_VENGAR"), quest("VENGAR_OPTIONAL_CLAIRE")))
 			 Recognising this sphere to be a resonance stone just like the one Claire gave to you, you listen as Shadow leans down to hiss,
 		#ELSE
 			 Recognising that this sphere's activation marks a significant event, you listen as Shadow leans down to hiss,
@@ -3851,7 +3851,7 @@
 	<p>
 		Ignoring the triumphant shouts of the gang-members gathered in his hall, Vengar roughly grabs hold you and starts dragging you back out into the tunnels through which you came. Letting out deep grunt as he kicks one of the more excitable members of his gang out of his way, the rat-boy growls down to you, [vengar.speech(I's gonna be usin' ya ta pay back back a favour ta Murk. I'm sure yer gonna 'ave lots o' fun with 'im as yer master; he's gonna transform ya into an 'orny milkin' bitch, an' get yer broken in an' worshippin' 'is cock! I's got all the rat-pussy I need, but some o' the members o' me gang'll pay Murk ta fuck ya!)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+	#IF(game.getDialogueFlags().hasFlag(flag("murkIntroduced")))
 		<p>
 			Vengar's deep voice echoes off of the rough walls of the twisting passageway as he continues dragging you towards your fate at the hands of Murk. Knowing all too well the sort of vile character the chubby rat-boy is, you know that what Vengar is saying is true, but you aren't given too long to think about your future, as the gang leader suddenly comes to a stop and throws you down to the hard ground.
 		</p>
@@ -3934,7 +3934,7 @@
 	<p>
 		Grabbing hold of you one last time, Vengar drags you over to the old wooden door that's set into the nearby wall. Stepping in front of you, Murk twists the handle and pushes open the door, before leading the two of you through into the room beyond.
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+	#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSeenMilkers")))
 		<p>
 			Once again finding yourself in the small, well-lit grotto which serves as Murk's milking room, you're greeted by the familiar sight of the row of metal-framed milking stalls running parallel to the far wall. After dragging you through the cold, shallow stream which cuts across the cave's floor, Vengar stops and waits for Murk's instructions, which allows you to take a good look at the six sturdy, metal frames which are bolted into the ground in front of you.
 		</p>
@@ -3962,7 +3962,7 @@
 		As you look over the human milkers arrayed before you, you see that each of their puffy, milk-dripping nipples are encased in the pressurised cups of their milking machine's breast pumps, while a vibrating pussy-pump is similarly working away at their quivering cunts.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+		#IF(game.getDialogueFlags().hasFlag(flag("ratWarrensSeenMilkers")))
 			[murk.speechNoEffects(I's bettin' ya never thought yer were gonna end up bein' in the milker's position, did ya?)]
 		#ELSE
 			[murk.speechNoEffects(Ya like the look o' yer new home?)]

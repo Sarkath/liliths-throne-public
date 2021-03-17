@@ -225,7 +225,7 @@
 	</p>
 	<p>
 		[arthur.speech(Don't worry, this process is completely reversible,)] Arthur says, before turning to Lilaya and ordering,
-	#IF(pc.getSexualOrientation()!=ORIENTATION_AMBIPHILIC)
+	#IF(pc.getSexualOrientation()!=orientation("AMBIPHILIC"))
 			 [arthur.speech(Ok, Lilaya, enchant the watch to try and change [pc.name] into being ambiphilic.)]
 		</p>
 		<p>
