@@ -77,9 +77,10 @@ public class Main extends Application {
 
 	public static Stage primaryStage;
 	
-	public static final String AUTHOR = "Innoxia";
+	public static final String ORIG_AUTHOR = "Innoxia";
 	public static final String GAME_NAME = "Lilith's Throne";
-	public static final String VERSION_NUMBER = "0.3.19";
+	public static final String MOD_NAME = "Transformed!";
+	public static final String VERSION_NUMBER = "0.3.19t";
 	public static final String VERSION_DESCRIPTION = "Alpha";
 	
 	/**
@@ -622,7 +623,7 @@ public class Main extends Application {
 
 		Main.primaryStage.getIcons().add(WINDOW_IMAGE);
 
-		Main.primaryStage.setTitle(GAME_NAME+" " + VERSION_NUMBER + " " + VERSION_DESCRIPTION+(DEBUG?" (Debug Mode)":""));
+		Main.primaryStage.setTitle(String.format("%s: %s - %s (%s)", GAME_NAME, MOD_NAME, VERSION_NUMBER, VERSION_DESCRIPTION));
 
 		loadFonts();
 		

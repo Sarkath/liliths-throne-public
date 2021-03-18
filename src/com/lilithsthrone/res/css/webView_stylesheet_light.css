@@ -1637,6 +1637,21 @@ position:relative;
     text-shadow: 2px 2px 5px #FFAB8A;*/
 }
 
+.mod-color, .mod-text {
+	color: #129e12;
+}
+
+.mod-text {
+	font-weight: normal;
+	text-shadow: 2px 2px 5px #8ae08f;
+}
+
+.url-text {
+	font-weight: normal;
+	break-inside: avoid;
+	color: #237090;
+}
+
 .option-disabled{
 	color: #777777;
 }

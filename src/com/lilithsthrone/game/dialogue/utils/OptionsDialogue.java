@@ -85,18 +85,18 @@ public class OptionsDialogue {
 		
 		@Override
 		public String getContent(){
-			return "<h1 class='special-text' style='font-size:48px; line-height:52px; text-align:center;'>"+Main.GAME_NAME+"</h1>"
-					+ "<h5 class='special-text' style='text-align:center;'>Created by "+Main.AUTHOR+"</h5>"
-					+ "<br/>"
+			return "<h1 class='special-text' style='font-size:48px; line-height:52px; text-align:center;'>" + Main.GAME_NAME + ": <span class='mod-text'>" + Main.MOD_NAME + "</span></h1>"
+					+ "<p>"
+					    + "<b>Note:</b> " + Main.GAME_NAME + ": Transformed! is an unofficial modified version of " + Main.GAME_NAME + ". This mod was not developed by nor is endorsed by <span class='special-text'>" + Main.ORIG_AUTHOR + "</span>. "
+					    + "Please visit <span class='special-text'>" + Main.ORIG_AUTHOR + "</span>'s blog (<span class='url-text'>https://lilithsthrone.blogspot.co.uk</span>) for updates on the official version of " + Main.GAME_NAME + "."
+					+ "</p>"
 					+ "<p>"
 						+ "This game is a text-based erotic RPG, and contains a lot of graphic sexual content. You must agree to the game's disclaimer before playing this game!"
 					+ "</p>"
-					+"<p>"
-						+ "You can visit my blog (https://lilithsthrone.blogspot.co.uk) to check on development progress (use the 'Blog' button below to open the blog in your default browser)."
+					+ "<p>"
+					    + "If you wish to download or contribute to the <span class='mod-text'>" + Main.MOD_NAME + "</span> mod, please visit its GitHub page: <span class='url-text'>https://github.com/Sarkath/liliths-throne-public</span>"
 					+ "</p>"
-					+ "<p style='text-align:center'>"
-						+ "<b>Please use either my blog or github to get the latest official version of Lilith's Throne!</b>"
-					+ "</p>"
+					+ "<br/>"
 					+ getJavaVersionInformation()
 					+ (Toolkit.getDefaultToolkit().getScreenSize().getHeight()<800
 							?"<p style='text-align:center; color:"+PresetColour.GENERIC_ARCANE.toWebHexString()+";'>"
@@ -233,15 +233,24 @@ public class OptionsDialogue {
 				};
 			
 			} else if (index == 12) {
-				return new ResponseEffectsOnly("Github", "Opens the page:<br/><br/><i>https://github.com/Innoxia/liliths-throne-public</i><br/><br/><b>Externally in your default browser.</b>"){
+				return new ResponseEffectsOnly("LT's Github", "Opens the page:<br/><br/><i>https://github.com/Innoxia/liliths-throne-public</i><br/><br/><b>Externally in your default browser.</b>"){
 					@Override
 					public void effects() {
 						Util.openLinkInDefaultBrowser("https://github.com/Innoxia/liliths-throne-public");
 						confirmNewGame=false;
 					}
 				};
-			
+
 			} else if (index == 13) {
+				return new ResponseEffectsOnly("Mod's Github", "Opens the page:<br/><br/><i>https://github.com/Sarkath/liliths-throne-public</i><br/><br/><b>Externally in your default browser.</b>") {
+					@Override
+					public void effects() {
+						Util.openLinkInDefaultBrowser("https://github.com/Sarkath/liliths-throne-public");
+						confirmNewGame = false;
+					}
+				};
+			
+			} else if (index == 14) {
 				return new ResponseEffectsOnly("Wiki", "Opens the page:<br/><br/><i>https://www.lilithsthrone.com/wiki/doku.php</i><br/><br/><b>Externally in your default browser.</b>"){
 					@Override
 					public void effects() {
@@ -2774,6 +2783,11 @@ public class OptionsDialogue {
 					+ "<b style='color:#21bfc5;'>Pimgd</b></br>"
 					+ "<b style='color:#21bfc5;'>Rfpnj</b></br>"
 					+ "<b style='color:#21bfc5;'>Tukaima</b></br>");
+
+			UtilText.nodeContentSB.append("<br/>"
+					+ Main.MOD_NAME + " mod contributors:<br/>"
+					+ "<b class='mod-color'>Sarkath</b>"
+					+ "<br/>");
 			
 			UtilText.nodeContentSB.append("<br/>"
 						+ "Special thanks to:<br/>"
@@ -2783,12 +2797,13 @@ public class OptionsDialogue {
 						+ "<b style='color:#e06e5f;'>Everyone who's financially supported me</b>,<br/>"
 						+ "<b>Bug reporters</b>,<br/>"
 						+ "and<br/>"
-						+ "<b>Everyone for playing Lilith's Throne!</b>"
-					+ "</p>"
-					+ "<br/>"
+						+ "<b>Everyone for playing Lilith's Throne!</b>");
+
+			UtilText.nodeContentSB.append("</p><br/>"
 					+ "<h5 style='text-align:center; color:"+PresetColour.RARITY_LEGENDARY.toWebHexString()+";'>Legendary Patrons</h5>"
 					+ "<p style='text-align:center;'>");
-			
+
+
 			for(CreditsSlot cs : Main.credits) {
 				if(cs.getLegendaryCount()>0) {
 					UtilText.nodeContentSB.append("<br/>");
@@ -2806,14 +2821,14 @@ public class OptionsDialogue {
 						for(int i=0; i<cs.getRareCount()%5; i++) {
 							UtilText.nodeContentSB.append("<b style='color:"+PresetColour.RARITY_RARE.toWebHexString()+";'>&#9679</b> ");
 						}
-						
+
 						for(int i=0; i<cs.getEpicCount()/5; i++) {// 5-marks:
 							UtilText.nodeContentSB.append("<b style='color:"+PresetColour.RARITY_EPIC.toWebHexString()+";'>&#127775</b> ");
 						}
 						for(int i=0; i<cs.getEpicCount()%5; i++) {
 							UtilText.nodeContentSB.append("<b style='color:"+PresetColour.RARITY_EPIC.toWebHexString()+";'>&#9679</b> ");
 						}
-						
+
 						for(int i=0; i<cs.getLegendaryCount()/5; i++) {// 5-marks:
 							UtilText.nodeContentSB.append("<b style='color:"+PresetColour.RARITY_LEGENDARY.toWebHexString()+";'>&#127775</b> ");
 						}
