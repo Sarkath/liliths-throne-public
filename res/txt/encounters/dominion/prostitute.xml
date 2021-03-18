@@ -4,12 +4,10 @@
 	<!-- ALLEY_PROSTITUTE -->
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_STORM"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	#IF(npc.hasEncounteredBefore())
 		<p>
 			#IF(canal)
@@ -117,12 +115,10 @@
 	]]></htmlContent>
 	
 	<htmlContent tag="ALLEY_PROSTITUTE"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	#IF(npc.hasEncounteredBefore())
 		<p>
 			#IF(canal)
@@ -250,14 +246,12 @@
 	]]></htmlContent>
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_DOM_SEX"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-				
-		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
-	#ENDVAR
-	
+
+	#VAR storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+
 	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you lean in towards [npc.herHim] and dominantly press your mouth against [npc.her] [npc.lips+]. Letting out a desperate [npc.moan], the horny [npc.race] immediately starts sloppily kissing you, before pulling back a little and panting, [npc.speech(Come on, fuck me senseless! Let's do it, right here, right now!)]
@@ -290,14 +284,12 @@
 	]]></htmlContent>
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_SUB_SEX"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-				
-		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
-	#ENDVAR
-	
+
+	#VAR storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+
 	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you lean in towards [npc.herHim] and submissively let [npc.herHim] press [npc.her] [npc.lips+] against your mouth. Letting out a desperate [npc.moan], the horny [npc.race] immediately starts sloppily kissing you, before pulling back a little and panting, [npc.speech(Oh yes! I'm going to fuck you senseless! Let's do it, right here, right now!)]
@@ -330,14 +322,12 @@
 	]]></htmlContent>
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_THREESOME"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-				
-		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
-	#ENDVAR
-	
+
+	#VAR storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+
 	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you tell your [com.companion] to join in on the fun, before leaning in towards the horny [npc.race] and dominantly pressing your mouth against [npc.her] [npc.lips+]. Letting out a desperate [npc.moan], [npc.name] immediately starts sloppily kissing you, before pulling back a little and panting, [npc.speech(Come on, fuck me senseless! Let's do it, right here, right now!)]
@@ -368,14 +358,12 @@
 	]]></htmlContent>
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_COMPANION_DOM_SEX"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-				
-		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
-	#ENDVAR
-	
+
+	#VAR storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+
 	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you step away from [npc.herHim] and tell your [com.companion] to take your place. Happy enough to be given the opportunity to have sex with this horny [npc.race], [com.name] leans in towards [npc.herHim] and dominantly presses [com.her] mouth against [npc.her] [npc.lips+]. Letting out a desperate [npc.moan], the [npc.name] immediately starts sloppily kissing your [com.companion], before pulling back a little and panting, [npc.speech(Come on, fuck me senseless! Let's do it, right here, right now!)]
@@ -414,14 +402,12 @@
 	]]></htmlContent>
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_COMPANION_SUB_SEX"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-				
-		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
-	#ENDVAR
-	
+
+	#VAR storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+
 	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you step away from [npc.herHim] and tell your [com.companion] to take your place. Happy enough to be given the opportunity to have sex with this horny [npc.race], [com.name] [com.steps] forwards and allows [npc.name] to dominantly press [npc.her] [npc.lips+] against [com.her] mouth. Letting out a desperate [npc.moan], the [npc.name] immediately starts sloppily kissing your [com.companion], before pulling back a little and panting, [npc.speech(Oh yes! I'm going to fuck you senseless! Let's do it, right here, right now!)]
@@ -483,10 +469,8 @@
 	]]></htmlContent>
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_QUESTION"><![CDATA[
-	#VAR
-		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
-	#ENDVAR
-	
+	#VAR storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+
 	<p>
 		Wondering why [npc.name] is choosing to work in these dangerous alleyways, you ask [npc.herHim] why [npc.she] isn't trying to attract customers out in the safety of Dominion's main streets, or, even better, in the city's red light district.
 	</p>

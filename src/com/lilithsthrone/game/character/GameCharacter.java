@@ -19715,6 +19715,10 @@ public abstract class GameCharacter implements XMLSaving {
 		return false;
 	}
 
+	public boolean isCharacterPossiblyFather(GameCharacter id) {
+	    return isCharacterPossiblyFather(id.getId());
+    }
+
 	/**
 	 * @return A list of PregnancyPossibilities which are linked to the possibility of this character being a father. i.e. A list of all the people who this character could have gotten pregnant.
 	 */

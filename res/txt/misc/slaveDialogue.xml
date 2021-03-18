@@ -129,18 +129,16 @@
 	</htmlContent>
 	
 	<htmlContent tag="SEX_SPITROAST_FRONT_START"><![CDATA[
-	#VAR
-		var isRape = !npc.isAttractedTo(pc) && !npc.isAttractedTo(npc2);
-	
-		var positioning = "";
-		if(npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL) {
-			positioning = "onto [npc.her] hands and knees ";
-		}
-		var playerPositioning = "Falling to your knees in front of [npc.name], you say,";
-		if(pc.isTaur()) {
-			playerPositioning = "Turning your [pc.legConfiguration] body to one side, you present your groin to [npc.name], before calling down to [npc.herHim],";
-		}
-	#ENDVAR
+	#VAR isRape = !npc.isAttractedTo(pc) && !npc.isAttractedTo(npc2);
+
+	#VAR positioning = "";
+	#IF(npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL)
+		#VAR positioning = "onto [npc.her] hands and knees ";
+	#ENDIF
+	#VAR playerPositioning = "Falling to your knees in front of [npc.name], you say,";
+	#IF(pc.isTaur())
+		#VAR playerPositioning = "Turning your [pc.legConfiguration] body to one side, you present your groin to [npc.name], before calling down to [npc.herHim],";
+	#ENDIF
 	
 	#IF(!isRape)
 		<p>
@@ -216,21 +214,19 @@
 	</htmlContent>
 	
 	<htmlContent tag="SEX_SPITROAST_BEHIND_START"><![CDATA[
-	#VAR
-		var isRape = !npc.isAttractedTo(pc) && !npc.isAttractedTo(npc2);
-		
-		var positioning = "";
-		if(npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL) {
-			positioning = "onto [npc.her] hands and knees ";
-		}
-		var playerPositioning = "Falling to your knees behind [npc.name], you say,";
-		var playerMounting = "take [npc.herHim]! Make sure to give me a good, hard fucking while I pleasure [npc2.name] with my mouth!";
-		if(pc.isTaur()) {
-			playerPositioning = "Stepping forwards so that your [pc.legConfiguration] body is over the top of [npc.name], you call down to [npc.herHim],";
-			playerMounting = "mount [npc.herHim]! Make sure to give me a good, hard rutting while I pleasure [npc2.name] with my mouth!";
-		}
-	#ENDVAR
-	
+	#VAR isRape = !npc.isAttractedTo(pc) && !npc.isAttractedTo(npc2);
+
+	#VAR positioning = "";
+	#IF(npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL) {
+		positioning = "onto [npc.her] hands and knees ";
+	#ENDIF
+	#VAR playerPositioning = "Falling to your knees behind [npc.name], you say,";
+	#VAR playerMounting = "take [npc.herHim]! Make sure to give me a good, hard fucking while I pleasure [npc2.name] with my mouth!";
+	#IF(pc.isTaur())
+		#VAR playerPositioning = "Stepping forwards so that your [pc.legConfiguration] body is over the top of [npc.name], you call down to [npc.herHim],";
+		#VAR playerMounting = "mount [npc.herHim]! Make sure to give me a good, hard rutting while I pleasure [npc2.name] with my mouth!";
+	#ENDIF
+
 	#IF(!isRape)
 		<p>
 			[pc.speech(You know, I was thinking that the three of us could have some fun together,)] you tease, turning to face [npc.name]. [pc.speech(You want to show [npc2.name] and I what a horny little sub you are, don't you?)]

@@ -4,12 +4,10 @@
 	<!-- ALLEY_ATTACK -->
 	
 	<htmlContent tag="ALLEY_ATTACK"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		#IF(canal)
 			You find yourself wandering down the track that runs alongside Dominion's canal. As you walk past a collection of leafy bushes growing on one side of the path, a shadowy figure suddenly leaps out, blocking your path.
@@ -39,13 +37,11 @@
 	</htmlContent>
 	
 	<htmlContent tag="ALLEY_ATTACK_REPEAT"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
 		var companions = pc.hasCompanions();
-	#ENDVAR
-	
+
 	<p>
 		#IF(canal)
 			Knowing that [npc.name(a)] is prowling around this area, you make sure to stay on high alert as you wander down the track that runs alongside Dominion's canal. Just as you suspected, as you cautiously pass a collection of leafy bushes growing on one side of the path, a shadowy figure leaps out, blocking your path! You instantly recognise the [npc.fullRace(true)], and you jump back into a fighting stance as you expect this encounter to be much the same as the last one.
@@ -222,13 +218,22 @@
 	</htmlContent>
 	
 	<htmlContent tag="ALLEY_ATTACK_PEACEFUL"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-		var companions = pc.hasCompanions();
-	#ENDVAR
-	
+	#VAR companions = pc.hasCompanions();
+
+	<p>Canal: [#canal]</p>
+	#IF(!canal)
+		<p><b>Non-canal message set.</b></p>
+		#VAR message = "NOT IN THE CANAL; LOL";
+	#ELSE
+		<p><b>Canal message set.</b></p>
+		#VAR message = "TOTALLY IN THE CANAL; LOL";
+	#ENDIF
+
+	<p>[#message]</p>
+
 	#IF(canal)
 		<p>
 			Knowing that [npc.name] calls this area [npc.her] home, you make sure to stay on the lookout for [npc.herHim] as you wander down the track that runs alongside Dominion's canal. Just as you suspected, as you pass a collection of leafy bushes growing on one side of the path, you see a familiar figure leaning against a brick wall up ahead.

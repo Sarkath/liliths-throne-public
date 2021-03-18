@@ -2626,7 +2626,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 								&& !Main.sex.getItemUseDenials(this, partner).contains(ItemType.getItemTypeFromId("innoxia_pills_sterility"))) {
 							return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_sterility"),
 										UtilText.parse(this, charactersPenetratingThisNpc.get(0),
-												"Taking a small blue '[#item('innoxia_pills_sterility').getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before quickly slipping it into [npc.her] mouth and swallowing it down."
+												"Taking a small blue '[#ITEM_innoxia_pills_sterility.getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before quickly slipping it into [npc.her] mouth and swallowing it down."
 												+ (this.isMute()
 														?" Knowing that [npc.sheIs] now far less fertile and extremely unlikely to get knocked up, [npc.name] lets out a relieved [npc.moan]..."
 														:" Knowing that [npc.sheIs] now far less fertile and extremely unlikely to get knocked up, [npc.name] [npc.moansVerb], [npc.speech(I really don't want to get pregnant...)]")));
@@ -2642,7 +2642,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 								&& !Main.sex.getItemUseDenials(this, partner).contains(ItemType.getItemTypeFromId("innoxia_pills_fertility"))) {
 							return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_fertility"),
 									UtilText.parse(this, charactersPenetratingThisNpc.get(0),
-											"Taking a small pink '[#item('innoxia_pills_fertility').getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before quickly slipping it into [npc.her] mouth and swallowing it down."
+											"Taking a small pink '[#ITEM_innoxia_pills_fertility.getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before quickly slipping it into [npc.her] mouth and swallowing it down."
 											+ (this.isMute()
 													?" Knowing that [npc.sheIs] now a lot more fertile, [npc.name] lets out [npc.a_moan+] as [npc.she] imagines [npc2.name] finishing inside of [npc.herHim] and getting [npc.herHim] knocked up..."
 													:" Knowing that [npc.sheIs] now a lot more fertile, [npc.name] lets out [npc.a_moan+] and pleads, [npc.speech(Finish inside of me! I want you to knock me up!)]")));
@@ -2659,7 +2659,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 								&& !Main.sex.getItemUseDenials(this, partner).contains(ItemType.getItemTypeFromId("innoxia_pills_sterility"))) {
 							return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_sterility"),
 										UtilText.parse(this, charactersThisNpcIsPenetrating.get(0),
-												"Taking a small blue '[#item('innoxia_pills_sterility').getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before quickly slipping it into [npc.her] mouth and swallowing it down."
+												"Taking a small blue '[#ITEM_innoxia_pills_sterility.getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before quickly slipping it into [npc.her] mouth and swallowing it down."
 												+ (this.isMute()
 														?" Knowing that [npc.sheIs] now far less virile and extremely unlikely to knock [npc2.name] up, [npc.name] lets out a relieved [npc.moan]..."
 														:" Knowing that [npc.sheIs] now far less virile and extremely unlikely to knock [npc2.name] up, [npc.name] [npc.moansVerb], [npc.speech(That's better! I won't be getting you pregnant now!)]")));
@@ -2675,7 +2675,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 								&& !Main.sex.getItemUseDenials(this, partner).contains(ItemType.getItemTypeFromId("innoxia_pills_fertility"))) {
 							return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_fertility"),
 									UtilText.parse(this, charactersThisNpcIsPenetrating.get(0),
-											"Taking a small pink '[#item('innoxia_pills_fertility').getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before quickly slipping it into [npc.her] mouth and swallowing it down."
+											"Taking a small pink '[#ITEM_innoxia_pills_fertility.getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before quickly slipping it into [npc.her] mouth and swallowing it down."
 											+ (this.isMute()
 													?" Knowing that [npc.sheIs] now a lot more virile, [npc.name] lets out [npc.a_moan+] as [npc.she] imagines finishing inside of [npc2.herHim] and getting [npc2.herHim] knocked up..."
 													:" Knowing that [npc.sheIs] now a lot more virile, [npc.name] lets out [npc.a_moan+] and teases, [npc.speech(I'm going to give you a big creampie and get you knocked up!)]")));
@@ -2697,7 +2697,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 								if(partner.isPlayer()) {
 									if(Main.sex.isForcingItemUse(this, partner)) {
 										return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_sterility"),
-												"Taking a small blue '[#item('innoxia_pills_sterility').getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before reaching over and pushing it into your mouth."
+												"Taking a small blue '[#ITEM_innoxia_pills_sterility.getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before reaching over and pushing it into your mouth."
 												+ " Clasping [npc.her] [npc.hand] over your [pc.lips] to prevent you from spitting it out,"
 													+ (this.isMute()
 															?" [npc.name] lets out a commanding growl and refuses to let go until you've swallowed it down..."
@@ -2705,7 +2705,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 										
 									} else {
 										return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_sterility"),
-												"Taking a small blue '[#item('innoxia_pills_sterility').getName(false)]' out of [npc.her] inventory, [npc.name] holds it out to you"
+												"Taking a small blue '[#ITEM_innoxia_pills_sterility.getName(false)]' out of [npc.her] inventory, [npc.name] holds it out to you"
 													+ (this.isMute()
 															?" and makes a pleading whine as [npc.she] motions for you to swallow it..."
 															:" and asks, [npc.speech(Please swallow this; I don't want you knocking me up!)]"));
@@ -2726,7 +2726,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 							if(partner.isPlayer()) {
 								if(Main.sex.isForcingItemUse(this, partner)) {
 									return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_fertility"),
-											"Taking a small pink '[#item('innoxia_pills_fertility').getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before reaching over and pushing it into your mouth."
+											"Taking a small pink '[#ITEM_innoxia_pills_fertility.getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before reaching over and pushing it into your mouth."
 											+ " Clasping [npc.her] [npc.hand] over your [pc.lips] to prevent you from spitting it out,"
 												+ (this.isMute()
 														?" [npc.name] lets out a commanding growl and refuses to let go until you've swallowed it down..."
@@ -2734,7 +2734,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 									
 								} else {
 									return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_fertility"),
-											"Taking a small pink '[#item('innoxia_pills_fertility').getName(false)]' out of [npc.her] inventory, [npc.name] holds it out to you"
+											"Taking a small pink '[#ITEM_innoxia_pills_fertility.getName(false)]' out of [npc.her] inventory, [npc.name] holds it out to you"
 												+ (this.isMute()
 														?" and makes a pleading whine as [npc.she] motions for you to swallow it..."
 														:" and asks, [npc.speech(Please swallow this; I want you to knock me up!)]"));
@@ -2758,7 +2758,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 							if(partner.isPlayer()) {
 								if(Main.sex.isForcingItemUse(this, partner)) {
 									return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_sterility"),
-											"Taking a small blue '[#item('innoxia_pills_sterility').getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before reaching over and pushing it into your mouth."
+											"Taking a small blue '[#ITEM_innoxia_pills_sterility.getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before reaching over and pushing it into your mouth."
 											+ " Clasping [npc.her] [npc.hand] over your [pc.lips] to prevent you from spitting it out,"
 												+ (this.isMute()
 														?" [npc.name] lets out a commanding growl and refuses to let go until you've swallowed it down..."
@@ -2766,7 +2766,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 									
 								} else {
 									return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_sterility"),
-											"Taking a small blue '[#item('innoxia_pills_sterility').getName(false)]' out of [npc.her] inventory, [npc.name] holds it out to you"
+											"Taking a small blue '[#ITEM_innoxia_pills_sterility.getName(false)]' out of [npc.her] inventory, [npc.name] holds it out to you"
 												+ (this.isMute()
 														?" and makes a pleading whine as [npc.she] motions for you to swallow it..."
 														:" and asks, [npc.speech(Please swallow this; I don't want to knock you up!)]"));
@@ -2786,7 +2786,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 							if(partner.isPlayer()) {
 								if(Main.sex.isForcingItemUse(this, partner)) {
 									return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_fertility"),
-											"Taking a small pink '[#item('innoxia_pills_fertility').getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before reaching over and pushing it into your mouth."
+											"Taking a small pink '[#ITEM_innoxia_pills_fertility.getName(false)]' out of [npc.her] inventory, [npc.name] pops it out of its protective wrapper before reaching over and pushing it into your mouth."
 											+ " Clasping [npc.her] [npc.hand] over your [pc.lips] to prevent you from spitting it out,"
 												+ (this.isMute()
 														?" [npc.name] lets out a commanding growl and refuses to let go until you've swallowed it down..."
@@ -2794,7 +2794,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 									
 								} else {
 									return new Value<>(Main.game.getItemGen().generateItem("innoxia_pills_fertility"),
-											"Taking a small pink '[#item('innoxia_pills_fertility').getName(false)]' out of [npc.her] inventory, [npc.name] holds it out to you"
+											"Taking a small pink '[#ITEM_innoxia_pills_fertility.getName(false)]' out of [npc.her] inventory, [npc.name] holds it out to you"
 												+ (this.isMute()
 														?" and makes a pleading whine as [npc.she] motions for you to swallow it..."
 														:" and asks, [npc.speech(Please swallow this; I want to knock you up!)]"));
@@ -3035,7 +3035,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 			if(item.getItemType().equals(ItemType.getItemTypeFromId("innoxia_pills_sterility"))) {
 				sb.append(UtilText.parse(user, target,
 						"<p>"
-							+ "Holding out a '[#item('innoxia_pills_sterility').getName(false)]' to [npc2.name], [npc.name] [npc.verb(tell)] [npc2.herHim] to swallow it so that [npc.she] [npc.does]'t have to worry about any unexpected pregnancies."));
+							+ "Holding out a '[#ITEM_innoxia_pills_sterility.getName(false)]' to [npc2.name], [npc.name] [npc.verb(tell)] [npc2.herHim] to swallow it so that [npc.she] [npc.does]'t have to worry about any unexpected pregnancies."));
 				
 				if(isObedientSlave) {
 					sb.append(UtilText.parse(user, target, 
@@ -3061,7 +3061,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 			} else if(item.getItemType().equals(ItemType.getItemTypeFromId("innoxia_pills_fertility"))) {
 				sb.append(UtilText.parse(user, target,
 						"<p>"
-							+ "Holding out a '[#item('innoxia_pills_fertility').getName(false)]' to [npc2.name], [npc.name] [npc.verb(tell)] [npc2.herHim] to swallow it in order to boost the chance of a successful impregnation."));
+							+ "Holding out a '[#ITEM_innoxia_pills_fertility.getName(false)]' to [npc2.name], [npc.name] [npc.verb(tell)] [npc2.herHim] to swallow it in order to boost the chance of a successful impregnation."));
 				
 				if(isObedientSlave) {
 					sb.append(UtilText.parse(user, target, 
@@ -3088,7 +3088,7 @@ public abstract class NPC extends GameCharacter implements XMLSaving {
 			} else if(item.getItemType().equals(ItemType.getItemTypeFromId("innoxia_pills_broodmother"))) {
 				sb.append(UtilText.parse(user, target,
 						"<p>"
-							+ "Holding out a '[#item('innoxia_pills_broodmother').getName(false)]' to [npc2.name], [npc.name] [npc.verb(tell)] [npc2.herHim] to swallow it in order to boost the chance of a successful impregnation."));
+							+ "Holding out a '[#ITEM_innoxia_pills_broodmother.getName(false)]' to [npc2.name], [npc.name] [npc.verb(tell)] [npc2.herHim] to swallow it in order to boost the chance of a successful impregnation."));
 				
 				if(isObedientSlave) {
 					sb.append(UtilText.parse(user, target, 

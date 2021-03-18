@@ -939,24 +939,16 @@ public class UtilText {
 		}
 		
 		if(xmlParsing) {
-			if(input.contains("#VAR")) { // Set variables to be parsed on each conditional:
-				speechTarget = "";
-				parserVariableCalls = new ArrayList<>();
-				Matcher matcherVAR = Pattern.compile("(?s)#VAR(.*?)#ENDVAR").matcher(input);
-				while(matcherVAR.find()) {
-					String s = matcherVAR.group().replaceAll("#VAR", "").replaceAll("#ENDVAR", "");
-					parserVariableCalls.add(s);
-				}
-				input = input.replaceAll("(?s)#VAR(.*?)#ENDVAR", "");
-			} else {
-				speechTarget = "";
-				parserVariableCalls = new ArrayList<>();
-			}
+			speechTarget = "";
+			parserVariableCalls = new ArrayList<>();
 		}
+
+		setNPCs(specialNPC);
 		
 		try {
 			StringBuilder resultBuilder = new StringBuilder();
 			StringBuilder sb = new StringBuilder();
+			Boolean openQuotes = false;
 			int openBrackets = 0;
 			int closeBrackets = 0;
 			int openArg = 0;
@@ -991,18 +983,29 @@ public class UtilText {
 						conditionalCloseBrackets++;
 					}
 				}
+
+				if (currentParseMode == ParseMode.VARIABLE) {
+					if(c == '"') {
+						openQuotes = !openQuotes;
+					} else if(c == ';' && !openQuotes) {
+						endIndex = i;
+					}
+
+					if(endIndex == 0)
+						sb.append(c);
+				}
 				
-				if (currentParseMode != ParseMode.REGULAR && currentParseMode != ParseMode.REGULAR_SCRIPT) {
+				if (currentParseMode != ParseMode.REGULAR && currentParseMode != ParseMode.REGULAR_SCRIPT && currentParseMode != ParseMode.VARIABLE) {
 					suppressOutput = false;
 					if (c == 'F' && substringMatchesInReverseAtIndex(input, "#IF", i)) {
 						if (openBrackets == 0) {
 							conditionals = new LinkedHashMap<>();
 							currentParseMode = ParseMode.CONDITIONAL;
-							startIndex = i-2;
-							
-							for(int j=i+1;j<input.length();j++) {
-								if(!Character.isWhitespace(input.charAt(j))) {
-									usingConditionalBrackets = input.charAt(j)=='(';
+							startIndex = i - 2;
+
+							for (int j = i + 1; j < input.length(); j++) {
+								if (!Character.isWhitespace(input.charAt(j))) {
+									usingConditionalBrackets = input.charAt(j) == '(';
 									lastConditionalUsedBrackets = usingConditionalBrackets;
 									break;
 								}
@@ -1010,9 +1013,9 @@ public class UtilText {
 						} else {
 							lastConditionalUsedBrackets = false;
 						}
-						
+
 						openBrackets++;
-						
+
 					} else if (currentParseMode == ParseMode.CONDITIONAL) {
 						if(usingConditionalBrackets) {
 							if(conditionalOpenBrackets>0 && conditionalOpenBrackets==conditionalCloseBrackets && openBrackets-1==closeBrackets) {
@@ -1135,15 +1138,19 @@ public class UtilText {
 	//									conditionalFalse = "";
 										conditionals.putIfAbsent(conditionalStatement, sb.toString().substring(1, sb.length()-5)); // Cut off the '#ENDIF' at the end of this section.
 									}
-				
+
 									endIndex = i;
 								}
 							}
 						}
+					} else if (c == 'R' && substringMatchesInReverseAtIndex(input, "#VAR", i)) {
+						currentParseMode = ParseMode.VARIABLE;
+						startIndex = i - 3;
+						sb = new StringBuilder();
 					}
 				}
 				
-				if (currentParseMode != ParseMode.CONDITIONAL) {
+				if (currentParseMode != ParseMode.CONDITIONAL && currentParseMode != ParseMode.VARIABLE) {
 					suppressOutput = false;
 					if (c == '[') {
 						if(openBrackets==0) {
@@ -1215,7 +1222,7 @@ public class UtilText {
 					}
 				}
 				
-				if (openBrackets>0 && ((target!=null && command!=null) || (!Character.isWhitespace(c) || c==' '))) {
+				if (currentParseMode != ParseMode.VARIABLE && openBrackets>0 && ((target!=null && command!=null) || (!Character.isWhitespace(c) || c==' '))) {
 					sb.append(c);
 				}
 				
@@ -1224,6 +1231,9 @@ public class UtilText {
 					String subResult;
 					if(currentParseMode == ParseMode.CONDITIONAL) {
 						subResult = parseConditionalSyntaxNew(specialNPC, conditionals, xmlParsing);
+					} else if(currentParseMode == ParseMode.VARIABLE) {
+						parser.parseExpression(sb.toString()).getValue(ctx, api);
+						subResult = "";
 					} else {
 						subResult = parseSyntaxNew(specialNPC, target, command, arguments, currentParseMode);
 					}
@@ -9064,18 +9074,11 @@ public class UtilText {
 
 
 			try {
-				StringBuilder commandWithVariableCalls = new StringBuilder();
-				
-				for(String s : parserVariableCalls) {
-					commandWithVariableCalls.append(s+";");
-				}
-				commandWithVariableCalls.append(command);
-				
 				if(suppressOutput) {
-					parser.parseExpression(commandWithVariableCalls.toString()).getValue(ctx, api);
+					parser.parseExpression(command).getValue(ctx, api);
 					return "";
 				}
-				return String.valueOf(parser.parseExpression(commandWithVariableCalls.toString()).getValue(ctx, api));
+				return String.valueOf(parser.parseExpression(command).getValue(ctx, api));
 			} catch(ExpressionException e) {
 				System.err.println("Parsing error: "+command);
 				System.err.println(e.getMessage());
@@ -9548,7 +9551,7 @@ public class UtilText {
 		
 		for(Entry<String, String> entry : conditionals.entrySet()) {
 			try {
-				if(evaluateConditional(specialNPCs, entry.getKey(), hasXmlVariables)){
+				if(evaluateConditional(specialNPCs, entry.getKey())){
 					return UtilText.parse(specialNPCs, entry.getValue(), false);
 				}
 				
@@ -9562,49 +9565,45 @@ public class UtilText {
 		
 		return "";
 	}
-	
-	public static boolean evaluateConditional(List<GameCharacter> specialNPCs, String conditionalStatement, boolean hasXmlVariables) throws ScriptException {
+
+	private static void setNPCs(List<GameCharacter> specialNPCs) {
+		if(!Main.game.isStarted()) return;
+
+		if(!specialNPCs.isEmpty()) {
+			//			System.out.println("List size: "+specialNPCList.size());
+			for(int i = 0; i<specialNPCs.size(); i++) {
+				if(i==0) {
+					api.put("npc", specialNPCs.get(i));
+				}
+				api.put("npc"+(i+1), specialNPCs.get(i));
+				//				System.out.println("Added: npc"+(i+1));
+			}
+
+		} else {
+			try { // Getting the target NPC can throw a NullPointerException, so if it does (i.e., there's no NPC suitable for parsing), just catch it and carry on.
+				api.put("npc", ParserTarget.NPC.getCharacter("npc", specialNPCs));
+				//				System.out.println("specialNPCList is empty");
+			} catch(Exception ex) {
+				//				System.err.println("Parsing error 2: Could not initialise npc");
+			}
+		}
+
+		if(Main.game.getPlayer().hasCompanions()) {
+			for(int i = 0; i<Main.game.getPlayer().getCompanions().size(); i++) {
+				if(i==0) {
+					api.put("com", Main.game.getPlayer().getCompanions().get(i));
+				}
+				api.put("com"+(i+1), Main.game.getPlayer().getCompanions().get(i));
+			}
+		}
+	}
+
+	public static boolean evaluateConditional(List<GameCharacter> specialNPCs, String conditionalStatement) throws ScriptException {
 		if(parser ==null) {
 			initScriptEngine();
 		}
 
-		if(Main.game.isStarted()) {
-			if(!specialNPCs.isEmpty()) {
-				//			System.out.println("List size: "+specialNPCList.size());
-				for(int i = 0; i<specialNPCs.size(); i++) {
-					if(i==0) {
-						api.put("npc", specialNPCs.get(i));
-					}
-					api.put("npc"+(i+1), specialNPCs.get(i));
-					//				System.out.println("Added: npc"+(i+1));
-				}
-
-			} else {
-				try { // Getting the target NPC can throw a NullPointerException, so if it does (i.e., there's no NPC suitable for parsing), just catch it and carry on.
-					api.put("npc", ParserTarget.NPC.getCharacter("npc", specialNPCs));
-					//				System.out.println("specialNPCList is empty");
-				} catch(Exception ex) {
-					//				System.err.println("Parsing error 2: Could not initialise npc");
-				}
-			}
-
-			if(Main.game.getPlayer().hasCompanions()) {
-				for(int i = 0; i<Main.game.getPlayer().getCompanions().size(); i++) {
-					if(i==0) {
-						api.put("com", Main.game.getPlayer().getCompanions().get(i));
-					}
-					api.put("com"+(i+1), Main.game.getPlayer().getCompanions().get(i));
-				}
-			}
-
-		}
-		
-		if(hasXmlVariables) {
-			for(String s : parserVariableCalls) {
-				// HACK: This should probably go into the parser.
-				parser.parseExpression(s).getValue(ctx, api);
-			}
-		}
+		setNPCs(specialNPCs);
 
 		return parser.parseExpression(conditionalStatement).getValue(ctx, api, Boolean.class);
 	}

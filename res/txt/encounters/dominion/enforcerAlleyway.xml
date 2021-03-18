@@ -4,17 +4,15 @@
 	<!-- ENFORCER_ALLEYWAY_START -->
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_START_REPEAT"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-		var playerEnforcer = npc.hasFlag(NPC_FLAG_thinksPlayerEnforcer);
-		var playerDemon = npc.hasFlag(NPC_FLAG_knowsPlayerDemon);
-		var playerEscaped = npc.hasFlag(NPC_FLAG_playerEscapedLastCombat);
-		var foughtPlayer = npc.hasFoughtPlayer();
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+	#VAR playerEnforcer = npc.hasFlag(NPC_FLAG_thinksPlayerEnforcer);
+	#VAR playerDemon = npc.hasFlag(NPC_FLAG_knowsPlayerDemon);
+	#VAR playerEscaped = npc.hasFlag(NPC_FLAG_playerEscapedLastCombat);
+	#VAR foughtPlayer = npc.hasFoughtPlayer();
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		#IF(canal)
 			#IF(!game.isDayTime())
@@ -126,14 +124,12 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_START"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-		var playerEnforcer = pc.hasAnyEnforcerStatusEffect();
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+	#VAR playerEnforcer = pc.hasAnyEnforcerStatusEffect();
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		#IF(canal)
 			#IF(!game.isDayTime())
@@ -244,12 +240,10 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_START_CONTINUE_HAD_SEX"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		Having already had sex with them, there's nothing left for you to do except tell these two Enforcers that you don't have any criminal activity to report.
 	</p>
@@ -269,12 +263,10 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_START_CONTINUE"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		Not wanting to spend any more time dealing with these Enforcers, you tell [npc.name] that you don't have any criminal activity to report.
 	</p>
@@ -291,10 +283,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_START_DEMONIC_SEDUCTION"><![CDATA[
-	#VAR
-		var foughtPlayer = npc.hasFoughtPlayer();
-	#ENDVAR
-	
+	#VAR foughtPlayer = npc.hasFoughtPlayer();
+
 	<p>
 		Wanting to have a little fun, you [pc.step] up close to [npc.name] and offer [npc.herHim] a flirty comment on how good [npc.she] looks in [npc.her] uniform.
 	</p>
@@ -573,10 +563,8 @@
 	<!-- Fucking pussy: -->
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_SEX_START_PENIS_PUSSY"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-	#ENDVAR
-	
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+
 	<p>
 		Deciding to do as you're told, you strip naked for [npc.name] and place your [pc.hands] up against the wall, before
 		#IF(pc.hasLegs())
@@ -603,10 +591,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_SEX_START_PENIS_PUSSY_THREESOME"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-	#ENDVAR
-	
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+
 	<p>
 		Deciding to do as you're told, you strip naked for [npc.name], but instead of placing your [pc.hands] up against the wall, you turn around and seductively ask whether [npc2.name] would like to join in with the search. Clearly eager to get in on the action, the [npc2.race] [npc2.steps] forwards, saying, [npc2.speech(Get down on all fours then! I'll use your mouth while [npc.name] here's fucking your pussy!)]
 	</p>
@@ -641,10 +627,8 @@
 	<!-- Fucking ass: -->
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_SEX_START_PENIS_ASSHOLE"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-	#ENDVAR
-	
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+
 	<p>
 		Deciding to do as you're told, you strip naked for [npc.name] and place your [pc.hands] up against the wall, before
 		#IF(pc.hasLegs())
@@ -671,10 +655,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_SEX_START_PENIS_ASSHOLE_THREESOME"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-	#ENDVAR
-	
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+
 	<p>
 		Deciding to do as you're told, you strip naked for [npc.name], but instead of placing your [pc.hands] up against the wall, you turn around and seductively ask whether [npc2.name] would like to join in with the search. Clearly eager to get in on the action, the [npc2.race] [npc2.steps] forwards, saying, [npc2.speech(Get down on all fours then! I'll use your mouth while [npc.name] here's fucking your ass!)]
 	</p>
@@ -709,10 +691,8 @@
 	<!-- Fingering pussy: -->
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_SEX_START_FINGER_PUSSY"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-	#ENDVAR
-	
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+
 	<p>
 		Deciding to do as you're told, you strip naked for [npc.name] and place your [pc.hands] up against the wall, before
 		#IF(pc.hasLegs())
@@ -734,10 +714,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_SEX_START_FINGER_PUSSY_THREESOME"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-	#ENDVAR
-	
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+
 	<p>
 		Deciding to do as you're told, you strip naked for [npc.name], but instead of placing your [pc.hands] up against the wall, you turn around and seductively ask whether [npc2.name] would like to join in with the search. Clearly eager to get in on the action, the [npc2.race] [npc2.steps] forwards, saying, [npc2.speech(Get down on all fours then! I'll use your mouth while [npc.name] here's having fun with your pussy!)]
 	</p>
@@ -767,11 +745,9 @@
 	<!-- Fingering ass & giving handjob: -->
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_SEX_START_FINGER_PENIS"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-		var analFingering = game.isAnalContentEnabled() && npc.getFetishDesire(FETISH_ANAL_GIVING).isPositive() && pc.isAbleToAccessCoverableArea(CA_ANUS, true);
-	#ENDVAR
-	
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+	#VAR analFingering = game.isAnalContentEnabled() && npc.getFetishDesire(FETISH_ANAL_GIVING).isPositive() && pc.isAbleToAccessCoverableArea(CA_ANUS, true);
+
 	<p>
 		Deciding to do as you're told, you strip naked for [npc.name] and place your [pc.hands] up against the wall, before
 		#IF(pc.hasLegs())
@@ -808,11 +784,9 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_SEX_START_FINGER_PENIS_THREESOME"><![CDATA[
-	#VAR
-		var kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
-		var analFingering = game.isAnalContentEnabled() && npc.getFetishDesire(FETISH_ANAL_GIVING).isPositive() && pc.isAbleToAccessCoverableArea(CA_ANUS, true);
-	#ENDVAR
-	
+	#VAR kindEncounter = npc.hasPersonalityTrait(PERSONALITY_TRAIT_KIND);
+	#VAR analFingering = game.isAnalContentEnabled() && npc.getFetishDesire(FETISH_ANAL_GIVING).isPositive() && pc.isAbleToAccessCoverableArea(CA_ANUS, true);
+
 	<p>
 		Deciding to do as you're told, you strip naked for [npc.name], but instead of placing your [pc.hands] up against the wall, you turn around and seductively ask whether [npc2.name] would like to join in with the search. Clearly eager to get in on the action, the [npc2.race] [npc2.steps] forwards, saying,
 		#IF(analFingering)
@@ -978,12 +952,10 @@
 	<!-- ENFORCER_ALLEYWAY_SOVERIEGN_CITIZEN -->
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_SOVERIEGN_CITIZEN"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	#IF(pc.getOccupation()==OCCUPATION_TOURIST)
 		<p>
 			[pc.speech(Now you listen here,)] you say, pointing your [pc.finger] first at [npc.name], and then at [npc2.name], [pc.speech(I doubt that you terrorists know the meaning of freedom, but let me tell you that I'm an American, and I'm not going to stand for a pair of jumped-up, tyrannical fascists telling me what to do! If you so much as <i>think</i> about trying to issue me another command, I'll be reporting you to the embassy! Nobody harasses an American citizen and gets away with it!)]
@@ -1050,12 +1022,10 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_REPORT_CONTINUE"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		#IF(pc.isHasSlaverLicense())
 			Deciding that you don't want [npc3.name] as a slave, you tell the Enforcers that you've got other things to do right now.
@@ -1082,12 +1052,10 @@
 	</htmlContent>
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_REPORT_HELP"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		Deciding that it would be a good idea to claim [npc3.name] as your slave, you tell the Enforcers that you'll tag along and take ownership of the [npc3.race].
 	</p>
@@ -1224,12 +1192,10 @@
 	<!-- ENFORCER_ALLEYWAY_REPORT_HELP_REWARD -->
 	
 	<htmlContent tag="ENFORCER_ALLEYWAY_REPORT_HELP_REWARD"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		As you lift the collar up to [npc3.namePos] neck, you see that the ring attached to the front starts to glow green; a clear indication that it's detecting the [npc3.race] as a potential enslavement target. Encouraged by the light, you finish what you started, and with a heavy metal 'clink', you clasp the collar around [npc3.her] neck.
 	</p>
@@ -1269,12 +1235,10 @@
 	<!-- AFTER_COMBAT_VICTORY -->
 	
 	<htmlContent tag="AFTER_COMBAT_VICTORY"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		Collapsing down onto the ground, [npc.name] pants, [npc.speech(You... You won't get away with this...)]
 	</p>
@@ -1312,12 +1276,10 @@
 	</htmlContent>
 	
 	<htmlContent tag="AFTER_COMBAT_VICTORY_CONTINUE"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		Deciding not to take advantage of their defeat, you turn your back on the two Enforcers and continue on your way down the 
 		#IF(canal)
@@ -1454,12 +1416,10 @@
 	<!-- AFTER_COMBAT_DEFEAT -->
 	
 	<htmlContent tag="AFTER_COMBAT_DEFEAT"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		Unable to continue fighting any longer, you feel your [pc.legs] give out from under you, and with a defeated sigh, you collapse down onto the ground.
 	</p>
@@ -1719,12 +1679,10 @@
 	<!-- AFTER_COMBAT_DEFEAT_SEX_REFUSED -->
 	
 	<htmlContent tag="AFTER_COMBAT_DEFEAT_SEX_REFUSED"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		#IF(npc2.isAttractedTo(pc))
 			Not at all happy with the idea of having sex with these two Enforcers, you tell them in no uncertain terms that they're to leave you alone.
@@ -1846,12 +1804,10 @@
 	</htmlContent>
 	
 	<htmlContent tag="AFTER_DEFEAT_SEX_CONTINUE"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		Moving around to block off any chance of your escape, [npc2.name] states, [npc.speech(We've still got to deal with the issue of your assault on a pair of Enforcers!)]
 	</p>
@@ -1910,12 +1866,10 @@
 	<!-- AFTER_DEFEAT_CELLS -->
 	
 	<htmlContent tag="AFTER_DEFEAT_CELLS"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		Still dazed from your defeat at the hands of these Enforcers, you're only vaguely aware of your surroundings as you're led
 		#IF(canal)
@@ -1944,12 +1898,10 @@
 	<!-- AFTER_CONTRABAND_CELLS -->
 	
 	<htmlContent tag="AFTER_CONTRABAND_CELLS"><![CDATA[
-	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+	#VAR canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
-	#ENDVAR
-	
+
 	<p>
 		Submitting to the Enforcers, you allow them to lock a pair of handcuffs around your wrists, before accompanying them
 		#IF(canal)

@@ -45,10 +45,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="HARPY_ATTACK_REPEAT"><![CDATA[
-	#VAR
-		var companions = pc.hasCompanions();
-	#ENDVAR
-	
+	#VAR companions = pc.hasCompanions();
+
 	<p>
 		#IF(companions)
 			Knowing that [npc.name(a)] is prowling around this area, you and [com.name] make sure to stay on high alert, carefully checking each and every dark corner and recess as you walk past the numerous platforms which constitute the Harpy Nests. Just as you suspected, as you cautiously pass a thick wooden support, a shadowy figure leaps out, blocking your path! You instantly recognise the [npc.fullRace(true)], and you and your [com.companion] jump back into a fighting stance as you expect this encounter to be much the same as the last one.
@@ -167,10 +165,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="HARPY_ATTACK_PEACEFUL"><![CDATA[
-	#VAR
-		var companions = pc.hasCompanions();
-	#ENDVAR
-	
+	#VAR companions = pc.hasCompanions();
+
 	<p>
 		Knowing that [npc.name] calls one of the nests in this area [npc.her] home, you make sure to stay on the lookout for [npc.herHim] as you wander past the numerous platforms which constitute the Harpy Nests. Just as you suspected, as you cautiously pass a thick wooden support, a shadowy figure leaps out, blocking your path!
 	</p>

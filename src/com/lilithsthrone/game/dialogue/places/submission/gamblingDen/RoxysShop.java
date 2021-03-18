@@ -411,12 +411,12 @@ public class RoxysShop {
 							+ (Main.game.getPlayer().hasItemType(ItemType.FETISH_UNREFINED)
 									?"[style.italicsBad("
 									:"[style.italicsGood(")
-								+"[#item('FETISH_UNREFINED').getDeterminer()] [#item('FETISH_UNREFINED').getName(false)])].",
+								+"[#ITEM_FETISH_UNREFINED.getDeterminer()] [#ITEM_FETISH_UNREFINED.getName(false)])].",
 							null);
 				}
 				return new Response("Sissify",
 						"Tell Roxy that Vengar would behave a lot better if she were to turn him into a sissy."
-						+ "<br/>Will consume: [style.italicsArcane(100 essences)] and [style.italicsMinorGood(one [#item('FETISH_UNREFINED').getName(false)])].",
+						+ "<br/>Will consume: [style.italicsArcane(100 essences)] and [style.italicsMinorGood(one [#ITEM_FETISH_UNREFINED.getName(false)])].",
 						VENGAR_SISSIFY) {
 					@Override
 					public void effects() {
@@ -425,7 +425,7 @@ public class RoxysShop {
 						Main.game.getTextStartStringBuilder().append(UtilText.parseFromXMLFile("places/submission/gamblingDen/roxysShop", "VENGAR_SISSIFY_END"));
 						Main.game.getTextEndStringBuilder().append(Main.game.getPlayer().incrementEssenceCount(-100, false));
 						Main.game.getPlayer().removeItemByType(ItemType.FETISH_UNREFINED);
-						Main.game.getTextEndStringBuilder().append("<p style='text-align:center;'>[style.italicsMinorBad(You lost <b>1</b> [#item('FETISH_UNREFINED').getName(false)]!)]</p>");
+						Main.game.getTextEndStringBuilder().append("<p style='text-align:center;'>[style.italicsMinorBad(You lost <b>1</b> [#ITEM_FETISH_UNREFINED.getName(false)]!)]</p>");
 					}
 				};
 				

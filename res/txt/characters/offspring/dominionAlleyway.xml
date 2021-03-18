@@ -2,14 +2,12 @@
 <dialogue>
 	
 	<htmlContent tag="OFFSPRING_ENCOUNTER"><![CDATA[
-	#VAR
-		var affection = npc.getAffection(pc);
-		var offspringPregnant = npc.isVisiblyPregnant();
-		var reactedToOffspringPregnancy = npc.isCharacterReactedToPregnancy(pc);
-		var playerPregnant = pc.isVisiblyPregnant();
-		var reactedToPlayerPregnancy = pc.isCharacterReactedToPregnancy(npc);
-	#ENDVAR
-	
+	#VAR affection = npc.getAffection(pc);
+	#VAR offspringPregnant = npc.isVisiblyPregnant();
+	#VAR reactedToOffspringPregnancy = npc.isCharacterReactedToPregnancy(pc);
+	#VAR playerPregnant = pc.isVisiblyPregnant();
+	#VAR reactedToPlayerPregnancy = pc.isCharacterReactedToPregnancy(npc);
+
 	#IF(!npc.hasFlag(NPC_FLAG_flagOffspringIntroduced))
 		<p>
 			In stark contrast to Dominion's bustling, ever-busy streets, the city's back alleys are all but completely deserted. Most likely due to their deserved reputation as being the dangerous home to muggers and rapists, you find that most of your time travelling through these twisting, labyrinthine passageways is spent in complete isolation. As you turn the next corner, however, your solitary journey is interrupted, as up ahead you see [npc.a_fullRace(true)] leaning back against one of the alley's walls.
@@ -193,10 +191,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFSPRING_ENCOUNTER_GREETING"><![CDATA[
-	#VAR
-		var pcIsMother = npc.getMother()!=null && npc.getMother().isPlayer();
-	#ENDVAR
-		
+	#VAR pcIsMother = npc.getMother()!=null && npc.getMother().isPlayer();
+
 	#IF(!npc.hasFlag(NPC_FLAG_flagOffspringIntroduced))
 		<p>
 			You're the first to recover from the shock of your surprise meeting, and, stepping forwards, you greet your [npc.daughter],
@@ -230,10 +226,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFSPRING_ENCOUNTER_HUG"><![CDATA[
-	#VAR
-		var pcIsMother = npc.getMother()!=null && npc.getMother().isPlayer();
-	#ENDVAR
-		
+	#VAR pcIsMother = npc.getMother()!=null && npc.getMother().isPlayer();
+
 	#IF(!npc.hasFlag(NPC_FLAG_flagOffspringIntroduced))
 		<p>
 			You're the first to recover from the shock of your surprise meeting, and, stepping forwards, you wrap your [pc.arms] around your [npc.daughter], before pulling [npc.herHim] into a loving hug. [npc.She] returns your embrace, hugging you close to [npc.her] warm body as you both share a happy moment, before breaking away from each other. Looking into [npc.her] [npc.eyes+], you greet your [npc.daughter] for the first time,
@@ -267,10 +261,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFSPRING_ENCOUNTER_KISS"><![CDATA[
-	#VAR
-		var pcIsMother = npc.getMother()!=null && npc.getMother().isPlayer();
-	#ENDVAR
-		
+	#VAR pcIsMother = npc.getMother()!=null && npc.getMother().isPlayer();
+
 	#IF(!npc.hasFlag(NPC_FLAG_flagOffspringIntroduced))
 		<p>
 			You're the first to recover from the shock of your surprise meeting, and, stepping forwards, you wrap your [pc.arms] around your [npc.daughter], before planting a wet kiss on [npc.her] cheek and pulling [npc.herHim] into a loving hug. [npc.She] returns your embrace, hugging you close to [npc.her] warm body as you both share a happy moment, before breaking away from each other. Looking into [npc.her] [npc.eyes+], you greet your [npc.daughter] for the first time,
@@ -474,9 +466,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFSPRING_ENCOUNTER_LEAVE"><![CDATA[
-	#VAR
-		var affection = npc.getAffection(pc);
-	#ENDVAR
+	#VAR affection = npc.getAffection(pc);
 
 	<p>
 		You don't really have time to stop and talk with [npc.name] at the moment, and you tell [npc.herHim] as much, [pc.speech(This isn't the best time for me right now, I'll come back later.)]
@@ -783,10 +773,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFSPRING_ENCOUNTER_SMALL_TALK"><![CDATA[
-	#VAR
-		var affection = npc.getAffection(pc);
-	#ENDVAR
-		
+	#VAR affection = npc.getAffection(pc);
+
 	<p>
 		You start to talk with [npc.name] about all sorts of unimportant things, ranging from the recent weather you've been having, to the state of Dominion's streets and alleyways. Talking to your [npc.daughter] fills you with a deep sense of calm and happiness, and every time [npc.she] smiles and offers [npc.her] opinion on something, you listen with rapt attention to every word that comes out of [npc.her] mouth.
 	</p>
@@ -1301,9 +1289,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFSPRING_OFFER_ROOM"><![CDATA[
-	#VAR
-		var affection = npc.getAffection(pc);
-	#ENDVAR
+	#VAR affection = npc.getAffection(pc);
 	<p>
 		You can't bear to let any [npc.relation(pc)] of yours continue to live in such squalid conditions, and so you say, [pc.speech([npc.Name], I really don't think living here is good for you. I want you to move in with me, so that you can live in comfort until you get your life back on track.)]
 	</p>

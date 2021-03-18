@@ -26,10 +26,8 @@
 	<!-- INITIAL_ENTRANCE -->
 	
 	<htmlContent tag="INITIAL_ENTRANCE"><![CDATA[
-	#VAR
-		var collar = pc.getClothingInSlot(IS_NECK);
-	#ENDVAR
-	
+	#VAR collar = pc.getClothingInSlot(IS_NECK);
+
 	<p>
 		[pc.Walking] up to the huge warehouse from which Dominion Express operates, you push open the front door and [pc.step] into the entrance hall. Partitioned from the main floor of the warehouse by an internal wall, this area is furnished to act as both a reception and waiting room. Several sofas and chairs are arrayed in rows on one side of this large room
 		#IF(game.isExtendedWorkTime())
@@ -101,10 +99,8 @@
 	<!-- CORRIDOR -->
 	
 	<htmlContent tag="CORRIDOR"><![CDATA[
-	#VAR
-		var collar = pc.getClothingInSlot(IS_NECK);
-	#ENDVAR
-	
+	#VAR collar = pc.getClothingInSlot(IS_NECK);
+
 	<p>
 		This wide, wooden-floored corridor cuts a direct path from one end of the warehouse to the other. While one side of this corridor is flanked by a solid wall, the other opens out onto a vast storage area, which is filled with stacks of crates, piles of furniture, and shelves stacked full of books.
 	</p>
@@ -135,10 +131,8 @@
 	<!-- STORAGE -->
 	
 	<htmlContent tag="STORAGE"><![CDATA[
-	#VAR
-		var collar = pc.getClothingInSlot(IS_NECK);
-	#ENDVAR
-	
+	#VAR collar = pc.getClothingInSlot(IS_NECK);
+
 	<p>
 		Dominion Express is not only in the business of cargo haulage, but also operates a highly-successful storage service. The vast majority of their warehouse's floor area is set aside for this purpose, and is home to countless crates, pieces of furniture, and book-shelves.
 	</p>
@@ -416,10 +410,8 @@
 	<!-- STABLES -->
 	
 	<htmlContent tag="STABLES"><![CDATA[
-	#VAR
-		var collar = pc.getClothingInSlot(IS_NECK);
-	#ENDVAR
-	
+	#VAR collar = pc.getClothingInSlot(IS_NECK);
+
 	<p>
 		At the far end of the corridor, there's a large, open archway connecting the warehouse to a sizeable annex. Looking through the archway, it's clear to see that this extension to the main building is where all of Dominion Express's centaur slaves are housed, and comprises of several long corridors lined with individual stalls, much like those found in a regular stable.
 		#IF(game.isExtendedWorkTime())
@@ -797,10 +789,8 @@
 	<!-- OFFICE_STABLE_ENTRY -->
 	
 	<htmlContent tag="OFFICE_STABLE_ENTRY_DENIED"><![CDATA[
-	#VAR
-		var collar = pc.getClothingInSlot(IS_NECK);
-	#ENDVAR
-	
+	#VAR collar = pc.getClothingInSlot(IS_NECK);
+
 	<p>
 		#IF(!game.getDialogueFlags().hasFlag(FLAG_natalyaInterviewOffered))
 			Deciding that you want to pay Natalya a visit, you knock on the door, which draws an immediate response from the secretary on the other side, who calls out, [style.speechFeminine(Enter!)]
@@ -972,10 +962,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFICE_STABLE_ENTRY_COLLAR_UPGRADED"><![CDATA[
-	#VAR
-		var collar = pc.getClothingInSlot(IS_NECK);
-	#ENDVAR
-	
+	#VAR collar = pc.getClothingInSlot(IS_NECK);
+
 	#IF(collar.getColour(0)==COLOUR_CLOTHING_GOLD)
 		<p>
 			Looking up from the piles of paperwork arrayed over the desk in front of her, Mistress Natalya starts to flash you one of her usual arrogant smirks, but as she catches sight of your gold filly choker, she does a double-take and asks in wide-eyed shock, [natalya.speech(W-What?! You actually managed to afford the gold upgrade?! Y-You're not supposed to be able to do that!)]
@@ -998,10 +986,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFICE_STABLE_ENTRY_WITH_COLLAR"><![CDATA[
-	#VAR
-		var collar = pc.getClothingInSlot(IS_NECK);
-	#ENDVAR
-	
+	#VAR collar = pc.getClothingInSlot(IS_NECK);
+
 	#IF(collar.getColour(0)==COLOUR_CLOTHING_GOLD)
 		<p>
 			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsDom))
@@ -1074,10 +1060,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFICE_STABLE_ENTRY_FILLY_LEAVE"><![CDATA[
-	#VAR
-		var collar = pc.getClothingInSlot(IS_NECK);
-	#ENDVAR
-	
+	#VAR collar = pc.getClothingInSlot(IS_NECK);
+
 	<p>
 		#IF(collar.getColour(0)==COLOUR_CLOTHING_GOLD)
 			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsDom))

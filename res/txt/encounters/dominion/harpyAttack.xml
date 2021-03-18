@@ -32,10 +32,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="HARPY_ATTACK_REPEAT"><![CDATA[
-	#VAR
-		var companions = pc.hasCompanions();
-	#ENDVAR
-	
+	#VAR companions = pc.hasCompanions();
+
 	<p>
 		As you travel along the narrow walkways, you find yourself passing the nest of that aggressive [npc.fullRace(true)] who attacked you before. As you walk by, [npc.she] suddenly jumps down in front of you, blocking your path!
 	</p>
@@ -208,10 +206,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="HARPY_ATTACK_PEACEFUL"><![CDATA[
-	#VAR
-		var companions = pc.hasCompanions();
-	#ENDVAR
-	
+	#VAR companions = pc.hasCompanions();
+
 	<p>
 		Knowing that [npc.namePos] nest is nearby, you make sure to stay on high alert, carefully looking up at the edges of the surrounding platforms as you walk down the twisting walkway. Just as you suspected, as you cautiously pass an overhanging platform, a figure leaps down in front of you, blocking your path!
 	</p>

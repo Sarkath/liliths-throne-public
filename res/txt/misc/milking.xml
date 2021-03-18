@@ -4,10 +4,8 @@
 	<!-- Milking breasts -->
 	
 	<htmlContent tag="MILKING_PLAYER"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 		<p>
 			You lie down on the artisan milker's comfortable, padded leather bed, and, attaching the
@@ -64,10 +62,8 @@
 	</htmlContent>
 
 	<htmlContent tag="MILKING_SLAVE_TARGET"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	<p>
 		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			As [npc.name] is already lying down on the artisan milker's comfortable, padded leather bed, you simply confirm that the
@@ -109,10 +105,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="MILKING_TARGET"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	<p>
 		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the artisan milker's comfortable, padded leather bed, and, attaching the
@@ -174,10 +168,8 @@
 	<!-- Milking cock -->
 	
 	<htmlContent tag="MILKING_COCK_PLAYER"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 		<p>
 			You lie down on the artisan milker's comfortable, padded leather bed, and, sliding the
@@ -237,10 +229,8 @@
 	</htmlContent>
 
 	<htmlContent tag="MILKING_COCK_SLAVE_TARGET"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	<p>
 		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			As [npc.name] is already lying down on the artisan milker's comfortable, padded leather bed, you simply confirm that the
@@ -284,10 +274,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="MILKING_COCK_TARGET"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	<p>
 		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			Wanting to have [npc.namePos] cum milked, you get [npc.herHim] to lie down on the artisan milker's comfortable, padded leather bed, and, sliding the
@@ -351,10 +339,8 @@
 	<!-- Milking pussy -->
 	
 	<htmlContent tag="MILKING_PUSSY_PLAYER"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 		<p>
 			You lie down on the artisan milker's comfortable, padded leather bed, and, sliding the
@@ -432,10 +418,8 @@
 	</htmlContent>
 
 	<htmlContent tag="MILKING_PUSSY_SLAVE_TARGET"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	<p>
 		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			As [npc.name] is already lying down on the artisan milker's comfortable, padded leather bed, you simply confirm that the
@@ -480,10 +464,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="MILKING_PUSSY_TARGET"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	<p>
 		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			Wanting to have [npc.namePos] girlcum milked, you get [npc.herHim] to lie down on the artisan milker's comfortable, padded leather bed, and, sliding the
@@ -548,10 +530,8 @@
 	<!-- Milking udders -->
 	
 	<htmlContent tag="MILKING_UDDERS_PLAYER"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 		<p>
 			You lie down on the artisan milker's comfortable, padded leather bed, and, attaching the
@@ -608,10 +588,8 @@
 	</htmlContent>
 
 	<htmlContent tag="MILKING_UDDERS_SLAVE_TARGET"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	<p>
 		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			As [npc.name] is already lying down on the artisan milker's comfortable, padded leather bed, you simply confirm that the
@@ -653,10 +631,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="MILKING_UDDERS_TARGET"><![CDATA[
-	#VAR
-		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
-	#ENDVAR
-	
+	#VAR upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
+
 	<p>
 		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the artisan milker's comfortable, padded leather bed, and, attaching the

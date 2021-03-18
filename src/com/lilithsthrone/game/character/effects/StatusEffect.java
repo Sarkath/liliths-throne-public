@@ -4754,7 +4754,7 @@ public class StatusEffect {
 			null) {
 		@Override
 		public String getDescription(GameCharacter target) {
-			return UtilText.parse(target, "After consuming a '[#item('innoxia_pills_fertility').getName(false)]', [npc.namePos] fertility and virility have been temporarily boosted.");
+			return UtilText.parse(target, "After consuming a '[#ITEM_innoxia_pills_fertility.getName(false)]', [npc.namePos] fertility and virility have been temporarily boosted.");
 		}
 		@Override
 		public boolean isSexEffect() {
@@ -4772,7 +4772,7 @@ public class StatusEffect {
 			null) {
 		@Override
 		public String getDescription(GameCharacter target) {
-			return UtilText.parse(target, "After consuming a '[#item('innoxia_pills_sterility').getName(false)]', [npc.namePos] fertility and virility have been greatly reduced."
+			return UtilText.parse(target, "After consuming a '[#ITEM_innoxia_pills_sterility.getName(false)]', [npc.namePos] fertility and virility have been greatly reduced."
 							+ " This is a <b>preventative</b> measure, and will not alter the outcome of any unprotected sex [npc.she] had before taking the pill!");
 		}
 		@Override
@@ -4794,7 +4794,7 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"After consuming a '[#item('innoxia_pills_broodmother').getName(false)]', [npc.namePos] fertility and virility have been temporarily boosted,"
+					"After consuming a '[#ITEM_innoxia_pills_broodmother.getName(false)]', [npc.namePos] fertility and virility have been temporarily boosted,"
 							+ " and if [npc.she] impregnates someone or becomes impregnated [npc.herself], [npc.she] will conceive far more offspring than usual!");
 		}
 		@Override

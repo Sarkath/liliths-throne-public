@@ -46,7 +46,7 @@ public enum SlavePermissionSetting {
 		}
 		@Override
 		public String getDescription() {
-			return UtilText.parse("Keep this slave on [#item('innoxia_pills_sterility').getNamePlural(false)], greatly reducing both their fertility and virility.");
+			return UtilText.parse("Keep this slave on [#ITEM_innoxia_pills_sterility.getNamePlural(false)], greatly reducing both their fertility and virility.");
 		}
 	},
 	PREGNANCY_NO_PILLS(true, "No Pills", "Don't give this slave any sort of fertility modification pills, resulting in a natural chance of them getting pregnant."),
@@ -57,7 +57,7 @@ public enum SlavePermissionSetting {
 		}
 		@Override
 		public String getDescription() {
-			return UtilText.parse("Keep this slave on [#item('innoxia_pills_fertility').getNamePlural(false)], greatly increasing both their fertility and virility.");
+			return UtilText.parse("Keep this slave on [#ITEM_innoxia_pills_fertility.getNamePlural(false)], greatly increasing both their fertility and virility.");
 		}
 	},
 
