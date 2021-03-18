@@ -30,7 +30,7 @@
 	
 	<generationAttributes>
 		<condAlphaImp constant="true"><![CDATA[npc.getSubspecies()==SUBSPECIES_IMP_ALPHA]]></condAlphaImp>
-		<condExhibitionist constant="true"><![CDATA[npc.hasFetish(fetish("FETISH_EXHIBITIONIST"))]]></condExhibitionist>
+		<condExhibitionist constant="true"><![CDATA[npc.hasFetish(FETISH_EXHIBITIONIST)]]></condExhibitionist>
 		
 		<condSpellcaster constant="true"><![CDATA[!npc.getAllSpells().isEmpty()]]></condSpellcaster>
 		<condHandWraps constant="true"><![CDATA[RND.nextInt(100)<=50]]></condHandWraps>

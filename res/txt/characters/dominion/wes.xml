@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dialogue>
 
-	<!-- WES_quest("START") -->
+	<!-- WES_QUEST_START -->
 	
-	<htmlContent tag="WES_quest("START")"><![CDATA[
+	<htmlContent tag="WES_QUEST_START"><![CDATA[
 	<p>
 		#IF(game.isDayTime())
 			Although the sun has already set this evening, there are still plenty of people out and about,
 		#ELSE
 			As you make your way down yet another of Dominion's streets, you can't help but notice how many people are out and about this evening,
 		#ENDIF
-		#IF(pc.getRace()==race("DEMON"))
+		#IF(pc.getRace()==RACE_DEMON)
 			 and while they hurry to get out of your way when they see that you're a demon, you still end up having to weave your way around some of the larger of the crowds.
 		#ELSE
 			 and you have to adjust your path every now and again so as to weave your way around the crowds.
 		#ENDIF
 	</p>
 	<p>
-		#IF(pc.hasTraitActivated(perk("OBSERVANT")))
+		#IF(pc.hasTraitActivated(PERK_OBSERVANT))
 			 As you're passing a slow-moving group of obnoxiously-loud revellers, you suddenly notice that an orange-furred, greater fox-boy, dressed in a grey hoodie and blue jeans, keeps on glancing your way from over on the other side of the street. Although his gaze is hidden behind a pair of dark glasses, you can tell that he's got some kind of particular interest in you. As your path around the crowd brings you closer to where he's standing, you see the fox-boy suddenly begin to move towards you, and as he sees that you've noticed his approach, he smiles and asks, [wes.speech(If I'm not mistaken, then you're [pc.name], right?)]
 		#ELSE
 			 As you're passing a slow-moving group of obnoxiously-loud revellers, you suddenly see that an orange-furred, greater fox-boy, dressed in a grey hoodie and blue jeans, is rapidly moving towards you. Although his gaze is hidden behind a pair of dark glasses, you can tell that he's got some kind of particular interest in you, and before you can react to his approach, he smiles and asks, [wes.speech(If I'm not mistaken, then you're [pc.name], right?)]
@@ -35,7 +35,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="WES_quest("AGREE")"><![CDATA[
+	<htmlContent tag="WES_QUEST_AGREE"><![CDATA[
 	<p>
 		Deciding to do as the fox-boy asks, you agree to meet him at the location and time he's given to you. Letting out a short sigh of relief, he flashes you a warm smile and declares, [wes.speech(I was right to seek your help. I'll see you soon!)]
 	</p>
@@ -48,7 +48,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="WES_quest("QUESTION")"><![CDATA[
+	<htmlContent tag="WES_QUEST_QUESTION"><![CDATA[
 	<p>
 		Wanting to know more about what this fox-boy wants before agreeing to meet with him, you ask him what sort of help he's expecting you to give. Sharply exhaling in frustration, he once again glances around and declares, [wes.speech(I don't have time to explain here. Please, just meet me tomorrow and I'll explain everything. I hope to see you soon!)]
 	</p>
@@ -62,10 +62,10 @@
 	</htmlContent>
 	
 	
-	<!-- WES_quest("SHOPPING_ARCADE_MEETING") -->
+	<!-- WES_QUEST_SHOPPING_ARCADE_MEETING -->
 	
-	<htmlContent tag="WES_quest("SHOPPING_ARCADE_MEETING")"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("wesQuestRefused")))
+	<htmlContent tag="WES_QUEST_SHOPPING_ARCADE_MEETING"><![CDATA[
+	#IF(game.getDialogueFlags().hasFlag(FLAG_wesQuestRefused))
 		<p>
 			Wanting to talk with Wes again, you decide to wait here outside of the antiques shop in the hopes that you'll be able to meet with him. Just like the last time you did this, the fox-boy doesn't show up for a good five minutes, but eventually you see him walking towards you from the same direction as which you arrived.
 		</p>
@@ -96,9 +96,9 @@
 	</htmlContent>
 	
 	
-	<!-- WES_quest("SHOPPING_ARCADE_MEETING_QUESTION") -->
+	<!-- WES_QUEST_SHOPPING_ARCADE_MEETING_QUESTION -->
 	
-	<htmlContent tag="WES_quest("SHOPPING_ARCADE_MEETING_QUESTION")"><![CDATA[
+	<htmlContent tag="WES_QUEST_SHOPPING_ARCADE_MEETING_QUESTION"><![CDATA[
 	<p>
 		Wanting to know more, and thinking that it would be best to start at the beginning, you ask Wes what exactly his superior officer is doing which would warrant them being investigated. After quickly glancing around to make sure that nobody's eavesdropping, the fox-boy explains, [wes.speech(The officer I'm talking about is '[elle.name] [elle.surname]', but everyone just calls her 'Elle'; she's the Senior Quartermaster over at Enforcer HQ. Me and her are the only two who have access to the station's inventory, and I've noticed over the past few weeks that equipment has started to go missing. It started with the odd pistol or a couple of batons, but just two days ago I discovered that even several of the cryoprism guns now only exist on paper. It <i>has</i> to be her who's taking them.)]
 	</p>
@@ -133,9 +133,9 @@
 	</htmlContent>
 	
 	
-	<!-- WES_quest("SHOPPING_ARCADE_MEETING_FAIL") -->
+	<!-- WES_QUEST_SHOPPING_ARCADE_MEETING_FAIL -->
 	
-	<htmlContent tag="WES_quest("SHOPPING_ARCADE_MEETING_FAIL")"><![CDATA[
+	<htmlContent tag="WES_QUEST_SHOPPING_ARCADE_MEETING_FAIL"><![CDATA[
 	<p>
 		Although you're certain that you can trust Wes to be telling the truth about the situation with Elle's criminal activities, you really don't like the idea of getting tangled up in the Enforcer's internal affairs. Telling the fox-boy that you're unwilling to do as he asks, you [pc.step] back from him and prepare to leave.
 	</p>
@@ -149,9 +149,9 @@
 	</htmlContent>
 	
 	
-	<!-- WES_quest("SHOPPING_ARCADE_MEETING_QUESTION_END") -->
+	<!-- WES_QUEST_SHOPPING_ARCADE_MEETING_QUESTION_END -->
 	
-	<htmlContent tag="WES_quest("SHOPPING_ARCADE_MEETING_QUESTION_END")"><![CDATA[
+	<htmlContent tag="WES_QUEST_SHOPPING_ARCADE_MEETING_QUESTION_END"><![CDATA[
 	<p>
 		Telling Wes that you'll do as he asks, you take the arcane recorder from him and listen as he instructs you on how to operate it. The device seems simple enough to use, and after you've told the fox-boy that you're confident in your ability at using it, he smiles and says, [wes.speech(Right, once you've tracked down Elle and recorded her illegal activities, you'll need to deposit this recorder in one of our anonymous evidence drop-boxes. Just ask that bimbo at the HQ's front desk where it is, or if you're down in Submission, then all of the Enforcer posts down there have one. After handing the evidence in, wait at least one week for the internal investigation to conclude, and then go back to the HQ's front desk and ask to see me. I'll have a reward for you then.)]
 	</p>
@@ -299,7 +299,7 @@
 	<p>
 		Deciding to follow Wes's instructions regarding the handling of the arcane recorder's incriminating footage, you ask Candi if there's any way for you to anonymously submit evidence of criminal activity. Blankly staring at you for a moment, the bimbo cat-girl bats her eyelids and asks, [candi.speechNoEffects(Umm, you mean, like, using the blue box thing? Yeah, I think you can, like, submit anonymous tips using that, or something...)]
 	</p>
-	#IF(pc.isQuestCompleted(questLine("SIDE_BUYING_BRAX")) && game.getSecondsPassed()-game.getDialogueFlags().getSavedLong("candi_sex_timer")>60*60*12)
+	#IF(pc.isQuestCompleted(QUEST_LINE_SIDE_BUYING_BRAX) && game.getSecondsPassed()-game.getDialogueFlags().getSavedLong("candi_sex_timer")>60*60*12)
 		<p>
 			After pointing down at a dark blue box fixed to the front of her counter, Candi bites her lip and lets out a horny moan, before asking, [candi.speechNoEffects(Hey, like, how about you come back here and give me a different kind of anonymous tip? My pussy's, like, all wet and ready for a good fuck, y'know?)]
 		</p>
@@ -614,7 +614,7 @@
 		Connected to the adjoining corridor by a pair of wide, propped-open doors, the requisitions area is the place where specialist or replacement equipment can be checked out by the HQ's Enforcers. [pc.Stepping] through the open doors into this area, you find yourself standing in a relatively small room, which, other than a couple of basic metal tables pushed up against one wall, is devoid of any furniture. The only other point of interest is the counter on the far side of the room, which currently appears to be unmanned.
 	</p>
 	<p>
-		#IF(pc.hasQuestInLine(questLine("SIDE_WES"), quest("WES_3_ELLE")))
+		#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_WES, QUEST_WES_3_ELLE))
 			Continuing to move forwards into the room, you look past the counter to see a huge storage area filled with all sorts of weapons and protective equipment. Down at the end of one of the aisles formed by the well-stocked shelving units, you see the familiar figure of Elle pinning Wes back against the wall. She's slipped her hand down the fox-boy's boxers, and from the rapid movements of her arm, it's quite obvious that she's giving him a handjob.
 		#ELSE
 			Continuing to move forwards into the room, you look past the counter to see a huge storage area filled with all sorts of weapons and protective equipment. Down at the end of one of the aisles formed by the well-stocked shelving units, you see the familiar figure of Elle forcing herself on Wes and pinning him back against the wall. She's slipped her hand down the fox-boy's trousers, and from the rapid movements of her arm, it's quite obvious that she's giving him a handjob.
@@ -627,7 +627,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="REQUISITIONS_TRADE_DIALOGUE"><![CDATA[
-	#IF(pc.hasQuestInLine(questLine("SIDE_WES"), quest("WES_3_ELLE")))
+	#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_WES, QUEST_WES_3_ELLE))
 		<p>
 			Telling Elle that you'd like to buy some Enforcer equipment, you wait as she rummages around in a nearby drawer for a moment, before producing a list of available equipment and placing it down on the counter-top in front of you. Leaning forwards over the counter-top and flashing you a seductive look, she reveals, [elle.speech(Here's what I can sell to you without causing any trouble...)]
 		</p>
@@ -649,7 +649,7 @@
 	<!-- REQUISITIONS_INTERACTION -->
 	
 	<htmlContent tag="REQUISITIONS_INTERACTION"><![CDATA[
-	#IF(pc.hasQuestInLine(questLine("SIDE_WES"), quest("WES_3_ELLE")))
+	#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_WES, QUEST_WES_3_ELLE))
 		<p>
 			Wanting to talk to Elle, you ring the counter's bell, causing her to look over towards the counter and see you standing there. Turning back to whisper something into Wes's ear, she slides her hand out from the fox-boy's boxers, before giving his groin a firm squeeze and then turning to walk over towards you.
 		</p>
@@ -695,7 +695,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="REQUISITIONS_INTERACTION_LEAVE"><![CDATA[
-	#IF(pc.hasQuestInLine(questLine("SIDE_WES"), quest("WES_3_ELLE")))
+	#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_WES, QUEST_WES_3_ELLE))
 		<p>
 			Having got what you wanted from Elle, you tell her that you need to be getting on your way, before saying goodbye and heading towards the exit. As you leave the requisitions area, you take one last look back to see the horny [elle.race] rapidly advancing on Wes and reaching towards his groin...
 		</p>
@@ -1136,7 +1136,7 @@
 	
 	<!-- REQUISITIONS_WORK -->
 	<htmlContent tag="REQUISITIONS_WORK"><![CDATA[
-	#IF(pc.hasQuestInLine(questLine("SIDE_WES"), quest("WES_3_ELLE")))
+	#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_WES, QUEST_WES_3_ELLE))
 		<p>
 			Deciding to try and make some small-talk with Elle, you ask her how her work is going.
 		</p>

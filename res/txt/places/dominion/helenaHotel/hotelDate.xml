@@ -11,7 +11,7 @@
 			Knowing that Helena will be receptive to the idea, you ask her if she'd like to go out on a dinner date with you this evening.
 		#ENDIF
 		 Flashing you a delightful smile, the beautiful harpy replies,
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateFirstDateComplete")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateFirstDateComplete))
 			 [helena.speech(That sounds wonderful, [pc.name]. I am sure I need not remind you, but I only dine at 'The Golden Feather', so we shall be going there.)]
 		#ELSE
 			 [helena.speech(That sounds wonderful, [pc.name]. I hope you haven't already made reservations anywhere, for I only dine at 'The Golden Feather' hotel, so we shall be going there.)]
@@ -276,7 +276,7 @@
 	
 	<htmlContent tag="DATE_RESTAURANT_START"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateRomanticSetup")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateRomanticSetup))
 			After another few minutes spent waiting on the sofa, you see the elevator doors on the other side of the foyer slide open, and from within the regal figure of Helena emerges.
 		#ELSE
 			After another fifteen minutes spent in Scarlett's company, you see the elevator doors on the other side of the foyer slide open, and from within the regal figure of Helena emerges.
@@ -288,7 +288,7 @@
 		#ENDIF
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateRomanticSetup")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateRomanticSetup))
 			After you've replied in the positive, Helena tells Scarlett that her presence will not be needed after all, and after the raven-harpy has moodily stomped off, she
 		#ELSE
 			Clearly not requiring Scarlett's presence, Helena makes no mention of the fact that the raven-harpy is missing, and as soon as you've replied to her previous question in the positive, she
@@ -311,7 +311,7 @@
 	<htmlContent tag="DATE_RESTAURANT_START_WINE"><![CDATA[
 	<p>
 		Not wanting to let Helena down, you tell the waitress that you'll be sharing the bottle of wine with her. Having taken your drink orders, the harpy quickly darts off to fetch the bottle of wine, leaving Helena to smugly state,
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateFirstDateComplete")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateFirstDateComplete))
 			 [helena.speech(As I own this hotel, there'll be no charge for anything on the menu, so just like the last time, you won't have the opportunity to impress me by offering to pay for the meal.)]
 		#ELSE
 			 [helena.speech(I don't think I've mentioned it to you yet, but I actually own this entire hotel. There'll be no charge for anything on the menu, so I'm afraid that you don't have the opportunity to impress me by offering to pay for the meal.)]
@@ -326,7 +326,7 @@
 	<htmlContent tag="DATE_RESTAURANT_START_WATER"><![CDATA[
 	<p>
 		Not wanting to drink any alcohol, you tell the waitress that you'd just like some water. Having taken your orders, the harpy quickly darts off to fetch your drinks, leaving Helena to pout and state,
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateFirstDateComplete")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateFirstDateComplete))
 			 [helena.speech(I was hoping you'd share the wine with me, [pc.name]... Anyway, I just wanted to remind you that as I own this hotel, there'll be no charge for anything on the menu, so you won't have the opportunity to impress me by offering to pay for the meal.)]
 		#ELSE
 			 [helena.speech(I was hoping you'd share the wine with me, [pc.name]... Anyway, I don't think I've mentioned it to you yet, but I actually own this entire hotel. There'll be no charge for anything on the menu, so I'm afraid that you don't have the opportunity to impress me by offering to pay for the meal.)]
@@ -341,7 +341,7 @@
 	<htmlContent tag="DATE_RESTAURANT_START_BEER"><![CDATA[
 	<p>
 		Not liking the sound of sharing a bottle of wine with Helena, you tell the waitress that you'd like a beer instead. Having taken your orders, the harpy quickly darts off to fetch your drinks, leaving Helena to pout and state,
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateFirstDateComplete")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateFirstDateComplete))
 			 [helena.speech(I was hoping you'd share the wine with me, [pc.name]... Anyway, I just wanted to remind you that as I own this hotel, there'll be no charge for anything on the menu, so you won't have the opportunity to impress me by offering to pay for the meal.)]
 		#ELSE
 			 [helena.speech(I was hoping you'd share the wine with me, [pc.name]... Anyway, I don't think I've mentioned it to you yet, but I actually own this entire hotel. There'll be no charge for anything on the menu, so I'm afraid that you don't have the opportunity to impress me by offering to pay for the meal.)]
@@ -356,7 +356,7 @@
 	<htmlContent tag="DATE_RESTAURANT_START_WHISKEY"><![CDATA[
 	<p>
 		Not liking the sound of sharing a bottle of wine with Helena, you tell the waitress that you'd like a glass of whiskey instead. Having taken your orders, the harpy quickly darts off to fetch your drinks, leaving Helena to pout and state,
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateFirstDateComplete")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateFirstDateComplete))
 			 [helena.speech(I was hoping you'd share the wine with me, [pc.name]... Anyway, I just wanted to remind you that as I own this hotel, there'll be no charge for anything on the menu, so you won't have the opportunity to impress me by offering to pay for the meal.)]
 		#ELSE
 			 [helena.speech(I was hoping you'd share the wine with me, [pc.name]... Anyway, I don't think I've mentioned it to you yet, but I actually own this entire hotel. There'll be no charge for anything on the menu, so I'm afraid that you don't have the opportunity to impress me by offering to pay for the meal.)]
@@ -425,7 +425,7 @@
 	
 	<htmlContent tag="DATE_RESTAURANT_TALKING_HARPY_NESTS"><![CDATA[
 	<p>
-		#IF(pc.isQuestCompleted(questLine("SIDE_HARPY_PACIFICATION")))
+		#IF(pc.isQuestCompleted(QUEST_LINE_SIDE_HARPY_PACIFICATION))
 			[helena.speech(So, I've heard that it was you who pacified the other matriarchs up in the Harpy Nests,)] Helena remarks, sipping her wine and smiling at you for a brief moment before continuing, [helena.speech(I've heard some people complain about the way we run things up there, but in truth it's not often that the Nests get into such a state. Besides, even if things do get a little chaotic every now and then, it's nobody's business but ours.)]
 		#ELSE
 			[helena.speech(You've no doubt heard about the other matriarchs kicking up a fuss in the Harpy Nests?)] Helena asks, stopping to sip her wine while she waits for your answer. After you've responded in the affirmative, she smiles at you and continues, [helena.speech(Well, I've heard some people complain about the way we run things up there, but in truth it's not often that the Nests get into such a state. Besides, even if things do get a little chaotic every now and then, it's nobody's business but ours.)]
@@ -482,9 +482,9 @@
 	<htmlContent tag="DATE_RESTAURANT_TALKING_RACES"><![CDATA[
 	<p>
 		[helena.speech(I did some modelling work for a fashion magazine the other day, and one of the photographers actually had the audacity to say that humans are more attractive than harpies!)] Helena scoffs, before taking a sip of her wine and continuing,
-		#IF(pc.getRace()==race("HARPY"))
+		#IF(pc.getRace()==RACE_HARPY)
 			 [helena.speech(We harpies are quite clearly the most attractive race, and after I pointed this out to the photographer, I had him immediately fired for daring to insult me in such a crude manner. Quite rightly, after that little incident, everyone else agreed that not only harpies are the most attractive race, but that I am the most beautiful of them all.)]
-		#ELSEIF(pc.getRace()==race("HUMAN"))
+		#ELSEIF(pc.getRace()==RACE_HUMAN)
 			 [helena.speech(I don't mean to offend you, [pc.name], what with you being a human and all, but we harpies are quite clearly the most attractive race. After I pointed this out to the photographer, I had him immediately fired for daring to insult me in such a crude manner. Quite rightly, after that little incident, everyone else agreed that not only harpies are the most attractive race, but that I am the most beautiful of them all.)]
 		#ELSE
 			 [helena.speech(Harpies are quite clearly the most attractive race, and after I pointed this out to the photographer, I had him immediately fired for daring to insult me in such a crude manner. Quite rightly, after that little incident, everyone else agreed that not only harpies are the most attractive race, but that I am the most beautiful of them all.)]
@@ -651,7 +651,7 @@
 		Doing just that, the two of you set about working your way through your meals, stopping every now and then to exchange remarks on how delicious your food is.
 		#IF(helena.isSlutty())
 			 Up until now, Helena has managed to keep her newly-awoken libido in check, but as you finish eating, you suddenly feet her talons rub up against your [pc.leg] beneath the table. Taking another sip of wine and seductively biting her lip at you, she lewdly teases,
-			#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+			#IF(helena.hasFetish(FETISH_DOMINANT))
 				 [helena.speech(Have you decided on how you want me fuck you later?)]
 			#ELSE
 				 [helena.speech(Have you decided on how you want to fuck me later?)]
@@ -779,7 +779,7 @@
 			With that, the waitress skips away, leaving you and Helena alone together again. Standing up, the beautiful matriarch warmly smiles at you and says, [helena.speech(I think I shall retire to my apartment for the remainder of the evening.)]
 		</p>
 		<p>
-			#IF(game.getDialogueFlags().hasFlag(flag("helenaDateSexLifeTalk")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateSexLifeTalk))
 				As she flashes you an expectant look, you realise that Helena wants you to accompany her up to her apartment. While you could always simply say goodbye and part ways with her here, you think that there might be an opportunity for you to take things a little further with her if you were to instead escort her upstairs...
 			#ELSE
 				As she flashes you an expectant look, you realise that Helena wants you to accompany her up to her apartment. While you could always simply say goodbye and part ways with her here, there might be an opportunity to give her a parting kiss if you were to instead escort her upstairs...
@@ -819,7 +819,7 @@
 	<p>
 		Taking hold of her wing-like arm, you escort Helena out of the restaurant, across the foyer, and into the elevator.
 		#IF(helena.isSlutty())
-			#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+			#IF(helena.hasFetish(FETISH_DOMINANT))
 				 As the doors slide close behind you, the horny matriarch dominantly presses you back against the wall, and after planting a passionate, sloppy kiss on your [pc.lips], she draws back and moans, [helena.speech(I'm going to fuck you so hard tonight...)]
 			#ELSE
 				 As the doors slide close behind you, the horny matriarch submissively rubs herself up against you, and after planting a passionate, sloppy kiss on your [pc.lips], she draws back and moans, [helena.speech(I want you to fuck me so hard tonight...)]
@@ -834,7 +834,7 @@
 	<p>
 		#IF(helena.isSlutty())
 			Unable to contain her excitement, Helena throws herself at you and starts planting a series of sloppy, passionate kisses upon your [pc.lips+]. After a few moments of making out with you in the doorway, Helena suddenly draws back, before breathlessly panting,
-			#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+			#IF(helena.hasFetish(FETISH_DOMINANT))
 				 [helena.speech(Come on, [pc.name]! I'm taking you to my bedroom!)]
 			#ELSE
 				 [helena.speech(Come on, [pc.name]! Take me to my bedroom!)]
@@ -858,7 +858,7 @@
 	<p>
 		Taking hold of her wing-like arm, you escort Helena out of the restaurant, across the foyer, and into the elevator.
 		#IF(helena.isSlutty())
-			#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+			#IF(helena.hasFetish(FETISH_DOMINANT))
 				 As the doors slide close behind you, the horny matriarch dominantly presses you back against the wall, and after planting a passionate, sloppy kiss on your [pc.lips], she draws back and moans, [helena.speech(I'm going to fuck you so hard tonight...)]
 			#ELSE
 				 As the doors slide close behind you, the horny matriarch submissively rubs herself up against you, and after planting a passionate, sloppy kiss on your [pc.lips], she draws back and moans, [helena.speech(I want you to fuck me so hard tonight...)]
@@ -869,12 +869,12 @@
 	</p>
 	<p>
 		Just a moment later, you and Helena find yourselves stepping out of the elevator and walking down the wide, well-lit corridor towards her apartment. Arriving at the front door, the regal matriarch presses the doorbell, and after just a few seconds, a harpy maid opens it and respectfully curtsies to the two of you.
-		#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+		#IF(helena.hasFetish(FETISH_DOMINANT))
 			 Before you have the chance to say or do anything, Helena dominantly grabs hold of you and pulls you inside, before eagerly moaning, [helena.speech(I'm taking you straight to my bedroom!)]
 		#ELSE
 			#IF(helena.isSlutty())
 				 Stepping through the open doorway, Helena turns to face you and asks, [helena.speech(You're coming inside to give me a good, hard fuck, aren't you, [pc.name]?)]
-			#ELSEIF(game.getDialogueFlags().hasFlag(flag("helenaDateSexLifeTalk")))
+			#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_helenaDateSexLifeTalk))
 				 Stepping through the open doorway, Helena turns to face you and asks, [helena.speech(Would you like to come inside for some coffee, [pc.name]?)]
 			#ELSE
 				 Stepping through the open doorway, Helena turns to face you and says, [helena.speech(I really did have a wonderful time tonight, [pc.name]. If you'd like, we could do this again next Friday?)]
@@ -886,7 +886,7 @@
 	
 	<htmlContent tag="DATE_APARTMENT_ROMANTIC_SCENE_BEDROOM"><![CDATA[
 	#IF(helena.isSlutty())
-		#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+		#IF(helena.hasFetish(FETISH_DOMINANT))
 			<p>
 				Letting Helena take charge, you allow her to pull you along behind her as she leads you down the hall and into her bedroom. After seeing that the rose petals leading up onto her bed, she turns and plants one last dominant, sloppy kiss on your [pc.lips], before pushing you down onto the mattress and then stepping over to the door of her walk-in wardrobe. Flashing you a hungry grin, she commands, [helena.speech(Be a good [pc.girl] and wait there for me, [pc.name].)]
 			</p>
@@ -925,7 +925,7 @@
 	<htmlContent tag="DATE_RESTAURANT_END_HOME_GOODBYE"><![CDATA[
 	<p>
 		Wanting to leave as quickly as possible, you tell Helena that you're going to have to depart immediately.
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateSexLifeTalk")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateSexLifeTalk))
 			 Shooting you a disappointed glare, the beautiful matriarch sighs, [helena.speech(Fine... Maybe you'll have time to come inside next Friday...)]
 		#ELSE
 			 Flashing you a warm smile, the beautiful matriarch says, [helena.speech(Thank you again for the wonderful evening, [pc.name]. I hope to see you again soon!)]
@@ -933,7 +933,7 @@
 	</p>
 	<p>
 		With that, Helena closes the door to her apartment, leaving you standing there all alone in the corridor. Turning around and heading back to the elevator, you ride it down to the ground floor, before making your way across the hotel's foyer and [pc.stepping] out into the streets of Dominion.
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateSexLifeTalk")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateSexLifeTalk))
 			 Without a backwards glance, you set off on your way towards whatever was more important than accompanying the most beautiful harpy in all of Dominion up to her apartment...
 		#ENDIF
 	</p>
@@ -942,7 +942,7 @@
 	
 	<htmlContent tag="DATE_RESTAURANT_END_HOME_GOODBYE_KISS"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaDateSexLifeTalk")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateSexLifeTalk))
 			Wanting to leave as quickly as possible, you tell Helena that you're going to have to depart immediately. Knowing that she's likely to feel let down by this, you [pc.step] forwards and plant a loving kiss on her cheek as a way of apologising for your hasty exit. While there's definitely a look of disappointment in her eyes, the beautiful matriarch can't help but smile as you kiss her, and she sighs, [helena.speech(Very well, [pc.name], if you really must be leaving right away, I suppose I shouldn't keep you...)]
 		#ELSE
 			Wanting to give Helena something else to remember the evening by, you [pc.step] forwards and plant a loving kiss on her cheek. Blushing deeply in response to your bold move, the beautiful matriarch can't help but smile as she bashfully exclaims, [helena.speech(Oh, [pc.name]! Before you leave, I must say thank you so much for the wonderful evening. I hope that we can do this again next Friday!)]
@@ -975,7 +975,7 @@
 			Accepting Helena's invitation to come inside, you tell her that you'd love to have some coffee with her. Flashing you a warm smile, the beautiful harpy excitedly exclaims, [helena.speech(Excellent! Please, come in!)]
 		#ENDIF
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("helenaDateApartmentSeen")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_helenaDateApartmentSeen))
 		<p>
 			Once again finding yourself stepping inside Helena's apartment, you see the usual three harpy maids waiting patiently for instructions from their matriarch. Turning to the nearest of these maids, Helena says, [helena.speech([pc.Name] and I intend to have coffee in the lounge. Please prepare it for us.)]
 		</p>
@@ -1169,7 +1169,7 @@
 	</p>
 	<p>
 		The sight of the beautiful matriarch presenting her
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 bird-like cloaca to you
 		#ELSE
 			 pussy to you
@@ -1264,7 +1264,7 @@
 	</p>
 	<p>
 		Continuing to fiercely blush, Helena slips her feathered thumbs into the band of her lacy white thong, before pulling it down and discarding it on the floor. With an animated flap of her wing-like arms, she hops up to kneel on the bed beside you and asks how she should position herself. Planting a loving kiss on her [helena.lips+], you help to guide her down so that she's lying on her back. Reassuring her that she'll enjoy this, you drop your head down towards her groin, before taking hold of her legs and gently pushing them apart.
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 With Helena's bird-like cloaca now just [style.sizes] away from your face, you lean in and plant a wet kiss on it, which causes her to cry out, [helena.speechNoEffects(~Ooh!~ D-Do that again!)]
 		#ELSE
 			 With Helena's virgin pussy now just [style.sizes] away from your face, you lean in and plant a wet kiss on her [helena.labia+], which causes her to cry out, [helena.speechNoEffects(~Ooh!~ D-Do that again!)]
@@ -1272,7 +1272,7 @@
 	</p>
 	<p>
 		Happily doing as the beautiful matriarch asks, you plant a series of increasingly-passionate kisses on
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 the exterior of her cloaca,
 		#ELSE
 			 her soft folds,
@@ -1297,7 +1297,7 @@
 	</p>
 	<p>
 		Happily doing as the beautiful matriarch asks, you drop your head down to her groin, and after planting a series of increasingly-passionate kisses on
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 the exterior of her cloaca,
 		#ELSE
 			 her soft folds,
@@ -1645,7 +1645,7 @@
 	</p>
 	<p>
 		While her answer is most definitely a 'no' for tonight, you get the feeling that Helena would be willing to lose her virginity to you, if you could only get her into a more romantic mood beforehand. Interpreting the thoughtful look on your face as one of disappointment, Helena steps forwards and offers,
-		#IF(helena.hasFetish(fetish("FETISH_ORAL_GIVING")))
+		#IF(helena.hasFetish(FETISH_ORAL_GIVING))
 			#IF(pc.hasPenis())
 				 [helena.speech(If you'd like, I could always give you a blowjob instead...)]
 			#ELSE
@@ -1675,7 +1675,7 @@
 	</p>
 	<p>
 		Ecstatic to hear that she's actually agreeing to let you perform anilingus on her, you quickly lie down on Helena's bed and get ready for her to sit on your face. With a flap of her wing-like arms, the beautiful matriarch leaps up to join you on the bed, and after letting out a deep sigh, she lowers herself down over your face until her
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 bird-like cloaca is hovering just [style.sizes] away from your mouth.
 		#ELSE
 			 [helena.asshole+] is hovering just [style.sizes] away from your mouth.
@@ -1684,7 +1684,7 @@
 	</p>
 	<p>
 		Before you can reply to this,
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 Helena drops down and firmly plants her bird-like cloaca over your [pc.lips]. Knowing that you're not interested in her pussy, she shifts about a little until her asshole is positioned directly over your mouth, before calling out,
 		#ELSE
 			 Helena reaches back to spread her perfectly-smooth ass cheeks, before suddenly dropping down and firmly pressing her asshole against your [pc.lips]. Dropping her tail-feathers down over your eyes, she calls out,
@@ -1706,13 +1706,13 @@
 	</p>
 	<p>
 		Happy to hear that she's willing to let you perform anilingus on her, you quickly lie down on Helena's bed and get ready for her to sit on your face. With a flap of her wing-like arms, the beautiful matriarch leaps up to join you on the bed, and after letting out an excited moan, she lowers herself down over your face until her
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 bird-like cloaca is hovering just [style.sizes] away from your mouth.
 		#ELSE
 			 [helena.asshole+] is hovering just [style.sizes] away from your mouth.
 		#ENDIF
 		 Before you can say anything or make a move of your own,
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 Helena drops down and firmly plants her bird-like cloaca over your [pc.lips]. Knowing that you're not interested in her pussy, she shifts about a little until her asshole is positioned directly over your mouth, before calling out,
 		#ELSE
 			 Helena reaches back to spread her perfectly-smooth ass cheeks, before suddenly dropping down and firmly pressing her asshole against your [pc.lips]. Dropping her tail-feathers down over your eyes, she calls out,
@@ -1737,7 +1737,7 @@
 	</p>
 	<p>
 		Ecstatic to hear that she's actually agreeing to let you perform anilingus on her, you tell Helena that it would be best for her to get down on all fours and present her ass to you. With a flap of her wing-like arms, the beautiful matriarch leaps up to join you on the bed, and after letting out a deep sigh, she does as you suggest and drops down onto all fours, before raising her tail-feathers and presenting you with her
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 bird-like cloaca.
 		#ELSE
 			 [helena.asshole+].
@@ -1746,7 +1746,7 @@
 	</p>
 	<p>
 		Not wanting to give the nervous matriarch any time in which to change her mind,
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 you drop down behind her and quickly press your [pc.lips] against her bird-like claoca. Knowing that you're not interested in her pussy, Helena shifts about a little until her asshole is pointing directly towards your mouth, before calling out,
 		#ELSE
 			 you take hold of her perfectly-smooth ass cheeks and spread them apart, before dropping down behind her and quickly pressing your [pc.lips] against her [helena.asshole+]. Feeling your mouth make contact with her butt, Helena calls out,
@@ -1767,7 +1767,7 @@
 		Wanting to get a taste of Helena's ass, you suggest to her that she let you give her a rimjob again. Flashing you an amused smirk as she hears what it is you're suggesting, the beautiful harpy teases, [helena.speechNoEffects(Oh, you want another taste of my butt, do you? Very well, come and worship my ass!)]
 	</p>
 		Before you can say anything, the beautiful matriarch quickly leaps up to join you on the bed, and after letting out an excited moan, she drops down onto all fours, before raising her tail-feathers and presenting you with her
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 bird-like cloaca.
 		#ELSE
 			 [helena.asshole+].
@@ -1776,7 +1776,7 @@
 	</p>
 	<p>
 		More than happy to do as she demands,
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 you drop down behind Helena and quickly press your [pc.lips] against her bird-like claoca. Knowing that you're not interested in her pussy, the gorgeous matriarch shifts about a little until her asshole is pointing directly towards your mouth, before calling out,
 		#ELSE
 			 you take hold of Helena's perfectly-smooth ass cheeks and spread them apart, before dropping down behind her and quickly pressing your [pc.lips] against her [helena.asshole+]. Feeling your mouth make contact with her butt, the gorgeous matriarch calls out,
@@ -1806,28 +1806,28 @@
 		After you've reassured Helena that you'll take it slow and make sure that it's not a painful experience for her, you can't help but smile as you hear her reply, [helena.speechNoEffects(Ok, you can fuck my ass, but you're going to get me lubed up first.)]
 	</p>
 	<p>
-		#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.hasFetish(FETISH_DOMINANT))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				Spreading her legs a little and assuming a dominant pose, the horny harpy reaches down between her legs and gives her bird-like cloaca a playful stroke. Snapping her feathered fingers and pointing at her groin, she orders you to kneel before her and give her a rimjob in order to get her nice and wet. Happy to do as she says, you drop down in front of the dominant harpy and quickly start kissing and licking her rear entrance.
 			#ELSE
 				Turning around and spreading her legs a little, the horny harpy lifts her tail-feathers, before reaching back and grabbing hold of her ass cheeks. Pulling them apart in order to present her virgin asshole, she orders you to kneel behind her and give her a rimjob in order to get her nice and wet. Happy to do as she says, you drop down behind the dominant harpy and quickly start kissing and licking her rear entrance.
 			#ENDIF
 		#ELSE
 			With a quick flap of her wings, the horny harpy gracefully leaps up onto her bed, before dropping down onto all fours and shuffling around to present her 
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 bird-like cloaca to you. Looking back over her shoulder and lifting her tail-feathers, she tells you that before she's willing to take your cock in her asshole, you're going to have to give her a rimjob in order to get her nice and wet. Happy to do as she says, you drop down behind the blushing harpy and quickly start kissing and licking her rear entrance.
 			#ELSE
 				 [helena.ass+] to you. Looking back over her shoulder and lifting her tail-feathers, she tells you that before she's willing to take your cock in her butt, you're going to have to give her a rimjob in order to get her nice and wet. Happy to do as she says, you drop down behind the blushing harpy and quickly start kissing and licking her rear entrance.
 			#ENDIF
 		#ENDIF
 	</p>
-	#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+	#IF(helena.hasFetish(FETISH_DOMINANT))
 		<p>
 			Soon enough, Helena's virgin asshole is sopping wet from all of your saliva, and upon feeling that she's now well-lubed and ready to take your cock, she steps away and turns towards you to command, [helena.speechNoEffects(~Mmm!~ Ok, [pc.name], that's enough! Now get down on your back so I can ride you!)]
 		</p>
 		<p>
 			Knowing that the dominant harpy won't accept any other position, you do as you're told and lie back on her bed, presenting your hard cock for her to penetrate herself on. Grinning at your show of obedience, Helena flaps her wings and flutters up onto the bed, before throwing one of her bird-like legs over your stomach and lowering herself down to tease her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 saliva-coated bird-like cloaca
 			#ELSE
 				 saliva-coated asshole
@@ -1836,7 +1836,7 @@
 		</p>
 		<p>
 			Finding yourself at the mercy of Helena's dominant demand, you do as she orders and beg for her to slip your cock into her rear entrance. Flashing you one last cheeky smirk, the gorgeous matriarch reaches down between her legs, before guiding your throbbing shaft up to her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 claoca
 			#ELSE
 				 asshole
@@ -1852,7 +1852,7 @@
 		</p>
 		<p>
 			Not wanting to waste another moment, you quickly reposition yourself behind Helena, before pointing your throbbing cock at her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 claoca
 			#ELSE
 				 [helena.ass+]
@@ -1869,7 +1869,7 @@
 	<htmlContent tag="DATE_APARTMENT_BEDROOM_COWGIRL_ANAL"><![CDATA[
 	<p>
 		Wanting to get straight down to business, you tell Helena that you want to fuck her ass again. As she hears you say this, the gorgeous harpy bites her lip and
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 runs her feathered hands down between her legs, before spreading her bird-like cloaca and teasing,
 		#ELSE
 			 turns around to show off her [helena.ass+], before looking back over her shoulder and teasing,
@@ -1897,7 +1897,7 @@
 	<htmlContent tag="DATE_APARTMENT_BEDROOM_DOGGY_ANAL"><![CDATA[
 	<p>
 		Wanting to get straight down to business, you tell Helena that you want her to get down on all fours so that you can fuck her asshole from behind. As she hears you say this, the gorgeous harpy bites her lip and
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 runs her feathered hands down between her legs, before spreading her bird-like cloaca and teasing,
 		#ELSE
 			 turns around to show off her [helena.ass+], before looking back over her shoulder and teasing,
@@ -1915,7 +1915,7 @@
 			 repositioning yourself behind her and preparing to fuck her like an animal.
 		#ENDIF
 		 Not wanting to waste another moment, you press your throbbing cock up against the beautiful matriarch's
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 cloaca,
 		#ELSE
 			 ass,
@@ -2191,7 +2191,7 @@
 			#ENDIF
 		</p>
 		<p>
-			#IF(!game.getDialogueFlags().hasFlag(flag("helenaSlutSeen")))
+			#IF(!game.getDialogueFlags().hasFlag(FLAG_helenaSlutSeen))
 				Helena's new sexual experience from the night before has clearly made a lasting change to her personality, and as you wonder what to say to her, she once again plants a passionate kiss on your [pc.lips]. Drawing back, she flashes you an excited smile, and you see that there's a distinctly dirty look in her [helena.eyes+]...
 			#ELSE
 				As you wonder what to say to her, the horny harpy once again leans down to plant a passionate kiss on your [pc.lips]. Drawing back, she flashes you an excited smile, and you see that there's a distinctly dirty look in her [helena.eyes+]...

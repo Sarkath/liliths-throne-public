@@ -5,14 +5,14 @@
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_STORM"><![CDATA[
 	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
 	#ENDVAR
 	
 	#IF(npc.hasEncounteredBefore())
 		<p>
-			#IF(#canal)
+			#IF(canal)
 				You find yourself wandering down the path that runs alongside Dominion's canal, staying alert for any sign of trouble. Up ahead, you suddenly spot the familiar figure of [npc.name], [npc.a_fullRace(true)].
 			#ELSE
 				You find yourself wandering down yet another of Dominion's dangerous, deserted alleyways, staying alert for any sign of trouble as you go. Reaching a turn in your path, you [pc.step] around the corner to see a rare sign of life, taking the form of the familiar figure of [npc.name], [npc.a_fullRace(true)].
@@ -90,7 +90,7 @@
 		</p>
 	#ELSE
 		<p>
-			#IF(#canal)
+			#IF(canal)
 				You find yourself wandering down the path that runs alongside Dominion's canal, staying alert for any sign of trouble. Up ahead, you suddenly spot a rare sign of life, taking the form of [npc.a_fullRace(true)].
 			#ELSE
 				You find yourself wandering down yet another of Dominion's dark, isolated alleyways, staying alert for any sign of trouble. Reaching a turn in your path, you step around the corner to see a rare sign of life, taking the form of [npc.a_fullRace(true)].
@@ -118,14 +118,14 @@
 	
 	<htmlContent tag="ALLEY_PROSTITUTE"><![CDATA[
 	#VAR
-		canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
 	#ENDVAR
 	
 	#IF(npc.hasEncounteredBefore())
 		<p>
-			#IF(#canal)
+			#IF(canal)
 				You find yourself wandering down the path that runs alongside Dominion's canal, staying alert for any sign of trouble. Up ahead, you suddenly spot the familiar figure of [npc.name], [npc.a_fullRace(true)], leaning back against a brick wall.
 			#ELSE
 				You find yourself wandering down yet another of Dominion's dangerous, deserted alleyways, staying alert for any sign of trouble as you go. Reaching a turn in your path, you [pc.step] around the corner to see a rare sign of life, taking the form of the familiar figure of [npc.name], [npc.a_fullRace(true)], leaning back against one wall.
@@ -213,7 +213,7 @@
 		#ENDIF
 	#ELSE
 		<p>
-			#IF(#canal)
+			#IF(canal)
 				You find yourself wandering down the path that runs alongside Dominion's canal, staying alert for any sign of trouble. Up ahead, you suddenly spot a rare sign of life, taking the form of [npc.a_fullRace(true)], leaning back against a brick wall.
 			#ELSE
 				You find yourself wandering down yet another of Dominion's dark, isolated alleyways, staying alert for any sign of trouble. Reaching a turn in your path, you step around the corner to see a rare sign of life, taking the form of [npc.a_fullRace(true)], leaning back against one wall.
@@ -251,15 +251,14 @@
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_DOM_SEX"><![CDATA[
 	#VAR
-		canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
-	#ENDVAR
-	#VAR
-		storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==weather("MAGIC_STORM");
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
 	#ENDVAR
 	
-	#IF(#storm)
+	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you lean in towards [npc.herHim] and dominantly press your mouth against [npc.her] [npc.lips+]. Letting out a desperate [npc.moan], the horny [npc.race] immediately starts sloppily kissing you, before pulling back a little and panting, [npc.speech(Come on, fuck me senseless! Let's do it, right here, right now!)]
 		</p>
@@ -272,7 +271,7 @@
 		</p>
 		<p>
 			Letting this [npc.race] prostitute show you the way, you follow [npc.herHim]
-			#IF(#canal)
+			#IF(canal)
 				 a little way down the canal, before [npc.she] suddenly turns off the path and leads you across a small, overgrown courtyard to a tatty-looking doorway. 
 			#ELSE
 				 a little way down the alleyway, before [npc.she] suddenly turns to one side and steps up to a tatty-looking doorway. 
@@ -292,15 +291,14 @@
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_SUB_SEX"><![CDATA[
 	#VAR
-		canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
-	#ENDVAR
-	#VAR
-		storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==weather("MAGIC_STORM");
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
 	#ENDVAR
 	
-	#IF(#storm)
+	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you lean in towards [npc.herHim] and submissively let [npc.herHim] press [npc.her] [npc.lips+] against your mouth. Letting out a desperate [npc.moan], the horny [npc.race] immediately starts sloppily kissing you, before pulling back a little and panting, [npc.speech(Oh yes! I'm going to fuck you senseless! Let's do it, right here, right now!)]
 		</p>
@@ -333,15 +331,14 @@
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_THREESOME"><![CDATA[
 	#VAR
-		canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
-	#ENDVAR
-	#VAR
-		storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==weather("MAGIC_STORM");
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
 	#ENDVAR
 	
-	#IF(#storm)
+	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you tell your [com.companion] to join in on the fun, before leaning in towards the horny [npc.race] and dominantly pressing your mouth against [npc.her] [npc.lips+]. Letting out a desperate [npc.moan], [npc.name] immediately starts sloppily kissing you, before pulling back a little and panting, [npc.speech(Come on, fuck me senseless! Let's do it, right here, right now!)]
 		</p>
@@ -372,15 +369,14 @@
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_COMPANION_DOM_SEX"><![CDATA[
 	#VAR
-		canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
-	#ENDVAR
-	#VAR
-		storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==weather("MAGIC_STORM");
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
 	#ENDVAR
 	
-	#IF(#storm)
+	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you step away from [npc.herHim] and tell your [com.companion] to take your place. Happy enough to be given the opportunity to have sex with this horny [npc.race], [com.name] leans in towards [npc.herHim] and dominantly presses [com.her] mouth against [npc.her] [npc.lips+]. Letting out a desperate [npc.moan], the [npc.name] immediately starts sloppily kissing your [com.companion], before pulling back a little and panting, [npc.speech(Come on, fuck me senseless! Let's do it, right here, right now!)]
 		</p>
@@ -419,15 +415,14 @@
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_COMPANION_SUB_SEX"><![CDATA[
 	#VAR
-		canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
-	#ENDVAR
-	#VAR
-		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==weather("MAGIC_STORM");
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
 	#ENDVAR
 	
-	#IF(#storm)
+	#IF(storm)
 		<p>
 			Deciding to take advantage of [npc.namePos] debilitating lust, you step away from [npc.herHim] and tell your [com.companion] to take your place. Happy enough to be given the opportunity to have sex with this horny [npc.race], [com.name] [com.steps] forwards and allows [npc.name] to dominantly press [npc.her] [npc.lips+] against [com.her] mouth. Letting out a desperate [npc.moan], the [npc.name] immediately starts sloppily kissing your [com.companion], before pulling back a little and panting, [npc.speech(Oh yes! I'm going to fuck you senseless! Let's do it, right here, right now!)]
 		</p>
@@ -479,7 +474,7 @@
 	</p>
 	<p>
 		From the manner in which [npc.she] reacted, it's obvious that [npc.name] is wanted by the Enforcers for some sort of crime, and needs to pay a [#SPECIAL_PARSE_0] flame fine in order to get out of it. If you really felt like it, you could use this knowledge to clear [npc.herHim] out of this area
-		#IF(game.getDialogueFlags().hasFlag(flag("prostitutionLicenseObtained")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_prostitutionLicenseObtained))
 			, or if you wanted to help, you could offer [npc.herHim] a job at Angel's Kiss...
 		#ELSE
 			...
@@ -489,7 +484,7 @@
 	
 	<htmlContent tag="ALLEY_PROSTITUTE_QUESTION"><![CDATA[
 	#VAR
-		storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==weather("MAGIC_STORM");
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
 	#ENDVAR
 	
 	<p>
@@ -500,7 +495,7 @@
 	</p>
 	<p>
 		As you confirm to [npc.name] that you're not an Enforcer, you can't help but notice how [npc.she] lets out a sigh of relief. Placing [npc.her] [npc.hands] on [npc.her] [npc.hips+], [npc.she] admits,
-		#IF(#storm)
+		#IF(storm)
 			 [npc.speech(Look, let's just say that I prefer to work in places where I'm not likely to be found. Now, are you going to pay me for a fuck or what?)]
 		#ELSE
 			 [npc.speech(Look, let's just say that I prefer to work in places where I'm not likely to be found. Now, are you going to fuck me or what?!)]
@@ -508,7 +503,7 @@
 	</p>
 	<p>
 		From the manner in which [npc.she] reacted, it's obvious that [npc.name] is wanted by the Enforcers for some sort of crime, and needs to pay a [#SPECIAL_PARSE_0] flame fine in order to get out of it. If you really felt like it, you could use this knowledge to clear [npc.herHim] out of this area
-		#IF(game.getDialogueFlags().hasFlag(flag("prostitutionLicenseObtained")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_prostitutionLicenseObtained))
 			, or if you wanted to help, you could offer [npc.herHim] a job at Angel's Kiss...
 		#ELSE
 			...

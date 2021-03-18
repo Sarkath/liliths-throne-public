@@ -107,7 +107,7 @@
 	
 	<htmlContent tag="SLAVE_USES_YOU_ALLEYWAY"><![CDATA[
 	<p>
-		#IF(pc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL")) || pc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END")))
+		#IF(pc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL) || pc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END))
 			As you're walking down the path that runs alongside one of Dominion's deserted canals, you suddenly feel someone step up right behind you, and before you can react, they reach around and clasp [npc.a_hand+] over your mouth.
 		#ELSE
 			As you're walking down one of Dominion's deserted alleyways, you suddenly feel someone step up right behind you, and before you can react, they reach around and clasp [npc.a_hand+] over your mouth.
@@ -191,7 +191,7 @@
 			 [npc.Name] has [npc2.name] pinned back against the alley's wall,
 		#ENDIF
 		 with [npc2.her] clothes dishevelled and [npc2.her]
-		#IF(npc2.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+		#IF(npc2.isAbleToAccessCoverableArea(CA_VAGINA, true))
 			 genitals on full display.
 		#ELSE
 			 hot body pressed up against [npc.hers].
@@ -212,33 +212,33 @@
 			 start fucking [npc2.name],
 		#ENDIF
 		 and as you watch,
-		#IF(npc.getAffectionLevel(npc2).isLessThan(affection("NEGATIVE_TWO_DISLIKE")))
+		#IF(npc.getAffectionLevel(npc2).isLessThan(AFFECTION_NEGATIVE_TWO_DISLIKE))
 			 [npc.she] leans in to snarl, [npc.speech(Glad I got a chance to catch you somewhere like this. It's time I show you your place!)]
-		#ELSEIF(npc.getAffectionLevel(npc2).isLessThan(affection("POSITIVE_ONE_FRIENDLY")))
+		#ELSEIF(npc.getAffectionLevel(npc2).isLessThan(AFFECTION_POSITIVE_ONE_FRIENDLY))
 			 [npc.she] leans in to declare, [npc.speech([pc.Name] told me that if I wanted to fuck somebody, it had to be you...)]
-		#ELSEIF(npc.getAffectionLevel(npc2).isLessThan(affection("POSITIVE_FOUR_LOVE")))
+		#ELSEIF(npc.getAffectionLevel(npc2).isLessThan(AFFECTION_POSITIVE_FOUR_LOVE))
 			 [npc.she] leans in to [npc.moan], [npc.speech(I followed you all the way here, and now that there's nobody to interrupt us, it's time to give you a good fucking!)]
 		#ELSE
 			 [npc.she] leans in to [npc.moan], [npc.speech(Fuck! I thought I'd never find you! I'm about to give you the fucking of a lifetime!)]
 		#ENDIF
 	</p>
 	<p>
-		#IF(npc2.getAffectionLevel(npc).isLessThan(affection("NEGATIVE_TWO_DISLIKE")) || (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
+		#IF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_NEGATIVE_TWO_DISLIKE) || (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
 			Angrily pushing back against [npc.name], [npc2.name] snaps, [npc2.speech(Well? Come on then, you fuck! We both know you aren't [npc.man] enough to do anything!)]
-		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(affection("POSITIVE_ONE_FRIENDLY")))
+		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_POSITIVE_ONE_FRIENDLY))
 			Letting out an annoyed huff, [npc2.name] replies, [npc2.speech(Well, let's get started then, I have somewhere I want to be and you're wasting my time with talking!)]
-		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(affection("POSITIVE_FOUR_LOVE")))
+		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_POSITIVE_FOUR_LOVE))
 			Seductively pushing back against [npc.name], [npc2.name] [npc2.moans], [npc2.speech(Come on then, fuck me already!)]
 		#ELSE
 			Erotically pushing [npc2.her] body back against [npc.name], [npc2.name] desperately [npc2.moans], [npc2.speech(Hurry, hurry! I've been needing this for ages!)]
 		#ENDIF
 	</p>
 	<p>
-		#IF(npc2.getAffectionLevel(npc).isLessThan(affection("NEGATIVE_TWO_DISLIKE")) || (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
+		#IF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_NEGATIVE_TWO_DISLIKE) || (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
 			Despite obviously not liking the situation [npc2.she] finds [npc2.herself] in, the prospect of getting off in accordance with your rules seems to have [npc2.name] surprisingly eager to get started. With moments before this little hate-fuck session begins, you realize it's time to choose between interrupting and getting in on the action, or hanging back and watching as they go at it.
-		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(affection("POSITIVE_ONE_FRIENDLY")))
+		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_POSITIVE_ONE_FRIENDLY))
 			[npc2.Name] clearly isn't thrilled at being forced into this situation, but [npc2.she] seems horny enough that [npc2.sheIs] willing to put [npc2.her] ambivalence towards [npc.name] aside in return for a few orgasms. With the impromptu rendezvous about to get underway, you have the option to announce your presence and join them, or watch as the two use each other.
-		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(affection("POSITIVE_FOUR_LOVE")))
+		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_POSITIVE_FOUR_LOVE))
 			It's clear from [npc2.her] eager [npc2.moan] that [npc2.name] is more than willing to submit to [npc.name] and be fucked by [npc.herHim]. As the two slaves prepare to get it on, you take a moment to decide whether to turn this into a threesome, or stay back and let them have their fun.
 		#ELSE
 			[npc2.Name] seems every bit as enthusiastic about having sex with [npc.name] as [npc2.she] could possibly be. As [npc2.she] gets ready to tumble with [npc2.her] partner, it's time to choose whether or not you want to join them, or sit back and enjoy the sight them enjoying each other.
@@ -250,16 +250,16 @@
 	<htmlContent tag="SLAVE_USES_OTHER_SLAVE_ALLEYWAY_START_SEX_DOM"><![CDATA[
 	<p>
 		Wanting to get in on the action, you make your presence known to your two slaves by [pc.stepping] around from behind the corner and [pc.walking] towards them. Catching sight of you, [npc.name] turns and
-		#IF(npc.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE"))
+		#IF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE)
 			 sneers at you, before stating, [npc.speech(I'd prefer to fuck [npc2.name] alone, but I guess I've got no choice but to let you join in...)]
-		#ELSEIF(npc.getAffectionLevelBasic(pc)==affectionBasic("NEUTRAL"))
+		#ELSEIF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_NEUTRAL)
 			 asks, [npc.speech(Are you going to join me, [pc.name]?)]
 		#ELSE
 			 grins at you, before asking, [npc.speech(You'll join me for a good fuck, won't you, [pc.name]?)]
 		#ENDIF
 	</p>
 	<p>
-		#IF(npc2.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE")|| (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
+		#IF(npc2.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE|| (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
 			Clearly unhappy about seeing that you've arrived to join in with the fun, [npc2.name] lets out a protesting whine, but otherwise realises the futility of [npc2.her] situation as you prepare to join [npc.name] in fucking [npc2.herHim]...
 		#ELSE
 			Pleased to see that you've arrived to join in with the fun, [npc2.name] lets out a horny whine, before preparing to submit to both you and [npc.name] as you move to fuck [npc2.herHim]...
@@ -271,9 +271,9 @@
 	<htmlContent tag="SLAVE_USES_OTHER_SLAVE_ALLEYWAY_START_SEX_SUB"><![CDATA[
 	<p>
 		Wanting to get in on the action, you make your presence known to your two slaves by [pc.stepping] around from behind the corner and [pc.walking] towards them. Catching sight of you, [npc.name] turns and
-		#IF(npc.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE"))
+		#IF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE)
 			 sneers at you, before stating, [npc.speech(I'd prefer to fuck [npc2.name] alone, but I guess I've got no choice but to let you join in...)]
-		#ELSEIF(npc.getAffectionLevelBasic(pc)==affectionBasic("NEUTRAL"))
+		#ELSEIF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_NEUTRAL)
 			 asks, [npc.speech(Are you going to join me, [pc.name]?)]
 		#ELSE
 			 grins at you, before asking, [npc.speech(You'll join me for a good fuck, won't you, [pc.name]?)]
@@ -281,7 +281,7 @@
 	</p>
 	<p>
 		Moving forwards to lean back against the wall beside [npc2.name], you tell [npc.name] that you were actually hoping for [npc.herHim] to dominate you. Flashing you a hungry grin as [npc.she] hears you say this, your slave
-		#IF(npc.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE"))
+		#IF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE)
 			 leans in to forcefully plant a rough kiss on your [pc.lips+], before pulling back and snarling, [npc.speech(Sure, I'll give you a good hate-fucking, bitch!)]
 		#ELSE
 			 leans in to plant a quick kiss on your [pc.lips+], before pulling back and [npc.moaning], [npc.speech(Sure, I'll give you a good fucking, if that's what you're after!)]
@@ -386,9 +386,9 @@
 		#ELSE
 			 pushes [npc2.name] back against the wall and grinds [npc.her] hot body up against [npc2.hers].
 		#ENDIF
-		#IF(npc2.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(npc2.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 As [npc2.namePos] genitals are already fully display, [npc.name] is able to greedily reach down and give the [npc2.race]'s groin a good grope.
-		#ELSEIF(npc2.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+		#ELSEIF(npc2.isAbleToAccessCoverableArea(CA_VAGINA, true))
 			 Reaching down between [npc2.namePos] [npc2.legs], [npc.name] quickly displaces the [npc2.race]'s clothing and gives [npc2.her] groin a good grope.
 		#ELSE
 			 Reaching down between [npc2.namePos] [npc2.legs], [npc.name] gives the [npc2.race]'s groin a good grope.
@@ -409,33 +409,33 @@
 			 start fucking [npc2.name],
 		#ENDIF
 		 and as you watch,
-		#IF(npc.getAffectionLevel(npc2).isLessThan(affection("NEGATIVE_TWO_DISLIKE")))
+		#IF(npc.getAffectionLevel(npc2).isLessThan(AFFECTION_NEGATIVE_TWO_DISLIKE))
 			 [npc.she] reaches up to roughly squeeze [npc2.namePos] neck and snarl, [npc.speech(Hope you're ready for this, little slut. I've been waiting to get you all alone for myself!)]
-		#ELSEIF(npc.getAffectionLevel(npc2).isLessThan(affection("POSITIVE_ONE_FRIENDLY")))
+		#ELSEIF(npc.getAffectionLevel(npc2).isLessThan(AFFECTION_POSITIVE_ONE_FRIENDLY))
 			 [npc.she] leans in to mutter, [npc.speech(Too bad it has to be you and me, huh? Still, it's nice to be able to get off once in a while.)]
-		#ELSEIF(npc.getAffectionLevel(npc2).isLessThan(affection("POSITIVE_FOUR_LOVE")))
+		#ELSEIF(npc.getAffectionLevel(npc2).isLessThan(AFFECTION_POSITIVE_FOUR_LOVE))
 			 [npc.she] leans in to [npc.moan], [npc.speech(Let's start this nice and slow, then we can change it up when you're ready.)]
 		#ELSE
 			 [npc.she] leans in to [npc.moan], [npc.speech(~Ooh!~ [npc2.Name]! I need you so bad! Stay still so I can fuck you!)]
 		#ENDIF
 	</p>
 	<p>
-		#IF(npc2.getAffectionLevel(npc).isLessThan(affection("NEGATIVE_TWO_DISLIKE")) || (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
+		#IF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_NEGATIVE_TWO_DISLIKE) || (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
 			Angrily pushing back against [npc.name], [npc2.name] snaps, [npc2.speech(Come on, then! I always knew you were a freak! Let's get this over with!!)]
-		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(affection("POSITIVE_ONE_FRIENDLY")))
+		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_POSITIVE_ONE_FRIENDLY))
 			Letting out an annoyed huff, [npc2.name] replies, [npc2.speech(Well, if you're gonna do it, then do it. Honestly, I really need this too!)]
-		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(affection("POSITIVE_FOUR_LOVE")))
+		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_POSITIVE_FOUR_LOVE))
 			Seductively pushing back against [npc.name], [npc2.name] [npc2.moans], [npc2.speech(Come on then, fuck me already!)]
 		#ELSE
 			Erotically pushing [npc2.her] body back against [npc.name], [npc2.name] desperately [npc2.moans], [npc2.speech(Hurry, hurry! I've been needing this for ages!)]
 		#ENDIF
 	</p>
 	<p>
-		#IF(npc2.getAffectionLevel(npc).isLessThan(affection("NEGATIVE_TWO_DISLIKE")) || (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
+		#IF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_NEGATIVE_TWO_DISLIKE) || (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
 			Despite obviously not liking the situation [npc2.she] finds [npc2.herself] in, the prospect of getting off in accordance with your rules seems to have [npc2.name] surprisingly eager to get started. With moments before this little hate-fuck session begins, you realize it's time to choose between interrupting and getting in on the action, or hanging back and watching as they go at it.
-		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(affection("POSITIVE_ONE_FRIENDLY")))
+		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_POSITIVE_ONE_FRIENDLY))
 			[npc2.Name] clearly isn't thrilled at being forced into this situation, but [npc2.she] seems horny enough that [npc2.sheIs] willing to put [npc2.her] ambivalence towards [npc.name] aside in return for a few orgasms. With the impromptu rendezvous about to get underway, you have the option to announce your presence and join them, or watch as the two use each other.
-		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(affection("POSITIVE_FOUR_LOVE")))
+		#ELSEIF(npc2.getAffectionLevel(npc).isLessThan(AFFECTION_POSITIVE_FOUR_LOVE))
 			It's clear from [npc2.her] eager [npc2.moan] that [npc2.name] is more than willing to submit to [npc.name] and be fucked by [npc.herHim]. As the two slaves prepare to get it on, you take a moment to decide whether to turn this into a threesome, or stay back and let them have their fun.
 		#ELSE
 			[npc2.Name] seems every bit as enthusiastic about having sex with [npc.name] as [npc2.she] could possibly be. As [npc2.she] gets ready to tumble with [npc2.her] partner, it's time to choose whether or not you want to join them, or sit back and enjoy the sight them enjoying each other.
@@ -447,16 +447,16 @@
 	<htmlContent tag="SLAVE_USES_OTHER_SLAVE_LILAYA_CORRIDOR_START_SEX_DOM"><![CDATA[
 	<p>
 		Wanting to get in on the action, you make your presence known to your two slaves by [pc.stepping] into the room and [pc.walking] towards them. Catching sight of you, [npc.name] turns and
-		#IF(npc.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE"))
+		#IF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE)
 			 sneers at you, before stating, [npc.speech(I'd prefer to fuck [npc2.name] alone, but I guess I've got no choice but to let you join in...)]
-		#ELSEIF(npc.getAffectionLevelBasic(pc)==affectionBasic("NEUTRAL"))
+		#ELSEIF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_NEUTRAL)
 			 asks, [npc.speech(Are you going to join me, [pc.name]?)]
 		#ELSE
 			 grins at you, before asking, [npc.speech(You'll join me for a good fuck, won't you, [pc.name]?)]
 		#ENDIF
 	</p>
 	<p>
-		#IF(npc2.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE")|| (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
+		#IF(npc2.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE|| (!npc2.isAttractedTo(npc) && game.isNonConEnabled()))
 			Clearly unhappy about seeing that you've arrived to join in with the fun, [npc2.name] lets out a protesting whine, but otherwise realises the futility of [npc2.her] situation as you prepare to join [npc.name] in fucking [npc2.herHim]...
 		#ELSE
 			Pleased to see that you've arrived to join in with the fun, [npc2.name] lets out a horny whine, before preparing to submit to both you and [npc.name] as you move to fuck [npc2.herHim]...
@@ -468,9 +468,9 @@
 	<htmlContent tag="SLAVE_USES_OTHER_SLAVE_LILAYA_CORRIDOR_START_SEX_SUB"><![CDATA[
 	<p>
 		Wanting to get in on the action, you make your presence known to your two slaves by [pc.stepping] into the room and [pc.walking] towards them. Catching sight of you, [npc.name] turns and
-		#IF(npc.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE"))
+		#IF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE)
 			 sneers at you, before stating, [npc.speech(I'd prefer to fuck [npc2.name] alone, but I guess I've got no choice but to let you join in...)]
-		#ELSEIF(npc.getAffectionLevelBasic(pc)==affectionBasic("NEUTRAL"))
+		#ELSEIF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_NEUTRAL)
 			 asks, [npc.speech(Are you going to join me, [pc.name]?)]
 		#ELSE
 			 grins at you, before asking, [npc.speech(You'll join me for a good fuck, won't you, [pc.name]?)]
@@ -478,7 +478,7 @@
 	</p>
 	<p>
 		Moving forwards to lean back against the wall beside [npc2.name], you tell [npc.name] that you were actually hoping for [npc.herHim] to dominate you. Flashing you a hungry grin as [npc.she] hears you say this, your slave
-		#IF(npc.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE"))
+		#IF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE)
 			 leans in to forcefully plant a rough kiss on your [pc.lips+], before pulling back and snarling, [npc.speech(Sure, I'll give you a good hate-fucking, bitch!)]
 		#ELSE
 			 leans in to plant a quick kiss on your [pc.lips+], before pulling back and [npc.moaning], [npc.speech(Sure, I'll give you a good fucking, if that's what you're after!)]

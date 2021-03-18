@@ -51,9 +51,9 @@
 	</htmlContent>
 	
 	
-	<!-- SHOP_clothing("STOCK_ROOM") -->
+	<!-- SHOP_CLOTHING_STOCK_ROOM -->
 	
-	<htmlContent tag="SHOP_clothing("STOCK_ROOM")"><![CDATA[
+	<htmlContent tag="SHOP_CLOTHING_STOCK_ROOM"><![CDATA[
 	<p>
 		The stockroom of Nyan's Clothing Emporium looks pretty much exactly as you'd expected it be. Ceiling-height shelving units are stocked full of clothes, shoes, and accessories of all different sorts, and there's a distinctive 'new clothing' smell lingering in the air.
 	</p>
@@ -67,9 +67,9 @@
 	</htmlContent>
 	
 	
-	<!-- SHOP_clothing("REPEAT") -->
+	<!-- SHOP_CLOTHING_REPEAT -->
 	
-	<htmlContent tag="SHOP_clothing("REPEAT_NO_NYAN")"><![CDATA[
+	<htmlContent tag="SHOP_CLOTHING_REPEAT_NO_NYAN"><![CDATA[
 	<p>
 		Stepping through the open pair of wide, glass doors, you find 'Nyan's Clothing Emporium' to be just as busy as ever. Crowds of shoppers block almost every aisle, and every single member of staff who you see is already occupied with other customers. 
 	</p>
@@ -115,15 +115,15 @@
 	<p>
 		Stepping through the open pair of wide, glass doors, you find 'Nyan's Clothing Emporium' to be just as busy as ever. Crowds of shoppers block almost every aisle, and every single member of staff who you see is already occupied with other customers.
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("nyanmumInterviewPassed")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_nyanmumInterviewPassed))
 		<p>
 			Scanning around for any sign of your girlfriend, you suddenly hear a familiar voice call out from behind you, [nyan.speechNoEffects([pc.Name]!)]
 		</p>
 		<p>
 			You turn around to see Nyan happily smiling at you, and after you've returned her greeting, she coyly teases,
-			#IF(!game.getDialogueFlags().hasFlag(flag("nyanmumDateCompleted")))
+			#IF(!game.getDialogueFlags().hasFlag(FLAG_nyanmumDateCompleted))
 				 [nyan.speechNoEffects(So, have you got plans for this weekend? My mum seems pretty excited about the prospect of it...)]
-			#ELSEIF(game.getDialogueFlags().hasFlag(flag("nyanmumGirlfriend")))
+			#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_nyanmumGirlfriend))
 				 [nyan.speechNoEffects(So, have you got plans for this weekend? Mum and I would really like to go on another date with you...)]
 			#ELSE
 				 [nyan.speechNoEffects(So, have you got plans for this weekend? I'd really like to go on another date with you...)]
@@ -132,8 +132,8 @@
 		<p>
 			After telling her that she'll have to wait and see, Nyan grins and playfully swishes her tail around behind her. There's no doubt that she's significantly more confident than when you first met her, and you notice that the cat-girl's stutter has completely vanished as she points behind her and says, [nyan.speechNoEffects(Come on, I can show you the stockroom again if you'd like! Follow me!)]
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
-		#IF(game.getDialogueFlags().hasFlag(flag("nyanApologised")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_nyanApologised))
 			<p>
 				Scanning around for any sign of your girlfriend, you suddenly hear a familiar voice call out from behind you, [nyan.speechNoEffects([pc.Name]!)]
 			</p>
@@ -206,7 +206,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="SHOP_clothing("REPEAT_GIRLFRIEND")"><![CDATA[
+	<htmlContent tag="SHOP_CLOTHING_REPEAT_GIRLFRIEND"><![CDATA[
 	<p>
 		Having changed your mind about Nyan's earlier proposition, you tell her that you've been thinking about her offer of becoming her [pc.girlfriend]. As you reveal that you'd love to start a relationship with her, the cute cat-girl lets out an excited squeak, and after grabbing the book which she showed to you earlier, she holds it up to cover her blushing cheeks and declares, [nyan.speechNoEffects(T-This is just like i-in my books! N-Now we have to g-get to know one another b-before we can... I-I mean... D-Do the thing together...)]
 	</p>
@@ -223,14 +223,14 @@
 	</htmlContent>
 	
 	<htmlContent tag="NYAN_EXIT"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("nyanmumInterviewPassed")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_nyanmumInterviewPassed))
 		<p>
 			Thanking Nyan for her time, you explain to her that you need to get going now. Putting her little notepad away, she cheekily plants a quick kiss on your cheek, before exclaiming, [nyan.speechNoEffects(Thanks for dropping by, [pc.name]! I'll see you again this weekend, right?)]
 		</p>
 		<p>
 			Telling your girlfriend that you'll do your best to make time for another date with her, you give her a quick kiss goodbye and exit the stockroom. Making your way to the store's exit, you have to push your way through a crowd of customers that's loitering around the glass doors, before finally heading back out into the Arcade and wondering what to do next...
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("nyanRestaurantDateCompleted")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_nyanRestaurantDateCompleted))
 		<p>
 			Thanking Nyan for her time, you explain to her that you need to get going now. Putting her little notepad away, she exclaims, [nyan.speechNoEffects(Thanks for d-dropping by, [pc.name]! I'll see you again this w-weekend, right?)]
 		</p>

@@ -14,21 +14,21 @@
 	<aquatic>false</aquatic>
 	<applySubspeciesChanges><![CDATA[
 		#IF(RND.nextInt(100)<40)
-			[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_fur"), coveringPattern("SPOTTED"), coveringModifier("FLUFFY"), colour("COVERING_WHITE"), false, colour("COVERING_BLACK"), false)]
-			[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_hair"), coveringPattern("NONE"), colour("COVERING_WHITE"), false, colour("COVERING_BLACK"), false)]
+			[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_fur, COVERING_PATTERN_SPOTTED, COVERING_MODIFIER_FLUFFY, COLOUR_COVERING_WHITE, false, COLOUR_COVERING_BLACK, false)]
+			[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_hair, COVERING_PATTERN_NONE, COLOUR_COVERING_WHITE, false, COLOUR_COVERING_BLACK, false)]
 		#ELSE
 			#IF(RND.nextInt(100)<90)
-				[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_fur"), coveringPattern("SPOTTED"), coveringModifier("FLUFFY"), colour("COVERING_GREY"), false, colour("COVERING_BLACK"), false)]
-				[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_hair"), coveringPattern("NONE"), colour("COVERING_GREY"), false, colour("COVERING_BLACK"), false)]
+				[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_fur, COVERING_PATTERN_SPOTTED, COVERING_MODIFIER_FLUFFY, COLOUR_COVERING_GREY, false, COLOUR_COVERING_BLACK, false)]
+				[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_hair, COVERING_PATTERN_NONE, COLOUR_COVERING_GREY, false, COLOUR_COVERING_BLACK, false)]
 			#ELSE
-				[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_fur"), coveringPattern("SPOTTED"), coveringModifier("FLUFFY"), colour("COVERING_BLACK"), false, colour("COVERING_BLACK"), false)]
-				[#targetedBody.setCovering(bodyCoveringType("innoxia_panther_hair"), coveringPattern("NONE"), colour("COVERING_BLACK"), false, colour("COVERING_BLACK"), false)]
+				[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_fur, COVERING_PATTERN_SPOTTED, COVERING_MODIFIER_FLUFFY, COLOUR_COVERING_BLACK, false, COLOUR_COVERING_BLACK, false)]
+				[#targetedBody.setCovering(BODY_COVERING_TYPE_innoxia_panther_hair, COVERING_PATTERN_NONE, COLOUR_COVERING_BLACK, false, COLOUR_COVERING_BLACK, false)]
 			#ENDIF
 		#ENDIF
 		[#targetedBody.updateCoverings(true, true, true, true)]
 	]]></applySubspeciesChanges>
 	<subspeciesWeighting><![CDATA[
-		#IF(targetedRace==race("innoxia_panther") && targetedBody.getCovering(bodyCoveringType("innoxia_panther_fur"), true).getPattern()==coveringPattern("SPOTTED") && targetedBody.getCovering(bodyCoveringType("innoxia_panther_fur"), true).getModifier()==coveringModifier("FLUFFY"))
+		#IF(targetedRace==RACE_innoxia_panther && targetedBody.getCovering(BODY_COVERING_TYPE_innoxia_panther_fur, true).getPattern()==COVERING_PATTERN_SPOTTED && targetedBody.getCovering(BODY_COVERING_TYPE_innoxia_panther_fur, true).getModifier()==COVERING_MODIFIER_FLUFFY)
 			100
 		#ELSE
 			0

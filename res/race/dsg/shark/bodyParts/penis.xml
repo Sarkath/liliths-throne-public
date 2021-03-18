@@ -26,7 +26,7 @@
 	<additionalTransformationEffect/>
 	<!-- Hyena penises do not require any after-effects, but if you wanted to add one, use this format:
 	<additionalTransformationEffect><![CDATA[
-		[#npc.setSkinCovering(bodyCoveringType("PENIS"), colour("SKIN_EBONY"), false)]
+		[#npc.setSkinCovering(BODY_COVERING_TYPE_PENIS, COLOUR_SKIN_EBONY, false)]
 	]]></additionalTransformationEffect>
 	-->
 	

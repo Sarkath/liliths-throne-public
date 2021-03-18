@@ -11,7 +11,7 @@
 		#ENDIF
 	</p>
 	<p>
-		#IF(game.getCurrentWeather()==weather("MAGIC_STORM"))
+		#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
 			As there's an arcane storm raging overhead, your surroundings are almost completely deserted, with only the occasional demon to be seen walking down the street.
 			#IF(game.getHourOfDay()>=9 && game.getHourOfDay()<=16)
 				 As city hall is [style.colourGood(currently open to the public)], you wonder how many people are inside due to legitimate business, and how many are just making use of the building to take shelter from the storm.
@@ -112,7 +112,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="CITY_HALL_WAITING_AREA_LODGER_QUEST"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("cityHallLodgerBoardSeen")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_cityHallLodgerBoardSeen))
 		<p>
 			Shuddering at the thought of being at the mercy of Dominion's bureaucracy, you turn your attention towards the small, free-standing notice board that's positioned on one side of the waiting room. Curious to see if there's anything to be discovered from reading the many notes pinned to it, you quickly head over to this notice board and start reading.
 		</p>
@@ -131,7 +131,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="CITY_HALL_WAITING_AREA_LODGER_NO_ROOM"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("cityHallLodgerBoardSeen")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_cityHallLodgerBoardSeen))
 		<p>
 			Shuddering at the thought of being at the mercy of Dominion's bureaucracy, you turn your attention towards the small, free-standing notice board that's positioned on one side of the waiting room. Curious to see if there's anything to be discovered from reading the many notes pinned to it, you quickly head over to this notice board and start reading.
 		</p>
@@ -150,7 +150,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="CITY_HALL_WAITING_AREA_LODGER_AVAILABLE"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("cityHallLodgerBoardSeen")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_cityHallLodgerBoardSeen))
 		<p>
 			Shuddering at the thought of being at the mercy of Dominion's bureaucracy, you turn your attention towards the small, free-standing notice board that's positioned on one side of the waiting room. Curious to see if there's anything to be discovered from reading the many notes pinned to it, you quickly head over to this notice board and start reading.
 		</p>

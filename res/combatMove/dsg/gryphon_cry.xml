@@ -92,7 +92,7 @@
 	The parsing target of 'npc' corresponds to the character who is being checked to see if they have this move available to them.
 	All whitespace is stripped from the returned String before it is parsed into a Boolean. -->
 	<availabilityCondition><![CDATA[
-		[#(npc.getFaceType()==faceType("dsg_gryphon_face")) && !npc.isSpeechMuffled() && !npc.isMute()]
+		[#(npc.getFaceType()==FACE_TYPE_dsg_gryphon_face) && !npc.isSpeechMuffled() && !npc.isMute()]
 	]]>
 	</availabilityCondition>
 	
@@ -157,8 +157,8 @@
 		NOTE: The damage is automatically applied to the target, so you don't need to handle parsing of that. -->
 		<execute><![CDATA[
 			[npc.Name] [npc.verb(open)] [npc.her] beak and [npc.verb(screech)] out a mighty hunting call.
-			#IF (!npc.hasStatusEffect(se("dsg_race_gryphon_hunting_cry")))
-				[##npc.addStatusEffect(se("dsg_race_gryphon_hunting_cry"), 3)]
+			#IF (!npc.hasStatusEffect(SE_dsg_race_gryphon_hunting_cry))
+				[##npc.addStatusEffect(SE_dsg_race_gryphon_hunting_cry, 3)]
 			#ENDIF
 		]]></execute>
 		<critDescription><![CDATA[

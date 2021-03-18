@@ -9,7 +9,7 @@
 	</p>
 	<p>
 		#IF(helena.isSlutty())
-			#IF(!game.getDialogueFlags().hasFlag(flag("helenaSlutSeen")))
+			#IF(!game.getDialogueFlags().hasFlag(FLAG_helenaSlutSeen))
 					Before you're able to advance further into the store, the beautiful harpy matriarch herself quickly strides forwards to greet you. As she approaches, you find yourself almost not believing what you're seeing, as instead of her usual elegant white plunge dress,
 					#IF(helena.isVisiblyPregnant())
 						 Helena is now wearing an incredibly slutty outfit, and what's more, she's also very clearly pregnant.
@@ -45,20 +45,20 @@
 				<p>
 					Stepping forwards, the horny harpy grabs your [pc.hands] and guides them down to rub her clearly-swollen belly. Caught a little off-guard by Helena's audacious move, you're not able to offer much of a response before she seductively licks her lips and leans forwards to tease,
 			#ELSE
-				#IF(game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+				#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 					 and seductively teases,
 				#ELSE
 					 and seductively teases,
 				#ENDIF
 			#ENDIF
 			#IF(game.getDayOfWeek()==DOW_FRIDAY)
-				#IF(game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+				#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 					 [helena.speech(That little romp in the back room wasn't nearly enough to satisfy me. I'm expecting you to take me out on a date tonight, and then we can go back to my place for a good hard fuck in my room...)]
 				#ELSE
 					 [helena.speech(I'm expecting you to take me out on a date tonight, [pc.name], and then we can go back to my place for a good hard fuck in my room...)]
 				#ENDIF
 			#ELSE
-				#IF(game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+				#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 					 [helena.speech(You know, if you were to visit my nest this evening, I'm sure I could be persuaded to give you a very personal tour of my bedroom again...)]
 				#ELSE
 					 [helena.speech(If you'd like, I could give you a very personal tour of the back room...)]
@@ -68,7 +68,7 @@
 			#IF(game.getDayOfWeek()==DOW_FRIDAY)
 				Before you're able to advance further into the store, the beautiful harpy matriarch herself quickly strides forwards to greet you. After flashing you a delightful smile, she softly says, [helena.speech(Welcome back, [pc.name]. Just so you know, I am expecting you to take me out on a date this evening. Now, with that out of the way, what brings you here today?)]
 			#ELSE
-				#IF(game.getDialogueFlags().hasFlag(flag("helenaShopTalkedTo")))
+				#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopTalkedTo))
 					Before you're able to advance further into the store, the beautiful harpy matriarch herself quickly strides forwards to greet you. After flashing you a delightful smile, she softly says, [helena.speech(Welcome back, [pc.name]. Unfortunately, I have no more time today in which to participate in idle conversation with you, but if you're here on matters of business, then of course I would be delighted to help you.)]
 				#ELSE
 					Before you're able to advance further into the store, the beautiful harpy matriarch herself quickly strides forwards to greet you. After flashing you a delightful smile, she softly says, [helena.speech(Welcome back, [pc.name]. What brings you here today?)]
@@ -128,7 +128,7 @@
 	<htmlContent tag="ROMANCE_SHOP_CORE_END_DATE"><![CDATA[
 	<p>
 		#IF(helena.isSlutty())
-			#IF(!game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+			#IF(!game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 				Telling Scarlett to step back, Helena once again teases, [helena.speech(So, [pc.name], are you here to take me out on a date? Or perhaps before we get to that, you'd like to spend some time in the back room with me?)]
 			#ELSE
 				Telling Scarlett to step back, Helena once again teases, [helena.speech(So, [pc.name], are you here to take me out on a date?)]
@@ -148,9 +148,9 @@
 	<htmlContent tag="ROMANCE_SHOP_CORE_END_CUSTOM_SLAVE_PROGRESS"><![CDATA[
 	<p>
 		#IF(helena.isSlutty())
-			#IF(game.getDialogueFlags().hasFlag(flag("helenaScarlettThreesome")) && !game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_helenaScarlettThreesome) && !game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 				Brushing one of her flawless wings up against Scarlett's body, Helena once again teases, [helena.speech(Just to remind you, [pc.name], it will be another [#SPECIAL_PARSE_0] days until your slave is ready for collection, which will be on [#SPECIAL_PARSE_1]. Perhaps you're not here about that though? Maybe you're here to spend some time in the back room with the two of us, hmm?)]
-			#ELSEIF(!game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+			#ELSEIF(!game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 				Telling Scarlett to step back, Helena once again teases, [helena.speech(Just to remind you, [pc.name], it will be another [#SPECIAL_PARSE_0] days until your slave is ready for collection, which will be on [#SPECIAL_PARSE_1]. Perhaps you're not here about that though? Maybe you're here to spend some time in the back room with me, hmm?)]
 			#ELSE
 				Telling Scarlett to step back, Helena once again teases, [helena.speech(Just to remind you, [pc.name], it will be another [#SPECIAL_PARSE_0] days until your slave is ready for collection, which will be on [#SPECIAL_PARSE_1]. So, what can I do for you?)]
@@ -170,9 +170,9 @@
 	<htmlContent tag="ROMANCE_SHOP_CORE_END_CUSTOM_SLAVE_READY"><![CDATA[
 	<p>
 		#IF(helena.isSlutty())
-			#IF(game.getDialogueFlags().hasFlag(flag("helenaScarlettThreesome")) && !game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_helenaScarlettThreesome) && !game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 				Brushing one of her flawless wings up against Scarlett's body, Helena once again teases, [helena.speech(So, [pc.name], are you here to collect your slave? Or perhaps you'd like to spend some time in the back room with the two of us?)]
-			#ELSEIF(!game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+			#ELSEIF(!game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 				Telling Scarlett to step back, Helena once again teases, [helena.speech(So, [pc.name], are you here to collect your slave? Or perhaps you'd like to spend some time in the back room with me?)]
 			#ELSE
 				Telling Scarlett to step back, Helena once again teases, [helena.speech(So, [pc.name], are you here to collect your slave?)]
@@ -192,9 +192,9 @@
 	<htmlContent tag="ROMANCE_SHOP_CORE_END"><![CDATA[
 	<p>
 		#IF(helena.isSlutty())
-			#IF(game.getDialogueFlags().hasFlag(flag("helenaScarlettThreesome")) && !game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_helenaScarlettThreesome) && !game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 				Brushing one of her flawless wings up against Scarlett's body, Helena once again teases, [helena.speech(So, [pc.name], is it business that you're here for? Or perhaps you'd like to spend some time in the back room with the two of us?)]
-			#ELSEIF(!game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+			#ELSEIF(!game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 				Telling Scarlett to step back, Helena once again teases, [helena.speech(So, [pc.name], is it business that you're here for? Or perhaps you'd like to spend some time in the back room with me?)]
 			#ELSE
 				Telling Scarlett to step back, Helena once again teases, [helena.speech(So, [pc.name], what business is it you wish to discuss?)]
@@ -220,9 +220,9 @@
 	</p>
 	<p>
 		As the raven-harpy hurries off to carry out her matriarch's order, Helena guides you over to a couple of nearby empty sofas.
-		#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+		#IF(helena.hasFetish(FETISH_DOMINANT))
 			 Sitting down on the one opposite to you, she flashes you a devious grin as she spreads her legs and gives you a clear view of the lacy black thong that she's wearing beneath her microskirt. Biting her lip, she teases, [helena.speech(Maybe after we're done with business, I'll take you into the back room and give you a taste of my dirty little pussy...)]
-		#ELSEIF(helena.hasFetish(fetish("FETISH_SUBMISSIVE")))
+		#ELSEIF(helena.hasFetish(FETISH_SUBMISSIVE))
 			 Sitting down on the one opposite to you, she submissively bats her eyelids as she spreads her legs and gives you a clear view of the lacy black thong that she's wearing beneath her microskirt. Biting her lip, she teases, [helena.speech(Maybe after we're done with business, you could take me into the back room and fuck my dirty little pussy...)]
 		#ELSE
 			 Sitting down on the one opposite to you, she throws you a subtle smile and gently says, [helena.speech(I am more than happy to personally assist you with your slave customisation, [pc.name].)]
@@ -233,7 +233,7 @@
 	</p>
 	<p>
 		[helena.speech(Thank you, Scarlett,)]
-		#IF(helena.hasFetish(fetish("FETISH_DOMINANT")) || helena.hasFetish(fetish("FETISH_SUBMISSIVE")))
+		#IF(helena.hasFetish(FETISH_DOMINANT) || helena.hasFetish(FETISH_SUBMISSIVE))
 			 Helena replies, crossing her legs and blocking off your view of her slutty underwear. Gesturing towards the shop's counter, she continues, [helena.speech(Please wait for me over there.)]
 		#ELSE
 			 Helena replies, before gesturing towards the shop's counter and continuing, [helena.speech(Please wait for me over there.)]
@@ -254,9 +254,9 @@
 	</p>
 	<p>
 		Standing up from her sofa and calling over Scarlett to take the forms away,
-		#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+		#IF(helena.hasFetish(FETISH_DOMINANT))
 			 the slutty matriarch steps close to lewdly whisper in your [pc.ear], [helena.speech(How about I take you into the back room and give you a good, hard fuck?)]
-		#ELSEIF(helena.hasFetish(fetish("FETISH_SUBMISSIVE")))
+		#ELSEIF(helena.hasFetish(FETISH_SUBMISSIVE))
 			 the slutty matriarch steps close to lewdly whisper in your [pc.ear], [helena.speech(How about you take me into the back room and give me a good, hard fuck?)]
 		#ELSE
 			 the regal matriarch lets out a small sigh and says, [helena.speech(That's no problem, [pc.name]. Is there anything else I can do for you today?)]
@@ -494,7 +494,7 @@
 		Seeing that you and Helena have concluded your business, Scarlett walks over from where she was waiting and impudently asks, [scarlett.speech(So, you two are done? Helena, I'm hungry. I'm going to go and get something to eat, ok?)]
 	</p>
 	<p>
-		#IF(helena.isSlutty() && !game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+		#IF(helena.isSlutty() && !game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 			Spreading her legs to give you an unobstructed view of her lacy black thong, Helena bites her lips and says, [helena.speech(You know, I'm hungry too... How about you come into the back room with me, [pc.name], so you can help me satisfy this craving I've got...)]
 		#ELSE
 			Letting out an exasperated sigh, Helena turns to the raven-harpy and says, [helena.speech(You can take a break later. For now, [pc.name] might have something more to discuss...)]
@@ -515,26 +515,26 @@
 	</p>
 	<p>
 		Doing as she's told, Scarlet hurries off into the back room, and just moments later returns with the [npc.fullRace(true)] trailing along behind her. As you look at your new slave, who's wearing nothing but a steel slave collar, you see that [npc.sheIs] exactly as you ordered, and as [npc.she] comes to a halt in front of you, [npc.she]
-		#IF(npc.getObedienceBasic()==obedienceBasic("DISOBEDIENT"))
-			#IF(npc.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE"))
+		#IF(npc.getObedienceBasic()==OBEDIENCE_BASIC_DISOBEDIENT)
+			#IF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE)
 				 scowls at you and disobediently mutters, [npc.speech(Eugh... So I'm going to be owned by <i>you</i>?)]
-			#ELSEIF(npc.getAffectionLevelBasic(pc)==affectionBasic("NEUTRAL"))
+			#ELSEIF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_NEUTRAL)
 				 sighs and disobediently comments, [npc.speech(So, I guess I'm going to be owned by you now, huh?)]
 			#ELSE
 				 smiles and disobediently exclaims, [npc.speech(Is this really it at last? I get to be owned by you?)]
 			#ENDIF
-		#ELSEIF(npc.getObedienceBasic()==obedienceBasic("NEUTRAL"))
-			#IF(npc.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE"))
+		#ELSEIF(npc.getObedienceBasic()==OBEDIENCE_BASIC_NEUTRAL)
+			#IF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE)
 				 sighs and mutters, [npc.speech(Am I to your satisfaction?)]
-			#ELSEIF(npc.getAffectionLevelBasic(pc)==affectionBasic("NEUTRAL"))
+			#ELSEIF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_NEUTRAL)
 				 asks, [npc.speech(Am I to your satisfaction?)]
 			#ELSE
 				 smiles and asks, [npc.speech(Am I to your satisfaction?)]
 			#ENDIF
 		#ELSE
-			#IF(npc.getAffectionLevelBasic(pc)==affectionBasic("DISLIKE"))
+			#IF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_DISLIKE)
 				 obediently bows [npc.her] head, completely concealing [npc.her] dislike of you as [npc.she] asks, [npc.speech(Am I to your satisfaction, [pc.name]?)]
-			#ELSEIF(npc.getAffectionLevelBasic(pc)==affectionBasic("NEUTRAL"))
+			#ELSEIF(npc.getAffectionLevelBasic(pc)==AFFECTION_BASIC_NEUTRAL)
 				 obediently bows [npc.her] head, before asking, [npc.speech(Am I to your satisfaction, [pc.name]?)]
 			#ELSE
 				 obediently bows [npc.her] head, completely concealing [npc.her] affection towards you as [npc.she] asks, [npc.speech(Am I to your satisfaction, [pc.name]?)]
@@ -567,14 +567,14 @@
 				After a short while of talking about business, she starts making several graphic comments about how she keeps on thinking back to the evening in which
 				#IF(helena.getPregnantLitter().isFatherId(pc.getId()))
 					 you impregnated her. Stepping forwards, she grabs your [pc.hands] and makes you stroke her pregnant belly as she teases,
-					#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+					#IF(helena.hasFetish(FETISH_DOMINANT))
 						 [helena.speech(Once I've laid these eggs, maybe I'll ride your cock and get you to knock me up all over again...)]
 					#ELSE
 						 [helena.speech(Once I've laid these eggs, maybe you'll want to hump me and knock me up all over again...)]
 					#ENDIF
 				#ELSE
 					 Scarlett impregnated her. Stepping forwards, she grabs your [pc.hands] and makes you stroke her pregnant belly as she teases,
-					#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+					#IF(helena.hasFetish(FETISH_DOMINANT))
 						 [helena.speech(Once I've laid these eggs, maybe I'll get Scarlett to hump me and knock me up all over again...)]
 					#ELSE
 						 [helena.speech(Once I've laid these eggs, I wonder if Scarlett will want to hump me and knock me up all over again...)]
@@ -582,25 +582,25 @@
 				#ENDIF
 			#ELSE
 				After a short while of talking about business, 
-				#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+				#IF(helena.hasFetish(FETISH_DOMINANT))
 					 she dominantly steps forwards and starts making several graphic comments about how she keeps on getting wet at the thought of 
 				#ELSE
 					 she steps forwards and starts making several graphic comments about how she keeps on getting wet at the thought of 
 				#ENDIF
-				#IF(helena.hasFetish(fetish("FETISH_ANAL_RECEIVING")))
+				#IF(helena.hasFetish(FETISH_ANAL_RECEIVING))
 					#IF(!helena.isVaginaVirgin())
 						 her horny little pussy and ass being filled with your cock.
 					#ELSE
 						 her slutty ass being filled with your cock.
 					#ENDIF
-					#IF(!game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+					#IF(!game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 						 Biting her lip, she lowers her voice and coyly asks, [helena.speech(How about the two of step into the back room? I could do with some oral right about now...)]
 					#ELSE
 						 Biting her lip, she lowers her voice and coyly remarks, [helena.speech(I'm looking forward to our next date together. I wonder if you're going to want to fuck my butt or my tight, wet cunt?)]
 					#ENDIF
 				#ELSE
 					 her horny little pussy being filled with your cock.
-					#IF(!game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+					#IF(!game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 						 Biting her lip, she lowers her voice and coyly asks, [helena.speech(How about the two of step into the back room? I could do with some oral right about now...)]
 					#ELSE
 						 Biting her lip, she lowers her voice and coyly remarks, [helena.speech(I'm looking forward to our next date together. I can't wait to feel you using my tight, wet cunt again...)]
@@ -609,7 +609,7 @@
 			#ENDIF
 		</p>
 		<p>
-			#IF(!game.getDialogueFlags().hasFlag(flag("helenaShopFucked")))
+			#IF(!game.getDialogueFlags().hasFlag(FLAG_helenaShopFucked))
 				After a few more minutes of teasing and making all sorts of lewd remarks, the regal matriarch pointedly asks, [helena.speech(So, [pc.name], do you want me to give you a very <i>personal</i> tour of the back room, or should I get back to work?)]
 			#ELSE
 				After a few more minutes of teasing and making all sorts of lewd remarks, the regal matriarch spots one of her harpy workers beckoning for her attention, and so steps back and declares, [helena.speech(I'd love to continue talking with you, [pc.name], but I need to get back on with work now.)]
@@ -645,12 +645,12 @@
 	</p>
 	<p>
 		Seemingly not at all bothered by the fact that these slaves are able to overhear the two of you, Helena steps forwards and lifts her micro skirt, before hooking her feathered thumbs into the band of her lacy black thong and sliding it down the length of her flawless bird-like legs.
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 With her cloaca now fully on display, the slutty harpy uses her fingers to spread it and present her pussy to you, before
 		#ELSE
 			 With her groin now fully on display, the slutty harpy uses her fingers to spread her pussy and present it to you, before
 		#ENDIF
-		#IF(helena.hasFetish(fetish("FETISH_DOMINANT")))
+		#IF(helena.hasFetish(FETISH_DOMINANT))
 			 dominantly teasing, [helena.speech(How should I use you today, I wonder?)]
 		#ELSE
 			 submissively teasing, [helena.speech(How would you like to use me, [pc.name]?)]
@@ -675,7 +675,7 @@
 	#IF(!helena.getFetishDesire(FETISH_ANAL_RECEIVING).isPositive())
 		<p>
 			Wanting to perform a different type of oral on Helena, you suggest
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 that you could probe your tongue a little lower down within her cloaca and perform anilingus on her.
 			#ELSE
 				 that she could present her ass to you so that you can perform anilingus on her.
@@ -684,7 +684,7 @@
 		</p>
 		<p>
 			Confirming that that's what you want, you can't help but smile as Helena blushes and turns around, before stepping over to lean against a nearby wall and pushing her [helena.assSize] ass out towards you. Looking back over her shoulder, she lifts her beautiful white tail feathers to present you with
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 the cloaca between her legs, and as you drop down behind her and press your [pc.lips+] against the lower part of her bird-like slit, she stammers, [helena.speechNoEffects(T-This had better feel good!)]
 			#ELSE
 				 her butt, and as you drop down behind her and press your [pc.lips+] against her virgin asshole, she stammers, [helena.speechNoEffects(T-This had better feel good!)]
@@ -702,7 +702,7 @@
 		</p>
 		<p>
 			Confirming that that's what you want, you can't help but smile as Helena giggles and turns around, before stepping over to lean against a nearby wall and pushing her [helena.assSize] ass out towards you. Looking back over her shoulder, she lifts her beautiful white tail feathers to present you with
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 the cloaca between her legs, and as you drop down behind her and press your [pc.lips+] against the lower part of her bird-like slit, she moans,
 			#ELSE
 				 her butt, and as you drop down behind her and press your [pc.lips+] against her exposed asshole, she moans,
@@ -848,7 +848,7 @@
 		</p>
 		<p>
 			Instead of positioning herself over your groin, however, the dominant harpy moves forwards to stand over your head, before sinking down onto her knees and planting her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 cloaca
 			#ELSE
 				 [helena.ass+]
@@ -858,7 +858,7 @@
 	#ELSE
 		<p>
 			Deciding that it's best to do as you're asked, you lie down on a nearby rug, presenting Helena with your rapidly-hardening cock. Instead of positioning herself over your groin, however, the dominant harpy moves forwards to stand over your head, before sinking down onto her knees and planting her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 cloaca
 			#ELSE
 				 [helena.ass+]
@@ -868,7 +868,7 @@
 	#ENDIF
 	<p>
 		With little choice but to do as you're told, you start eagerly kissing and licking Helena's asshole, causing her to let out a series of deep, passionate moans. Once her rear entrance is nicely lubricated by your saliva, she stands up, leaving you gasping for air as she moves down to straddle your stomach. After taking a moment to slide her
-		#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 			 slimy cloaca
 		#ELSE
 			 slimy asshole 
@@ -891,14 +891,14 @@
 	<p>
 		#IF(pc.isTaur())
 			More than happy to do as she asks, you rear up on the hind legs and swiftly move forwards to mount her. With your lower [pc.a_legRace]'s body now positioned over the top of the horny harpy, you buck your hips forwards until you feel the [pc.cockHead+] of your cock pushing against her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 cloaca. Encouraged by the feel of Helena's soft, delicate wings guiding your throbbing shaft to prod at her [helena.labia+], you buck forwards, sinking your hard cock into her [helena.pussy+] and causing her to let out a desperate moan,
 			#ELSE
 				 [helena.labia+]. Not wanting to wait another moment, you immediately buck forwards, sinking your hard cock into her [helena.pussy+] and causing her to let out a desperate moan,
 			#ENDIF
 		#ELSE
 			More than happy to do as she asks, you [pc.step] forwards and press the [pc.cockHead+] of your cock against her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 cloaca.
 			#ELSE
 				 [helena.labia+].
@@ -918,7 +918,7 @@
 		Wanting to make the most of this opportunity, you [pc.step] forwards and tell Helena that you're going to fuck her ass again. Hearing what it is you're saying, the submissive harpy bites her lip and steps over to a nearby table,
 		#IF(helena.isVisiblyPregnant())
 			 before lying back on it and presenting you with her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 cloaca.
 			#ELSE
 				 ass.
@@ -926,7 +926,7 @@
 			 Rubbing her beautiful wings over her swollen, pregnant belly, she spreads her bird-like legs and teases,
 		#ELSE
 			 before bending forwards over it and presenting you with her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 cloaca.
 			#ELSE
 				 ass.
@@ -939,14 +939,14 @@
 		More than happy to do as she asks, you kneel down and start eagerly kissing and licking Helena's asshole, causing her to let out a series of deep, passionate moans. Once her rear entrance is nicely lubricated by your saliva,
 		#IF(pc.isTaur())
 			 you rear up on the hind legs and swiftly move forwards to mount her. With your lower [pc.a_legRace]'s body now positioned over the top of the horny harpy, you buck your hips forwards until you feel the [pc.cockHead+] of your cock pushing against her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 slimy cloaca. Encouraged by the feel of Helena's soft, delicate wings guiding your throbbing shaft to prod at her asshole, you buck forwards, sinking your hard cock into her rear entrance and causing her to let out a desperate moan,
 			#ELSE
 				 slimy rear entrance. Not wanting to wait another moment, you immediately buck forwards, sinking your hard cock into her asshole and causing her to let out a desperate moan,
 			#ENDIF
 		#ELSE
 			 you stand up an move forwards and press the [pc.cockHead+] of your cock against her
-			#IF(helena.getGenitalArrangement()==genitals("CLOACA"))
+			#IF(helena.getGenitalArrangement()==GENITALS_CLOACA)
 				 slimy cloaca.
 			#ELSE
 				 slimy rear entrance.
@@ -998,7 +998,7 @@
 		As Helena walks off to leave the two of you alone together, Scarlett
 		#IF(scarlett.isLikesPlayer())
 			 flashes you a rare smile and asks,
-			#IF(game.getDialogueFlags().hasFlag(flag("helenaShopScarlettCounterOral")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopScarlettCounterOral))
 				#IF(scarlett.hasPenis())
 					 [scarlett.speech(So, what did you want, [pc.name]? I don't have time for you to suck my cock under the counter again...)]
 				#ELSE
@@ -1021,7 +1021,7 @@
 			#ENDIF
 		#ELSE
 			 scowls at you and rudely asks,
-			#IF(game.getDialogueFlags().hasFlag(flag("helenaShopScarlettCounterOral")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopScarlettCounterOral))
 				#IF(scarlett.hasPenis())
 					 [scarlett.speech(What the fuck do you want now, [pc.name]? I don't have time to fuck your face under the counter again.)]
 				#ELSE
@@ -1049,7 +1049,7 @@
 	
 	<htmlContent tag="HELENAS_SHOP_SCARLETT_END"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaShopScarlettTalkedTo")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopScarlettTalkedTo))
 			Not having anything more to discuss with Scarlett, you tell her that you'd better let her get back on with work.
 			#IF(scarlett.isLikesPlayer())
 				 Failing to hide the disappointment in her voice, she replies, [scarlett.speech(Oh, ok... I'll call Helena back over.)]
@@ -1130,7 +1130,7 @@
 	<htmlContent tag="HELENAS_SHOP_SCARLETT_COUNTER_ORAL_START"><![CDATA[
 	<p>
 		Doing as you're told, you pull down Scarlett's underwear to reveal
-		#IF(scarlett.getGenitalArrangement()==genitals("CLOACA"))
+		#IF(scarlett.getGenitalArrangement()==GENITALS_CLOACA)
 			 her bird-like cloaca.
 			#IF(scarlett.hasPenis())
 				 Her rapidly-hardening cock is already pushing out from between her folds, and as she bucks her hips forwards to push the [scarlett.cockHead+] against your [pc.lips+], she again hisses,
@@ -1181,7 +1181,7 @@
 	<!-- HELENAS_SHOP_SCARLETT_CAFE -->
 	
 	<htmlContent tag="HELENAS_SHOP_SCARLETT_CAFE"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("helenaShopScarlettCafeRevealed")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopScarlettCafeRevealed))
 		<p>
 			Wanting to spend more than just a few minutes talking with Scarlett, you ask her if she'd like to spend her lunch break with you again.
 			#IF(scarlett.isLikesPlayer())
@@ -1222,7 +1222,7 @@
 	
 	<htmlContent tag="HELENAS_SHOP_SCARLETT_CAFE_CORE"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("helenaShopScarlettCafeRevealed")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopScarlettCafeRevealed))
 			Letting Scarlett lead the way, you accompany her out of Helena's Boutique and down the busy street to the same cafe which the two of you visited last time.
 		#ELSE
 			Letting Scarlett lead the way, you accompany her out of Helena's Boutique and down the busy street to a nearby cafe.
@@ -1233,7 +1233,7 @@
 			 Eager to arrive at her destination, Scarlett doesn't even attempt to strike up a conversation with you, and rudely shoves her way past anyone who dares get in her way as she single-mindedly strides forwards and pushes open the cafe's front door.
 		#ENDIF
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("helenaShopScarlettCafeRevealed")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopScarlettCafeRevealed))
 		<p>
 			Following Scarlett's lead, you enter the busy cafe and join her in sitting down at one of the few empty tables. Having noticed your arrival, the same energetic rabbit-girl waitress from before bounces forwards and asks if she can take your orders. Returning her greeting with the usual angry scowl, Scarlett snaps, [scarlett.speech(Fucking hell, Beth, we've only just sat down!)]
 		</p>
@@ -1558,7 +1558,7 @@
 	<p>
 		After just a few more minutes, you and Scarlett find yourselves once again stepping inside Helena's Boutique. Almost immediately, the beautiful harpy matriarch notices your return and sweeps across the shop floor to softly greet you, [helena.speech(Hello again, [pc.name]. I trust that you and my dear Scarlett had a pleasant time together?)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("helenaShopScarlettExtraTransformationApplied")) && scarlett.hasVagina() && !game.getDialogueFlags().hasFlag(flag("helenaShopScarlettExtraTransformationHelenaReacted")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_helenaShopScarlettExtraTransformationApplied) && scarlett.hasVagina() && !game.getDialogueFlags().hasFlag(FLAG_helenaShopScarlettExtraTransformationHelenaReacted))
 		<p>
 			After you've answered in the affirmative, Helena flashes you a smile and turns towards the raven-harpy standing beside you. Obviously having noticed her subordinate's beautiful face and large bust, she says, [helena.speech(Good, I see that you've taken the transformation potion which I gave you. I was concerned that people might think you not attractive enough to be so close to me, but now that I've had you improved, that will no longer be an issue.)]
 		</p>

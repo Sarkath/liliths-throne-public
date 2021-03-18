@@ -30,7 +30,7 @@
 		
 		<condPlantigrade constant="true"><![CDATA[npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL && npc.getFootStructure()==FOOT_STRUCTURE_PLANTIGRADE]]></condPlantigrade>
 		<condGoth constant="true"><![CDATA[RND.nextInt(100)<=15]]></condGoth>
-		<condExhibitionist constant="true"><![CDATA[npc.hasFetish(fetish("FETISH_EXHIBITIONIST"))]]></condExhibitionist>
+		<condExhibitionist constant="true"><![CDATA[npc.hasFetish(FETISH_EXHIBITIONIST)]]></condExhibitionist>
 		<condFishnetTop constant="true"><![CDATA[RND.nextInt(100)<=50]]></condFishnetTop>
 		
 		

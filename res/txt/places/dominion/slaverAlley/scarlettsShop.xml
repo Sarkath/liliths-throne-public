@@ -7,7 +7,7 @@
 	<p>
 		Tucked away in one corner of Slaver Alley, you see a shop that's quite unlike all the others. Looking down from the words 'Scarlett's Shop' painted in fancy gold lettering above the door, you see that there's a sign hanging in one of the large glass windows, which reads, [style.italicsMinorBad('Open every day, [unit.time(6)]-[unit.time(22)]')].
 	</p>
-	#IF(pc.getQuest(questLine("MAIN")) == quest("MAIN_1_E_REPORT_TO_HELENA"))
+	#IF(pc.getQuest(QUEST_LINE_MAIN) == QUEST_MAIN_1_E_REPORT_TO_HELENA)
 		<p>
 			As the shop is currently [style.colourBad(closed)], there's nothing more for you to do here except turn around and leave. You also haven't yet gone to report to Scarlett's matriarch, [helena.name], so there wouldn't be much for you to do here even if the shop was open. Scarlett said that you can find [helena.name] up in the Harpy Nests...
 		</p>
@@ -26,7 +26,7 @@
 	<p>
 		Despite the fact that this shop should be [style.colourGood(open)] for business at this time, you don't see any sign of activity inside. Furthermore, while the other shops in Slaver Alley use the area in front of their premises to proudly display advertisement boards and platforms upon which to display their goods, the area in front of 'Scarlett's Shop' is noticeably barren; yet further proof that this particular store must have fallen upon hard times.
 	</p>
-	#IF(pc.getQuest(questLine("MAIN")) == quest("MAIN_1_E_REPORT_TO_HELENA"))
+	#IF(pc.getQuest(QUEST_LINE_MAIN) == QUEST_MAIN_1_E_REPORT_TO_HELENA)
 		<p>
 			You haven't yet gone to report to Scarlett's matriarch, [helena.name], and you don't really want to have to talk to the rude harpy again until you've done as she's asked. Scarlett said that you can find [helena.name] up in the Harpy Nests, so you'll need to go there report to her before stepping foot inside this shop again.
 		</p>
@@ -146,7 +146,7 @@
 	
 	<htmlContent tag="HELENAS_SHOP_EXTERIOR_PAINTING"><![CDATA[
 	<p>
-		#IF(pc.getQuest(questLine("ROMANCE_HELENA"))==quest("ROMANCE_HELENA_3_C_EXTERIOR_DECORATOR"))
+		#IF(pc.getQuest(QUEST_LINE_ROMANCE_HELENA)==QUEST_ROMANCE_HELENA_3_C_EXTERIOR_DECORATOR)
 			Thanks to you, the entire frontage of Helena's shop has been repainted in a brilliant white, and is really starting to stand out from those around it. Looking around, you see that most people are at least glancing in its direction as they walk past. Unfortunately for the more curious of these passersby, however, Helena has replaced the sign displaying the shop's opening times with one that simply reads: 'Closed for renovations.'
 		#ELSE
 			Thanks to you, all of the paint has been stripped from the front of Helena's store, including the name 'Scarlett's Shop'. With just the bare woodwork left exposed, the frontage is starting to stand out from those around it, and you notice that a few members of the public are starting to look in its direction as they walk past. Unfortunately for the more curious of these passersby, however, Helena has replaced the sign displaying the shop's opening times with one that simply reads: 'Closed for renovations.'
@@ -322,7 +322,7 @@
 	</p>
 	<p>
 		[helena.speech(What an excellent decision,)] [helena.name] calmly replies,
-		#IF(game.getDialogueFlags().hasFlag(flag("punishedByHelena")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_punishedByHelena))
 			 [helena.speech(Now, taking into consideration the fact that you took that little punishment of mine on Scarlett's behalf, I'm willing to give you a discount. Although she is unquestionably loyal to me, I must inform you that Scarlett can be quite unpleasant towards others, and so would need a good deal of training to make her into a good slave. Taking this into account, I'd value Scarlett at fifteen thousand flames, but with the discount I'm willing to give you, you may purchase her for ten thousand.)]
 		#ELSE
 			 [helena.speech(Although she is unquestionably loyal to me, I must inform you that Scarlett can be quite unpleasant towards others, and so would need a good deal of training to make her into a good slave. Taking this into account, I'd value Scarlett at fifteen thousand flames. I'm not one for haggling over prices, so you can either pay the full fifteen thousand, or else I'll find someone else to buy her.)]

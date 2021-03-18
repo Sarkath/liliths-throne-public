@@ -75,7 +75,7 @@
 	</p>
 	<p>
 		The usual pair of zebra-boys are standing guard at the front of the queue, and as you enter, Jules sees you and calls out over the faint background bass of the club's music system,
-		#IF(game.getDialogueFlags().hasFlag(flag("suckedJulesCock")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_suckedJulesCock))
 			 [jules.speech(Hey, my little cocksucker's back! Come over here and get on your knees, and you can skip the queue again!)]
 		#ELSE
 			 [jules.speech(Hey, it's you again! You gonna suck my cock this time, or what?)]
@@ -267,7 +267,7 @@
 			#ENDIF
 		#ENDIF
 		 After exchanging opinions on the state of the club and how crowded it is, [npc.name] ends up talking a little about
-		#IF npc.getHistory()==occupation("NPC_UNEMPLOYED") || npc.getHistory()==occupation("NPC_UNIVERSITY_STUDENT")
+		#IF npc.getHistory()==OCCUPATION_NPC_UNEMPLOYED || npc.getHistory()==OCCUPATION_NPC_UNIVERSITY_STUDENT
 		#THEN [npc.her] friends and some of the things they get up to in Dominion.
 		#ELSE [npc.her] job as [npc.a_jobName].
 		#ENDIF
@@ -1874,7 +1874,7 @@
 	</p>
 	<p>
 		With the [npc.race] in tow, you make your way out of the club, before heading back down Dominion's wide central boulevard towards Lilaya's mansion.
-		#IFgame.getCurrentWeather()==weather("MAGIC_STORM")
+		#IFgame.getCurrentWeather()==WEATHER_MAGIC_STORM
 		#THEN
 			#IFnpc.isVulnerableToArcaneStorm()
 			#THEN Due to the ongoing arcane storm, [npc.name] keeps on trying to pull you to one side and start having sex with you, but you're determined to get back home before starting anything like that, and, pulling [npc.herHim] along, you continue on your way back home.
@@ -2172,7 +2172,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="WATERING_HOLE_FIND_CONTAclothing("DOM")"><![CDATA[
+	<htmlContent tag="WATERING_HOLE_FIND_CONTACT_DOM"><![CDATA[
 	<p>
 		Before long, you catch sight of [npc.a_raceFull(true)] standing all alone, and as you approach, you see that it's [npc.name]; just the person you were looking for! Loitering around nearby, you try to catch [npc.her] [npc.eye], and are delighted when, after just a moment, [npc.she] notices you and starts to approach.
 	</p>
@@ -2600,12 +2600,12 @@
 		Letting out a happy [pc.moan], you lean in against [npc.name], mirroring [npc.her] movement and tilting your head to one side as [npc.her] [npc.lips+] press against yours.
 		#IF npc.isSelfish()
 		#THEN
-			#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), false)
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
 			#THEN Taking a firm, dominant grip on your [pc.hips+], [npc.name] thrusts [npc.her] [npc.tongue] into your mouth, before starting to greedily make out with you. As [npc.her] [npc.tongue+] slides over yours, you feel [npc.her] [npc.hands] reach around to give your [pc.ass+] a firm squeeze, and, using this grip, [npc.she] roughly pulls you up against [npc.herHim].
 			#ELSE As your mouth is blocked, [npc.name] has to make do with kissing your [pc.lips] and face. Taking a firm, dominant grip on your [pc.hips+], [npc.her] [npc.hands] reach around to give your [pc.ass+] a firm squeeze, and, using this grip, [npc.she] roughly pulls you up against [npc.herHim].
 			#ENDIF
 		#ELSE
-			#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), false)
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
 			#THEN Taking a firm grip on your [pc.hips+], [npc.name] slides [npc.her] [npc.tongue] into your mouth, before starting to passionately make out with you. As [npc.her] [npc.tongue+] slides over yours, you feel [npc.her] [npc.hands] reach around to give your [pc.ass+] a gentle squeeze, and, using this grip, [npc.she] firmly pulls you up against [npc.herHim].
 			#ELSE As your mouth is blocked, [npc.name] has to make do with kissing your [pc.lips] and face. Taking a firm grip on your [pc.hips+], [npc.her] [npc.hands] reach around to give your [pc.ass+] a gentle squeeze, and, using this grip, [npc.she] roughly pulls you up against [npc.herHim].
 			#ENDIF
@@ -2640,7 +2640,7 @@
 		#THEN Leaning against the bar, [npc.name] throws you a charming smile, before attempting to strike up a conversation with you. Spending a couple of minutes talking about
 		#ELSE Leaning against the bar, [npc.name] smiles at you, before attempting to strike up a conversation. Spending a couple of minutes talking about
 		#ENDIF
-		#IF npc.getHistory()==occupation("NPC_UNEMPLOYED") || npc.getHistory()==occupation("NPC_UNIVERSITY_STUDENT")
+		#IF npc.getHistory()==OCCUPATION_NPC_UNEMPLOYED || npc.getHistory()==OCCUPATION_NPC_UNIVERSITY_STUDENT
 		#THEN some of [npc.her] friends and the things they get up to in Dominion, [npc.she] then pauses to offer you a chance to give your input.
 		#ELSE [npc.her] job as [npc.a_jobName], [npc.she] then pauses to offer you a chance to give your input.
 		#ENDIF
@@ -2797,12 +2797,12 @@
 		Letting out a happy [pc.moan], you lean in against [npc.name], mirroring [npc.her] movement and tilting your head to one side as [npc.her] [npc.lips+] press against yours.
 		#IF npc.isSelfish()
 		#THEN
-			#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), false)
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
 			#THEN Taking a firm, dominant grip on your [pc.hips+], [npc.name] thrusts [npc.her] [npc.tongue] into your mouth, before starting to greedily make out with you. As [npc.her] [npc.tongue+] slides over yours, you feel [npc.her] [npc.hands] reach around to give your [pc.ass+] a firm squeeze, and, using this grip, [npc.she] roughly pulls you up against [npc.herHim].
 			#ELSE As your mouth is blocked, [npc.name] has to make do with kissing your [pc.lips] and face. Taking a firm, dominant grip on your [pc.hips+], [npc.her] [npc.hands] reach around to give your [pc.ass+] a firm squeeze, and, using this grip, [npc.she] roughly pulls you up against [npc.herHim].
 			#ENDIF
 		#ELSE
-			#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), false)
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
 			#THEN Taking a firm grip on your [pc.hips+], [npc.name] slides [npc.her] [npc.tongue] into your mouth, before starting to passionately make out with you. As [npc.her] [npc.tongue+] slides over yours, you feel [npc.her] [npc.hands] reach around to give your [pc.ass+] a gentle squeeze, and, using this grip, [npc.she] firmly pulls you up against [npc.herHim].
 			#ELSE As your mouth is blocked, [npc.name] has to make do with kissing your [pc.lips] and face. Taking a firm grip on your [pc.hips+], [npc.her] [npc.hands] reach around to give your [pc.ass+] a gentle squeeze, and, using this grip, [npc.she] roughly pulls you up against [npc.herHim].
 			#ENDIF
@@ -3141,7 +3141,7 @@
 	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_KISS_ACCEPT"><![CDATA[
 	<p>
 		Letting out a happy [pc.moan], you lean in against [npc.name], mirroring [npc.her] movement and tilting your head to one side as [npc.her] [npc.lips+] press against yours.
-		#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), false)
+		#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
 		#THEN Reaching up to take hold of the sides of your head, [npc.name] slides [npc.her] [npc.tongue] into your mouth, before starting to passionately make out with you. As [npc.her] [npc.tongue+] slides over yours, you feel the heat of [npc.her] body pressing against yours, and you can't help but let out a satisfied, and very muffled, sigh.
 		#ELSE As your mouth is blocked, [npc.name] has to make do with kissing your [pc.lips] and face. As [npc.she] reaches up to take hold of the sides of your head, you feel the heat of [npc.her] body pressing against yours, and you can't help but let out a satisfied, and very muffled, sigh.
 		#ENDIF
@@ -3244,7 +3244,7 @@
 		#ELSE
 			Leaning forwards over the table, [npc.name] smiles at you, before attempting to strike up a conversation. Spending a couple of minutes talking about
 		#ENDIF
-		#IF(npc.getHistory()==occupation("NPC_UNEMPLOYED") || npc.getHistory()==occupation("NPC_UNIVERSITY_STUDENT"))
+		#IF(npc.getHistory()==OCCUPATION_NPC_UNEMPLOYED || npc.getHistory()==OCCUPATION_NPC_UNIVERSITY_STUDENT)
 			 some of [npc.her] friends and the things they get up to in Dominion, [npc.she] then pauses to offer you a chance to give your input.
 		#ELSE
 			 [npc.her] job as [npc.a_jobName], [npc.she] then pauses to offer you a chance to give your input.
@@ -3373,13 +3373,13 @@
 		[pc.speech(Sure, that sounds fun,)] you reply, smiling at [npc.name] as [npc.she] takes hold of your [pc.hand], before leading you out of the club.
 	</p>
 	<p>
-		#IF game.getCurrentWeather()==weather("RAIN")
+		#IF game.getCurrentWeather()==WEATHER_RAIN
 		#THEN As the two of you step out into the street, you're greeted by a thundering torrent of rain. Thankfully, [npc.name] has an umbrella with [npc.herHim], and the two of you walk closely side-by-side beneath its protective canopy as you make your way back to [npc.her] house.
 		#ELSE
-			#IF game.getCurrentWeather()==weather("SNOW")
+			#IF game.getCurrentWeather()==WEATHER_SNOW
 			#THEN As the two of you step out into the street, you're greeted by the sight of heavy snowfall. Thankfully, [npc.name] has an umbrella with [npc.herHim], and the two of you walk closely side-by-side beneath its protective canopy as you make your way back to [npc.her] house.
 			#ELSE
-				#IF game.getCurrentWeather()==weather("MAGIC_STORM")
+				#IF game.getCurrentWeather()==WEATHER_MAGIC_STORM
 				#THEN As the two of you step out into the street, you're greeted by the rumbling sound of arcane thunder. [npc.Name] instantly seems to be heavily affected by its arousing effects, and, without warning, pulls you up against [npc.herHim] and plants a passionate kiss on your [pc.lips]. After a moment of making out with one another, you gently push [npc.herHim] back, before reminding [npc.herHim] of your destination. Trying to shake [npc.her] head clear, [npc.she] takes hold of your [pc.hand], and the two of you set off at a run back to [npc.her] house, stopping ever now and then to kiss one another.
 				#ELSE As the two of you step out into the busy street, [npc.name] turns towards you and smiles. Still holding your [pc.hand] in [npc.hers], [npc.she] tells you in what direction [npc.her] house is, and, setting off that way, the two of you make your way to [npc.her] house.
 				#ENDIF

@@ -104,9 +104,9 @@
 	All whitespace is stripped from the returned String before it is parsed into a Boolean. -->
 	<availabilityCondition><![CDATA[
 		[#((npc.getMainWeapon(0) != null && 
-		npc.getMainWeapon(0).getWeaponType().equals(weapon("dsg_eep_pbweap_pbpistol"))) || 
+		npc.getMainWeapon(0).getWeaponType().equals(WEAPON_dsg_eep_pbweap_pbpistol)) || 
 		(npc.getOffhandWeapon(0) != null && 
-		npc.getOffhandWeapon(0).getWeaponType().equals(weapon("dsg_eep_pbweap_pbpistol")))) && 
+		npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_dsg_eep_pbweap_pbpistol))) && 
 		npc.getEssenceCount() > 0]
 	]]>
 	</availabilityCondition>
@@ -135,7 +135,7 @@
 	'damageType' will parse to this move's DamageType.
 	-->
 	<criticalCondition><![CDATA[
-		[#npc.getAttributeValue(attribute("RESISTANCE_FIRE")) < -10]
+		[#npc.getAttributeValue(ATTRIBUTE_RESISTANCE_FIRE) < -10]
 	]]></criticalCondition>
 	
 	<!-- A short description to let the player know what the conditions are for this move to inflict a critical hit. -->

@@ -8,32 +8,32 @@
 		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
 	#ENDVAR
 	
-	#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+	#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 		<p>
 			You lie down on the artisan milker's comfortable, padded leather bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 soft suction cups
 			#ENDIF
 			 to your [pc.breastRows] [pc.breasts], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [pc.milk+] from your [pc.nipples+].
 			#ELSE
 				 begins to squeeze and suck the [pc.milk+] from your [pc.nipples+].
 			#ENDIF
 			 You let out a delighted sigh at the satisfying feeling of being milked in comfort, and, allowing your eyes to close, you take a relaxing, well-earned break from your daily activities.
 		</p>
-	#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+	#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 		<p>
 			You lie down on the industrial milker's uncomfortable metal bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 hard suction cups
 			#ENDIF
 			 to your [pc.breastRows] [pc.breasts], you flick the nearby switch to 'on'. Immediately, the machine starts loudly whirring and humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [pc.milk+] from your [pc.nipples+].
 			#ELSE
 				 begins to roughly squeeze and suck the [pc.milk+] from your [pc.nipples+].
@@ -43,13 +43,13 @@
 	#ELSE
 		<p>
 			You lie down on the milking machine's leather bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 suction cups
 			#ENDIF
 			 to your [pc.breastRows] [pc.breasts], you flick the nearby switch to 'on'. Immediately, the machine starts humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [pc.milk+] from your [pc.nipples+].
 			#ELSE
 				 begins to squeeze and suck the [pc.milk+] from your [pc.nipples+].
@@ -69,17 +69,17 @@
 	#ENDVAR
 	
 	<p>
-		#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			As [npc.name] is already lying down on the artisan milker's comfortable, padded leather bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 soft suction cups
 			#ENDIF
 			 are fastly secured over [npc.her] [npc.breastRows] [npc.nipples], and that the gently-humming milking machine's switch is set to 'on'.
-		#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+		#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 			As [npc.name] is already lying down on the industrial milker's uncomfortable metal bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 hard suction cups
@@ -87,7 +87,7 @@
 			 are fastly secured over [npc.her] [npc.breastRows] [npc.nipples], and that the loudly-whirring milking machine's switch is set to 'on'.
 		#ELSE
 			As [npc.name] is already lying down on the milking machine's leather bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 suction cups
@@ -95,7 +95,7 @@
 			 are fastly secured over [npc.her] [npc.breastRows] [npc.nipples], and that the steadily-humming milking machine's switch is set to 'on'.
 		#ENDIF
 		 Sitting down on the padded leather seat next to [npc.herHim], you reach out and give [npc.her] [npc.breasts+] a firm squeeze, smiling in delight as [npc.her] [npc.milk+] squirts out
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 into the aftermarket suction cups, before being quickly sucked away into the storage vats.
 			#ELSE
 				 and is quickly sucked away into the storage vats.
@@ -114,48 +114,48 @@
 	#ENDVAR
 	
 	<p>
-		#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the artisan milker's comfortable, padded leather bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 soft suction cups
 			#ENDIF
 			 to [npc.her] [npc.breastRows] [npc.breasts], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [npc.milk+] from [npc.her] [npc.nipples+].
 			#ELSE
 				 begins to squeeze and suck the [npc.milk+] from [npc.her] [npc.nipples+].
 			#ENDIF
-		#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+		#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the industrial milker's uncomfortable metal bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 hard suction cups
 			#ENDIF
 			 to [npc.her] [npc.breastRows] [npc.breasts], you flick the nearby switch to 'on'. Immediately, the machine starts loudly whirring and humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [npc.milk+] from [npc.her] [npc.nipples+].
 			#ELSE
 				 begins to roughly squeeze and suck the [npc.milk+] from [npc.her] [npc.nipples+].
 			#ENDIF
 		#ELSE
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the milking machine's leather bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 suction cups
 			#ENDIF
 			 to [npc.her] [npc.breastRows] [npc.breasts], you flick the nearby switch to 'on'. Immediately, the machine starts humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [npc.milk+] from [npc.her] [npc.nipples+].
 			#ELSE
 				 begins to squeeze and suck the [npc.milk+] from [npc.her] [npc.nipples+].
 			#ENDIF
 		#ENDIF
 		 Sitting down on the padded leather seat next to [npc.herHim], you reach out and give [npc.her] [npc.breasts+] a firm squeeze, smiling in delight as an extra squirt of [npc.her] [npc.milk+] is 
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 sucked out and pumped away into the storage vats.
 			#ELSE
 				 greedily sucked out and pumped away into the storage vats.
@@ -178,32 +178,32 @@
 		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
 	#ENDVAR
 	
-	#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+	#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 		<p>
 			You lie down on the artisan milker's comfortable, padded leather bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 special 'Succ-u-Bus' suction tube
 			#ELSE
 				 soft suction tube
 			#ENDIF
 			 down over your [pc.cock+], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 the aftermarket suction device begin to expertly squeeze and stroke your [pc.cock+].
 			#ELSE
 				 begins to squeeze and stroke your [pc.cock+].
 			#ENDIF
 			 It doesn't take long before your orgasm crashes over you, and, bucking your [pc.hips] into the bed's soft leather padding, you feel your [pc.cum+] shooting out into the tube that's enveloping your [pc.cock].
 		</p>
-	#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+	#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 		<p>
 			You lie down on the industrial milker's uncomfortable metal bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 special 'Succ-u-Bus' suction tube
 			#ELSE
 				 industrial-strength suction tube
 			#ENDIF
 			 down over your [pc.cock+], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 the aftermarket suction device begin to expertly squeeze and stroke your [pc.cock+].
 			#ELSE
 				 begins to roughly squeeze and stroke your [pc.cock+].
@@ -213,13 +213,13 @@
 	#ELSE
 		<p>
 			You lie down on the milking machine's leather bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 special 'Succ-u-Bus' suction tube
 			#ELSE
 				 suction tube
 			#ENDIF
 			 down over your [pc.cock+], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 the aftermarket suction device begin to expertly squeeze and stroke your [pc.cock+].
 			#ELSE
 				 begins to squeeze and stroke your [pc.cock+].
@@ -242,17 +242,17 @@
 	#ENDVAR
 	
 	<p>
-		#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			As [npc.name] is already lying down on the artisan milker's comfortable, padded leather bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 special 'Succ-u-Bus' suction tube
 			#ELSE
 				 soft suction tube
 			#ENDIF
 			 is fastly secured over [npc.her] [npc.cock+], and that the gently-humming milking machine's switch is set to 'on'.
-		#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+		#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 			As [npc.name] is already lying down on the industrial milker's uncomfortable metal bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 special 'Succ-u-Bus' suction tube
 			#ELSE
 				 industrial-strength suction tube
@@ -260,7 +260,7 @@
 			 is fastly secured over [npc.her] [npc.cock+], and that the loudly-whirring milking machine's switch is set to 'on'.
 		#ELSE
 			As [npc.name] is already lying down on the milking machine's leather bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 special 'Succ-u-Bus' suction tube
 			#ELSE
 				 suction tube
@@ -268,7 +268,7 @@
 			 is fastly secured over [npc.her] [npc.cock+], and that the steadily-humming milking machine's switch is set to 'on'.
 		#ENDIF
 		 Sitting down on the padded leather seat next to [npc.herHim], you reach out and take hold of the tube, before smoothly oscillating it up and down over [npc.her] [npc.cock+]. Much to your delight, it only takes a few strokes before [npc.namePos] orgasm crashes over [npc.herHim], and as [npc.she] bucks [npc.her] [npc.hips] into the bed's padding, you watch as [npc.her] [npc.cum+]
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 shoots out into the tube that's enveloping [npc.her] [npc.cock], before being pumped away into the storage vats.
 			#ELSE
 				 shoots out into the tube that's enveloping [npc.her] [npc.cock], before being greedily pumped away into the storage vats.
@@ -289,48 +289,48 @@
 	#ENDVAR
 	
 	<p>
-		#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			Wanting to have [npc.namePos] cum milked, you get [npc.herHim] to lie down on the artisan milker's comfortable, padded leather bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 special 'Succ-u-Bus' suction tube
 			#ELSE
 				 soft suction tube
 			#ENDIF
 			 down over [npc.her] [npc.cock], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 the aftermarket suction device begin to expertly squeeze and stroke [npc.her] [npc.cock+].
 			#ELSE
 				 begins to squeeze and stroke [npc.her] [npc.cock+].
 			#ENDIF
-		#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+		#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the industrial milker's uncomfortable metal bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 special 'Succ-u-Bus' suction tube
 			#ELSE
 				 industrial-strength suction tube
 			#ENDIF
 			 down over [npc.her] [npc.cock], you flick the nearby switch to 'on'. Immediately, the machine starts loudly whirring and humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 the aftermarket suction device begin to expertly squeeze and stroke [npc.her] [npc.cock+].
 			#ELSE
 				 begins to roughly squeeze and stroke [npc.her] [npc.cock+].
 			#ENDIF
 		#ELSE
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the milking machine's leather bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 special 'Succ-u-Bus' suction tube
 			#ELSE
 				 suction tube
 			#ENDIF
 			 down over [npc.her] [npc.cock], you flick the nearby switch to 'on'. Immediately, the machine starts humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_CUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_CUM_EFFICIENCY))
 				 the aftermarket suction device begin to expertly squeeze and stroke [npc.her] [npc.cock+].
 			#ELSE
 				 begins to squeeze and stroke [npc.her] [npc.cock+].
 			#ENDIF
 		#ENDIF
 		 Sitting down on the padded leather seat next to [npc.herHim], you reach out and take hold of the tube, before smoothly oscillating it up and down over [npc.her] [npc.cock+]. Much to your delight, it only takes a few strokes before [npc.namePos] orgasm crashes over [npc.herHim], and as [npc.she] bucks [npc.her] [npc.hips] into the bed's padding, you watch as [npc.her] [npc.cum+]
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 shoots out into the tube that's enveloping [npc.her] [npc.cock], before being pumped away into the storage vats.
 			#ELSE
 				 shoots out into the tube that's enveloping [npc.her] [npc.cock], before being greedily pumped away into the storage vats.
@@ -355,16 +355,16 @@
 		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
 	#ENDVAR
 	
-	#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+	#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 		<p>
 			You lie down on the artisan milker's comfortable, padded leather bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 special 'Vibro-Pump'
 			#ELSE
 				 soft suction tube
 			#ENDIF
 			 down over your [pc.pussy+], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 the aftermarket pump begins rapidly vibrating against your [pc.clit+].
 			#ELSE
 				 begins to gently vibrate against your [pc.clit+].
@@ -377,16 +377,16 @@
 				#ENDIF
 			 into the machine's greedy pump.
 		</p>
-	#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+	#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 		<p>
 			You lie down on the industrial milker's uncomfortable metal bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 special 'Vibro-Pump'
 			#ELSE
 				 industrial-strength suction tube
 			#ENDIF
 			 down over your [pc.pussy+], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 the aftermarket pump begins rapidly vibrating against your [pc.clit+].
 			#ELSE
 				 begins to roughly vibrate against your [pc.clit+].
@@ -402,13 +402,13 @@
 	#ELSE
 		<p>
 			You lie down on the milking machine's leather bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 special 'Vibro-Pump'
 			#ELSE
 				 suction tube
 			#ENDIF
 			 down over your [pc.pussy+], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 the aftermarket pump begins rapidly vibrating against your [pc.clit+].
 			#ELSE
 				 begins to vibrate against your [pc.clit+].
@@ -437,17 +437,17 @@
 	#ENDVAR
 	
 	<p>
-		#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			As [npc.name] is already lying down on the artisan milker's comfortable, padded leather bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 special 'Vibro-Pump'
 			#ELSE
 				 soft suction tube
 			#ENDIF
 			 is fastly secured over [npc.her] [npc.pussy+], and that the gently-humming milking machine's switch is set to 'on'.
-		#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+		#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 			As [npc.name] is already lying down on the industrial milker's uncomfortable metal bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 special 'Vibro-Pump'
 			#ELSE
 				 industrial-strength suction tube
@@ -455,7 +455,7 @@
 			 is fastly secured over [npc.her] [npc.pussy+], and that the loudly-whirring milking machine's switch is set to 'on'.
 		#ELSE
 			As [npc.name] is already lying down on the milking machine's leather bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 special 'Vibro-Pump'
 			#ELSE
 				 suction tube
@@ -485,41 +485,41 @@
 	#ENDVAR
 	
 	<p>
-		#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			Wanting to have [npc.namePos] girlcum milked, you get [npc.herHim] to lie down on the artisan milker's comfortable, padded leather bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 special 'Vibro-Pump'
 			#ELSE
 				 soft suction tube
 			#ENDIF
 			 down over [npc.her] [npc.pussy], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 the aftermarket pump begins rapidly vibrating against [npc.her] [npc.clit+].
 			#ELSE
 				 begins to vibrate against [npc.her] [npc.clit+].
 			#ENDIF
-		#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+		#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 			Wanting to have [npc.name] girlcum, you get [npc.herHim] to lie down on the industrial milker's uncomfortable metal bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 special 'Vibro-Pump'
 			#ELSE
 				 industrial-strength suction tube
 			#ENDIF
 			 down over [npc.her] [npc.cock], you flick the nearby switch to 'on'. Immediately, the machine starts loudly whirring and humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 the aftermarket pump begins rapidly vibrating against [npc.her] [npc.clit+].
 			#ELSE
 				 begins to roughly vibrate against [npc.her] [npc.clit+].
 			#ENDIF
 		#ELSE
 			Wanting to have [npc.name] girlcum, you get [npc.herHim] to lie down on the milking machine's leather bed, and, sliding the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 special 'Vibro-Pump'
 			#ELSE
 				 suction tube
 			#ENDIF
 			 down over [npc.her] [npc.cock], you flick the nearby switch to 'on'. Immediately, the machine starts humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_GIRLCUM_EFFICIENCY))
 				 the aftermarket pump begins rapidly vibrating against [npc.her] [npc.clit+].
 			#ELSE
 				 begins to vibrate against [npc.her] [npc.clit+].
@@ -552,32 +552,32 @@
 		var upgrades = game.getPlayerCell().getPlace().getPlaceUpgrades();
 	#ENDVAR
 	
-	#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+	#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 		<p>
 			You lie down on the artisan milker's comfortable, padded leather bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 soft suction cups
 			#ENDIF
 			 to your [pc.crotchBoobsRows] [pc.crotchBoobs], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [pc.crotchMilk+] from your [pc.crotchNipples+].
 			#ELSE
 				 begins to squeeze and suck the [pc.crotchMilk+] from your [pc.crotchNipples+].
 			#ENDIF
 			 You let out a delighted sigh at the satisfying feeling of being milked in comfort, and, allowing your eyes to close, you take a relaxing, well-earned break from your daily activities.
 		</p>
-	#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+	#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 		<p>
 			You lie down on the industrial milker's uncomfortable metal bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 hard suction cups
 			#ENDIF
 			 to your [pc.crotchBoobsRows] [pc.crotchBoobs], you flick the nearby switch to 'on'. Immediately, the machine starts loudly whirring and humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [pc.crotchMilk+] from your [pc.crotchNipples+].
 			#ELSE
 				 begins to roughly squeeze and suck the [pc.crotchMilk+] from your [pc.crotchNipples+].
@@ -587,13 +587,13 @@
 	#ELSE
 		<p>
 			You lie down on the milking machine's leather bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 suction cups
 			#ENDIF
 			 to your [pc.crotchBoobsRows] [pc.crotchBoobs], you flick the nearby switch to 'on'. Immediately, the machine starts humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [pc.crotchMilk+] from your [pc.crotchNipples+].
 			#ELSE
 				 begins to squeeze and suck the [pc.crotchMilk+] from your [pc.crotchNipples+].
@@ -613,17 +613,17 @@
 	#ENDVAR
 	
 	<p>
-		#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			As [npc.name] is already lying down on the artisan milker's comfortable, padded leather bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 soft suction cups
 			#ENDIF
 			 are fastly secured over [npc.her] [npc.crotchBoobsRows] [npc.crotchNipples], and that the gently-humming milking machine's switch is set to 'on'.
-		#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+		#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 			As [npc.name] is already lying down on the industrial milker's uncomfortable metal bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 hard suction cups
@@ -631,7 +631,7 @@
 			 are fastly secured over [npc.her] [npc.crotchBoobsRows] [npc.crotchNipples], and that the loudly-whirring milking machine's switch is set to 'on'.
 		#ELSE
 			As [npc.name] is already lying down on the milking machine's leather bed, you simply confirm that the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 suction cups
@@ -639,7 +639,7 @@
 			 are fastly secured over [npc.her] [npc.crotchBoobsRows] [npc.crotchNipples], and that the steadily-humming milking machine's switch is set to 'on'.
 		#ENDIF
 		 Sitting down on the padded leather seat next to [npc.herHim], you reach out and give [npc.her] [npc.crotchBoobs+] a firm squeeze, smiling in delight as [npc.her] [npc.crotchMilk+] squirts out
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 into the aftermarket suction cups, before being quickly sucked away into the storage vats.
 			#ELSE
 				 and is quickly sucked away into the storage vats.
@@ -658,48 +658,48 @@
 	#ENDVAR
 	
 	<p>
-		#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_ARTISAN_MILKERS")))
+		#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_ARTISAN_MILKERS))
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the artisan milker's comfortable, padded leather bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 soft suction cups
 			#ENDIF
 			 to [npc.her] [npc.crotchBoobsRows] [npc.crotchBoobs], you flick the nearby switch to 'on'. Immediately, the machine starts gently humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [npc.crotchMilk+] from [npc.her] [npc.crotchNipples+].
 			#ELSE
 				 begins to squeeze and suck the [npc.crotchMilk+] from [npc.her] [npc.crotchNipples+].
 			#ENDIF
-		#ELSEIF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS")))
+		#ELSEIF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_INDUSTRIAL_MILKERS))
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the industrial milker's uncomfortable metal bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 hard suction cups
 			#ENDIF
 			 to [npc.her] [npc.crotchBoobsRows] [npc.crotchBoobs], you flick the nearby switch to 'on'. Immediately, the machine starts loudly whirring and humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [npc.crotchMilk+] from [npc.her] [npc.crotchNipples+].
 			#ELSE
 				 begins to roughly squeeze and suck the [npc.crotchMilk+] from [npc.her] [npc.crotchNipples+].
 			#ENDIF
 		#ELSE
 			Wanting to have [npc.name] milked, you get [npc.herHim] to lie down on the milking machine's leather bed, and, attaching the
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 special 'Lact-o-Cups'
 			#ELSE
 				 suction cups
 			#ENDIF
 			 to [npc.her] [npc.crotchBoobsRows] [npc.crotchBoobs], you flick the nearby switch to 'on'. Immediately, the machine starts humming, and
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 the aftermarket suction cups begin to expertly squeeze and suck the [npc.crotchMilk+] from [npc.her] [npc.crotchNipples+].
 			#ELSE
 				 begins to squeeze and suck the [npc.crotchMilk+] from [npc.her] [npc.crotchNipples+].
 			#ENDIF
 		#ENDIF
 		 Sitting down on the padded leather seat next to [npc.herHim], you reach out and give [npc.her] [npc.crotchBoobs+] a firm squeeze, smiling in delight as an extra squirt of [npc.her] [npc.crotchMilk+] is 
-			#IF(upgrades.contains(placeUpgrade("LILAYA_MILKING_ROOM_MILK_EFFICIENCY")))
+			#IF(upgrades.contains(PLACE_UPGRADE_LILAYA_MILKING_ROOM_MILK_EFFICIENCY))
 				 sucked out and pumped away into the storage vats.
 			#ELSE
 				 greedily sucked out and pumped away into the storage vats.

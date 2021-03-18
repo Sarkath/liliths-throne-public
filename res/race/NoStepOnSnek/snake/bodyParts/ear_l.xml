@@ -21,7 +21,7 @@
 	]]></transformationDescription>
 	<bodyDescription><![CDATA[
 		[npc.She] [npc.has] a pair of pointed snake ears, which are [npc.materialCompositionDescriptor] [npc.earFullDescription(true)]#IF(npc.isPiercedEar()), and which have been pierced#ENDIF.
-		#IF(npc.getFaceType()==faceType("HUMAN"))
+		#IF(npc.getFaceType()==FACE_TYPE_HUMAN)
 			 Small patches of scales extend from the base of [npc.her] ears down onto [npc.her] cheeks.
 		#ENDIF
 	]]></bodyDescription>

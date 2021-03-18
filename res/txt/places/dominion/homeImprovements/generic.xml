@@ -14,7 +14,7 @@
 		Looking across at the warehouses, you see that one is quite clearly signposted as being open to the general public, while the other is apparently just for supplying small businesses. Huge posters advertising cans of paint, ceramic tiles, tools, timber, and all manner of miscellaneous building supplies have been plastered all over the walls of these warehouses, letting passersby know the sort of things which can be purchased here.
 	</p>
 	<p>
-		#IF(game.getCurrentWeather()==weather("MAGIC_STORM"))
+		#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
 			As there's an arcane storm raging overhead, your surroundings are almost completely deserted, with only the occasional demon to be seen walking down the nearby street.
 			#IF(game.isExtendedWorkTime())
 				 As the warehouses are [style.colourGood(currently open)], you wonder how many people are inside due to legitimate business, and how many are just making use of the building to take shelter from the storm. If you wanted to, you could always head inside the one signposted as being open to the public and do some shopping for DIY or building supplies.
@@ -80,7 +80,7 @@
 		Tall shelving units have been lined up to form a solid wall in front of you, and you see that each one of them is stocked full of almost every type of building supply imaginable. While the products on display don't look particularly special, their prices are listed as being anything up to ten times what they ordinarily should be. The reason for these astronomical costs seems to be that these shelves are labelled as containing 'Premium-grade supplies'. 
 	</p>
 	<p>
-		#IF(pc.hasTraitActivated(perk("OBSERVANT")))
+		#IF(pc.hasTraitActivated(PERK_OBSERVANT))
 			Taking a quick look around, you see that while there are quite a few customers browsing these shelves, not a single one looks like they know what they're doing. Perhaps there's a reason why these supplies don't seem to be attracting the attention of the more experienced shoppers... 
 		#ELSE
 			Taking a quick look around, you see that there are quite a few customers browsing these shelves. If popularity is any measure, then perhaps these supplies are worth their steep price after all...
@@ -111,7 +111,7 @@
 		Each side of the warehouse is lined with a series of tall shelves, and as you stand before them, you see that they're stocked full of all manner of miscellaneous building supplies. While the prices displayed next to each item seem to be very reasonable, there are several small signs reminding you that these 'Standard-grade supplies' are not the finest quality goods which are on offer, and that if you want the very best, you should head back to browse over the 'Premium-grade supplies' located near to the entrance.
 	</p>
 	<p>
-		#IF(pc.hasTraitActivated(perk("OBSERVANT")))
+		#IF(pc.hasTraitActivated(PERK_OBSERVANT))
 			Taking a quick look around, you see that not only are there lots of people browsing the goods in this section, but there are also several of them who look to be experienced shoppers. Perhaps there's a reason why these people are over here instead of at the more expensive 'Premium-grade supplies' section... 
 		#ELSE
 			Taking a quick look around, you see that there are a lot of customers browsing these shelves. It seems as though most people either don't care about getting the 'Premium-grade supplies', or simply can't afford them...
@@ -131,7 +131,7 @@
 	<!-- PAINT_PURCHASED -->
 	
 	<htmlContent tag="PAINT_PURCHASED"><![CDATA[
-	#IF(pc.getRace().equals(race("DEMON")))
+	#IF(pc.getRace().equals(RACE_DEMON))
 		<p>
 			Picking up the can of golden paint, you quickly make your way over to the checkouts, before joining on at the end of the shortest queue. As the customers notice your approach, and see that you're [pc.a_race], they quickly move aside to let you move to the front. The employee behind the till immediately stops serving the customer she was dealing with, and offers, [style.speechFeminine(Good [style.afternoon], [pc.maam], please let me take that for you.)]
 		</p>
@@ -345,7 +345,7 @@
 	<htmlContent tag="TOILETS_GLORY_HOLE_SUB_START"><![CDATA[
 	<p>
 		Having already waited long enough, you quickly kneel down in front of the glory hole,
-		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
 			 before opening your mouth and leaning in towards [npc.namePos] [npc.cock+].
 		#ELSE
 			 but as your mouth is blocked, all you can prepare to do is give [npc.name] a handjob.

@@ -726,7 +726,7 @@ public abstract class AbstractSubspecies {
 	 */
 	public void applySpeciesChanges(Body body) {
 		if(this.isFromExternalFile() && Main.game.isStarted()) {
-			UtilText.setBodyForParsing(body);
+			UtilText.setBodyForParsing("targetedBody", body);
 			UtilText.parse(applySubspeciesChanges);
 		}
 	}
@@ -767,8 +767,8 @@ public abstract class AbstractSubspecies {
 	 */
 	public int getSubspeciesWeighting(Body body, AbstractRace race) {
 		if(this.isFromExternalFile() && Main.game.isStarted()) {
-			UtilText.setBodyForParsing(body);
-			UtilText.setRaceForParsing(race);
+			UtilText.setBodyForParsing("targetedBody", body);
+			UtilText.setRaceForParsing("targetedRace", race);
 //			if(race==Race.HUMAN) {
 //				new IllegalArgumentException().printStackTrace();
 //			}

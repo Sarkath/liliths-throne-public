@@ -67,7 +67,7 @@
 	<p>
 		You do as [npc.name] commands, and obediently drop to your knees in front of her. Looking down at your submissive form, the succubus cultist coos in delight, [npc.speech(Good [pc.girl]! You're eager for my gift, aren't you?!)]
 	</p>
-	#IF(!pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+	#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
 		<p>
 			You look up to see her happy smile turn into a puzzled frown as she realises that you're not able to get access to your mouth. Reaching down to your sealed clothing, she focuses her arcane energy into removing the seal. [npc.speech(There you go! Now you can suck cock to your heart's content!)]
 		</p>
@@ -85,7 +85,7 @@
 	<p>
 		You slowly trace your fingers over your pussy, drawing [npc.namePos] eyes down between your [pc.legs+]. She smiles as she realises what you're suggesting, and eagerly grabs your [pc.arm] once again, before pushing you down onto your back on top of the chapel's altar. [npc.speech(What better way to praise Lilith than by filling an eager slut's womb with my seed?! Your belly's going to be nice and swollen with my demonic brood soon enough!)]
 	</p>
-	#IF(!pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+	#IF(!pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 		<p>
 			You look up to see her happy smile turn into a puzzled frown as she realises that she's not able to get access to your pussy. Reaching down to your seal clothing, she focuses her arcane energy into removing the seal. [npc.speech(There we go! Now it's time for your special gift!)]
 		</p>
@@ -100,7 +100,7 @@
 	<p>
 		You slowly turn to one side, tracing your fingers over your ass in order to draw [npc.namePos] eyes down to your rear end. She smiles as she realises what you're suggesting, and eagerly grabs your [pc.arm] once again, before pushing you down onto your back on top of the chapel's altar. [npc.speech(What better way to praise Lilith than by filling some slut's ass with my seed?!)]
 	</p>
-	#IF(!pc.isAbleToAccessCoverableArea(ca("ANUS"), true))
+	#IF(!pc.isAbleToAccessCoverableArea(CA_ANUS, true))
 		<p>
 			You look up to see her happy smile turn into a puzzled frown as she realises that she's not able to get access to your asshole. Reaching down to your sealed clothing, she focuses her arcane energy into removing the seal. [npc.speech(There we go! Now it's time for your special gift!)]
 		</p>
@@ -209,7 +209,7 @@
 
 	<htmlContent tag="ENCOUNTER_CHAPEL_COMBAT_LOSS_SEX"><![CDATA[
 	<p>
-		#IF(!pc.isAbleToAccessCoverableArea(ca("VAGINA"), true) || !pc.isAbleToAccessCoverableArea(ca("ANUS"), true))
+		#IF(!pc.isAbleToAccessCoverableArea(CA_VAGINA, true) || !pc.isAbleToAccessCoverableArea(CA_ANUS, true))
 			You look up to see [npc.namePos] grin turn into a puzzled frown as she realises that she's not able to get access to your groin. Reaching down to your sealed clothing, she focuses her arcane energy into removing the seal. [npc.speech(There we go! Now let's both find out how much you love being my fuck-toy!)]
 		#ELSE
 			You look up to see a wild, hungry look in [npc.namePos] [npc.eyes+], and [npc.she] excitedly squeals, [npc.speech(Let's both find out how much you love being my fuck-toy!)]

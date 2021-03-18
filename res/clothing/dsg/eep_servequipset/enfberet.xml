@@ -61,7 +61,7 @@
 						<tag>CONTRABAND_MEDIUM</tag>
 					</itemTagsRemoved> 
 					<unavailabilityText showDisabledButton="true"><![CDATA[
-						#IF(!pc.hasOccupationTag(occupationTag("ENFORCER_PATROL")))
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
 							Only Patrol Enforcers can use this beret flash!
 						#ENDIF
 					]]></unavailabilityText> 
@@ -85,7 +85,7 @@
 						<tag>CONTRABAND_MEDIUM</tag>
 					</itemTagsRemoved>
 					<unavailabilityText showDisabledButton="true"><![CDATA[
-						#IF(!pc.hasOccupationTag(occupationTag("ENFORCER_SWORD")))
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_SWORD))
 							Only SWORD Enforcers can use this beret flash!
 						#ENDIF
 					]]></unavailabilityText>
@@ -109,7 +109,7 @@
 						<tag>CONTRABAND_MEDIUM</tag>
 					</itemTagsRemoved>
 					<unavailabilityText showDisabledButton="true"><![CDATA[
-						#IF(!pc.hasOccupationTag(occupationTag("ENFORCER_ORICL")))
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_ORICL))
 							Only ORICL Enforcers can use this beret flash!
 						#ENDIF
 					]]></unavailabilityText>

@@ -533,7 +533,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="ROYAL_GUARD_POST_ADMIRE_INSTRUclothing("OVERPOWER")"><![CDATA[
+	<htmlContent tag="ROYAL_GUARD_POST_ADMIRE_INSTRUCT_OVERPOWER"><![CDATA[
 	<p>
 		Sensing that you'd be able to overpower [slimeRoyalGuard.name], you step forwards, before giving him one final instruction. [pc.speech(There's one final thing you're lacking in your technique, and it's the difference between an easy victory, and being defeated before you're able to land even one hit.)]
 	</p>

@@ -42,7 +42,7 @@
 		Letting out a defeated sigh, the human turns back towards the street, at which point he notices your approach. Flashing you a half-hearted smile, he says, [daddy.speech(Hey, if you're looking for a meeting with Lilaya, you'd be better off coming back tomorrow. Apparently, she's pretty busy today, and you don't want to piss off that maid of hers. Trust me on that one.)]
 	</p>
 	<p>
-		#IF(pc.getSexualOrientation()!=orientation("GYNEPHILIC"))
+		#IF(pc.getSexualOrientation()!=ORIENTATION_GYNEPHILIC)
 			You feel your heart beating a little faster as you look up and suddenly notice how handsome this tall, muscular man is. Although he only appears to be in his early forties, his hair is already a magnificent silvery-white in colour, and as you look upon his light-skinned face, you find yourself gazing into a pair of twinkling [daddy.eyeColour] eyes. It's at this moment that you suddenly realise there's something not quite 'human' about this person, and that although he appears to be one at first glance, these unusual features, combined with his strikingly-good looks and an air of arcane power that you sense surrounding him, reveal him to be a demon.
 		#ELSE
 			As you step forwards, you find yourself looking up at this tall, muscular man. Although he only appears to be in his early forties, his hair is already a magnificent silvery-white in colour, and as you look upon his light-skinned face, you find yourself gazing into a pair of twinkling [daddy.eyeColour] eyes. It's at this moment that you suddenly realise there's something not quite 'human' about this person, and that although he appears to be one at first glance, these unusual features, combined with his undeniably-handsome face and an air of arcane power that you sense surrounding him, reveal him to be a demon.
@@ -123,7 +123,7 @@
 		#ENDIF
 	</p>
 	<p>
-		#IF(pc.isAttractedTo(daddy) && pc.hasFetish(fetish("FETISH_INCEST")))
+		#IF(pc.isAttractedTo(daddy) && pc.hasFetish(FETISH_INCEST))
 			You feel your heart beating in your chest as [daddy.name] asks this, and, with thoughts of incestuous passion running through your mind, you wonder if you should accept [daddy.herHim] as your '[daddy.daddy]', or perhaps you should keep your desires in check and turn [daddy.herHim] down once again...
 		#ELSE
 			Although you knocked on [daddy.her] door with the intention of accepting [daddy.name] as your '[daddy.daddy]', you now find yourself wondering if you should go through with this after all, or change your mind and turn [daddy.herHim] down yet again...
@@ -181,7 +181,7 @@
 		Seeing both you and Lilaya standing before [daddy.herHim], [daddy.name] joyously smiles at you, before turning to your companion and exclaiming, [daddy.speech(I can't believe it! Finally, I get to meet you, Lilaya! I must say that you look every bit as beautiful as your mother!)]
 	</p>
 	<p>
-		#IF(lilaya.getSubspecies()==subspecies("DEMON"))
+		#IF(lilaya.getSubspecies()==SUBSPECIES_DEMON)
 			Although Lilaya's demonic skin is already scarlet in colour, you look across to see it turning an even darker shade of red, and as she starts blushing, she stammers, [lilaya.speech(P-Please don't say such embarrassing things!)]
 		#ELSE
 			Looking across at her, you see Lilaya's cheeks turning a deep shade of scarlet, and as she starts blushing, she stammers, [lilaya.speech(P-Please don't say such embarrassing things!)]
@@ -685,7 +685,7 @@
 	
 	<htmlContent tag="FIRST_DINNER_WATER"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Coyly turning down [daddy.her] offer of wine, you tell [daddy.name] that you'd prefer to drink water this evening, before batting your eyelids at [daddy.herHim] and asking how [daddy.she] was able to get past the front queue so easily.
 		#ELSE
 			Turning down [daddy.her] offer of wine, you inform [daddy.name] that you'll stick to drinking water this evening, before asking [daddy.herHim] how [daddy.she] was able to get past the front queue so easily.
@@ -695,7 +695,7 @@
 		[daddy.speech(Well, you know how it is,)] [daddy.she] responds, smiling as [daddy.she] tries to act as nonchalant as possible, [daddy.speech(I helped the owner out with some repairs when he first set this place up, and he feels like he's in my debt or something.)]
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			#IF(!pc.isTaur())
 				Running your [pc.foot] up the length of [daddy.namePos] leg, you bite your lip as you ask if that's what [daddy.she] does for a living. Clearly getting turned on by your teasing, the silver-haired [daddy.race] gazes hungrily into your [pc.eyes] as [daddy.she] answers,
 			#ELSE
@@ -714,7 +714,7 @@
 	
 	<htmlContent tag="FIRST_DINNER_WINE"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Coyly accepting [daddy.her] offer of wine, you tell [daddy.name] that it would be fun to let yourself go a little this evening, before batting your eyelids at [daddy.herHim] and asking how [daddy.she] was able to get past the front queue so easily.
 		#ELSE
 			Accepting [daddy.her] offer of wine, you tell [daddy.name] that you'll let [daddy.herHim] pick the vintage, before asking [daddy.herHim] how [daddy.she] was able to get past the front queue so easily.
@@ -724,7 +724,7 @@
 		[daddy.speech(Well, you know how it is,)] [daddy.she] responds, smiling as [daddy.she] tries to act as nonchalant as possible, [daddy.speech(I helped the owner out with some repairs when he first set this place up, and he feels like he's in my debt or something.)]
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			#IF(!pc.isTaur())
 				Running your [pc.foot] up the length of [daddy.namePos] leg, you bite your lip as you ask if that's what [daddy.she] does for a living. Clearly getting turned on by your teasing, the silver-haired [daddy.race] gazes hungrily into your [pc.eyes] as [daddy.she] answers,
 			#ELSE
@@ -750,7 +750,7 @@
 		[daddy.Name] leans back in [daddy.her] chair, letting out a deep, contented sigh as [daddy.she] thinks back to who it was [daddy.she] saw that day. Curious to know who [daddy.sheIs] referring to, you tell him that you have indeed met Meraxis, and ask if it was her that [daddy.name] saw, to which [daddy.she] replies, [daddy.speech(Oh, no, it's not her I'm talking about, but her mother... Lyssieth... It was as though I'd seen a vision of perfection itself... She was so graceful, and beautiful beyond imagining. It was at that moment that I knew I was destined to make her my wife.)]
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			[pc.speech(Your <i>wife</i>?)] you ask, pouting at [daddy.herHim] as you hear that [daddy.she] already has a romantic interest.
 		#ELSE
 			[pc.speech(Your <i>wife</i>?)] you ask, unsure if you'd heard [daddy.herHim] correctly.
@@ -767,7 +767,7 @@
 	</p>
 	<p>
 		At this moment, your food arrives, and [daddy.namePos] story is momentarily put on hold as the two of you start eating. 
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			 Quickly discovering that the food served here is nothing short of exceptional, you allow the conversation to slow down in order to fully enjoy it, while still making sure to throw in a flirtatious remark here and there.
 		#ELSE
 			 Quickly discovering that the food served here is nothing short of exceptional, you happily allow the conversation to slow down in order to fully enjoy it.
@@ -782,7 +782,7 @@
 	
 	<htmlContent tag="DINNER_NO_TF"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Making sure to drop in several remarks as to how handsome he is, you assure [daddy.name] that his appearance is the closest he'll be able to get to pleasing Lyssieth, but that because he's not a human, she might not be interested.
 		#ELSE
 			You assure [daddy.name] that his appearance is the closest he'll be able to get to pleasing Lyssieth, but that because he's not a human, she might not be interested.
@@ -806,7 +806,7 @@
 	
 	<htmlContent tag="DINNER_SUCCUBUS_TF"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Thinking that it would be a lot hotter if [daddy.name] took on his succubus form, you tell him that Lyssieth seems to prefer to be surrounded by females, and, making sure to make several sexual remarks, attempt to convince him that he'd probably have a better chance at seducing her if he transformed himself into one.
 		#ELSE
 			Thinking that it would be better if [daddy.name] took on his succubus form, you tell him that Lyssieth seems to prefer to be surrounded by females, and that he'd probably have a better chance at seducing her if he transformed himself into one.
@@ -821,7 +821,7 @@
 	
 	<htmlContent tag="DINNER_SUCCUBUS_TF_END"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Sitting down in front of you, [daddy.name] lets out an exhausted sigh, and as her chest moves, you can't help but glance down and see that her now-large nipples are clearly visible through the stretched fabric of her t-shirt. Seeing this really starts to turn you on, and you can't help but make a complimentary, sexual remark about her new body.
 		#ELSE
 			Sitting down in front of you, [daddy.name] lets out an exhausted sigh, and as her chest moves, you can't help but notice that her now-large nipples are clearly visible through the stretched fabric of her t-shirt.
@@ -845,7 +845,7 @@
 	
 	<htmlContent tag="DINNER_WATER"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Coyly turning down [daddy.her] offer of wine, you tell [daddy.name] that you'd prefer to drink water this evening, before batting your eyelids at [daddy.herHim] and asking how [daddy.sheHas] been lately.
 		#ELSE
 			Turning down [daddy.her] offer of wine, you inform [daddy.name] that you'll stick to drinking water this evening, before asking [daddy.herHim] how [daddy.sheHas] been lately.
@@ -854,7 +854,7 @@
 	</p>
 	<p>
 		At this point, the waiter returns to take your orders for drinks, and after he's done so, soon returns with your bottled water and [daddy.namePos] glass of wine. You then place your orders for your meals, and after that's done,
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			 you're able to really get started on flirting with and teasing your [daddy.daddy].
 		#ELSE
 			 you're able to get a real conversation going with your [daddy.daddy].
@@ -865,7 +865,7 @@
 	
 	<htmlContent tag="DINNER_WINE"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Coyly accepting [daddy.her] offer of wine, you tell [daddy.name] that it would be fun to let yourself go a little this evening, before batting your eyelids at [daddy.herHim] and asking how [daddy.sheHas] been lately.
 		#ELSE
 			Accepting [daddy.her] offer of wine, you tell [daddy.name] that you'll let [daddy.herHim] pick the vintage, before asking [daddy.herHim] how [daddy.sheHas] been lately.
@@ -874,7 +874,7 @@
 	</p>
 	<p>
 		At this point, the waiter returns to take your orders for drinks, and after he's done so, soon returns with your chosen bottle of wine. You then place your orders for your meals, and after that's done,
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			 you're able to really get started on flirting with and teasing your [daddy.daddy].
 		#ELSE
 			 you're able to get a real conversation going with your [daddy.daddy].
@@ -886,7 +886,7 @@
 	<htmlContent tag="DINNER_CORE"><![CDATA[
 	<p>
 		Soon enough, your food arrives, and your current conversation is momentarily put on hold as the two of you start eating.
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			#IF(!pc.isTaur())
 				 Not letting a moment go to waste, you continue your flirting by running your [pc.foot] up the length of [daddy.namePos] leg, pausing now and again to bite your lip and coyly ask if [daddy.sheIs] enjoying your company. Clearly getting turned on by your teasing, the silver-haired [daddy.race] responds very much in the positive, and makes it well known to you that [daddy.she] would like for you to come back to [daddy.her] apartment after your meal. 
 			#ELSE
@@ -904,7 +904,7 @@
 	
 	<htmlContent tag="LILAYA_DINNER_WATER"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Coyly turning down [daddy.her] offer of wine, you tell [daddy.name] that you'd prefer to drink water this evening, before making several flirtatious remarks towards both [daddy.herHim] and Lilaya. Much to your delight, both of your companions seem more than happy to reciprocate with several sexual remarks of their own.
 		#ELSE
 			Turning down [daddy.her] offer of wine, you inform [daddy.name] that you'll stick to drinking water this evening, before asking [daddy.herHim] how [daddy.sheHas] been recently. Responding positively, [daddy.name] says that [daddy.sheHas] been well, although hasn't had much time in which to relax, as [daddy.sheIs] currently busy working on several projects around the city.
@@ -912,7 +912,7 @@
 	</p>
 	<p>
 		At this point, the waiter returns to take your orders for drinks, and after he's done so, soon returns with your bottled water and a bottle of wine for Lilaya and [daddy.name] to share. You then place your orders for your meals, and after that's done,
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			 you're able to really get started on flirting with and teasing your [lilaya.relation(pc)] and [daddy.daddy].
 		#ELSE
 			 you're able to get a real conversation going with your [lilaya.relation(pc)] and [daddy.daddy].
@@ -923,7 +923,7 @@
 	
 	<htmlContent tag="LILAYA_DINNER_WINE"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Coyly accepting [daddy.her] offer of wine, you tell [daddy.name] that it would be fun to let yourself go a little this evening, before making several flirtatious remarks towards both [daddy.herHim] and Lilaya. Much to your delight, both of your companions seem more than happy to reciprocate with several sexual remarks of their own.
 		#ELSE
 			Accepting [daddy.her] offer of wine, you tell [daddy.name] that you'll let [daddy.herHim] pick the vintage, before asking [daddy.herHim] how [daddy.sheHas] been recently. Responding positively, [daddy.name] says that [daddy.sheHas] been well, although hasn't had much time in which to relax, as [daddy.sheIs] currently busy working on several projects around the city.
@@ -931,7 +931,7 @@
 	</p>
 	<p>
 		At this point, the waiter returns to take your orders for drinks, and after he's done so, soon returns with your chosen bottle of wine. You then place your orders for your meals, and after that's done,
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			 you're able to really get started on flirting with and teasing your [lilaya.relation(pc)] and [daddy.daddy].
 		#ELSE
 			 you're able to get a real conversation going with your [lilaya.relation(pc)] and [daddy.daddy].
@@ -943,7 +943,7 @@
 	<htmlContent tag="LILAYA_DINNER_CORE"><![CDATA[
 	<p>
 		Soon enough, your food arrives, and your current conversation is momentarily put on hold as the three of you start eating.
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			#IF(!pc.isTaur())
 				 Not letting a moment go to waste, you continue your flirting by running your [pc.foot] up the length of Lilaya's and [daddy.namePos] legs, pausing now and again to bite your lip and coyly ask if they are enjoying your company. Clearly getting turned on by your teasing, the two of them respond very much in the positive, with [daddy.name] making it well known to that [daddy.she] would like for the two of you to come back to [daddy.her] apartment after your meal. 
 			#ELSE
@@ -961,7 +961,7 @@
 	
 	<htmlContent tag="LILAYA_DINNER_WATER_INITIAL"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Coyly turning down [daddy.her] offer of wine, you tell [daddy.name] that you'd prefer to drink water this evening, before making several flirtatious remarks towards both [daddy.herHim] and Lilaya. Much to your delight, both of your companions seem more than happy to reciprocate with several sexual remarks of their own.
 		#ELSE
 			Turning down [daddy.her] offer of wine, you inform [daddy.name] that you'll stick to drinking water this evening, before asking [daddy.herHim] how [daddy.sheHas] been recently. Responding positively, [daddy.name] says that [daddy.sheHas] been well, although hasn't had much time in which to relax, as [daddy.sheIs] currently busy working on several projects around the city.
@@ -975,7 +975,7 @@
 	
 	<htmlContent tag="LILAYA_DINNER_WINE_INITIAL"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Coyly accepting [daddy.her] offer of wine, you tell [daddy.name] that it would be fun to let yourself go a little this evening, before making several flirtatious remarks towards both [daddy.herHim] and Lilaya. Much to your delight, both of your companions seem more than happy to reciprocate with several sexual remarks of their own.
 		#ELSE
 			Accepting [daddy.her] offer of wine, you tell [daddy.name] that you'll let [daddy.herHim] pick the vintage, before asking [daddy.herHim] how [daddy.sheHas] been recently. Responding positively, [daddy.name] says that [daddy.sheHas] been well, although hasn't had much time in which to relax, as [daddy.sheIs] currently busy working on several projects around the city.
@@ -1011,7 +1011,7 @@
 	</p>
 	<p>
 		With the matter of [daddy.namePos] meeting with Lyssieth now being resolved, talk soon turns to more mundane matters, consisting mostly of you, Lilaya, and [daddy.name] telling one another about recent events in your lives. 
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			 Keen to get the two of them into the mood for some fun later on, you make sure to keep a flirtatious tone running through most of the conversation. Happy enough to play along, both Lilaya and [daddy.name] drop in several sexual remarks of their own, and you can soon tell that the two of them are getting very turned on...
 		#ENDIF
 	</p>
@@ -1023,7 +1023,7 @@
 	
 	<htmlContent tag="FIRST_DINNER_ACCEPT"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Deciding to do as [daddy.name] asks, you seductively reply, [pc.speech(You know, I was actually hoping that you'd want to be my [daddy.daddy]... And I'm sure I can convince Lilaya to feel the same way...)]
 		#ELSE
 			Deciding to do as [daddy.name] asks, you reply, [pc.speech(Ok... You can be my [daddy.daddy]... And I'll convince Lilaya to come and meet you.)]
@@ -1050,7 +1050,7 @@
 	
 	<htmlContent tag="DINNER_DESSERT"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			You tell [daddy.name] that you'd like to take [daddy.herHim] up on [daddy.her] offer of dessert, giving you more time in which to continue flirting with [daddy.herHim].
 		#ELSE
 			You tell [daddy.name] that you'd like to take [daddy.herHim] up on [daddy.her] offer of dessert, giving you more time in which to continue your conversation.
@@ -1058,7 +1058,7 @@
 		 Consequently, when the waiter comes to clear your table, [daddy.name] asks to see the dessert menu, and after looking over it, the two of you place your orders.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Soon enough, you and your [daddy.daddy] are tucking in to your selected treats, while continuing to flirt and tease one another.
 		#ELSE
 			Soon enough, you and your [daddy.daddy] are tucking in to your selected treats, while continuing to talk about all manner of goings on in Dominion.
@@ -1066,10 +1066,10 @@
 		 The steady background chatter filling the restaurant starts to get quieter as each of you finish off your desserts, and, noticing the time, [daddy.name] says that the two of you should be making a move, before heading over to the restaurant's small bar area and settling the bill.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			With your evening out coming to an end, you exit the restaurant with [daddy.namePos] arm around your waist, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at you, [daddy.she] pulls you close as [daddy.she] asks, [daddy.speech(So, you want to come back to my place for a little more fun?)]
 		#ELSE
-			#IF(pc.getQuest(questLine("SIDE_DADDY")) == quest("DADDY_ACCEPTED"))
+			#IF(pc.getQuest(QUEST_LINE_SIDE_DADDY) == QUEST_DADDY_ACCEPTED)
 				With your evening out coming to an end, you exit the restaurant by [daddy.namePos] side, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at you, [daddy.she] smiles as [daddy.she] says, [daddy.speech(You know, I really enjoyed this evening with you, [pc.name]. Please do come and visit me any other evening you like, and I'm looking forward to meeting Lilaya when you bring her with you.)]
 			#ELSE
 				With your evening out coming to an end, you exit the restaurant by [daddy.namePos] side, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at you, [daddy.she] smiles as [daddy.she] says, [daddy.speech(You know, I really enjoyed this evening with you, [pc.name]. Please do come and visit me any other evening you like, and we can do this again.)]
@@ -1081,7 +1081,7 @@
 	
 	<htmlContent tag="LILAYA_DINNER_DESSERT"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Both you and Lilaya tell [daddy.name] that you'd like to take [daddy.herHim] up on [daddy.her] offer of dessert, giving you more time in which to flirt with one another.
 		#ELSE
 			Both you and Lilaya tell [daddy.name] that you'd like to take [daddy.herHim] up on [daddy.her] offer of dessert, giving you more time in which to continue your conversation.
@@ -1089,7 +1089,7 @@
 		 Consequently, when the waiter comes to clear your table, [daddy.name] asks to see the dessert menu, and after looking over it, the three of you place your orders.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Soon enough, you, your [lilaya.relation(pc)], and your [daddy.daddy] are tucking in to your selected treats, while continuing to flirt and tease one another.
 		#ELSE
 			Soon enough, you, your [lilaya.relation(pc)], and your [daddy.daddy] are tucking in to your selected treats, while continuing to talk about all manner of goings on in Dominion.
@@ -1097,7 +1097,7 @@
 		 The steady background chatter filling the restaurant starts to get quieter as each of you finish off your desserts, and, noticing the time, [daddy.name] says that the three of you should be making a move, before heading over to the restaurant's small bar area and settling the bill.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			With your evening out coming to an end, and with [daddy.namePos] arms around each of your waists, you and Lilaya move to exit the restaurant, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at Lilaya, and then over at you, [daddy.she] pulls you both close as [daddy.she] asks, [daddy.speech(So, do you two want to come back to my place for a little more fun?)]
 		#ELSE
 			With your evening out coming to an end, you and Lilaya exit the restaurant by [daddy.namePos] side, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at Lilaya, and then across to you, [daddy.she] smiles as [daddy.she] says, [daddy.speech(You know, I really enjoyed this evening with the two of you. Please do come and visit me any other evening you like, and we can do this again.)]
@@ -1108,7 +1108,7 @@
 	
 	<htmlContent tag="DINNER_NO_DESSERT"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			You tell [daddy.name] that you were thinking of a different sort of dessert, and that perhaps you could soon head back to [daddy.her] apartment in order to get started on it.
 		#ELSE
 			You tell [daddy.name] that you're too full to have any dessert, and that you should probably be thinking about leaving soon.
@@ -1116,10 +1116,10 @@
 		 Consequently, when the waiter comes to clear your table, [daddy.name] asks to settle the bill, and once that's done, the two of you prepare to make a move.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			With your evening out coming to an end, you exit the restaurant with [daddy.namePos] arm around your waist, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at you, [daddy.she] pulls you close as [daddy.she] asks, [daddy.speech(So, you want to come back to my place for some special 'dessert'?)]
 		#ELSE
-			#IF(pc.getQuest(questLine("SIDE_DADDY")) == quest("DADDY_ACCEPTED"))
+			#IF(pc.getQuest(QUEST_LINE_SIDE_DADDY) == QUEST_DADDY_ACCEPTED)
 				With your evening out coming to an end, you exit the restaurant by [daddy.namePos] side, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at you, [daddy.she] smiles as [daddy.she] says, [daddy.speech(You know, I really enjoyed this evening with you, [pc.name]. Please do come and visit me any other evening you like, and I'm looking forward to meeting Lilaya when you bring her with you.)]
 			#ELSE
 				With your evening out coming to an end, you exit the restaurant by [daddy.namePos] side, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at you, [daddy.she] smiles as [daddy.she] says, [daddy.speech(You know, I really enjoyed this evening with you, [pc.name]. Please do come and visit me any other evening you like, and we can do this again.)]
@@ -1131,7 +1131,7 @@
 	
 	<htmlContent tag="LILAYA_DINNER_NO_DESSERT"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			You tell [daddy.name] that you and Lilaya would like a different sort of dessert, and that perhaps you could soon head back to [daddy.her] apartment in order to get started on it.
 		#ELSE
 			You tell [daddy.name] that you're too full to have any dessert, which turns out to be the case for Lilaya as well.
@@ -1139,7 +1139,7 @@
 		 Consequently, when the waiter comes to clear your table, [daddy.name] asks to settle the bill, and once that's done, the three of you prepare to make a move.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			With your evening out coming to an end, and with [daddy.namePos] arms around each of your waists, you and Lilaya move to exit the restaurant, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at Lilaya, and then over at you, [daddy.she] pulls you both close as [daddy.she] asks, [daddy.speech(So, do you two want to come back to my place for some special 'dessert'?)]
 		#ELSE
 			With your evening out coming to an end, you and Lilaya exit the restaurant by [daddy.namePos] side, and are soon stepping back out into the streets of Demon Home. Looking [daddy.heightDown(pc)] at Lilaya, and then across to you, [daddy.she] smiles as [daddy.she] says, [daddy.speech(You know, I really enjoyed this evening with the two of you. Please do come and visit me any other evening you like, and we can do this again.)]
@@ -1239,7 +1239,7 @@
 	
 	<htmlContent tag="DINNER_END_REFUSE"><![CDATA[
 	<p>
-		#IF(pc.getQuest(questLine("SIDE_DADDY")) == quest("DADDY_ACCEPTED"))
+		#IF(pc.getQuest(QUEST_LINE_SIDE_DADDY) == QUEST_DADDY_ACCEPTED)
 			Not feeling in the mood to go back to [daddy.her] place, you make your excuses and decline [daddy.namePos] offer. In a disappointed tone, [daddy.name] replies, [daddy.speech(Ok, well, I'm just happy that you accepted me as your new [daddy.dad]. I really had a lot of fun tonight, and I'm looking forward to meeting Lilaya when you bring her with you.)]
 		#ELSE
 			Not feeling in the mood to go back to [daddy.her] place, you make your excuses and decline [daddy.namePos] offer. In a disappointed tone, [daddy.name] replies, [daddy.speech(Ok, well, come back and visit me any evening you want. I really had a lot of fun tonight.)]
@@ -1488,7 +1488,7 @@
 	<htmlContent tag="AFTER_APARTMET_SEX_HOME"><![CDATA[
 	<p>
 		After lying next to one another for a while, you eventually decide that it's time for you to leave, and, after putting your clothes back on, [daddy.name] leads you back to [daddy.her] front door. Leaning in to plant one last kiss on your [pc.lips+] [daddy.she] says,
-		#IF(pc.getQuest(questLine("SIDE_DADDY")) == quest("DADDY_ACCEPTED"))
+		#IF(pc.getQuest(QUEST_LINE_SIDE_DADDY) == QUEST_DADDY_ACCEPTED)
 			 [daddy.speech(I really had a lot of fun tonight, [pc.name]. Please come and visit me again soon, and I'm looking forward to meeting Lilaya when you bring her with you!)]
 		#ELSE
 			 [daddy.speech(I really had a lot of fun tonight, [pc.name]. Please come and visit me again soon!)]
@@ -1517,7 +1517,7 @@
 	<!-- APARTMENT -->
 	
 	<htmlContent tag="APARTMENT_TALK"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 		<p>
 			Wanting to hear about [daddy.namePos] recent exploits, you continue to make flirtatious remarks as you ask [daddy.herHim] about what [daddy.sheHas] been getting up to recently. More than happy to regale you with tales from [daddy.her] ongoing construction projects, [daddy.name] proceeds to spend a good deal of time telling you several stories from the life of an arcane construction worker.
 		</p>
@@ -1536,7 +1536,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="LILAYA_APARTMENT_TALK"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 		<p>
 			Wanting to hear about [daddy.namePos] recent exploits, you continue to make flirtatious remarks as you ask [daddy.herHim] about what [daddy.sheHas] been getting up to recently. More than happy to regale you and Lilaya with tales from [daddy.her] ongoing construction projects, [daddy.name] proceeds to spend a good deal of time telling you several stories from the life of an arcane construction worker.
 		</p>
@@ -1556,7 +1556,7 @@
 	
 	<htmlContent tag="APARTMENT_SEDUCE"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Wanting to do a little more than simply flirt with [daddy.name] this evening, you turn up the heat a little and start making some very sexual remarks, while playfully running your hand over [daddy.her] leg.
 		#ELSE
 			Deciding that you want to have a little fun this evening, you start flirting with [daddy.name], before leading up to asking [daddy.herHim] to come over and sit next to you on the sofa. After [daddy.she]'s done as you asked, you then turn up the heat by starting to make some very sexual remarks, while playfully running your hand over [daddy.her] leg.
@@ -1573,7 +1573,7 @@
 	
 	<htmlContent tag="LILAYA_APARTMENT_SEDUCE"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("flirtingWithDaddy")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
 			Wanting to do a little more than simply flirt with your two companions this evening, you turn up the heat a little and start making some very sexual remarks, while playfully running your hand over [daddy.namePos] leg.
 		#ELSE
 			Deciding that you want to have a little fun this evening, you start flirting with your two companions, before leading up to asking [daddy.name] to come over and sit between you and Lilaya on the sofa. After [daddy.she]'s done as you asked, you then turn up the heat by starting to make some very sexual remarks, while playfully running your hand over [daddy.her] leg.

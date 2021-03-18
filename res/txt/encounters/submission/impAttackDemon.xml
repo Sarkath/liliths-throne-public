@@ -31,7 +31,7 @@
 	</p>
 	<p>
 		It's quite clear that these imps are only interested in one thing, and as they start to advance, the third imp, who up until now had been quite content to simply sneer and scowl at you, puts any doubts as to their intentions to rest, as [npc2.she] calls out, 
-		#IF properties.getForcedTFTendency()==forcedTF("MASCULINE") || properties.getForcedTFTendency()==forcedTF("MASCULINE_HEAVY")
+		#IF properties.getForcedTFTendency()==FORCED_TF_MASCULINE || properties.getForcedTFTendency()==FORCED_TF_MASCULINE_HEAVY
 		#THEN
 			[npc2.speech(I've been savin' a potion for someone just like you! Ooh, I'm lookin' forwards to turnin' you into our hunky herm! Gonna give you a nice wet cunt and a big, thick cock!)]
 		#ELSE
@@ -51,11 +51,11 @@
 	<p>
 		Two of the smaller imps immediately dart forwards, and, flying up to each side of you, they grab your [pc.arms], before folding their wings behind their backs and using their weight to pull you down onto your knees. As you hit the floor, you look up to see [npc.name] and [npc2.name] stepping forwards, grinning in delight as they see that you're not going to put up a fight.
 	</p>
-	#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+	#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 	#THEN
 		<p>
 			[npc.speech(Give me the potion,)] [npc.name] commands [npc.her] partner. Quickly producing a bottle of strange liquid, [npc2.name] hands it over to her superior, who immediately pulls the stopper out and steps forwards, before grabbing your chin and squeezing your cheeks. 
-			#IF properties.getForcedTFTendency()==forcedTF("MASCULINE") || properties.getForcedTFTendency()==forcedTF("MASCULINE_HEAVY")
+			#IF properties.getForcedTFTendency()==FORCED_TF_MASCULINE || properties.getForcedTFTendency()==FORCED_TF_MASCULINE_HEAVY
 			#THEN
 				[npc.speech(Open wide, [pc.insult]! This'll turn you into our manly stud, before giving you a nice big cock and sopping wet cunt, so whoever gets between your legs can have some extra fun!)]
 			#ELSE
@@ -342,11 +342,11 @@
 			rub [npc4.her] groin up against your waist.
 		#ENDIF
 	</p>
-	#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+	#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 	#THEN
 		<p>
 			[npc.speech(Give me the potion,)] [npc.name] snaps at [npc.her] partner. Quickly producing a bottle of strange liquid, [npc2.name] hands it over to her superior, who immediately pulls the stopper out and steps forwards, before grabbing your chin and squeezing your cheeks. 
-			#IF properties.getForcedTFTendency()==forcedTF("MASCULINE") || properties.getForcedTFTendency()==forcedTF("MASCULINE_HEAVY")
+			#IF properties.getForcedTFTendency()==FORCED_TF_MASCULINE || properties.getForcedTFTendency()==FORCED_TF_MASCULINE_HEAVY
 			#THEN
 				[npc.speech(Open wide, [pc.insult]! This'll turn you into our manly stud, before giving you a nice big cock and sopping wet cunt, so whoever gets between your legs can have some extra fun!)]
 			#ELSE
@@ -485,7 +485,7 @@
 	<htmlContent tag="AFTER_DEFEAT_SEX"><![CDATA[
 	<p>
 		Having had their fun, the imps step back, allowing you to collapse down onto the floor as you pant from exertion.
-		#IF (pc.isCharactersCumInOrifice(orifice("VAGINA"), npc.getId()) || pc.isCharactersCumInOrifice(orifice("VAGINA"), npc2.getId()) || pc.isCharactersCumInOrifice(orifice("VAGINA"), npc3.getId()) || pc.isCharactersCumInOrifice(orifice("VAGINA"), npc4.getId()))
+		#IF (pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc2.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc3.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc4.getId()))
 		#THEN
 			#IF pc.isVisiblyPregnant()
 			#THEN
@@ -493,7 +493,7 @@
 			#ELSE
 				Suddenly, you feel [npc.name] sliding [npc.her] fingers into your freshly-creampied pussy, and you let out an exhausted moan as [npc.she] snickers, [npc.speech(Wondering if we got you knocked up, huh slut? Well, if you do end up birthing some more imps, you just send them this way. We could always do with more gang members!)]
 			#ENDIF
-			#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 			#THEN
 				</p>
 				<p>

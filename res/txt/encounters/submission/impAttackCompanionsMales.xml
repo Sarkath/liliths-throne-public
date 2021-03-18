@@ -30,7 +30,7 @@
 	</p>
 	<p>
 		It's quite clear that these imps are only interested in one thing, and as they start to advance, the second alpha-imp, who up until now had been quite content to simply sneer and scowl at the two of you, puts any doubts as to their intentions to rest, as [npc3.she] calls out, 
-		#IF properties.getForcedTFTendency()==forcedTF("FEMININE") || properties.getForcedTFTendency()==forcedTF("FEMININE_HEAVY")
+		#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
 		#THEN
 			[npc3.speech(The boss gave us potions to use on cheeky little [pc.insultPlural] like you! Gonna turn you into a pair of sexy bitches, complete with soppin' wet cunts for us to use as our cock-sleeves!)]
 		#ELSE
@@ -53,11 +53,11 @@
 	<p>
 		[npc.speech([npc.PcName]... Are you sure about this?!)] [npc.Name] calls out from somewhere behind you, but you turn and reassure [npc.herHim] that this is the for the best, before focusing your attention on the imps.
 	</p>
-	#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+	#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 	#THEN
 		<p>
 			[npc2.speech(Gimme the potion,)] [npc2.name] snaps at [npc2.her] partner. Quickly producing a bottle of strange liquid, [npc3.name] hands it over to her superior, who immediately pulls the stopper out and steps forwards, before grabbing your chin and squeezing your cheeks. 
-			#IF properties.getForcedTFTendency()==forcedTF("FEMININE") || properties.getForcedTFTendency()==forcedTF("FEMININE_HEAVY")
+			#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
 			#THEN
 				 [npc2.speech(Open wide, [pc.insult]! This is gonna turn you into one sexy bitch, complete with a soppin' wet cunt for us to use as our cock-sleeve!)]
 			#ELSE
@@ -110,11 +110,11 @@
 	<p>
 		The two smaller imps immediately dart forwards, and, flying up to each side of [npc.name], they grab [npc.her] [npc.arms], before folding their wings behind their backs and using their weight to pull [npc.herHim] down onto [npc.her] knees. As [npc.she] hits the floor, [npc.she] looks up to see the two alpha-imps stepping forwards, grinning in anticipation of what's about to happen.
 	</p>
-	#IF npc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+	#IF npc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 	#THEN
 		<p>
 			[npc2.speech(Gimme the potion,)] [npc2.name] snaps at [npc2.her] partner. Quickly producing a bottle of strange liquid, [npc3.name] hands it over to her superior, who immediately pulls the stopper out and steps forwards, before grabbing [npc.namePos] chin and squeezing [npc.her] cheeks. 
-			#IF properties.getForcedTFTendency()==forcedTF("FEMININE") || properties.getForcedTFTendency()==forcedTF("FEMININE_HEAVY")
+			#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
 			#THEN
 				 [npc2.speech(Open wide, [pc.insult]! This is gonna turn you into one sexy bitch, complete with a soppin' wet cunt for us to use as our cock-sleeve!)]
 			#ELSE
@@ -265,13 +265,13 @@
 	<p>
 		The two smaller imps immediately dart forwards, before flying up beside you and [npc.name]. Reaching out to grab hold of your [npc.arm], [npc4.name] then folds [npc4.her] wings behind [npc4.her] back and uses [npc4.her] weight to pull you down onto your knees. Looking to your side, you see [npc5.name] doing the same to [npc.name]. As the two of you hit the floor, you look up to see the two alpha-imps stepping forwards, grinning in anticipation of what's about to happen.
 	</p>
-	#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+	#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 	#THEN
-		#IF npc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+		#IF npc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 		#THEN
 			<p>
 				[npc2.speech(Get them potions out!)] [npc2.Name] snaps at [npc2.her] partner. Quickly producing two bottles of strange liquid, [npc3.name] hands one over to her superior, who immediately pulls the stopper out and steps forwards, before grabbing your chin and squeezing your cheeks. As [npc2.she] does this, [npc3.name] does the same to [npc.name], and as the potions draw ever closer to your open mouths, [npc.name] snickers,
-				#IF properties.getForcedTFTendency()==forcedTF("FEMININE") || properties.getForcedTFTendency()==forcedTF("FEMININE_HEAVY")
+				#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
 				#THEN
 					 [npc2.speech(Open wide, [pc.insult]! This is gonna turn you into one sexy bitch, complete with a soppin' wet cunt for us to use as our cock-sleeve!)]
 				#ELSE
@@ -287,7 +287,7 @@
 			</p>
 			<p>
 				[npc2.speech(Yeah, just save yer potion for the next cunt we find,)] [npc2.name] snaps.
-				#IF properties.getForcedTFTendency()==forcedTF("FEMININE") || properties.getForcedTFTendency()==forcedTF("FEMININE_HEAVY")
+				#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
 				#THEN
 					 [npc2.speech(Open wide, [pc.insult]! This is gonna turn you into one sexy bitch, complete with a soppin' wet cunt for us to use as our cock-sleeve!)]
 				#ELSE
@@ -299,14 +299,14 @@
 			</p>
 		#ENDIF
 	#ELSE
-		#IF npc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+		#IF npc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 		#THEN
 			<p>
 				[npc2.speech(This stupid [pc.insult]'s got [pc.her] mouth blocked!)] [npc2.name] snarls at you, before turning towards [npc2.her] partner. [npc2.speech(Just use one o' our potions on that [npc.insult] you've got before you.)]
 			</p>
 			<p>
 				Quickly producing a bottle of strange liquid, [npc3.name] does as [npc3.her] superior commands, and, pulling the stopper out, [npc3.she] steps forwards, before grabbing [npc.namePos] chin and squeezing [npc.her] cheeks. 
-				#IF properties.getForcedTFTendency()==forcedTF("FEMININE") || properties.getForcedTFTendency()==forcedTF("FEMININE_HEAVY")
+				#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
 				#THEN
 					 [npc3.speech(Open wide, [npc.insult]! This is gonna turn you into one sexy bitch, complete with a soppin' wet cunt for us to use as our cock-sleeve!)]
 				#ELSE
@@ -433,13 +433,13 @@
 	<p>
 		The two smaller imps immediately dart forwards, before flying up beside you and [npc.name]. Reaching out to grab hold of your [npc.arm], [npc4.name] then folds [npc4.her] wings behind [npc4.her] back and uses [npc4.her] weight to pull you down onto all fours. Looking to your side, you see [npc5.name] doing the same to [npc.name]. As the two of you hit the floor, you look up to see the two alpha-imps stepping forwards, grinning in anticipation of what's about to happen.
 	</p>
-	#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+	#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 	#THEN
-		#IF npc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+		#IF npc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 		#THEN
 			<p>
 				[npc2.speech(Get them potions out!)] [npc2.Name] snaps at [npc2.her] partner. Quickly producing two bottles of strange liquid, [npc3.name] hands one over to her superior, who immediately pulls the stopper out and steps forwards, before grabbing your chin and squeezing your cheeks. As [npc2.she] does this, [npc3.name] does the same to [npc.name], and as the potions draw ever closer to your open mouths, [npc.name] snickers,
-				#IF properties.getForcedTFTendency()==forcedTF("FEMININE") || properties.getForcedTFTendency()==forcedTF("FEMININE_HEAVY")
+				#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
 				#THEN
 					 [npc2.speech(Open wide, [pc.insult]! This is gonna turn you into one sexy bitch, complete with a soppin' wet cunt for us to use as our cock-sleeve!)]
 				#ELSE
@@ -455,7 +455,7 @@
 			</p>
 			<p>
 				[npc2.speech(Yeah, just save yer potion for the next cunt we find,)] [npc2.name] snaps.
-				#IF properties.getForcedTFTendency()==forcedTF("FEMININE") || properties.getForcedTFTendency()==forcedTF("FEMININE_HEAVY")
+				#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
 				#THEN
 					 [npc2.speech(Open wide, [pc.insult]! This is gonna turn you into one sexy bitch, complete with a soppin' wet cunt for us to use as our cock-sleeve!)]
 				#ELSE
@@ -467,14 +467,14 @@
 			</p>
 		#ENDIF
 	#ELSE
-		#IF npc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+		#IF npc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 		#THEN
 			<p>
 				[npc2.speech(This stupid [pc.insult]'s got [pc.her] mouth blocked!)] [npc2.name] snarls at you, before turning towards [npc2.her] partner. [npc2.speech(Just use one o' our potions on that [npc.insult] you've got before you.)]
 			</p>
 			<p>
 				Quickly producing a bottle of strange liquid, [npc3.name] does as [npc3.her] superior commands, and, pulling the stopper out, [npc3.she] steps forwards, before grabbing [npc.namePos] chin and squeezing [npc.her] cheeks. 
-				#IF properties.getForcedTFTendency()==forcedTF("FEMININE") || properties.getForcedTFTendency()==forcedTF("FEMININE_HEAVY")
+				#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
 				#THEN
 					 [npc3.speech(Open wide, [npc.insult]! This is gonna turn you into one sexy bitch, complete with a soppin' wet cunt for us to use as our cock-sleeve!)]
 				#ELSE
@@ -597,7 +597,7 @@
 	<htmlContent tag="AFTER_DEFEAT_SEX"><![CDATA[
 	<p>
 		Having had their fun, the imps step back, allowing you to collapse down onto the floor as you pant from exertion.
-		#IF (pc.isCharactersCumInOrifice(orifice("VAGINA"), npc2.getId()) || pc.isCharactersCumInOrifice(orifice("VAGINA"), npc3.getId()) || pc.isCharactersCumInOrifice(orifice("VAGINA"), npc4.getId()) || pc.isCharactersCumInOrifice(orifice("VAGINA"), npc5.getId()))
+		#IF (pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc2.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc3.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc4.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc5.getId()))
 		#THEN
 			#IF pc.isVisiblyPregnant()
 			#THEN
@@ -605,7 +605,7 @@
 			#ELSE
 				Suddenly, you feel [npc2.name] sliding [npc2.her] fingers into your freshly-creampied pussy, and you let out an exhausted moan as [npc2.she] snickers, [npc2.speech(Wonderin' if we got you knocked up, huh, slut? Well, if you get pregnant from this, just send them imp kids of yours this way. We could always do with more gang members!)]
 			#ENDIF
-			#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 			#THEN
 				</p>
 				<p>
@@ -649,9 +649,9 @@
 	<htmlContent tag="AFTER_DEFEAT_SEX_WITH_COMPANION"><![CDATA[
 	<p>
 		Having had their fun, the imps step back, allowing you and [npc.name] to collapse down onto the floor as the two of you pant from exertion.
-		#IF (pc.isCharactersCumInOrifice(orifice("VAGINA"), npc2.getId()) || pc.isCharactersCumInOrifice(orifice("VAGINA"), npc3.getId()) || pc.isCharactersCumInOrifice(orifice("VAGINA"), npc4.getId()) || pc.isCharactersCumInOrifice(orifice("VAGINA"), npc5.getId()))
+		#IF (pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc2.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc3.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc4.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc5.getId()))
 		#THEN
-			#IF (npc.isCharactersCumInOrifice(orifice("VAGINA"), npc2.getId()) || npc.isCharactersCumInOrifice(orifice("VAGINA"), npc3.getId()) || npc.isCharactersCumInOrifice(orifice("VAGINA"), npc4.getId()) || npc.isCharactersCumInOrifice(orifice("VAGINA"), npc5.getId()))
+			#IF (npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc2.getId()) || npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc3.getId()) || npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc4.getId()) || npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc5.getId()))
 			#THEN
 				 Suddenly, you feel [npc2.name] thrusting [npc2.her] fingers into your freshly-creampied pussy, and from [npc.namePos] sudden yelp, you realise that [npc2.name] has just done the same to [npc.herHim].
 				#IF npc.isVisiblyPregnant()
@@ -673,16 +673,16 @@
 				</p>
 				<p>
 					Before either of you can respond, [npc2.name] withdraws [npc2.her] fingers, which, much to the amusement of the other three imps, causes you and [npc.name] to let out synchronised [pc.moans]. As you turn your head to look back at [npc2.herHim], [npc2.name] quickly steps forwards,
-					#IF npc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+					#IF npc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 					#THEN
-						#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+						#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 						#THEN
 							 before shoving [npc2.her] cum-coated fingers into your and [npc.namePos] mouths. [npc2.speech(Clean me off, [pc.insultPlural]!)]
 						#ELSE
 							 before shoving [npc2.her] cum-coated fingers into [npc.namePos] mouth, and starting to wipe [npc2.her] other hand over your face. [npc2.speech(Hold still, [pc.insultPlural]!)]
 						#ENDIF
 					#ELSE
-						#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+						#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 						#THEN
 							 before shoving [npc2.her] cum-coated fingers into your mouth, and starting to wipe [npc2.her] other hand over [npc.namePos] face. [npc2.speech(Hold still, [pc.insultPlural]!)]
 						#ELSE
@@ -700,7 +700,7 @@
 				#ELSE
 					Suddenly, you feel [npc2.name] sliding [npc2.her] fingers into your freshly-creampied pussy, and you let out an exhausted moan as [npc2.she] snickers, [npc2.speech(Wonderin' if we got you knocked up, huh, slut? Well, if you get pregnant from this, just send them imp kids of yours this way. We could always do with more gang members!)]
 				#ENDIF
-				#IF pc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+				#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 				#THEN
 					</p>
 					<p>
@@ -717,7 +717,7 @@
 				</p>
 			#ENDIF
 		#ELSE
-			#IF (npc.isCharactersCumInOrifice(orifice("VAGINA"), npc2.getId()) || npc.isCharactersCumInOrifice(orifice("VAGINA"), npc3.getId()) || npc.isCharactersCumInOrifice(orifice("VAGINA"), npc4.getId()) || npc.isCharactersCumInOrifice(orifice("VAGINA"), npc5.getId()))
+			#IF (npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc2.getId()) || npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc3.getId()) || npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc4.getId()) || npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc5.getId()))
 			#THEN
 				#IF npc.isVisiblyPregnant()
 				#THEN
@@ -725,7 +725,7 @@
 				#ELSE
 					Suddenly, you see [npc2.name] step around behind your companion, before sliding [npc2.her] fingers into [npc.her] freshly-creampied pussy. [npc.Name] lets out an exhausted moan as [npc.she] feels the sudden penetration, and [npc2.name] leans forwards to snicker, [npc2.speech(Wonderin' if we got you knocked up, huh, slut? Well, if you get pregnant from this, just send them imp kids of yours this way. We could always do with more gang members!)]
 				#ENDIF
-				#IF npc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+				#IF npc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 				#THEN
 					</p>
 					<p>
@@ -759,7 +759,7 @@
 	<htmlContent tag="AFTER_SEX_WATCHING_COMPANION"><![CDATA[
 	<p>
 		Having had their fun, the imps step back, allowing [npc.name] to collapse down onto the floor as [npc.she] pants from exertion.
-		#IF (npc.isCharactersCumInOrifice(orifice("VAGINA"), npc2.getId()) || npc.isCharactersCumInOrifice(orifice("VAGINA"), npc3.getId()) || npc.isCharactersCumInOrifice(orifice("VAGINA"), npc4.getId()) || npc.isCharactersCumInOrifice(orifice("VAGINA"), npc5.getId()))
+		#IF (npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc2.getId()) || npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc3.getId()) || npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc4.getId()) || npc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc5.getId()))
 		#THEN
 			#IF npc.isVisiblyPregnant()
 			#THEN
@@ -767,7 +767,7 @@
 			#ELSE
 				Suddenly, you see [npc2.name] step around behind your companion, before sliding [npc2.her] fingers into [npc.her] freshly-creampied pussy. [npc.Name] lets out an exhausted moan as [npc.she] feels the sudden penetration, and [npc2.name] leans forwards to snicker, [npc2.speech(Wonderin' if we got you knocked up, huh, slut? Well, if you get pregnant from this, just send them imp kids of yours this way. We could always do with more gang members!)]
 			#ENDIF
-			#IF npc.isAbleToAccessCoverableArea(ca("MOUTH"), true)
+			#IF npc.isAbleToAccessCoverableArea(CA_MOUTH, true)
 			#THEN
 				</p>
 				<p>

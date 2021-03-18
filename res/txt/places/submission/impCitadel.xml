@@ -60,7 +60,7 @@
 	
 	<htmlContent tag="IMP_CHALLENGE"><![CDATA[
 	<p>
-		#IF pc.hasFetish(fetish("FETISH_SADIST"))
+		#IF pc.hasFetish(FETISH_SADIST)
 		#THEN
 			The sight of these imps, who have inevitably all partaken in muggings and worse, makes your blood boil. Walking up to the nearest one, you kick him in his side with full force, causing him to stagger back and collapse against a nearby wall. [pc.speech(I'm here to clean you all out! Get ready for a beating, you scum!)]
 		#ELSE
@@ -158,7 +158,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_VICTORY_attribute("BOOST")"><![CDATA[
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_VICTORY_ATTRIBUTE_BOOST"><![CDATA[
 	<p style='text-align:center;'>
 		[style.italicsExcellent(You have defeated the citadel's entire imp garrison! You truly are a master at fighting imps, and know exactly how to beat them!)]
 	</p>
@@ -587,7 +587,7 @@
 	<p>
 		[citadelArcanist.speech(Well, I don't think I've seen <i>you</i> before,)] she says, with a hint of amusement in her voice. [citadelArcanist.speech(You may address me as [citadelArcanist.name]. Who are you?)] 
 	</p>
-	#IF pc.hasTraitActivated(perk("OBSERVANT"))
+	#IF pc.hasTraitActivated(PERK_OBSERVANT)
 	#THEN
 		<p>
 			[pc.speech(I'm [pc.name],)] you respond. As you take another glance at [citadelArcanist.namePos] tail, you notice that she's actually got three, and is merely pretending to have only one by pushing them all together. [pc.speech(I didn't expect to see a three-tailed fox-girl in here.)]
@@ -614,7 +614,7 @@
 	</p>
 	<p>
 		[citadelArcanist.speech(Oh, do settle down,)] [citadelArcanist.name] dismissively states with a wave of her hand.
-		#IF pc.getRace()==race("FOX_MORPH")
+		#IF pc.getRace()==RACE_FOX_MORPH
 		#THEN
 				 [citadelArcanist.speech(You know, it's a real shame that you're already a fox. I've crafted a potion that would have turned you into a cute fox-girl, but I don't want to waste it on someone who's already a fox...)]
 			<p>
@@ -639,7 +639,7 @@
 	</p>
 	<p>
 		[citadelArcanist.speech(Oh, do be quiet, you silly little thing,)] [citadelArcanist.name] dismissively states with a wave of her hand.
-		#IF pc.getRace()==race("FOX_MORPH")
+		#IF pc.getRace()==RACE_FOX_MORPH
 		#THEN
 				 [citadelArcanist.speech(Hmm, I still don't want to waste my potion on someone who's already a fox...)]
 			<p>
@@ -872,7 +872,7 @@
 	<htmlContent tag="KEEP_ENTRY"><![CDATA[
 	<p>
 		You decide that the time has come to face this 'dark siren', and so, steeling yourself for the worst, you step forwards and push on the heavy wooden gates.
-		#IF pc.hasStatusEffect(SE_PHYSIQUE_perk("0"))
+		#IF pc.hasStatusEffect(SE_PHYSIQUE_PERK_0)
 		#THEN As you're so weak, you struggle for quite some time to get them to move, but, eventually, you manage to get them to swing open before you, allowing you to step forwards into the keep.
 		#ELSE Thankfully, they're both unlocked and quite well balanced, and they readily swing open before you, allowing you to step forwards into the keep.
 		#ENDIF
@@ -885,7 +885,7 @@
 	</p>
 	<p>
 		Looking past these demons, you see a raised dais, and upon the top, there sits a dark stone throne. Sitting upon this seat of power is the citadel's leader, the dark siren herself. Although the rest of this huge hall is well lit by the arcane lanterns, the figure sitting upon the throne itself is curiously shrouded in shadow.
-		#IF pc.hasTraitActivated(perk("CHUUNI"))
+		#IF pc.hasTraitActivated(PERK_CHUUNI)
 		#THEN Wanting this reclusive leader of the imp gangs to reveal herself, you call out your challenge, [pc.speech(So you're the one who presumes to call herself the 'dark siren', are you?! It's time for you to meet your end!)]
 		#ELSE Wanting this reclusive leader of the imp gangs to reveal herself, you call out, [pc.speech(So you're the one who's responsible for the imp gangs terrorising the tunnels of Submission! I've come to put a stop to all that, siren!)]
 		#ENDIF
@@ -894,7 +894,7 @@
 		[siren.speech(Siren?)] a surprisingly small and high-pitched voice calls out from the shadows. [siren.speech(Do you not know whom you address? I, the unraveller of fates, destroyer of worlds, recognised daughter of Lyssieth herself! My name strikes fear into the hearts of demon and human alike! Cower in terror, you mere mortal, as I prepare to reveal my true identity!)]
 	</p>
 	<p>
-		#IF pc.hasTraitActivated(perk("CHUUNI"))
+		#IF pc.hasTraitActivated(PERK_CHUUNI)
 		#THEN You can't help but notice [impAlphaLeader.name] flinching at the siren's impressive introduction, but, as intimidating as she may be, you know that she's no match for your ultimate power!
 		#ELSE You can't help but notice [impAlphaLeader.name] flinching at the siren's cringe-worthy introduction, and, as she describes herself as the 'destroyer of worlds', you find yourself letting out a low groan as you share in the second-hand embarrassment.
 		#ENDIF
@@ -918,7 +918,7 @@
 	<htmlContent tag="KEEP_ENTRY_RETURN"><![CDATA[
 	<p>
 		Once again, you decide to try and confront and defeat [siren.name], and so, steeling yourself for the fight to come, you step forwards and push on the heavy wooden gates.
-		#IF pc.hasStatusEffect(SE_PHYSIQUE_perk("0"))
+		#IF pc.hasStatusEffect(SE_PHYSIQUE_PERK_0)
 		#THEN As you're so weak, you struggle for quite some time to get them to move, but, eventually, you manage to get them to swing open before you, allowing you to step forwards into the keep.
 		#ELSE Thankfully, they're both unlocked and quite well balanced, and they readily swing open before you, allowing you to step forwards into the keep.
 		#ENDIF
@@ -930,7 +930,7 @@
 		Just as before, the three demon lieutenants are waiting right there in front of you. [impMalesLeader.Name] appears to be the most senior of them, as he's standing at the head, with [impAlphaLeader.name] to his right, and [impFemalesLeader.name] to his left. As the huge wooden gates swing shut behind you, he smirks and asks, [impMalesLeader.speech(Back again, [pc.race]? Didn't you learn your lesson the last time?)]
 	</p>
 	<p>
-		#IF pc.hasTraitActivated(perk("CHUUNI"))
+		#IF pc.hasTraitActivated(PERK_CHUUNI)
 		#THEN Before you can answer, [siren.name] herself stands up from her throne, and delivers yet another impressive speech,
 		#ELSE Before you can answer, [siren.name] herself stands up from her throne, and delivers yet another cringe-worthy speech,
 		#ENDIF
@@ -961,7 +961,7 @@
 		Looking over at the siren's throne, you see [siren.name] stepping down from the raised dais as she laughs, [siren.speech(Fool! Now you shall witness my vast astronomical powers! The very fabric of space and time bends to my will!)]
 	</p>
 	<p>
-		Thrusting one foot forwards, [siren.name] strikes a heroic pose, and, lifting her huge scythe above her head with one arm, she effortlessly twirls it around in an impressive display of strength and finesse. Reaching up to grab the shaft with her other hand, she then swings it around into a low-ready position, before letting out another #IFpc.hasTraitActivated(perk("CHUUNI"))#THENspirited#ELSEridiculous#ENDIF laugh, [siren.speech(~Mwhaha!~ Prepare for your obliteration!)]
+		Thrusting one foot forwards, [siren.name] strikes a heroic pose, and, lifting her huge scythe above her head with one arm, she effortlessly twirls it around in an impressive display of strength and finesse. Reaching up to grab the shaft with her other hand, she then swings it around into a low-ready position, before letting out another #IFpc.hasTraitActivated(PERK_CHUUNI)#THENspirited#ELSEridiculous#ENDIF laugh, [siren.speech(~Mwhaha!~ Prepare for your obliteration!)]
 	</p>
 	<p>
 		You don't have any time in which to recover from your fight against the demons, as [siren.name] prepares to immediately fight you one-on-one!
@@ -1065,7 +1065,7 @@
 		#IF pc.isAbleToFly()
 		#THEN you make good use of your ability to fly, and swiftly dart through the air, dodging falling boulders and collapsing masonry before following the three demons out through the main gates into Submission's cavern.
 		#ELSE
-			#IF pc.getRace()==race("SQUIRREL_MORPH") || pc.getRace()==race("CAT_MORPH")
+			#IF pc.getRace()==RACE_SQUIRREL_MORPH || pc.getRace()==RACE_CAT_MORPH
 			#THEN you make good use of your body's agility to dodge falling boulders and collapsing masonry as you rush across the courtyard and follow the three demons out into Submission's cavern.
 			#ELSE you somehow manage to dodge all of the falling boulders and collapsing masonry as you rush across the courtyard and follow the three demons out into Submission's cavern.
 			#ENDIF
@@ -1089,7 +1089,7 @@
 		#IF pc.isAbleToFly()
 		#THEN you make good use of your ability to fly, and swiftly dart through the air, dodging falling boulders and collapsing masonry before following the three demons out through the main gates into Submission's cavern.
 		#ELSE
-			#IF pc.getRace()==race("SQUIRREL_MORPH") || pc.getRace()==race("CAT_MORPH")
+			#IF pc.getRace()==RACE_SQUIRREL_MORPH || pc.getRace()==RACE_CAT_MORPH
 			#THEN you make good use of your body's agility to dodge falling boulders and collapsing masonry as you rush across the courtyard and follow the three demons out into Submission's cavern.
 			#ELSE you somehow manage to dodge all of the falling boulders and collapsing masonry as you rush across the courtyard and follow the three demons out into Submission's cavern.
 			#ENDIF
@@ -1295,7 +1295,7 @@
 		#IF pc.isAbleToFly()
 		#THEN you make good use of your ability to fly, and swiftly dart through the air, dodging falling boulders and collapsing masonry before following the two demons out through the main gates into Submission's cavern.
 		#ELSE
-			#IF pc.getRace()==race("SQUIRREL_MORPH") || pc.getRace()==race("CAT_MORPH")
+			#IF pc.getRace()==RACE_SQUIRREL_MORPH || pc.getRace()==RACE_CAT_MORPH
 			#THEN you make good use of your body's agility to dodge falling boulders and collapsing masonry as you rush across the courtyard and follow the two demons out into Submission's cavern.
 			#ELSE you somehow manage to dodge all of the falling boulders and collapsing masonry as you rush across the courtyard and follow the two demons out into Submission's cavern.
 			#ENDIF
@@ -1322,7 +1322,7 @@
 		#IF pc.isAbleToFly()
 		#THEN you make good use of your ability to fly, and swiftly dart through the air, dodging falling boulders and collapsing masonry before following the two demons out through the main gates into Submission's cavern.
 		#ELSE
-			#IF pc.getRace()==race("SQUIRREL_MORPH") || pc.getRace()==race("CAT_MORPH")
+			#IF pc.getRace()==RACE_SQUIRREL_MORPH || pc.getRace()==RACE_CAT_MORPH
 			#THEN you make good use of your body's agility to dodge falling boulders and collapsing masonry as you rush across the courtyard and follow the two demons out into Submission's cavern.
 			#ELSE you somehow manage to dodge all of the falling boulders and collapsing masonry as you rush across the courtyard and follow the two demons out into Submission's cavern.
 			#ENDIF

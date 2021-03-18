@@ -31,21 +31,21 @@
 		<enchantmentEffectId>RACE</enchantmentEffectId>
 		
 		<effectTooltipLines>
-			<line><![CDATA[[#attribute("MAJOR_CORRUPTION").getFormattedValue(25)]]]></line>
-			<line><![CDATA[[#attribute("MAJOR_CORRUPTION").getFormattedValue(25)] to 'potion effects']]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_CORRUPTION.getFormattedValue(25)]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_CORRUPTION.getFormattedValue(25)] to 'potion effects']]></line>
 			<line><![CDATA[[style.boldSlime(Transforms body into slime!)]]]></line>
 		</effectTooltipLines>
 		
 		<applyEffects><![CDATA[
-			[#npc.incrementAttribute(attribute("MAJOR_CORRUPTION"), 25)]
-			[#npc.addPotionEffect(attribute("MAJOR_CORRUPTION"), 25)]
+			[#npc.incrementAttribute(ATTRIBUTE_MAJOR_CORRUPTION, 25)]
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_CORRUPTION, 25)]
 			
-			#IF(npc.getBody().getBodyMaterial()==bodyMaterial("SLIME"))
+			#IF(npc.getBody().getBodyMaterial()==BODY_MATERIAL_SLIME)
 				<p style='margin-bottom:0; padding-bottom:0;'>
 					[style.colourDisabled([npc.NameIsFull] already a slime, so nothing happens...)]
 				</p>
 			#ELSE
-				[#npc.setBodyMaterial(bodyMaterial("SLIME"))]
+				[#npc.setBodyMaterial(BODY_MATERIAL_SLIME)]
 			#ENDIF
 		]]></applyEffects>
 		

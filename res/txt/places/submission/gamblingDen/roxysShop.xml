@@ -417,7 +417,7 @@
 		Thinking that Vengar could do with some changes to make him more receptive to being a submissive slave, you suggest to Roxy that she have him turned into a sissy slut. Chuckling in glee at your suggestion, the rat-girl points out a flaw in your plan, [roxy.speech(That's all well an' good, but I ain't got no transformative potions! I'd love fer me slave ta be a subby sissy slut, but I ain't gonna pay fer that ta be done ta him!)]
 	</p>
 	<p>
-		Explaining to Roxy that if she was willing to donate an item of food, you could enchant both it and your [#item("FETISH_UNREFINED").getName(false)] in order to make a couple of potions to turn Vengar into a submissive sissy. Hearing what it is you're saying, the rat-boy stands up from behind the counter and shouts, [vengar.speechNoEffects(Fuck you! I ain't bein' turned inta no sissy!)]
+		Explaining to Roxy that if she was willing to donate an item of food, you could enchant both it and your [#ITEM_FETISH_UNREFINED.getName(false)] in order to make a couple of potions to turn Vengar into a submissive sissy. Hearing what it is you're saying, the rat-boy stands up from behind the counter and shouts, [vengar.speechNoEffects(Fuck you! I ain't bein' turned inta no sissy!)]
 	</p>
 	<p>
 		Sharply slapping the rat-boy across the face, Roxy snaps, [roxy.speech(If ya ain't wantin' this, I could always arrange fer ya ta be locked up in public use stocks fer the rest o' yer miserable life! Wot's it gonna be, slave?! Ya gonna be a good girl, or ya want ta be turned inta a public cum-dump?!)]
@@ -426,7 +426,7 @@
 		Knowing that he doesn't have any choice but to submit to Roxy's wishes, Vengar sinks back down onto the floor with a defeated sigh. Tossing a burger at you, the foul-mouthed rat-girl snaps, [roxy.speech(Fuckin' get on with it then! I's lookin' forward ta seein' the sort of sissy slut you's gonna turn 'im inta!)]
 	</p>
 	<p>
-		Quickly setting about enchanting both the burger and your [#item("FETISH_UNREFINED").getName(false)], you've soon crafted two transformative potions. Grabbing both of them, Roxy force-feeds her slave the concoction which you've created, before stepping back and watching as he begins to transform...
+		Quickly setting about enchanting both the burger and your [#ITEM_FETISH_UNREFINED.getName(false)], you've soon crafted two transformative potions. Grabbing both of them, Roxy force-feeds her slave the concoction which you've created, before stepping back and watching as he begins to transform...
 	</p>
 	]]>
 	</htmlContent>

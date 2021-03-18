@@ -72,9 +72,9 @@
 						<tag>CONTRABAND_MEDIUM</tag>
 					</itemTagsRemoved> 
 					<unavailabilityText showDisabledButton="true"><![CDATA[
-						#IF(!pc.hasOccupationTag(occupationTag("ENFORCER_PATROL")) ||
-							!pc.hasOccupationTag(occupationTag("ENFORCER_SWORD")) ||
-							!pc.hasOccupationTag(occupationTag("ENFORCER_ORICL")))
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL) ||
+							!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_SWORD) ||
+							!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_ORICL))
 							Only Enforcers can use an Enforcer nameplate!
 						#ENDIF
 					]]></unavailabilityText> 

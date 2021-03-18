@@ -30,17 +30,17 @@
 		<enchantmentEffectId>ATTRIBUTE_PHYSIQUE</enchantmentEffectId>
 		
 		<effectTooltipLines>
-			<line><![CDATA[[style.boldGood(Restores)] 20% [style.boldHealth([#attribute("HEALTH_MAXIMUM").getName()])]]]></line>
-			<line><![CDATA[[style.boldGood(Restores)] 40% [style.boldMana([#attribute("MANA_MAXIMUM").getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 20% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 40% [style.boldMana([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
 		</effectTooltipLines>
 		
 		<applyEffects><![CDATA[
-			[##npc.incrementHealth(npc.getAttributeValue(attribute("HEALTH_MAXIMUM"))/30)]
-			[##npc.incrementMana(npc.getAttributeValue(attribute("MANA_MAXIMUM"))/30)]
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/30)]
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/30)]
 		]]></applyEffects>
 		
 		<itemTags>
-			<tag>attribute("TF_ITEM")</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
 			<tag>SOLD_BY_RALPH</tag>
 		</itemTags>
 	</coreAttributes>

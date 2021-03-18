@@ -39,7 +39,7 @@
 	<baseDamage><![CDATA[
 		#IF(npc.isArmMovementHindered())
 			0
-		#ELSE IF (npc.getHealth() < (npc.getAttributeValue(attribute("HEALTH_MAXIMUM")) * 0.5))
+		#ELSE IF (npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.5))
 			[#npc.getUnarmedDamage() * 9]
 		#ELSE
 			[#npc.getUnarmedDamage() * 3]
@@ -98,7 +98,7 @@
 	The parsing target of 'npc' corresponds to the character who is being checked to see if they have this move available to them.
 	All whitespace is stripped from the returned String before it is parsed into a Boolean. -->
 	<availabilityCondition><![CDATA[
-		[#npc.getArmType()==armType("dsg_raccoon_arm")]
+		[#npc.getArmType()==ARM_TYPE_dsg_raccoon_arm]
 	]]>
 	</availabilityCondition>
 	
@@ -116,7 +116,7 @@
 	<weighting><![CDATA[
 		#IF(npc.isArmMovementHindered())
 			0
-		#ELSE IF (npc.getHealth() < (npc.getAttributeValue(attribute("HEALTH_MAXIMUM")) * 0.5))
+		#ELSE IF (npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.5))
 			1.0
 		#ELSE
 			0.5
@@ -132,7 +132,7 @@
 	'damageType' will parse to this move's DamageType.
 	-->
 	<criticalCondition><![CDATA[
-		[#npc.getHealth() < (npc.getAttributeValue(attribute("HEALTH_MAXIMUM")) * 0.2)]
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.2)]
 	]]></criticalCondition>
 	
 	<!-- A short description to let the player know what the conditions are for this move to inflict a critical hit. -->

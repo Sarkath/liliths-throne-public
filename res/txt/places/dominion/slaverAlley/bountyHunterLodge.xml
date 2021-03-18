@@ -55,7 +55,7 @@
 	<htmlContent tag="FLOOR"><![CDATA[
 	<p>
 		Crossing the tavern's main floor, you have to weave your way around dozens of tables, most of which have rough-looking bounty hunters and other such unsavoury individuals seated around them.
-		#IF(pc.getRace()==race("DEMON"))
+		#IF(pc.getRace()==RACE_DEMON)
 			 The ones who see that you're a demon obligingly scoot their chairs forwards to give you room to pass, while those who shout curses before then taking a look at you are soon uttering apologies and offering you their seat.
 		#ELSE
 			 Growls and grumbles fill the air as you squeeze past the chairs and tables, with a couple of particularly rowdy individuals shouting curses as you pass.
@@ -76,7 +76,7 @@
 	<!-- DOBERMANNS -->
 	
 	<htmlContent tag="DOBERMANNS"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatSeduced")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatSeduced))
 		<p>
 			Wanting to talk to [wolfgang.name] and [karl.name] again, you [pc.walk] over to the table at which they're sitting and say hello. Looking up from their mugs of beer, the dobermann bounty hunters flash you a pair of lustful grins as they see that you've returned to them.
 		</p>
@@ -111,7 +111,7 @@
 		Deciding that it'd be a lot of fun to seduce and fuck this hot pair of bounty hunters, you put on your most alluring look and lean down over their table.
 		#IF(pc.hasAnyEnforcerStatusEffect())
 			 Noticing their glances at your uniform, you reassure the two dobermanns that you're off-duty for the rest of today, before suggestively teasing them by saying that Enforcers like to let themselves go just as much as anybody else.
-		#ELSEIF(pc.getRace()==race("DEMON"))
+		#ELSEIF(pc.getRace()==RACE_DEMON)
 			 Reassuring the two dobermanns that you're not going to make use of your demonic status to get them in trouble, you suggestively tease them by saying how your demonic body is always horny and hungry for a good fuck.
 		#ELSE
 			 Reassuring the two dobermanns that you've finished your business with Kay and have nothing to say about that subject, you start to suggestively tease and flirt with them.
@@ -200,7 +200,7 @@
 	</p>
 	<p>
 		[wolfgang.speech(Want a good double-stuffing of dog-cum, do you, slut?)] Wolfgang asks, before quickly gaining access to your
-		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 			 [pc.pussy+] and impatiently spreading your [pc.labia+] with both hands. Grunting in approval at what he sees, the dominant dobermann wastes no further time and immediately thrusts forwards, slamming his hot dog-cock deep into your [pc.pussy+].
 		#ELSE
 			 [pc.asshole+] and impatiently spreading your [pc.assSize] ass cheeks with both hands. Grunting in approval at what he sees, the dominant dobermann wastes no further time and immediately thrusts forwards, slamming his hot dog-cock deep into your [pc.asshole+].
@@ -221,16 +221,16 @@
 	</p>
 	<p>
 		[wolfgang.speech(Want a good double-stuffing of dog-cum, do you, slut?)] Wolfgang asks, before quickly gaining access to your
-		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 			 [pc.pussy+] and impatiently spreading your [pc.labia+] with both hands. Grunting in approval at what he sees, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], forcefully pulls you down and sinks his hot dog-cock deep into your [pc.pussy+].
 		#ELSE
 			 [pc.asshole+] and impatiently spreading your [pc.assSize] ass cheeks with both hands. Grunting in approval, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], forcefully pulls you down and sinks his hot dog-cock deep into your [pc.asshole+].
 		#ENDIF
 	</p>
 	<p>
-		#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+		#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 			Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes his cock up against Wolfgang's, and on his companion's next thrust, forces his cock into your asshole. The sensation of having your back-door stuffed full of two huge dog-cocks causes you to let out [pc.a_moan+], which is met by a synchronised pair of deep, amused grunts from the two dobermanns. Leaning into your back, Karl dominantly growls, [karl.speech(That's right, bitch, keep moaning like a whore!)]
-		#ELSEIF(!pc.isAbleToAccessCoverableArea(ca("ANUS"), true))
+		#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_ANUS, true))
 			Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes his cock up against Wolfgang's, and on his companion's next thrust, forces his cock into your [pc.pussy+]. The sensation of having your cunt stuffed full of two huge dog-cocks causes you to let out [pc.a_moan+], which is met by a synchronised pair of deep, amused grunts from the two dobermanns. Leaning into your back, Karl dominantly growls, [karl.speech(That's right, bitch, keep moaning like a whore!)]
 		#ELSE
 			Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes the [karl.cockHead+] of his cock up against your [pc.asshole+]. On his companion's next thrust, he suddenly forces his cock into your asshole, causing you to let out [pc.a_moan+]. Leaning into your back, Karl dominantly growls, [karl.speech(That's right, bitch, keep moaning like a whore!)]
@@ -349,7 +349,7 @@
 		The tavern's focal point takes the form of a long, wooden bar, behind which several barmaids and barmen are fulfilling the never-ending orders from the many patrons desperate for another drink. From their slurred, drunken speech and seemingly-unquenchable thirst, you can safely assume that most of the bounty hunters here end up spending a significant portion of their income on alcohol.
 	</p>
 	<p>
-		#IF(pc.getRace()==race("DEMON"))
+		#IF(pc.getRace()==RACE_DEMON)
 			Noticing that you're a demon, the crowd parts to let you [pc.step] up to the bar.
 		#ELSE
 			Although it's not easy, you manage to push your way through the crowd and [pc.step] up to the bar.

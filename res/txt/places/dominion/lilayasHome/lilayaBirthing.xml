@@ -144,7 +144,7 @@
 			Stepping forwards, you nervously smile at your demonic [lilaya.relation(pc)], before looking down and rubbing your belly, muttering, [pc.speech(Erm... Lilaya...)]
 		</p>
 		<p>
-			#IF(pc.isVisiblyPregnant() && !game.getDialogueFlags().hasFlag(flag("reactedToPregnancyLilaya")))
+			#IF(pc.isVisiblyPregnant() && !game.getDialogueFlags().hasFlag(FLAG_reactedToPregnancyLilaya))
 				[lilaya.speech(Wait... Are you <i>pregnant</i>?!)] she asks.
 			#ELSE
 				[lilaya.speech(So, you're ready to do something about your little pregnancy problem, huh?)] she asks.
@@ -165,7 +165,7 @@
 			Stepping forwards, you smile at your demonic [lilaya.relation(pc)], before looking down and rubbing your belly, saying, [pc.speech(Look, Lilaya, I got pregnant again!)]
 		</p>
 		<p>
-			#IF(pc.isVisiblyPregnant() && !game.getDialogueFlags().hasFlag(flag("reactedToPregnancyLilaya")))
+			#IF(pc.isVisiblyPregnant() && !game.getDialogueFlags().hasFlag(FLAG_reactedToPregnancyLilaya))
 				[lilaya.speech(Yes, I can see that!)] she replies, before walking over towards you and placing her hands on your swollen abdomen.
 			#ELSE
 				[lilaya.speech(So, you're ready to do something about your little pregnancy problem, huh?)] she replies, before walking over towards you and placing her hands on your swollen abdomen.
@@ -190,7 +190,7 @@
 	<p>
 		Cradling your swollen belly with both hands, you look up at Lilaya and say, [pc.speech(I'm ready to give birth now.)]
 	</p>
-	#IF(!pc.isQuestCompleted(questLine("SIDE_FIRST_TIME_PREGNANCY")))
+	#IF(!pc.isQuestCompleted(QUEST_LINE_SIDE_FIRST_TIME_PREGNANCY))
 		<p>
 			A delighted smile crosses her face, but despite her reassuring look, as well as knowing that you're in competent hands, you're still incredibly nervous about what comes next. Lilaya must have noticed the worried look on your face, as she moves up close to you and makes a soothing hushing sound. Her hands move down to gently stroke over your pregnant bump, and you start blushing at the thought of what's about to happen.
 		</p>
@@ -199,7 +199,7 @@
 			A delighted smile crosses her face, and despite the fact that you've done this before, you're still pretty nervous about what comes next. She must have noticed the worried look on your face, as she suddenly steps close to you and makes a soothing hushing sound. Her hands stroke over your pregnant bump, and you start blushing at the thought of what's about to happen.
 		</p>
 	#ENDIF
-	#IF(pc.getBodyMaterial()==bodyMaterial("SLIME"))
+	#IF(pc.getBodyMaterial()==BODY_MATERIAL_SLIME)
 		<p>
 			[lilaya.speech(Don't worry, I'm here for you,)] she says, pulling you into a loving hug for a moment before stepping back, [lilaya.speech(and anyway, giving birth to slimes is super easy and stress-free. We should do this in the birthing room, follow me!)]
 		</p>
@@ -208,7 +208,7 @@
 			[lilaya.speech(Don't worry, I'm here for you,)] she says, pulling you into a loving hug for a moment before stepping back, [lilaya.speech(but first, I need to know what sort of race you're going to be giving birth to.)]
 		</p>
 		<p>
-			#IF(!pc.isCoverableAreaExposed(ca("VAGINA")))
+			#IF(!pc.isCoverableAreaExposed(CA_VAGINA))
 				As she speaks, Lilaya starts stripping off your clothes, and as she gets access to your vagina, she lets out a little humming noise,
 			#ELSE
 				Your vagina is already exposed, and, after looking down at it for a moment, Lilaya lets out a little humming noise,
@@ -237,7 +237,7 @@
 		You glance across worriedly at Lilaya as she says this, but she squeezes your hand in hers and reassures you, [lilaya.speech(Don't worry, you don't need to stay conscious during this. Now, after I've delivered your children, they're going to grow pretty quickly, so don't be alarmed! They're also going to be pretty hungry, but don't worry if you're not producing any milk, we've got everything they'll need in that cabinet there. Oh, and also, they're probably going to want to leave straight away. All children are born with a strong desire to go out and become independent as soon as possible, so don't take it personally if they've already left by the time you wake up.)]
 	</p>
 	<p>
-		#IFplayer.isCoverableAreaExposed(ca("VAGINA"))
+		#IFplayer.isCoverableAreaExposed(CA_VAGINA)
 		#THEN
 			As she's speaking, Lilaya starts stripping off your clothes, and as she gets access to your vagina, she gently pushes you down onto the bed.
 		#ELSE
@@ -278,7 +278,7 @@
 		You let out a sigh she says this, but she squeezes your hand in hers and reassures you, [lilaya.speech(Don't worry, remember, you don't need to stay conscious during this. Now, just remember that after I've delivered your children, they're going to grow pretty quickly! They're also going to be hungry, but don't worry if you're not producing any milk, we've got everything they'll need in that cabinet there. Oh, and also, they're probably going to want to leave straight away. All children are born with a strong desire to go out and become independent as soon as possible, so don't take it personally if they've already left by the time you wake up.)]
 	</p>
 	<p>
-		#IFplayer.isCoverableAreaExposed(ca("VAGINA"))
+		#IFplayer.isCoverableAreaExposed(CA_VAGINA)
 		#THEN
 			As she's speaking, Lilaya starts stripping off your clothes, and as she gets access to your vagina, she gently pushes you down onto the bed.
 		#ELSE
@@ -302,7 +302,7 @@
 	<p>
 		[lilaya.speech(Right, here we go!)] she says, and you see sparks of purple energy start to run down her arms.
 	</p>
-	#IF(pc.getBodyMaterial()==bodyMaterial("SLIME"))
+	#IF(pc.getBodyMaterial()==BODY_MATERIAL_SLIME)
 		<p>
 			You strain your neck to look down, and see Lilaya bring her hands up to hover over your pregnant belly. A huge wave of exhaustion crashes over you, and you remember what she said about how she was going to draw out your aura for this. You struggle to keep your eyes open, but as you feel an intense pushing sensation deep with your slimy body, you're almost glad that you can't see what's happening. You start to slip in and out of consciousness, and you find yourself having a strange dream.
 		</p>
@@ -325,7 +325,7 @@
 		Letting out a good-natured laugh, she walks over to the drinks cabinet, saying, [Lilaya.speech(You know, I thought you might ask for that! I prepared this for you earlier!)]
 	</p>
 	<p>
-		#IF(pc.getBodyMaterial()==bodyMaterial("SLIME"))
+		#IF(pc.getBodyMaterial()==BODY_MATERIAL_SLIME)
 			She hands you a glass of what looks like ordinary sparkling water, but as you bring it to your lips and quickly down the liquid, you notice that it has a strong taste of peppermint. Almost instantly, you feel your eyelids grow heavy, and as you lie back on the bed, you vaguely see Lilaya bringing her hands up to hover over your pregnant belly. Sparks of purple energy start to run down her arms, and as you start to feel an intense pushing sensation deep within your slimy body, you're glad that you're not going to be awake for this.
 		#ELSE
 			She hands you a glass of what looks like ordinary sparkling water, but as you bring it to your lips and quickly down the liquid, you notice that it has a strong taste of peppermint. Almost instantly, you feel your eyelids grow heavy, and as you lie back on the bed, you vaguely see Lilaya bringing her hands up to hover over your pregnant belly. Sparks of purple energy start to run down her arms, and as you start to feel an intense pushing sensation deep within your vagina, you're glad that you're not going to be awake for this.
@@ -342,7 +342,7 @@
 		Taking your hands in hers, Lilaya leads you out of the lab and up to your room. Following her in as she pushes open the door, you see that Rose has laid a soft protective covering over your bed, and a few bottles of milk have been placed on your bedside cabinet.
 	</p>
 	<p>
-		#IF(!pc.isQuestCompleted(questLine("SIDE_FIRST_TIME_PREGNANCY")))
+		#IF(!pc.isQuestCompleted(QUEST_LINE_SIDE_FIRST_TIME_PREGNANCY))
 			As Lilaya leads you over to the bed, she explains the situation, [lilaya.speech(Ok, so I know you haven't done anything like this before, so I'll quickly explain what's going to happen. In order for you to start laying your eggs, I need to focus a special kind of arcane spell into your nice little bump here. This isn't as intense as giving birth to live young, so you're going to stay conscious through all of this.)]
 		#ELSE
 			As Lilaya leads you over to the bed, she explains the situation, [lilaya.speech(Ok, so I know we've done this before, but I'll just quickly remind you of what's going to happen. In order for you to start laying your eggs, I need to focus a special kind of arcane spell into your nice little bump here. This isn't as intense as giving birth to live young, so you're going to stay conscious through all of this.)]
@@ -395,9 +395,9 @@
 	</htmlContent>
 	
 	
-	<!-- LILAYA_ASSISTS_EGG_LAYING_PROTEclothing("THE_EGGS") -->
+	<!-- LILAYA_ASSISTS_EGG_LAYING_PROTECT_THE_EGGS -->
 	
-	<htmlContent tag="LILAYA_ASSISTS_EGG_LAYING_PROTEclothing("THE_EGGS")"><![CDATA[
+	<htmlContent tag="LILAYA_ASSISTS_EGG_LAYING_PROTECT_THE_EGGS"><![CDATA[
 	<p>
 		As you look down at your clutch of eggs, you find yourself burning with an overwhelming need to protect them at all costs. Throwing Lilaya's arms off of you, you collapse forwards, wrapping your [pc.arms] around your precious brood as you turn your head back and shout, [pc.speech(Get away! Don't hurt them!)]
 	</p>
@@ -416,26 +416,26 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="LILAYA_ASSISTS_EGG_LAYING_PROTEclothing("THE_EGGS_FEMININE_HATCHING")"><![CDATA[
+	<htmlContent tag="LILAYA_ASSISTS_EGG_LAYING_PROTECT_THE_EGGS_FEMININE_HATCHING"><![CDATA[
 	<p>
 		You watch in awe as the first egg starts to crack. Within moments, a little head bursts through the top, and your eyes open wide as you see a tiny [#SPECIAL_PARSE_0] crawling out. A little egg-tooth is still attached to her forehead, but after a quick shake, she drops it off onto the bed beneath her. As all the other eggs start cracking in turn, you feel a wave of exhaustion washing over you, and with what little strength you have left, you feebly call out for Lilaya.
 	</p>
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="LILAYA_ASSISTS_EGG_LAYING_PROTEclothing("THE_EGGS_MASCULINE_HATCHING")"><![CDATA[
+	<htmlContent tag="LILAYA_ASSISTS_EGG_LAYING_PROTECT_THE_EGGS_MASCULINE_HATCHING"><![CDATA[
 	<p>
 		You watch in awe as the first egg starts to crack. Within moments, a little head bursts through the top, and your eyes open wide as you see a tiny [#SPECIAL_PARSE_0] crawling out. A little egg-tooth is still attached to his forehead, but after a quick shake, he drops it off onto the bed beneath him. As all the other eggs start cracking in turn, you feel a wave of exhaustion washing over you, and with what little strength you have left, you feebly call out for Lilaya.
 	</p>
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="LILAYA_ASSISTS_EGG_LAYING_PROTEclothing("THE_EGGS_END")"><![CDATA[
+	<htmlContent tag="LILAYA_ASSISTS_EGG_LAYING_PROTECT_THE_EGGS_END"><![CDATA[
 	<p>
 		As your head collapses down onto the bed, you vaguely see Lilaya rushing into the room. A delighted smile breaks out across her face as she sees that your eggs are hatching, and just before you pass out, you see her bending down in order to start taking care of your children.
 	</p>
 	<p>
-		#IF(pc.getBreastRawMilkStorageValue()>0 && pc.isAbleToAccessCoverableArea(ca("NIPPLES"), true) && pc.getNippleShape()==nippleShape("_NORMAL") && game.isLactationContentEnabled())
+		#IF(pc.getBreastRawMilkStorageValue()>0 && pc.isAbleToAccessCoverableArea(CA_NIPPLES, true) && pc.getNippleShape()==NIPPLE_SHAPE_NORMAL && game.isLactationContentEnabled())
 			Some time later, you drift back into consciousness for a moment as you feel a desperate suckling at your nipples, and you're vaguely aware that it's your children who are eagerly drinking down mouthfuls of your [pc.milk]. Letting your eyelids close again, you soon drift off into an exhausted sleep.
 		#ELSE
 			Some time later, you drift back into consciousness for a moment as you feel a weight on your chest, and you're vaguely aware of cradling your children in your arms as they eagerly drink down bottle after bottle of the milk that Lilaya has provided for you. Letting your eyelids close again, you soon drift off into an exhausted sleep.

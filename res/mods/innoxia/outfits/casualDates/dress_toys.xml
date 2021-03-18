@@ -28,12 +28,12 @@
 			<legConfiguration>BIPEDAL</legConfiguration>
 		</acceptableLegConfigurations>
 		
-		<!-- The condition that needs to be satisfied for someone to generate this outfit. "npc.hasFetish(fetish("FETISH_EXHIBITIONIST"))" should probably always be taken into account. This conditional instance does NOT support the "clothingConditionalX" elements.
+		<!-- The condition that needs to be satisfied for someone to generate this outfit. "npc.hasFetish(FETISH_EXHIBITIONIST)" should probably always be taken into account. This conditional instance does NOT support the "clothingConditionalX" elements.
 		Accepted method calls for the "npc" can be found here: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/character/GameCharacter.java 
 		Accepted method calls for the main game (using the "game" tag) can be found here: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/Game.java
 		And also here: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/dialogue/utils/UtilText.java 
 		The method "initScriptEngine()" in UtiLText.java shows you what you can get a handle on.-->
-		<conditional><![CDATA[!npc.hasFetish(fetish("FETISH_EXHIBITIONIST")) && npc.hasFetish(fetish("FETISH_MASTURBATION")) && npc.getFetishDesire(FETISH_SUBMISSIVE).isPositive()]]></conditional>
+		<conditional><![CDATA[!npc.hasFetish(FETISH_EXHIBITIONIST) && npc.hasFetish(FETISH_MASTURBATION) && npc.getFetishDesire(FETISH_SUBMISSIVE).isPositive()]]></conditional>
 		
 		<!-- How likely this outfit is to be randomly chosen out of all available ones. Default outfits have a weight of 100. As there could be several outfits added to the weighting method, the chance of this outfit being selected is not able to be precisely determined. -->
 		<weight>100</weight><!-- I left this one at 100, even though it's a special outfit, as the conditional check is hard to satisfy. -->

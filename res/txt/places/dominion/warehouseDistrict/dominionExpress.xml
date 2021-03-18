@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dialogue>
 
-	<htmlContent tag="WAREHOUSE_DISTRIclothing("DOMINION_EXPRESS")"><![CDATA[
+	<htmlContent tag="WAREHOUSE_DISTRICT_DOMINION_EXPRESS"><![CDATA[
 	<p>
 		[style.boldBrown(Dominion Express)]<br/>
 		Looking at the business card given to you by Natalya, you see that the delivery company which employs her as a 'Stable Mistress' is very near to where you're currently standing, and is open to visiting members of the public between the hours of
-		#IF(pc.isQuestFailed(questLine("ROMANCE_NATALYA")))
+		#IF(pc.isQuestFailed(QUEST_LINE_ROMANCE_NATALYA))
 			 [unit.time(6)]-[unit.time(22)]. As Natalya had you thrown out and banned from ever returning to Dominion Express, there's nothing for you to do there...
 		#ELSEIF(game.isExtendedWorkTime())
-			#IF(pc.isQuestCompleted(questLine("ROMANCE_NATALYA")))
+			#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
 				 [style.colourMinorGood([unit.time(6)]-[unit.time(22)])]. As you're a qualified filly, you're free to come and go at any time of the day, and you wonder whether you should head inside and service some of the centaur slaves...
 			#ELSE
 				 [style.colourMinorGood([unit.time(6)]-[unit.time(22)])]. As the warehouse out of which Dominion Express operates is currently [style.colourGood(open)], you could head inside and see if you could arrange to meet the [natalya.race] again...
 			#ENDIF
-		#ELSEIF(pc.isQuestCompleted(questLine("ROMANCE_NATALYA")))
+		#ELSEIF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
 			 [style.colourMinorBad([unit.time(6)]-[unit.time(22)])]. As you're a qualified filly, the opening times don't apply to you, and even though Natalya won't be present at this hour, you could still head inside and service some of the centaur slaves...
 		#ELSE
 			 [style.colourMinorBad([unit.time(6)]-[unit.time(22)])]. As the warehouse out of which Dominion Express operates is currently [style.colourBad(closed)], you'll have to come back during opening hours if you wanted to meet the [natalya.race] again...
@@ -45,9 +45,9 @@
 		#ELSE
 			Due to the fact that the warehouse is closed to the public at this hour, there's only a single smartly-dressed horse-girl sitting behind the counter. Noticing your entry, she stifles a yawn and turns to face you.
 		#ENDIF
-		#IF(pc.isQuestCompleted(questLine("ROMANCE_NATALYA")) && collar!=null && collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA) && collar!=null && collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
 			 Noticing the fact that you're wearing a filly collar, she waves you through and says, [style.speechFeminine(Go on though, filly. I'm sure there are plenty of slaves waiting for you in the stables...)]
-		#ELSEIF(pc.hasQuest(questLine("ROMANCE_NATALYA")))
+		#ELSEIF(pc.hasQuest(QUEST_LINE_ROMANCE_NATALYA))
 			 Not wanting to be delayed, you've already got your stamped business card out, and as you show it to the receptionist, she waves you past and says,
 			#IF(game.isExtendedWorkTime())
 				 [style.speechFeminine(Go on though. I'm sure Natalya is waiting to see you...)]
@@ -114,9 +114,9 @@
 		#ELSE
 			Despite the hour of day, you find yourself passing the occasional centaur or centauress slave on your way down the corridor. Unlike in daylight hours, however, these slaves don't seem to be picking up or dropping off cargo, and instead appear to be tasked with reorganising the goods already stored here.
 		#ENDIF
-		#IF(pc.isQuestCompleted(questLine("ROMANCE_NATALYA")) && collar!=null && collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA) && collar!=null && collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
 			 Catching sight of your filly collar, these centaurs hungrily stare at you as you pass,
-			#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+			#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
 				 and you realise that [style.colourPink(it's only a matter of time before one of them tries to make you service them)].
 			#ELSE
 				 but [style.colourBad(as you can't access your mouth, none of them will try to make you service them)].
@@ -148,9 +148,9 @@
 		#ELSE
 			It's through the labyrinth-like aisles formed by these stacks of stored goods which you're currently [pc.walking], and despite the hour of day, you find yourself passing the occasional centaur or centauress slave. 
 		#ENDIF
-		#IF(pc.isQuestCompleted(questLine("ROMANCE_NATALYA")) && collar!=null && collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA) && collar!=null && collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
 			 Noticing the filly collar around your neck, these centaurs make lewd comments as you pass,
-			#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+			#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
 				 and you realise that [style.colourPink(it's only a matter of time before one of them tries to make you service them)].
 			#ELSE
 				 but [style.colourBad(as you can't access your mouth, none of them will try to make you service them)].
@@ -220,7 +220,7 @@
 		</p>
 	</div>
 	<p>
-		#IF(pc.isQuestCompleted(questLine("ROMANCE_NATALYA")))
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
 			Having officially qualified as one of Dominion Express's fillies, you wonder whether you should make use of this rewards station now, or perhaps you should go and earn some more filly points first...
 		#ELSE
 			As you're not one of Dominion Express's fillies, you doubt that you'll be able to make use of this rewards station...
@@ -250,7 +250,7 @@
 	</p>
 	<p>
 		Not wanting to trigger any kind of alarm system, you step back from the machine, and as you do so, the projected arcane words thankfully disappear.
-		#IF(pc.isQuestCompleted(questLine("ROMANCE_NATALYA")))
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
 			 It doesn't look like you're going to be able to make use of this 'filly rewards station' without first equipping your filly choker...
 		#ELSE
 			 It doesn't look like you're going to be able to make use of this 'filly rewards station' without being a 'filly' yourself...
@@ -438,7 +438,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="STABLES_NO_COLLAR"><![CDATA[
-		#IF(pc.isQuestCompleted(questLine("ROMANCE_NATALYA")))
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
 			 As he sees you approach, he stifles a yawn and says, [style.speechMasculine(Hey, you're a filly, aren't you? Sorry, but I can't let you into the stables if you're not wearing your choker...)]
 		#ELSE
 			 As he sees you approach, he stifles a yawn and says, [style.speechMasculine(Sorry, [pc.sir], but visitors aren't allowed into the stables...)]
@@ -772,7 +772,7 @@
 			At the far end of the corridor, positioned next to the stables, there's a solid wooden door bearing a plaque which reads; 'Stable Mistress Natalya's Office'. Looking through the large glass windows positioned to the side of this door, you see that there's a small waiting room on the other side, in which a smartly-dressed horse-girl secretary is sitting behind a small wooden desk.
 		</p>
 		<p>
-			#IF(pc.hasQuest(questLine("ROMANCE_NATALYA")))
+			#IF(pc.hasQuest(QUEST_LINE_ROMANCE_NATALYA))
 				If you wanted to pay Mistress Natalya another visit, it looks as though you'll first have to enter this waiting room and deal with the secretary again...
 			#ELSE
 				If you wanted to pay Natalya a visit, it looks as though you'll first have to enter this waiting room and deal with this secretary...
@@ -783,7 +783,7 @@
 			At the far end of the corridor, positioned next to the stables, there's a solid wooden door bearing a plaque which reads; 'Stable Mistress Natalya's Office'. Looking through the large glass windows positioned to the side of this door, you see that there's a small, totally-deserted waiting room on the other side. As Mistress Natalya isn't working at this hour, the waiting room's light are all turned off, and its door is securely locked.
 		</p>
 		<p>
-			#IF(pc.hasQuest(questLine("ROMANCE_NATALYA")))
+			#IF(pc.hasQuest(QUEST_LINE_ROMANCE_NATALYA))
 				If you wanted to pay Mistress Natalya another visit, you'll have to come back between the hours of [style.colourMinorBad([unit.time(6)]-[unit.time(22)])]...
 			#ELSE
 				If you wanted to pay Natalya a visit, you'll have to come back between the hours of [style.colourMinorBad([unit.time(6)]-[unit.time(22)])]...
@@ -802,7 +802,7 @@
 	#ENDVAR
 	
 	<p>
-		#IF(!game.getDialogueFlags().hasFlag(flag("natalyaInterviewOffered")))
+		#IF(!game.getDialogueFlags().hasFlag(FLAG_natalyaInterviewOffered))
 			Deciding that you want to pay Natalya a visit, you knock on the door, which draws an immediate response from the secretary on the other side, who calls out, [style.speechFeminine(Enter!)]
 		#ELSE
 			Deciding that you want to pay Mistress Natalya another visit, you knock on the door, which again draws an immediate response from the secretary on the other side, who calls out, [style.speechFeminine(Enter!)]
@@ -810,7 +810,7 @@
 	</p>
 	<p>
 		Turning the handle and pushing the door open, you [pc.step] forwards into the small waiting room. A couple of comfortable leather sofas and a wooden coffee table are placed against the right-hand wall, while to your left, the smartly-dressed horse-girl secretary is looking at you from behind her desk.
-	#IF(game.getDialogueFlags().hasFlag(flag("natalyaBusy")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaBusy))
 			 Recognising you from earlier, she frowns at you and flatly states, [style.speechFeminine(Mistress Natalya instructed you not to bother her again today, did she not? Come back tomorrow if you have something to discuss with her.)]
 		</p>
 		<p>
@@ -832,7 +832,7 @@
 		<p style='text-align:center;'>
 			[style.italicsMinorBad(If you want to see Mistress Natalya, you'll have to come back after resolving your pregnancy.)]
 		</p>
-	#ELSEIF(pc.hasIncubationLitter(orifice("VAGINA")))
+	#ELSEIF(pc.hasIncubationLitter(ORIFICE_VAGINA))
 			Before you can say anything, a curious little arcane device to one side of the door lets out a high-pitched beeping noise, which causes the horse-girl to frowns at you and flatly state, [style.speechFeminine(That means your womb's stuffed full of eggs. I am not sure if you're aware, but Mistress Natalya despises anything even remotely related to pregnancies. She will have no interest in seeing you until after you've laid your eggs.)]
 		</p>
 		<p>
@@ -865,7 +865,7 @@
 	
 	<htmlContent tag="OFFICE_STABLE_ENTRY"><![CDATA[
 	<p>
-		#IF(!game.getDialogueFlags().hasFlag(flag("natalyaInterviewOffered")))
+		#IF(!game.getDialogueFlags().hasFlag(FLAG_natalyaInterviewOffered))
 			Deciding that you want to pay Natalya a visit, you knock on the door, which draws an immediate response from the secretary on the other side, who calls out, [style.speechFeminine(Enter!)]
 		#ELSE
 			Deciding that you want to pay Mistress Natalya another visit, you knock on the door, which again draws an immediate response from the secretary on the other side, who calls out, [style.speechFeminine(Enter!)]
@@ -873,7 +873,7 @@
 	</p>
 	<p>
 		Turning the handle and pushing the door open, you [pc.step] forwards into the small waiting room. A couple of comfortable leather sofas and a wooden coffee table are placed against the right-hand wall, while to your left, the smartly-dressed horse-girl secretary is looking at you from behind her desk.
-		#IF(!game.getDialogueFlags().hasFlag(flag("natalyaInterviewOffered")))
+		#IF(!game.getDialogueFlags().hasFlag(FLAG_natalyaInterviewOffered))
 				 Raising her eyebrows, this secretary asks, [style.speechFeminine(How may I help you? Mistress Natalya isn't expecting any visitors today...)]
 			</p>
 			<p>
@@ -907,7 +907,7 @@
 		 Just like the last time you saw her, Natalya is smartly dressed in a black feminine blazer and white shirt, which are struggling to keep her large, [natalya.cupSize]-cup breasts in check. A huge black skirt is concealing her feral horse's body, while a pair of royal-purple hair sticks are keeping her silken, black hair tied up into a smart bun. Perched on the bridge of her cute feminine nose, she's wearing a pair of black, thick-rimmed glasses, behind which her grey-green eyes are flicking up and down as she looks you over.
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("playerSubmittedToNatalya")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_playerSubmittedToNatalya))
 			[natalya.speech(I am pleased to see you here again, filly. I bet you've been thinking of nothing but my cock since I had you jerk me off in that alleyway,)]
 		#ELSE
 			[natalya.speech(I am pleased to see you here again, filly. I knew you'd come and see me again,)]
@@ -938,13 +938,13 @@
 		#ELSEIF(pc.getBreastSize().getMeasurement()<8)
 			 Mistress Natalya's face instantly scrunches up into a furious scowl as she catches sight of your reduced breast size, and she screams, [natalya.speech(Bad filly! How <i>dare</i> you transform yourself! You are to kneel before me, <i>right this instant</i>!)]
 		#ELSEIF(pc.hasVagina())
-			#IF(pc.isCoverableAreaExposed(ca("VAGINA")))
+			#IF(pc.isCoverableAreaExposed(CA_VAGINA))
 				 Mistress Natalya's face instantly scrunches up into a furious scowl as she catches sight of your exposed pussy, and she screams, [natalya.speech(Bad filly! How <i>dare</i> you transform yourself! You are to kneel before me, <i>right this instant</i>!)]
 			#ELSE
 				 Mistress Natalya's face instantly scrunches up into a suspicious glare, and she ponders, [natalya.speech(I can tell that there's something not quite right about you... Wait... You've got a filthy pussy between your [pc.legs], haven't you?! You bad filly! How <i>dare</i> you transform yourself! You are to kneel before me, <i>right this instant</i>!)]
 			#ENDIF
 		#ELSE
-			#IF(pc.isCoverableAreaExposed(ca("PENIS")))
+			#IF(pc.isCoverableAreaExposed(CA_PENIS))
 				 Mistress Natalya's face instantly scrunches up into a furious scowl as she sees that you no longer have a cock, and she screams, [natalya.speech(Bad filly! How <i>dare</i> you transform yourself! You are to kneel before me, <i>right this instant</i>!)]
 			#ELSE
 				 Mistress Natalya's face instantly scrunches up into a suspicious glare, and she ponders, [natalya.speech(I can tell that there's something not quite right about you... Wait... You've ha your penis removed, haven't you?! You bad filly! How <i>dare</i> you transform yourself! You are to kneel before me, <i>right this instant</i>!)]
@@ -976,7 +976,7 @@
 		var collar = pc.getClothingInSlot(IS_NECK);
 	#ENDVAR
 	
-	#IF(collar.getColour(0)==colour("clothing("GOLD")"))
+	#IF(collar.getColour(0)==COLOUR_CLOTHING_GOLD)
 		<p>
 			Looking up from the piles of paperwork arrayed over the desk in front of her, Mistress Natalya starts to flash you one of her usual arrogant smirks, but as she catches sight of your gold filly choker, she does a double-take and asks in wide-eyed shock, [natalya.speech(W-What?! You actually managed to afford the gold upgrade?! Y-You're not supposed to be able to do that!)]
 		</p>
@@ -1002,11 +1002,11 @@
 		var collar = pc.getClothingInSlot(IS_NECK);
 	#ENDVAR
 	
-	#IF(collar.getColour(0)==colour("clothing("GOLD")"))
+	#IF(collar.getColour(0)==COLOUR_CLOTHING_GOLD)
 		<p>
-			#IF(game.getDialogueFlags().hasFlag(flag("natalyaDailySexAsDom")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsDom))
 				Looking up from the piles of paperwork arrayed over the desk in front of her, Mistress Natalya nervously gulps as she glances down at the golden filly choker around your neck, before quickly reminding you,
-				#IF(game.getDialogueFlags().hasFlag(flag("natalyaDailySexAsSub")))
+				#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsSub))
 					 [natalya.speech(T-The contract explicitly states that golden fillies only get to dominate me once a day, filly! I already submitted to you earlier, s-so you can't make me do it again today! As you've also serviced me today, there's nothing more that I can give to you!)]
 				#ELSE
 					 [natalya.speech(T-The contract explicitly states that golden fillies only get to dominate me once a day, filly! I already submitted to you earlier, s-so you can't make me do it again today! Perhaps you'd like me to remind you of your true place and let you service my cock or ass, hmm?!)]
@@ -1015,9 +1015,9 @@
 				Looking up from the piles of paperwork arrayed over the desk in front of her, Mistress Natalya nervously gulps as she glances down at the golden filly choker around your neck, before anxiously asking, [natalya.speech(Y-You're not going to order me to submit to you, are you? You're just a submissive, anal-loving filly slut! D-Don't forget that!)]
 			#ENDIF
 		</p>
-	#ELSEIF(collar.getColour(0)==colour("clothing("SILVER")"))
+	#ELSEIF(collar.getColour(0)==COLOUR_CLOTHING_SILVER)
 		<p>
-			#IF(game.getDialogueFlags().hasFlag(flag("natalyaDailySexAsSub")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsSub))
 				Looking up from the piles of paperwork arrayed over the desk in front of her, Mistress Natalya glances down at the silver filly choker around your neck, before raising her eyebrows and reminding you, [natalya.speech(You only get to service me once per day, filly! I already let you have your fun earlier, so there's nothing more for me to give to you today!)]
 			#ELSE
 				Looking up from the piles of paperwork arrayed over the desk in front of her, Mistress Natalya glances down at the silver filly choker around your neck, before flashing you a sly smirk and asking, [natalya.speech(What is it filly? Do you want to get a taste of my big, fat cock? Or maybe you want to eat my ass, hmm? Go on, filly, tell me what it is you want!)]
@@ -1037,7 +1037,7 @@
 	<htmlContent tag="OFFICE_STABLE_ENTRY_DENIED_ENTRY"><![CDATA[
 	<p>
 		Not being able to see
-		#IF(pc.hasQuest(questLine("ROMANCE_NATALYA")))
+		#IF(pc.hasQuest(QUEST_LINE_ROMANCE_NATALYA))
 			 Mistress Natalya again
 		#ELSE
 			 Natalya
@@ -1079,9 +1079,9 @@
 	#ENDVAR
 	
 	<p>
-		#IF(collar.getColour(0)==colour("clothing("GOLD")"))
-			#IF(game.getDialogueFlags().hasFlag(flag("natalyaDailySexAsDom")))
-				#IF(game.getDialogueFlags().hasFlag(flag("natalyaDailySexAsSub")))
+		#IF(collar.getColour(0)==COLOUR_CLOTHING_GOLD)
+			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsDom))
+				#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsSub))
 					Having already dominated and submitted to Mistress Natalya today, you're unable to have sex with her again until tomorrow. With nothing more for you to do with the [natalya.race], you tell her that you're going to return to your duties, before turning around and exiting her office.
 				#ELSE
 					Having already dominated Mistress Natalya today, you're unable to make her your submissive bitch again until tomorrow. Deciding that you don't want to submit to the [natalya.race], you tell her that you're going to return to your duties, before turning around and exiting her office.
@@ -1089,8 +1089,8 @@
 			#ELSE
 				Deciding that you don't want to have sex with the [natalya.race] right now, you tell her that you're going to return to your duties, before turning around and exiting her office.
 			#ENDIF
-		#ELSEIF(collar.getColour(0)==colour("clothing("SILVER")"))
-			#IF(game.getDialogueFlags().hasFlag(flag("natalyaDailySexAsSub")))
+		#ELSEIF(collar.getColour(0)==COLOUR_CLOTHING_SILVER)
+			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsSub))
 				Having already submitted to Mistress Natalya today, you're unable to sexually service her again until tomorrow. With nothing more for you to do with the [natalya.race], you tell her that you're going to return to your duties, before turning around and exiting her office.
 			#ELSE
 				Deciding that you don't want to submit to the [natalya.race] right now, you tell her that you're going to return to your duties, before turning around and exiting her office.
@@ -1204,7 +1204,7 @@
 	<htmlContent tag="OFFICE_STABLE_INTERVIEW_3"><![CDATA[
 	<p>
 		Hurrying to do as you're told, you reach up to lift Mistress Natalya's skirt, fully revealing her black-haired horse-like body.
-		#IF(game.getDialogueFlags().hasFlag(flag("playerSubmittedToNatalya")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_playerSubmittedToNatalya))
 			 Although you've seen it before, you still find yourself staring in awe at how huge the [natalya.race]'s [natalya.penisLengthValue] cock is, especially in proportion to her relatively small body.
 		#ELSE
 			 As you kneel back down beside her, you find yourself staring in awe at how huge the [natalya.race]'s [natalya.penisLengthValue] cock is, especially in proportion to her relatively small body.
@@ -1284,9 +1284,9 @@
 	</htmlContent>
 	
 	
-	<!-- OFFICE_STABLE_CONTRAclothing("OFFERED") -->
+	<!-- OFFICE_STABLE_CONTRACT_OFFERED -->
 	
-	<htmlContent tag="OFFICE_STABLE_CONTRAclothing("OFFERED")"><![CDATA[
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_OFFERED"><![CDATA[
 	<p>
 		Opening your mouth, you dart out your [pc.tongue+] and start eagerly licking up all the excess cum and saliva that's coating Mistress Natalya's softening horse-cock. Encouraged by the soft moans which she keeps on making, you spend the next several minutes cleaning the small [natalya.race]'s disproportionately-huge cock while she continues filling out the forms she retrieved from her desk.
 	</p>
@@ -1308,7 +1308,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="OFFICE_STABLE_CONTRAclothing("OFFERED_NO_TF")"><![CDATA[
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_OFFERED_NO_TF"><![CDATA[
 	<p>
 		[pc.speech(I wont need to be transformed though, will I?)] you ask, confident that your big breasts, feminine figure, and [pc.cockSize] cock are just what Natalya is looking for.
 	</p>
@@ -1321,7 +1321,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="OFFICE_STABLE_CONTRAclothing("OFFERED_TF")"><![CDATA[
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_OFFERED_TF"><![CDATA[
 	<p>
 		[pc.speech(So you mean you're going to transform me?)] you ask.
 	</p>
@@ -1339,7 +1339,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="OFFICE_STABLE_CONTRAclothing("OFFERED_REFUSED")"><![CDATA[
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_OFFERED_REFUSED"><![CDATA[
 	<p>
 		The prospect of going through further training with Natalya's centaur slaves is too much for you, and so you stand up and grab your clothes, before firmly telling Natalya that you're not going to sign up to become one of her fillies. Clearly not used to being spoken to in such a direct manner by people who she sees as being beneath her, Natalya steps back in shock, before angrily shouting, [natalya.speech(How dare you refuse me?! Get the hell out of my office! I never want to see you here again!)]
 	</p>
@@ -1347,16 +1347,16 @@
 	</htmlContent>
 	
 	
-	<!-- OFFICE_STABLE_CONTRAclothing("SIGNED") -->
+	<!-- OFFICE_STABLE_CONTRACT_SIGNED -->
 	
-	<htmlContent tag="OFFICE_STABLE_CONTRAclothing("SIGNED_NO_TF")"><![CDATA[
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_SIGNED_NO_TF"><![CDATA[
 	<p>
 		Doing as you're told, you sign the forms, declaring yourself willing to be trained into one of Dominion Express's fillies. Pushing her glasses up onto the bridge of her nose, Mistress Natalya allows a big grin to settle on her face as she files away your contract, before turning to face you and asking, [natalya.speech(So, filly, to complete the first stage of your training, you'll be sucking one of my centaur slaves' cocks. Would you like to service one of my big, strong boys, or would you prefer to suck a big, fat [style.shemale] cock?)]
 	</p>
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="OFFICE_STABLE_CONTRAclothing("SIGNED")"><![CDATA[
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_SIGNED"><![CDATA[
 	<p>
 		Doing as you're told, you sign the forms, declaring yourself willing to be trained into one of Dominion Express's fillies. Pushing her glasses up onto the bridge of her nose, Mistress Natalya allows a big grin to settle on her face as she files away your contract, before turning to face you and declaring, [natalya.speech(First of all, filly, we'll get your body transformed into one that's suitable for servicing my centaur slaves.)]
 	</p>
@@ -1371,7 +1371,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="OFFICE_STABLE_CONTRAclothing("SIGNED_TRANSFORMED")"><![CDATA[
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_SIGNED_TRANSFORMED"><![CDATA[
 	<p>
 		Doing as you're told, you [pc.step] forwards and take the offered bottle, before pulling out the stopper and gulping down all the sickly-sweet liquid contained within. Almost immediately, you feel an intense heat pulsing throughout your entire body, and as you start to transform, Mistress Natalya teases, [natalya.speech(This is why I insisted on having you strip naked! I love watching new fillies being transformed...)]
 	</p>
@@ -1394,7 +1394,7 @@
 	</p>
 	<p>
 		Doing as you're told, you wait in Mistress Natalya's office while she prances off to fetch [npc.a_race] from the stables. Thankfully, you don't have to wait for long, and after just a few minutes, she returns with [npc.a_gender] [npc.race] slave in tow. Standing at [npc.heightValue] from head to hoof, and possessing a large, muscular body,
-		#IF(npc.getRaceStage()==race("STAGE_GREATER"))
+		#IF(npc.getRaceStage()==RACE_STAGE_GREATER)
 			 this dark-brown-haired
 		#ELSE
 			 this olive-skinned, dark-brown-haired

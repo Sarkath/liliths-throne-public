@@ -38,7 +38,7 @@
 		<p>
 			Thanking [finch.name], you wonder what you do next...
 		</p>
-	#ELSEIF(!game.getDialogueFlags().hasFlag(flag("finchIntroduced")))
+	#ELSEIF(!game.getDialogueFlags().hasFlag(FLAG_finchIntroduced))
 		<p>
 			The heavy oak doors of the 'Slavery Administration' building are wide open, and, stepping through the inviting entranceway, you find yourself standing in a large, cavernous entrance hall. Rows of marble pillars line the edges of the room, with little wooden benches interspersed between them. Two doors are set into the wall opposite you, with signs labelling them as 'Holding pens' and 'Offices'. The only other piece of furniture to be seen is a long, black-marble desk, behind which a black-haired cat-boy is grinning at you with mischievous eyes.
 		</p>

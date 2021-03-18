@@ -23,7 +23,7 @@
 	
 	<generationAttributes>
 		<clothingConditional1 constant="true"><![CDATA[npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL && npc.getFootStructure()==FOOT_STRUCTURE_PLANTIGRADE]]></clothingConditional1> <!-- is bipedal -->
-		<clothingConditional2 constant="true"><![CDATA[npc.hasFetish(fetish("FETISH_EXHIBITIONIST"))]]></clothingConditional2> <!-- Exhibitionist -->
+		<clothingConditional2 constant="true"><![CDATA[npc.hasFetish(FETISH_EXHIBITIONIST)]]></clothingConditional2> <!-- Exhibitionist -->
 		<clothingConditional3 constant="true"><![CDATA[npc.isArmWings()]]></clothingConditional3> <!-- arm-wings -->
 		
 		<presetColourGroup1 values="ALL_METAL"/>
@@ -187,7 +187,7 @@
 		</clothingType>
 		
 		<clothingType> <!-- Chastity. -->
-			<conditional><![CDATA[npc.hasPenisIgnoreDildo() && npc.hasFetish(fetish("FETISH_DENIAL_SELF"))]]></conditional>
+			<conditional><![CDATA[npc.hasPenisIgnoreDildo() && npc.hasFetish(FETISH_DENIAL_SELF)]]></conditional>
 			<types>
 				<type>innoxia_bdsm_chastity_cage</type>
 				<type>innoxia_bdsm_ornate_chastity_cage</type>

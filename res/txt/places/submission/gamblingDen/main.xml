@@ -36,9 +36,9 @@
 		You find yourself standing in the Gambling Den's entrance hall. A sign hanging from the ceiling in front of you reads 'Welcome to the Gambling Den!', and from somewhere further within the building, you hear the distinctive sounds of laughter, conversation, and then of a slot machine dispensing coins to a lucky winner. 
 	</p>
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("axelFeminised")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_axelFeminised))
 			To one side of the hall, you see the curvy, feminine figure of [axel.name], the owner of this establishment. The albino [axel.race] looks to be busy keeping a close watch over everyone who comes and goes.
-		#ELSEIF(game.getDialogueFlags().hasFlag(flag("axelSissified")))
+		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_axelSissified))
 			To one side of the hall, you see the slim, androgynous figure of [axel.name], the owner of this establishment. The albino [axel.race] looks to be busy keeping a close watch over everyone who comes and goes.
 		#ELSE
 			To one side of the hall, you see the large, muscular figure of [axel.name], the owner of this establishment. The albino [axel.race] looks to be busy keeping a close watch over everyone who comes and goes.
@@ -117,7 +117,7 @@
 	
 	<htmlContent tag="OFFICE_WITH_AXEL"><![CDATA[
 	#IF(axel.isAttractedTo(pc))
-		#IF(game.getDialogueFlags().hasFlag(flag("axelSissified")) || game.getDialogueFlags().hasFlag(flag("axelFeminised")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_axelSissified) || game.getDialogueFlags().hasFlag(FLAG_axelFeminised))
 			<p>
 				Wanting to spend some time in private with [axel.name], you ask [axel.herHim] if the two of you could step into [axel.her] office for a while. Upon hearing your suggestion, the [axel.race] smiles, and with a faint blush forming in [axel.her] cheeks, [axel.she] teases,
 				#IF(pc.hasCompanions())
@@ -274,7 +274,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="START_AXEL_ORAL_RECEIVING"><![CDATA[
-	#IF(pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(ca("PENIS"), true))
+	#IF(pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true))
 		<p>
 			Stepping up in front of Axel, you slide your [pc.hands] up over his muscular chest to rest them on his wide shoulders. Rubbing your groin up against his leg, you tease, [pc.speech(How about you kneel down and get a taste of my cock?)]
 		</p>
@@ -516,7 +516,7 @@
 	
 	<!-- OFFICE_WITH_LEXA_FEMINISE_APPLY -->
 	
-	<htmlContent tag="OFFICE_WITH_LEXA_clothing("FEMININE")"><![CDATA[
+	<htmlContent tag="OFFICE_WITH_LEXA_CLOTHING_FEMININE"><![CDATA[
 	<p>
 		Thinking that it would be best for [axel.name] to stick with the more conservative of the three choices, you tell her that she's bound to look beautiful wearing the light pink dress. Her face lights up as you say this, and with an excited squeak, she quickly retreats into what's become her dressing room, clearly eager to change into the outfit you suggested.
 	</p>
@@ -529,7 +529,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="OFFICE_WITH_LEXA_clothing("MAID")"><![CDATA[
+	<htmlContent tag="OFFICE_WITH_LEXA_CLOTHING_MAID"><![CDATA[
 	<p>
 		Thinking that it would be best for [axel.name] to wear clothes which reflect her true nature, you tell her that she'd feel most comfortable wearing the set of maid's clothes. Although she blushes as you say this, she's obviously not opposed to the idea, as she quickly retreats into what's become her dressing room, clearly eager to change into the outfit you suggested.
 	</p>
@@ -542,7 +542,7 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="OFFICE_WITH_LEXA_clothing("WHORE")"><![CDATA[
+	<htmlContent tag="OFFICE_WITH_LEXA_CLOTHING_WHORE"><![CDATA[
 	<p>
 		Thinking that it would be best for [axel.name] to wear clothes which make her look like a slutty whore, you order her to wear the set of trashy, revealing clothing. Although she heavily blushes as you say this, she's obviously not opposed to the idea, as she quickly retreats into what's become her dressing room, clearly eager to change into the outfit you suggested.
 	</p>
@@ -566,9 +566,9 @@
 	</htmlContent>
 	
 	
-	<!-- OFFICE_WITH_LEXA_clothing("BACK_OUT") -->
+	<!-- OFFICE_WITH_LEXA_CLOTHING_BACK_OUT -->
 	
-	<htmlContent tag="OFFICE_WITH_LEXA_clothing("BACK_OUT")"><![CDATA[
+	<htmlContent tag="OFFICE_WITH_LEXA_CLOTHING_BACK_OUT"><![CDATA[
 	<p>
 		You decide against having [lexa.name] change her outfit, and instead wonder if there's anything else you want from [lexa.herHim]...
 	</p>
@@ -614,14 +614,14 @@
 	</htmlContent>
 	
 	<htmlContent tag="AXEL_ROXY_REPEAT"><![CDATA[
-	#IF(pc.hasQuest(questLine("SIDE_VENGAR")))
+	#IF(pc.hasQuest(QUEST_LINE_SIDE_VENGAR))
 		<p>
 			[pc.speech(Can you tell me anything else about Roxy?)] you ask, hoping to get some more information from [axel.name] about her.
 		</p>
 		<p>
 			[axel.speech(Well, other than that she's Vengar's ex-girlfriend, I don't really know too much about her,)] the [axel.race] replies, [axel.speech(That is, other than the obvious fact that she's extremely rude. She treats me like dirt whenever I try talking to her, so I've never been able to find out anything about her.)]
 		</p>
-		#IF(pc.isQuestCompleted(questLine("SIDE_VENGAR")))
+		#IF(pc.isQuestCompleted(QUEST_LINE_SIDE_VENGAR))
 			<p>
 				[pc.speech(And you can't get rid of her even though the situation with Vengar is all sorted out now?)] you ask.
 			</p>
@@ -711,11 +711,11 @@
 	<!-- AXEL_BUSINESS -->
 	
 	<htmlContent tag="AXEL_BUSINESS"><![CDATA[
-	#IF(pc.hasQuest(questLine("SIDE_VENGAR")))
+	#IF(pc.hasQuest(QUEST_LINE_SIDE_VENGAR))
 		<p>
 			Curious to find out about any recent events at the Gambling Den, you ask [axel.name] how [axel.she] is and how [axel.her] business is going.
 		</p>
-		#IF(pc.isQuestCompleted(questLine("SIDE_VENGAR")))
+		#IF(pc.isQuestCompleted(QUEST_LINE_SIDE_VENGAR))
 			<p>
 				[axel.speech(I'm doing well, thank you,)] [axel.name] responds, smiling happily at you as [npc.she] continues, [axel.speech(Now that I'm not having to pay Vengar every month, I'm finally starting to turn a profit on this place. I can't thank you enough for your help in resolving that whole business...)]
 			</p>
@@ -1087,7 +1087,7 @@
 	<htmlContent tag="AXEL_VENGAR_VISIT_RETURN_FINISH"><![CDATA[
 	<p>
 		Telling [axel.name] that you'll wait here for [axel.herHim], you watch as [axel.she] hurries over to the door of [axel.her] nearby office and slips inside. Just a few moments later, [axel.she] returns, before handing over a bag of [#SPECIAL_PARSE_0] flames to you. With a huge grin on [axel.her] face, the [axel.race] says,
-		#IF(game.getDialogueFlags().hasFlag(flag("axelSissified")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_axelSissified))
 			 [axel.speech(I can't thank you enough for all of your help, [pc.name]! I know that I ended up getting, well... this new body of mine, but the truth is, I actually really like it... I don't think I'm going to be hurrying to change back any time soon.)]
 		#ELSE
 			 [axel.speech(I can't thank you enough for all of your help, [pc.name]! Not only did you finally put an end to Vengar's extortion, but you also saved me from being transformed by him!)]

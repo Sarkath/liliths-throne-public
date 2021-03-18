@@ -16,9 +16,9 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="QUICK_TRANSFORMATIONS_femininity("VERY_MASCULINE")"><![CDATA[
+	<htmlContent tag="QUICK_TRANSFORMATIONS_FEMININITY_VERY_MASCULINE"><![CDATA[
 	<p>
-		#IF(npc.getFemininity() == femininity("MASCULINE_STRONG"))
+		#IF(npc.getFemininity() == FEMININITY_MASCULINE_STRONG)
 			You decide that you like [npc.name] having a very masculine body and face, and can't help but hungrily look [npc.herHim] up and down as you wonder if you should get [npc.herHim] to
 		#ELSE
 				Wanting [npc.name] to transform [npc.herself] so that [npc.sheHasFull] a very masculine face and body, you command, [pc.speech(Make your body as manly as you possibly can!)]
@@ -38,9 +38,9 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="QUICK_TRANSFORMATIONS_femininity("MASCULINE")"><![CDATA[
+	<htmlContent tag="QUICK_TRANSFORMATIONS_FEMININITY_MASCULINE"><![CDATA[
 	<p>
-		#IF(npc.getFemininity() == femininity("MASCULINE"))
+		#IF(npc.getFemininity() == FEMININITY_MASCULINE)
 			You decide that you like [npc.name] having a masculine body and face, and can't help but hungrily look [npc.herHim] up and down as you wonder if you should get [npc.herHim] to
 		#ELSE
 				Wanting [npc.name] to transform [npc.herself] so that [npc.sheHasFull] a masculine face and body, you command, [pc.speech(Transform your body so that you're masculine, but not too much so!)]
@@ -60,9 +60,9 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="QUICK_TRANSFORMATIONS_femininity("ANDROGYNOUS")"><![CDATA[
+	<htmlContent tag="QUICK_TRANSFORMATIONS_FEMININITY_ANDROGYNOUS"><![CDATA[
 	<p>
-		#IF(npc.getFemininity() == femininity("ANDROGYNOUS"))
+		#IF(npc.getFemininity() == FEMININITY_ANDROGYNOUS)
 			You decide that you like [npc.name] having an androgynous body and face, and can't help but hungrily look [npc.herHim] up and down as you wonder if you should get [npc.herHim] to
 		#ELSE
 				Wanting [npc.name] to transform [npc.herself] so that [npc.sheHasFull] an androgynous face and body, you command, [pc.speech(Transform your body so that you look androgynous!)]
@@ -82,9 +82,9 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="QUICK_TRANSFORMATIONS_femininity("FEMININE")"><![CDATA[
+	<htmlContent tag="QUICK_TRANSFORMATIONS_FEMININITY_FEMININE"><![CDATA[
 	<p>
-		#IF(npc.getFemininity() == femininity("FEMININE"))
+		#IF(npc.getFemininity() == FEMININITY_FEMININE)
 			You decide that you like [npc.name] having a feminine body and face, and can't help but hungrily look [npc.herHim] up and down as you wonder if you should get [npc.herHim] to
 		#ELSE
 				Wanting [npc.name] to transform [npc.herself] so that [npc.sheHasFull] a feminine face and body, you command, [pc.speech(Transform your body so that you're feminine, but not too much so!)]
@@ -104,9 +104,9 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="QUICK_TRANSFORMATIONS_femininity("VERY_FEMININE")"><![CDATA[
+	<htmlContent tag="QUICK_TRANSFORMATIONS_FEMININITY_VERY_FEMININE"><![CDATA[
 	<p>
-		#IF(npc.getFemininity() == femininity("FEMININE_STRONG"))
+		#IF(npc.getFemininity() == FEMININITY_FEMININE_STRONG)
 			You decide that you like [npc.name] having a very feminine body and face, and can't help but hungrily look [npc.herHim] up and down as you wonder if you should get [npc.herHim] to
 		#ELSE
 				Wanting [npc.name] to transform [npc.herself] so that [npc.sheHasFull] a very feminine face and body, you command, [pc.speech(Make your body appear as feminine as you possibly can!)]
@@ -141,7 +141,7 @@
 		[npc.speech(Not my cock!)] [npc.race] moans, before relenting, [npc.speech(Fine, I'll do as you ask...)]
 	</p>
 	<p>
-		#IF(npc.isCoverableAreaVisible(ca("PENIS")))
+		#IF(npc.isCoverableAreaVisible(CA_PENIS))
 			Looking down at [npc.her] exposed crotch, you thankfully see that [npc.sheHas] done as [npc.sheHas] been told, and there's no evidence of any male genitalia between [npc.her] [npc.legs].
 		#ELSE
 			Looking down at [npc.her] crotch, you thankfully don't see any sign of a bulge beneath [npc.her] clothes; evidence that [npc.sheHas] done as [npc.sheHas] been told.
@@ -158,7 +158,7 @@
 		[npc.speech(Does it really have to be tiny?)] [npc.race] moans, before relenting, [npc.speech(Fine, I'll do as you ask...)]
 	</p>
 	<p>
-		#IF(npc.isCoverableAreaVisible(ca("PENIS")))
+		#IF(npc.isCoverableAreaVisible(CA_PENIS))
 			Looking down at [npc.her] exposed crotch, you thankfully see that [npc.sheHas] done as [npc.sheHas] been told, and that [npc.she] now has a tiny little sissy-cock between [npc.her] [npc.legs].
 		#ELSE
 			Looking down at [npc.her] crotch, you don't see any sign of a bulge beneath [npc.her] clothes, but then again, if [npc.sheHas] kept it tiny like you asked, you wouldn't expect to see anything there anyway.
@@ -175,7 +175,7 @@
 		With no choice but to do as you command, [npc.race] sighs, [npc.speech(Fine, I'll do as you ask...)]
 	</p>
 	<p>
-		#IF(npc.isCoverableAreaVisible(ca("PENIS")))
+		#IF(npc.isCoverableAreaVisible(CA_PENIS))
 			Looking down at [npc.her] exposed crotch, you thankfully see that [npc.sheHas] done as [npc.sheHas] been told, and that [npc.she] now has an average-sized cock hanging down between [npc.her] [npc.legs].
 		#ELSE
 			Looking down at [npc.her] crotch, you see a small bulge beneath [npc.her] clothes, and you find yourself smiling in delight as you realise that the [npc.race] is going to do anything you command.
@@ -192,7 +192,7 @@
 		With no choice but to do as you command, [npc.race] sighs, [npc.speech(Fine, I'll do as you ask...)]
 	</p>
 	<p>
-		#IF(npc.isCoverableAreaVisible(ca("PENIS")))
+		#IF(npc.isCoverableAreaVisible(CA_PENIS))
 			Looking down at [npc.her] exposed crotch, you thankfully see that [npc.sheHas] done as [npc.sheHas] been told, and that [npc.she] now has a large cock dangling down between [npc.her] [npc.legs].
 		#ELSE
 			Looking down at [npc.her] crotch, you see a large bulge beneath [npc.her] clothes, and you find yourself smiling in delight as you realise that the [npc.race] is going to do anything you command.
@@ -209,7 +209,7 @@
 		With no choice but to do as you command, [npc.race] sighs, [npc.speech(Fine, I'll do as you ask...)]
 	</p>
 	<p>
-		#IF(npc.isCoverableAreaVisible(ca("PENIS")))
+		#IF(npc.isCoverableAreaVisible(CA_PENIS))
 			Looking down at [npc.her] exposed crotch, you thankfully see that [npc.sheHas] done as [npc.sheHas] been told, and that [npc.she] now has an absolutely massive cock dangling down between [npc.her] [npc.legs].
 		#ELSE
 			Looking down at [npc.her] crotch, you see a massive bulge beneath [npc.her] clothing, and you find yourself smiling in delight as you realise that the [npc.race] is going to do anything you command.

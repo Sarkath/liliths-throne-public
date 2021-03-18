@@ -30,13 +30,13 @@
 		<enchantmentEffectId>RACE</enchantmentEffectId>
 		
 		<effectTooltipLines>
-			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#attribute("HEALTH_MAXIMUM").getName()])]]]></line>
-			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldMana([#attribute("MANA_MAXIMUM").getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldMana([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
 		</effectTooltipLines>
 		
 		<applyEffects><![CDATA[
-			[##npc.incrementHealth(npc.getAttributeValue(attribute("HEALTH_MAXIMUM"))/10)]
-			[##npc.incrementMana(npc.getAttributeValue(attribute("MANA_MAXIMUM"))/10)]
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/10)]
 		]]></applyEffects>
 		
 		<itemTags>

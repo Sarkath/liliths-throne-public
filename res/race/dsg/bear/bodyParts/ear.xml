@@ -50,7 +50,7 @@
 	This description immediately follows a brief description of the ear type beginning to transform. -->
 	<transformationDescription><![CDATA[
 		They quickly begin to grow larger and shift to sit higher up on [npc.her] head than a normal pair of human ears would.
-		#IF(npc.getBodyMaterial()==bodyMaterial("FLESH"))
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
 		 A layer of [npc.earFullDescriptionColour] quickly grows to cover them,
 		#ELSE
 		 Just like the rest of [npc.her] body, they're made out of [npc.earFullDescription],

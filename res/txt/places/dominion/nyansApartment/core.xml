@@ -863,7 +863,7 @@
 	<p>
 		Completely exhausted from the sex, both you and Nyan collapse down onto her bed, panting for breath. Leaning across to plant a quick kiss on your girlfriend's lips, you can't help but smile as she blushes and sighs, [nyan.speech(That was amazing... I love you, [pc.name]...)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("nyanCreampied")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_nyanCreampied))
 		<p>
 			After a few minutes, the cat-girl finally recovers enough energy to get up off the bed, and with her mind no longer clouded by arousal, she reaches down to rub a hand over her tummy and wonders aloud, [nyan.speech(I wonder if you've got me pregnant from this...)]
 		</p>
@@ -885,7 +885,7 @@
 	<p>
 		Completely exhausted from the sex, both you and [nyanmum.name] collapse down onto her bed, panting for breath. Leaning across to plant a quick kiss on your girlfriend's lips, you can't help but smile as she grins and sighs, [nyanmum.speech(You're good at this... You know, I think I might love you, [pc.name]...)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("nyanmumCreampied")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_nyanmumCreampied))
 		<p>
 			After a few minutes, the cougar-girl finally recovers enough energy to get up off the bed, and with her mind no longer clouded by arousal, she rubs a hand over her tummy and wonders aloud, [nyanmum.speech(I wonder if you've got me pregnant...)]
 		</p>
@@ -949,7 +949,7 @@
 		After quickly using the ensuite bathroom to freshen up, you head to the apartment's kitchen. Being of an open-plan design, you're able to see that both Nyan is in the kitchen right from the moment you enter the dining room. 
 		As you [pc.walk] over to say good morning, you see that Nyan is wearing [nyan.a_slotClothing(TORSO_UNDER, true)], and over the top of that, she's wearing [nyan.a_slotClothing(TORSO_OVER, true)]. As you approach, you see that she's just finished drying up, and as she turns and sees you, she throws you a happy smile and exclaims, [nyan.speech([pc.Name]! I was just about to come and wake you! Look, I made pastries!)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("nyanCreampied")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_nyanCreampied))
 		#IF(nyan.isPregnant())
 			<p>
 				[pc.Walking] over to give your girlfriend a kiss, you join her in sitting down behind the counter and eating the pastries which she's freshly baked. As you eat, Nyan alarmingly starts to revert to acting in a shy, nervous manner, and so you stop eating to ask her what's on her mind. Furiously blushing, the cat-girl lets out a little squeak, and with her cheeks flushing red, she holds up an arcane pregnancy tester for you to see...
@@ -1004,7 +1004,7 @@
 	<p>
 		Alerted to your presence by her daughter's greeting, [nyanmum.name] turns around and flashes you a sly smile. Instead of the dress which she was wearing last night, she's now clothed in [nyanmum.a_slotClothing(TORSO_UNDER, true)] and [nyanmum.a_slotClothing(LEG, true)], which together show off a good deal of her muscular arms and legs. Patting the stool next to her, she declares, [nyanmum.speech(Come and sit down, [pc.name].)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("nyanmumCreampied")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_nyanmumCreampied))
 		#IF(nyanmum.isPregnant())
 			<p>
 				[pc.Walking] over to give each of your girlfriends a kiss, you sit down behind the counter and begin to eat the pastries which Nyan has freshly baked. As you take your first bite, [nyanmum.name] suddenly smirks, and with a little laugh, she leans across and holds something up right in front of your face. Pulling back so that you can see clearly, you feel your eyes opening wide as you see that what [nyanmum.name] is holding is an arcane pregnancy tester...
@@ -1096,7 +1096,7 @@
 	<htmlContent tag="DOUBLE_SEX_FOREPLAY_CUNNILINGUS"><![CDATA[
 	<p>
 		Wanting to get things started by performing oral on the two cat-girls, you tell them to lie back on the bed and present themselves to you.
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 With their pussies already fully exposed due to their crotchless underwear, Nyan and her mother do as you ask, and lie back on the bed by each other's side.
 		#ELSE
 			 Sliding off their underwear, Nyan and her mother do as you ask, and lie back on the bed by each other's side.
@@ -1127,7 +1127,7 @@
 	<htmlContent tag="DOUBLE_SEX_FOREPLAY_FINGERING"><![CDATA[
 	<p>
 		Wanting to get things started by fingering these two cat-girls, you tell them to lie back on the bed and present themselves to you.
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 With their pussies already fully exposed due to their crotchless underwear, Nyan and her mother do as you ask, and lie back on the bed by each other's side.
 		#ELSE
 			 Sliding off their underwear, Nyan and her mother do as you ask, and lie back on the bed by each other's side.
@@ -1200,7 +1200,7 @@
 	<htmlContent tag="DOUBLE_SEX_FOREPLAY_ANILINGUS"><![CDATA[
 	<p>
 		Wanting to get things started by rimming the two cat-girls, you tell them to get down on all fours on the bed and present themselves to you.
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 With their assholes already fully exposed due to their crotchless underwear, Nyan and her mother do as you ask, and drop down onto the bed by each other's side.
 		#ELSE
 			 Sliding off their underwear, Nyan and her mother do as you ask, and drop down onto the bed by each other's side.
@@ -1276,7 +1276,7 @@
 	#IF(nyan.isVaginaVirgin())
 		<p>
 			Deciding that you want to take Nyan's virginity in the missionary position, you ask her to lie back on the bed. Doing as you ask,
-			#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 she lies back on her bed and presents you with her exposed pussy.
 			#ELSE
 				 she strips out of her lingerie and lies back, fully naked, on her bed.
@@ -1314,7 +1314,7 @@
 	#ELSE
 		<p>
 			Deciding that you want to fuck the two cat-girls in the missionary position, you ask them to lie back on the bed. Doing as you ask,
-			#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 Nyan and [nyanmum.name] lie back on her bed and present you with their exposed pussies.
 			#ELSE
 				 Nyan and [nyanmum.name] strip out of their lingerie and lie back, fully naked, on the bed.
@@ -1341,7 +1341,7 @@
 	<htmlContent tag="DOUBLE_SEX_MAIN_MISSIONARY_NYANMUM"><![CDATA[
 	<p>
 		Deciding that you want to fuck [nyanmum.name] in the missionary position, you ask her to lie back on the bed. Doing as you ask, both [nyanmum.name] and Nyan 
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 lie back on the bed, before spreading her legs and presenting you with their exposed pussies.
 		#ELSE
 			 strip out of their lingerie and lie back, fully naked, on the bed.
@@ -1378,7 +1378,7 @@
 	#IF(nyan.isVaginaVirgin())
 		<p>
 			Deciding that you want to take Nyan's virginity in the doggy-style position, you ask her to get down onto all fours on the bed. Doing as you ask,
-			#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 she drops and presents you with her exposed pussy.
 			#ELSE
 				 she strips out of her lingerie and drops down, fully naked, on her bed.
@@ -1416,7 +1416,7 @@
 	#ELSE
 		<p>
 			Deciding that you want to fuck the two cat-girls in the doggy-style position, you ask them to get down onto all fours on the bed. Doing as you ask,
-			#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 Nyan and [nyanmum.name] drop down beside one another and present you with their exposed pussies.
 			#ELSE
 				 Nyan and [nyanmum.name] strip out of their lingerie and drop down beside one another, fully naked, on the bed.
@@ -1443,7 +1443,7 @@
 	<htmlContent tag="DOUBLE_SEX_MAIN_DOGGY_NYANMUM"><![CDATA[
 	<p>
 		Deciding that you want to fuck [nyanmum.name] in the doggy-style position, you ask her to lie back on the bed. Doing as you ask, both [nyanmum.name] and Nyan
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 drop down beside one another and present you with their exposed pussies.
 		#ELSE
 			 strip out of their lingerie and drop down beside one another, fully naked, on the bed.
@@ -1480,7 +1480,7 @@
 	#IF(nyan.isVaginaVirgin())
 		<p>
 			Deciding that it would be best to let Nyan lose her virginity at her own pace, you lie back on the bed and ask her to straddle you in the cowgirl position. Doing as you ask,
-			#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 both she and her mother get up on the bed, before Nyan nervously moves over the top of you and lowers herself down into position.
 			#ELSE
 				 both she and her mother strip out of their lingerie and get up on the bed, before Nyan nervously moves over the top of you and lowers herself down into position.
@@ -1505,7 +1505,7 @@
 	#ELSE
 		<p>
 			Deciding that it want Nyan to ride your cock, you lie back on the bed and ask her to straddle you in the cowgirl position. Doing as you ask,
-			#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 both she and her mother get up on the bed, before Nyan moves over the top of you and lowers herself down into position.
 			#ELSE
 				 both she and her mother strip out of their lingerie and get up on the bed, before Nyan moves over the top of you and lowers herself down into position.
@@ -1534,7 +1534,7 @@
 	<htmlContent tag="DOUBLE_SEX_MAIN_COWGIRL_NYANMUM"><![CDATA[
 	<p>
 		Deciding that you want [nyanmum.name] to ride your cock, you lie back on the bed and ask her to straddle you in the cowgirl position. Doing as you ask,
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 both she and her daughter get up on the bed, before [nyanmum.name] moves over the top of you and lowers herself down into position.
 		#ELSE
 			 both she and her daughter strip out of their lingerie and get up on the bed, before [nyanmum.name] moves over the top of you and lowers herself down into position.
@@ -1585,7 +1585,7 @@
 	<htmlContent tag="DOUBLE_SEX_MAIN_SCISSOR_NYAN"><![CDATA[
 	<p>
 		Wanting to scissor with Nyan, you suggest that she lie back on the bed so that you can take the dominant position and start tribbing with her. Doing as you ask,
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 both she and her mother get up on the bed, before Nyan lies back and presents you with her exposed pussy.
 		#ELSE
 			 both she and her mother strip out of their lingerie and get up on the bed, before Nyan lies back and presents you with her exposed pussy.
@@ -1607,7 +1607,7 @@
 	<htmlContent tag="DOUBLE_SEX_MAIN_SCISSOR_NYANMUM"><![CDATA[
 	<p>
 		Wanting to scissor with [nyanmum.name], you suggest that she lie back on the bed so that you can take the dominant position and start tribbing with her. Doing as you ask,
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 both she and her daughter get up on the bed, before [nyanmum.name] lies back and presents you with her exposed pussy.
 		#ELSE
 			 both she and her daughter strip out of their lingerie and get up on the bed, before [nyanmum.name] lies back and presents you with her exposed pussy.
@@ -1629,7 +1629,7 @@
 	<htmlContent tag="DOUBLE_SEX_MAIN_SCISSORED_NYAN"><![CDATA[
 	<p>
 		Wanting to scissor with Nyan, you lie back on the bed and suggest that she take the dominant position and start tribbing with you. Doing as you ask,
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 both she and her mother get up on the bed,
 		#ELSE
 			 both she and her mother strip out of their lingerie and get up on the bed,
@@ -1651,7 +1651,7 @@
 	<htmlContent tag="DOUBLE_SEX_MAIN_SCISSORED_NYANMUM"><![CDATA[
 	<p>
 		Wanting to scissor with [nyanmum.name], you lie back on the bed and suggest that she take the dominant position and start tribbing with you. Doing as you ask,
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 both she and her daughter get up on the bed,
 		#ELSE
 			 both she and her daughter strip out of their lingerie and get up on the bed,
@@ -1693,7 +1693,7 @@
 		Not wanting to take things further than oral, you tell the cat-girls that you just want to perform cunnilingus on them. Clearly expecting more than just that, [nyanmum.name] makes her displeasure known as she replies, [nyanmum.speech(Eugh! Fine, I guess if that's all you want, you can eat us out...)]
 	</p>
 	<p>
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			With their pussies already fully exposed due to their crotchless underwear, Nyan and her mother lie back on the bed by each other's side.
 		#ELSE
 			Stripping completely naked, Nyan and her mother lie back on the bed by each other's side.
@@ -1717,7 +1717,7 @@
 		Not wanting to take things further than oral, you tell the cat-girls that you just want to perform anilingus on them. Clearly expecting more than just that, [nyanmum.name] makes her displeasure known as she replies, [nyanmum.speech(Eugh! Fine, I guess if that's all you want, you can worship our asses...)]
 	</p>
 	<p>
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			With their assholes already fully exposed due to their crotchless underwear, Nyan and her mother do as you ask, and drop down onto the bed by each other's side.
 		#ELSE
 			Stripping completely naked, Nyan and her mother do as you ask, and drop down onto the bed by each other's side.
@@ -1743,7 +1743,7 @@
 	#IF(nyan.isVaginaVirgin())
 		<p>
 			Deciding that you want to take Nyan's anal virginity, you ask her to get down onto all fours on the bed. Doing as you ask,
-			#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 she drops and presents you with her exposed pussy.
 			#ELSE
 				 she strips out of her lingerie and drops down, fully naked, on her bed.
@@ -1781,7 +1781,7 @@
 	#ELSE
 		<p>
 			Deciding that you want to anally fuck the two cat-girls, you ask them to get down onto all fours on the bed. Doing as you ask,
-			#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 Nyan and [nyanmum.name] drop down beside one another and present you with their exposed assholes.
 			#ELSE
 				 Nyan and [nyanmum.name] strip out of their lingerie and drop down beside one another, fully naked, on the bed.
@@ -1808,7 +1808,7 @@
 	<htmlContent tag="DOUBLE_SEX_MAIN_ANAL_NYANMUM"><![CDATA[
 	<p>
 		Deciding that you want to fuck [nyanmum.namePos] ass, you ask her to get down on all fours on the bed. Doing as you ask, both [nyanmum.name] and Nyan
-		#IF(nyan.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+		#IF(nyan.isAbleToAccessCoverableArea(CA_VAGINA, false))
 			 drop down beside one another and present you with their exposed assholes.
 		#ELSE
 			 strip out of their lingerie and drop down beside one another, fully naked, on the bed.
@@ -1851,8 +1851,8 @@
 	<p>
 		Not one to be outdone, [nyanmum.name] takes hold of your [pc.arm] and sighs, [nyanmum.speech(I love you too, [pc.name]...)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("nyanCreampied")))
-		#IF(game.getDialogueFlags().hasFlag(flag("nyanmumCreampied")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_nyanCreampied))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_nyanmumCreampied))
 			<p>
 				After a few minutes, the two cat-girls finally recover enough energy to get up off the bed, and with her mind no longer clouded by arousal, [nyanmum.name] rubs a hand over her tummy and wonders aloud, [nyanmum.speech(I wonder if you've got me pregnant...)]
 			</p>
@@ -1879,7 +1879,7 @@
 				With that, the potentially-pregnant cat-girl turns to look at you, before shaking the thought of becoming a mother from her head and cheerily asking, [nyan.speech(You're going to stay the night, aren't you? Come on, lets have a wash before getting into bed!)]
 			</p>
 		#ENDIF
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("nyanmumCreampied")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_nyanmumCreampied))
 		<p>
 			After a few minutes, the two cat-girls finally recover enough energy to get up off the bed, and with her mind no longer clouded by arousal, [nyanmum.name] rubs a hand over her tummy and wonders aloud, [nyanmum.speech(I wonder if you've got me pregnant...)]
 		</p>
@@ -1936,8 +1936,8 @@
 	<p>
 		Alerted to your presence by her daughter's greeting, [nyanmum.name] turns around and flashes you a sly smile. Instead of the dress which she was wearing last night, she's now clothed in [nyanmum.a_slotClothing(TORSO_UNDER, true)] and [nyanmum.a_slotClothing(LEG, true)], which together show off a good deal of her muscular arms and legs. Patting the stool next to her, she declares, [nyanmum.speech(Come and sit down, [pc.name].)]
 	</p>
-	#IF(game.getDialogueFlags().hasFlag(flag("nyanmumCreampied")))
-		#IF(game.getDialogueFlags().hasFlag(flag("nyanCreampied")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_nyanmumCreampied))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_nyanCreampied))
 			<p>
 				[pc.Walking] over to give each of your girlfriends a kiss, you sit down behind the counter and begin to eat the pastries which Nyan has freshly baked. As you take your first bite, [nyanmum.name] suddenly smirks, and with a little laugh, she leans across and holds something up right in front of your face. Pulling back so that you can see clearly, you feel your eyes opening wide as you see that what [nyanmum.name] is holding is an arcane pregnancy tester...
 			</p>
@@ -2041,7 +2041,7 @@
 				</p>
 			#ENDIF
 		#ENDIF
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("nyanCreampied")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_nyanCreampied))
 		#IF(nyan.isPregnant())
 			<p>
 				[pc.Walking] over to give each of your girlfriends a kiss, you sit down behind the counter and begin to eat the pastries which Nyan has freshly baked. As you eat, Nyan alarmingly starts to revert to acting in a shy, nervous manner, and so you stop eating to ask her what's on her mind. Furiously blushing, the cat-girl lets out a little squeak, and with her cheeks flushing red, she holds up an arcane pregnancy tester for you to see...
@@ -2112,8 +2112,8 @@
 	
 	<htmlContent tag="PREGNANCY_ADDITION"><![CDATA[
 	<p style='text-align:center;'>
-		#IF(game.getDialogueFlags().hasFlag(flag("nyanCreampied")) && nyan.isPregnant())
-			#IF(game.getDialogueFlags().hasFlag(flag("nyanmumCreampied")) && nyanmum.isPregnant())
+		#IF(game.getDialogueFlags().hasFlag(FLAG_nyanCreampied) && nyan.isPregnant())
+			#IF(game.getDialogueFlags().hasFlag(FLAG_nyanmumCreampied) && nyanmum.isPregnant())
 				[style.italicsPinkLight(You will be unable to encounter Nyan's or [nyanmum.namePos] children, as after being born, [nyanmum.name] will give them a stable job elsewhere in the Realm...)]
 			#ELSE
 				[style.italicsPinkLight(You will be unable to encounter Nyan's children, as after being born, [nyanmum.name] will give them a stable job elsewhere in the Realm...)]

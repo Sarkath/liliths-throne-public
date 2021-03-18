@@ -75,7 +75,7 @@
 	This description immediately follows a brief description of the face type beginning to transform. -->
 	<transformationDescription><![CDATA[
 		[npc.Her] nose and mouth twitch and transform as they push out into an anthropomorphic dragon-like muzzle, and [npc.her] tongue tapers to fit, turning into a similarly animalistic one.
-		#IF(npc.getBodyMaterial()==bodyMaterial("FLESH"))
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
 			 A layer of [npc.faceSkin+] quickly grows to cover [npc.her] new face, 
 		#ELSE
 			 Just like the rest of [npc.her] body, [npc.her] new face is [npc.materialDescriptor] [npc.faceSkin+], 

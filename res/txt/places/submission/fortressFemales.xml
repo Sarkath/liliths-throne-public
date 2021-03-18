@@ -43,7 +43,7 @@
 		Having defeated [impFemalesLeader.name], the [impFemalesLeader.race] who led the imp gangs roaming the surrounding tunnels, [impFemalesLeader.her] keep is now completely deserted. The front doors have been left wide-open, and, taking a cursory glance inside, you see that there's absolutely nothing within that would be of interest to you. There's nothing more to do here except turn around and go back the way you came...
 	</p>
 	<p>
-		#IF pc.isQuestProgressGreaterThan(questLine("MAIN"), quest("MAIN_2_B_SIRENS_CALL"))
+		#IF pc.isQuestProgressGreaterThan(QUEST_LINE_MAIN, QUEST_MAIN_2_B_SIRENS_CALL)
 		#THEN
 			[style.italicsMinorBad(You get the feeling that [impFemalesLeader.name] will return to reclaim [impFemalesLeader.her] fortress sooner or later!)]
 		#ELSE

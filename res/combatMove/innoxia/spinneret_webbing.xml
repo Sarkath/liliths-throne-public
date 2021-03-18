@@ -59,11 +59,11 @@
 	
 	<!-- Once started to cocoon a target, the AI will become more and more interested in finishing the cocooning process off. -->
 	<weighting><![CDATA[
-		#IF(npc2.hasStatusEffect(se("WEBBED_3")))
+		#IF(npc2.hasStatusEffect(SE_WEBBED_3))
 			10.0
-		#ELSEIF(npc2.hasStatusEffect(se("WEBBED_2")))
+		#ELSEIF(npc2.hasStatusEffect(SE_WEBBED_2))
 			5.0
-		#ELSEIF(npc2.hasStatusEffect(se("WEBBED_1")))
+		#ELSEIF(npc2.hasStatusEffect(SE_WEBBED_1))
 			2.5
 		#ELSE
 			1.0
@@ -89,21 +89,21 @@
 	<performMove>
 		<execute><![CDATA[
 			[npc.Name] [npc.verb(point)] [npc.her] spinneret at [npc2.name], and before [npc2.sheIs] able to dodge out of the way, [npc.name] [npc.verb(fire)] a sticky stream of thick, strong webbing all over [npc2.herHim]!
-			#IF(npc2.hasStatusEffect(se("WEBBED_3")))
+			#IF(npc2.hasStatusEffect(SE_WEBBED_3))
 				[##npc2.setHealth(0)]
 				<br/>[style.italicsTerrible([npc2.NameIsFull] now totally wrapped up in a cocoon, and as such [npc2.is] completely defeated!)]
-			#ELSEIF(npc2.hasStatusEffect(se("WEBBED_2")))
-				[##npc2.removeStatusEffectCombat(se("WEBBED_2"))]
-				[##npc2.addStatusEffect(se("WEBBED_3"), 10)]
+			#ELSEIF(npc2.hasStatusEffect(SE_WEBBED_2))
+				[##npc2.removeStatusEffectCombat(SE_WEBBED_2)]
+				[##npc2.addStatusEffect(SE_WEBBED_3, 10)]
 				<br/>[style.italicsTerrible([npc2.NameIsFull] almost totally wrapped up in a cocoon, and as such [npc2.is] near to being completely defeated!)]
 				<br/>[style.italicsTerrible(If [npc2.name] [npc2.verb(get)] webbed again, [npc.she] will be instantly defeated!)]
-			#ELSEIF(npc2.hasStatusEffect(se("WEBBED_1")))
-				[##npc2.removeStatusEffectCombat(se("WEBBED_1"))]
-				[##npc2.addStatusEffect(se("WEBBED_2"), 10)]
+			#ELSEIF(npc2.hasStatusEffect(SE_WEBBED_1))
+				[##npc2.removeStatusEffectCombat(SE_WEBBED_1)]
+				[##npc2.addStatusEffect(SE_WEBBED_2, 10)]
 				<br/>[style.italicsBad([npc2.NameIsFull] seriously caught up in strong, sticky webbing, and as such [npc2.is] struggling to fight back!)]
 				<br/>[style.italicsTerrible(If [npc2.name] [npc2.verb(get)] webbed again, this effect will become extremely serious!)]
 			#ELSE
-				[##npc2.addStatusEffect(se("WEBBED_1"), 10)]
+				[##npc2.addStatusEffect(SE_WEBBED_1, 10)]
 				<br/>[style.italicsBad([npc2.NameIsFull] caught up in strong, sticky webbing, and as such [npc2.her] ability to fight back is impaired!)]
 				<br/>[style.italicsTerrible(If [npc2.name] [npc2.verb(get)] webbed again, this effect will become more serious!)]
 			#ENDIF

@@ -23,10 +23,10 @@
 	
 	<htmlContent tag="INITIAL_ENCOUNTER"><![CDATA[
 	<p>
-		#IF(pc.getWorldLocation()==worldType("DOMINION_EXPRESS"))
+		#IF(pc.getWorldLocation()==WORLD_TYPE_DOMINION_EXPRESS)
 			As you [pc.walk] through the warehouse, you suddenly notice that there's [npc.a_race] quickly trotting directly towards you. Turning to face [npc.herHim], you find your gaze being drawn down to the [npc.cockSize], erect horse-cock between [npc.her] feral hindquarters. Stepping forwards and pinning you up against a nearby wall, this clearly-aroused [npc.race] pants, [npc.speech(Filly, you need to help me get some release! I'll give you [#SPECIAL_PARSE_0] filly points, please, just [#SPECIAL_PARSE_1]!)]
 		#ELSE
-			#IF(pc.getLocationPlace().getPlaceType()==placeType("DOMINION_BOULEVARD"))
+			#IF(pc.getLocationPlace().getPlaceType()==PLACE_TYPE_DOMINION_BOULEVARD)
 				As you [pc.walk] down the wide boulevard
 			#ELSE
 				As you [pc.walk] down the street
@@ -42,10 +42,10 @@
 	<htmlContent tag="INITIAL_ENCOUNTER_REFUSED"><![CDATA[
 	<p>
 		Not wanting to service this slave right now, you tell [npc.herHim] that [npc.sheIs] going to have to find another filly to give [npc.herHim] what [npc.she] wants. Letting out a frantic, desperate whine, the [npc.race] doesn't stick around to argue, and instead canters off
-		#IF(pc.getWorldLocation()==worldType("DOMINION_EXPRESS"))
+		#IF(pc.getWorldLocation()==WORLD_TYPE_DOMINION_EXPRESS)
 			 towards the stables in search for another filly.
 		#ELSE
-			#IF(pc.getLocationPlace().getPlaceType()==placeType("DOMINION_BOULEVARD"))
+			#IF(pc.getLocationPlace().getPlaceType()==PLACE_TYPE_DOMINION_BOULEVARD)
 				 down the wide boulevard in search for another filly.
 			#ELSE
 				 down the street in search for another filly.
@@ -60,7 +60,7 @@
 	<htmlContent tag="INITIAL_ENCOUNTER_BLOWJOB_START"><![CDATA[
 	<p>
 		Seeing no reason to refuse [npc.namePos] request, you obediently drop down behind [npc.her] feral hindquarters,
-		#IF(pc.getWorldLocation()==worldType("DOMINION_EXPRESS"))
+		#IF(pc.getWorldLocation()==WORLD_TYPE_DOMINION_EXPRESS)
 			 and in full view of the rest of the warehouse,
 		#ELSE
 			 and in full view of the public,
@@ -75,7 +75,7 @@
 	<htmlContent tag="INITIAL_ENCOUNTER_RIMJOB_START"><![CDATA[
 	<p>
 		Seeing no reason to refuse [npc.namePos] request, you obediently drop down behind [npc.her] feral hindquarters,
-		#IF(pc.getWorldLocation()==worldType("DOMINION_EXPRESS"))
+		#IF(pc.getWorldLocation()==WORLD_TYPE_DOMINION_EXPRESS)
 			 and in full view of the rest of the warehouse,
 		#ELSE
 			 and in full view of the public,
@@ -90,7 +90,7 @@
 	<htmlContent tag="INITIAL_ENCOUNTER_MOUNTED_START"><![CDATA[
 	<p>
 		Seeing no reason to refuse [npc.namePos] request, you obediently drop down behind [npc.her] feral hindquarters,
-		#IF(pc.getWorldLocation()==worldType("DOMINION_EXPRESS"))
+		#IF(pc.getWorldLocation()==WORLD_TYPE_DOMINION_EXPRESS)
 			 and in full view of the rest of the warehouse,
 		#ELSE
 			 and in full view of the public,
@@ -108,7 +108,7 @@
 	<htmlContent tag="AFTER_SEX"><![CDATA[
 	<p>
 		Having had [npc.her] fun, and also having put on a show for
-		#IF(pc.getWorldLocation()==worldType("DOMINION_EXPRESS"))
+		#IF(pc.getWorldLocation()==WORLD_TYPE_DOMINION_EXPRESS)
 			 the occasional passing centaur slave
 		#ELSE
 			 the members of the public who gathered to watch
@@ -123,10 +123,10 @@
 	<htmlContent tag="AFTER_SEX_LEAVE"><![CDATA[
 	<p>
 		Looking up and thanking the now-satisfied [npc.race] for the filly points, you watch as [npc.she] flashes you one last smirk, before turning and trotting off
-		#IF(pc.getWorldLocation()==worldType("DOMINION_EXPRESS"))
+		#IF(pc.getWorldLocation()==WORLD_TYPE_DOMINION_EXPRESS)
 			 into the warehouse's storage area.
 		#ELSE
-			#IF(pc.getLocationPlace().getPlaceType()==placeType("DOMINION_BOULEVARD"))
+			#IF(pc.getLocationPlace().getPlaceType()==PLACE_TYPE_DOMINION_BOULEVARD)
 				 down the wide boulevard.
 			#ELSE
 				 down the street.

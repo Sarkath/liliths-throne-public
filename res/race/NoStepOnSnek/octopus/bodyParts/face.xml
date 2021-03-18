@@ -23,7 +23,7 @@
 	<noseDescriptorsFeminine/>
 	<transformationDescription><![CDATA[
 		[npc.Her] nose and mouth twitch and transform as they fuse together and push out into a short beak, and [npc.her] tongue thins down, turning into an octopus-like one.
-		#IF(npc.getBodyMaterial()==bodyMaterial("FLESH"))
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
 			 A layer of [npc.faceSkin+] quickly grows to cover [npc.her] new face, 
 		#ELSE
 			 Just like the rest of [npc.her] body, [npc.her] new face is [npc.materialDescriptor] [npc.faceSkin+], 

@@ -58,7 +58,7 @@
 	The body that's being checked can be accessed via using 'targetedBody'.
 	The race of the body that's being checked SHOULD NOT be accessed via targetedBody.getRace(), and should instead be accessed via using 'targetedRace'. -->
 	<subspeciesWeighting><![CDATA[
-		#IF(targetedRace==race("dsg_otter"))
+		#IF(targetedRace==RACE_dsg_otter)
 			100
 		#ELSE
 			0

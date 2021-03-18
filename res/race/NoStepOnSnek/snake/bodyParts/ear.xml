@@ -17,7 +17,7 @@
 	</descriptorsFeminine>
 	<transformationDescription><![CDATA[
 		They quickly shrink down into little nubs as most of the external cartilage shifts down into the sides of [npc.her] head.
-		#IF(npc.getBodyMaterial()==bodyMaterial("FLESH"))
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
 			 A layer of [npc.earFullDescriptionColour] grow to cover [npc.her] now-fully-internal ears,
 		#ELSE
 			 Just like the rest of [npc.her] body, [npc.her] now-fully-internal ears are made out of [npc.earFullDescription],

@@ -280,7 +280,7 @@ public abstract class AbstractRace {
 	 */
 	public void applyRaceChanges(Body body) {
 		if(this.isFromExternalFile()) {
-			UtilText.setBodyForParsing(body);
+			UtilText.setBodyForParsing("targetedBody", body);
 			UtilText.parse(raceChangeString);
 		}
 	}

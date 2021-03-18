@@ -15,7 +15,7 @@
 	</p>
 	<p>
 		Instead of her usual skirt and blouse, she's wearing [nyan.a_slotClothing(TORSO_UNDER, true)], with a colour-coordinated bow on her headband. In addition to this, she's carrying
-		#IF(game.getSeason()==season("SUMMER"))
+		#IF(game.getSeason()==SEASON_SUMMER)
 			 both her stylish, tan-coloured coat and cute, frog-styled umbrella in her arms, and is wearing a pair of dark brown chelsea boots.
 		#ELSE
 			 her stylish, tan-coloured coat, black scarf, and cute, frog-styled umbrella in her arms, and is wearing a pair of dark brown thigh-high boots.
@@ -35,7 +35,7 @@
 	<!-- DATE_RESTAURANT_1_ARRIVED -->
 	
 	<htmlContent tag="DATE_RESTAURANT_1_ARRIVED"><![CDATA[
-	#IF(game.getCurrentWeather()==weather("MAGIC_STORM"))
+	#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
 		<p>
 			As you approach the exit, a bright pink light suddenly flashes through the windows, causing Nyan to let out a little eek and whine, [nyan.speechNoEffects(Oh no... There's an arcane storm! Perhaps if we wait for the thunder to pass, then run for the Arcade, we could make it?)]
 		</p>
@@ -48,10 +48,10 @@
 		<p>
 			After giving your girlfriend some time in which to catch her breath, you accompany her down the wide, marble walkways of the Arcade, and soon arrive at your destination of the restaurant, 'The Oaken Glade'. Holding open the front door and allowing Nyan to step inside, you follow her through and are immediately met by a smartly-dressed otter-boy, who is quite clearly the establishment's maître d'. Looking over at Nyan, he gives her a big, familiar smile, before slightly bowing his head and offering his enthusiastic greetings, [style.speechMasculine(Good evening, good evening! If you and your partner for this evening would care to follow me, I will show you to your seats. After all, we always have a table for you!)]
 		</p>
-	#ELSEIF(game.getCurrentWeather()==weather("RAIN") || game.getCurrentWeather()==weather("SNOW"))
+	#ELSEIF(game.getCurrentWeather()==WEATHER_RAIN || game.getCurrentWeather()==WEATHER_SNOW)
 		<p>
 			As you approach the exit, you see through the windows that it's currently
-			#IF(game.getCurrentWeather()==weather("RAIN"))
+			#IF(game.getCurrentWeather()==WEATHER_RAIN)
 				 raining outside.
 			#ELSE
 				 snowing outside.
@@ -66,7 +66,7 @@
 			As you approach the exit, you see through the windows that the weather outside isn't going to prove to be an issue. After holding open the door for your girlfriend, you accompany her down the steps and then proceed on your way down the street. Clearly being very excited about going out on a date with you, Nyan walks right by your side for the whole five minutes that it takes to get to the Shopping Arcade.
 		</p>
 	#ENDIF
-	#IF(game.getCurrentWeather()!=weather("MAGIC_STORM"))
+	#IF(game.getCurrentWeather()!=WEATHER_MAGIC_STORM)
 		<p>
 			Heading inside, you accompany your girlfriend down the wide, marble walkways of the Arcade, and soon arrive at your destination of the restaurant, 'The Oaken Glade'. Holding open the front door and allowing Nyan to step inside, you follow her through and are immediately met by a smartly-dressed otter-boy, who is quite clearly the establishment's maître d'. Looking over at Nyan, he gives her a big, familiar smile, before slightly bowing his head and offering his enthusiastic greetings, [style.speechMasculine(Good evening, good evening! If you and your partner for this evening would care to follow me, I will show you to your seats. After all, we always have a table for you!)]
 		</p>
@@ -182,7 +182,7 @@
 	<p>
 		After you've quickly settled the bill, the waiter retrieves Nyan's coat and umbrella, before seeing the two of you to the door and thanking you for your business. As you [pc.step] out into the Shopping Arcade, Nyan performs an uncharacteristic move, and boldly initiates physical contact by taking hold of your [pc.wing] and leaning into your body. Letting out a happy little giggle, she exclaims, [nyan.speechNoEffects(That was so fun, [pc.name]! Thank you so much!)]
 	</p>
-	#IF(game.getCurrentWeather()==weather("MAGIC_STORM"))
+	#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
 		<p>
 			Returning your girlfriend's sentiments, you accompany her to the exit of the Shopping Arcade, where you see through the glass doors that there's an ongoing arcane storm. Letting out a little eek, Nyan huddles up to you and whines, [nyan.speechNoEffects(Oh no... Perhaps if we hurry, it won't affect me too much...)]
 		</p>
@@ -196,10 +196,10 @@
 			Telling her that there's nothing to be sorry about, you reassuringly stroke Nyan's arm, which has the desired effect of calming her down. Making your way up the flights of stairs to the third floor, the two of you soon arrive at the door to your girlfriend's apartment, where she turns to face you and nervously shuffles her feet, before looking at you with her big, blue eyes and asking, [nyan.speechNoEffects(You're going to come in, aren't you? Just remember all what I told you this evening, and my mum won't be a problem!)]
 		</p>
 	#ELSE
-		#IF(game.getCurrentWeather()==weather("RAIN") || game.getCurrentWeather()==weather("SNOW"))
+		#IF(game.getCurrentWeather()==WEATHER_RAIN || game.getCurrentWeather()==WEATHER_SNOW)
 			<p>
 				Returning your girlfriend's sentiments, you accompany her to the exit of the Shopping Arcade, where you see through the glass doors that it's currently
-				#IF(game.getCurrentWeather()==weather("RAIN"))
+				#IF(game.getCurrentWeather()==WEATHER_RAIN)
 					 raining outside.
 				#ELSE
 					 snowing outside.

@@ -17,7 +17,7 @@
 	</descriptorsFeminine>
 	<transformationDescription><![CDATA[
 		They quickly begin to shrink down a little and become rounded, and in the process also shift to sit higher up on [npc.her] head than a normal pair of human ears would.
-		#IF(npc.getBodyMaterial()==bodyMaterial("FLESH"))
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
 			 A layer of [npc.earFullDescriptionColour] quickly grows to cover them,
 		#ELSE
 			 Just like the rest of [npc.her] body, they're made out of [npc.earFullDescription],

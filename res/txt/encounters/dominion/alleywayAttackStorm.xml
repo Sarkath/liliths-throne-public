@@ -5,9 +5,9 @@
 	
 	<htmlContent tag="ALLEY_ATTACK"><![CDATA[
 	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
 	#ENDVAR
 	
 	#IF(pc.hasCompanions())
@@ -55,9 +55,9 @@
 	
 	<htmlContent tag="ALLEY_ATTACK_REPEAT"><![CDATA[
 	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
 		var companions = pc.hasCompanions();
 	#ENDVAR
 	
@@ -180,9 +180,9 @@
 	
 	<htmlContent tag="ALLEY_ATTACK_PEACEFUL"><![CDATA[
 	#VAR
-		var canal = npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_ALLEYS_CANAL_CROSSING"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL"))
-				|| npc.getLocationPlace().getPlaceType().equals(placeType("DOMINION_CANAL_END"));
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
 		var companions = pc.hasCompanions();
 	#ENDVAR
 	

@@ -20,6 +20,7 @@ import java.util.regex.Pattern;
 
 import javax.script.ScriptException;
 
+import org.springframework.context.expression.MapAccessor;
 import org.springframework.expression.ExpressionException;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
@@ -212,9 +213,9 @@ public class UtilText {
 	private static boolean parseAddPronoun;
 
 	private static ExpressionParser parser = null;
+	private static Map<String, Object> api;
 	private static StandardEvaluationContext ctx = null;
-	private static GameApi api = null;
-	
+
 	private static List<String> specialParsingStrings = new ArrayList<>();
 	private static List<GameCharacter> parsingCharactersForSpeech = new ArrayList<>();
 	
@@ -9037,12 +9038,31 @@ public class UtilText {
 			if(parser ==null) {
 				initScriptEngine();
 			}
+			if(!specialNPCs.isEmpty()) {
+				for(int i = 0; i<specialNPCs.size(); i++) {
+					if(i==0) {
+						api.put("npc", specialNPCs.get(i));
+					}
+					api.put("npc"+(i+1), specialNPCs.get(i));
+				}
+			} else {
+				try { // Getting the target NPC can throw a NullPointerException, so if it does (i.e., there's no NPC suitable for parsing), just catch it and carry on.
+					api.put("npc", ParserTarget.NPC.getCharacter("npc", specialNPCs));
+				} catch(Exception ex) {
+//					System.err.println("Parsing error: Could not initialise npc");
+				}
+			}
 
-			api.npcs = specialNPCs;
+			if(Main.game.isStarted() && Main.game.getPlayer().hasCompanions()) {
+				for(int i = 0; i<Main.game.getPlayer().getCompanions().size(); i++) {
+					if(i==0) {
+						api.put("com", Main.game.getPlayer().getCompanions().get(i));
+					}
+					api.put("com"+(i+1), Main.game.getPlayer().getCompanions().get(i));
+				}
+			}
 
-			if(Main.game.isStarted() && Main.game.getPlayer().hasCompanions())
-				api.coms = Main.game.getPlayer().getCompanions();
-			
+
 			try {
 				StringBuilder commandWithVariableCalls = new StringBuilder();
 				
@@ -9052,10 +9072,10 @@ public class UtilText {
 				commandWithVariableCalls.append(command);
 				
 				if(suppressOutput) {
-					parser.parseExpression(commandWithVariableCalls.toString()).getValue(ctx);
+					parser.parseExpression(commandWithVariableCalls.toString()).getValue(ctx, api);
 					return "";
 				}
-				return String.valueOf(parser.parseExpression(commandWithVariableCalls.toString()).getValue(ctx));
+				return String.valueOf(parser.parseExpression(commandWithVariableCalls.toString()).getValue(ctx, api));
 			} catch(ExpressionException e) {
 				System.err.println("Parsing error: "+command);
 				System.err.println(e.getMessage());
@@ -9067,10 +9087,29 @@ public class UtilText {
 			if(parser ==null) {
 				initScriptEngine();
 			}
-			api.npcs = specialNPCs;
+			if(!specialNPCs.isEmpty()) {
+				for(int i = 0; i<specialNPCs.size(); i++) {
+					if(i==0) {
+						api.put("npc", specialNPCs.get(i));
+					}
+					api.put("npc"+(i+1), specialNPCs.get(i));
+				}
+			} else {
+				try { // Getting the target NPC can throw a NullPointerException, so if it does (i.e., there's no NPC suitable for parsing), just catch it and carry on.
+					api.put("npc", ParserTarget.NPC.getCharacter("npc", specialNPCs));
+				} catch(Exception ex) {
+//					System.err.println("Parsing error: Could not initialise npc 2");
+				}
+			}
 
-			if(Main.game.getPlayer().hasCompanions())
-				api.coms = Main.game.getPlayer().getCompanions();
+			if(Main.game.getPlayer().hasCompanions()) {
+				for(int i = 0; i<Main.game.getPlayer().getCompanions().size(); i++) {
+					if(i==0) {
+						api.put("com", Main.game.getPlayer().getCompanions().get(i));
+					}
+					api.put("com"+(i+1), Main.game.getPlayer().getCompanions().get(i));
+				}
+			}
 		}
 		
 		// Non-script parsing:
@@ -9174,8 +9213,16 @@ public class UtilText {
 		}
 
 		if(ctx == null) {
-			api = new GameApi(Main.game, Main.sex, Main.combat, Main.getProperties(), Util.random, Main.game.getItemGen());
-			ctx = new StandardEvaluationContext(api);
+			ctx = new StandardEvaluationContext();
+			ctx.addPropertyAccessor(new MapAccessor());
+
+			api = new HashMap<>();
+			api.put("game", Main.game);
+			api.put("sex", Main.sex);
+			api.put("combat", Main.combat);
+			api.put("properties", Main.getProperties());
+			api.put("RND", Util.random);
+			api.put("itemGem", Main.game.getItemGen());
 		}
 
 //		ScriptEngineManager manager = new ScriptEngineManager();
@@ -9186,7 +9233,7 @@ public class UtilText {
 			for(ParserTarget target : ParserTarget.values()) {
 				if(target!=ParserTarget.STYLE && target!=ParserTarget.UNIT && target!=ParserTarget.NPC && target!=ParserTarget.COMPANION) {
 					for(String tag : target.getTags()) {
-						ctx.setVariable(tag, target.getCharacter(tag, null));
+						api.put(tag, target.getCharacter(tag, null));
 					}
 				}
 			}
@@ -9198,291 +9245,301 @@ public class UtilText {
 
 		// Ensure that these classes are only pushed into the JS engine once.
 		if(jsObjectLoadComplete) return;
-		
+
 		// Java classes:
-		for(DayOfWeek dayOfWeek : DayOfWeek.values())
-			api.addDayOfWeek(dayOfWeek.toString(), dayOfWeek);
-		
+		for(DayOfWeek dayOfWeek : DayOfWeek.values()) {
+			api.put("DOW_"+dayOfWeek, dayOfWeek);
+		}
+
 		// Items:
-		for(AbstractWeaponType weaponType : WeaponType.getAllWeapons())
-			api.addWeaponType(WeaponType.getIdFromWeaponType(weaponType), weaponType);
-
-		for(AbstractClothingType clothingType : ClothingType.getAllClothing())
-			api.addClothingType(ClothingType.getIdFromClothingType(clothingType), clothingType);
-
-		for(AbstractItemType itemType : ItemType.getAllItems())
-			api.addItemType(ItemType.getIdFromItemType(itemType), itemType);
-
-		for(AbstractSetBonus setBonus : SetBonus.getAllSetBonuses())
-			api.addSetBonus(SetBonus.getIdFromSetBonus(setBonus), setBonus);
-
-		for(ItemTag it : ItemTag.values())
-			api.addItemTag(it.toString(), it);
-
-		for(CoverableArea ca : CoverableArea.values())
-			api.addCoverableArea(ca.toString(), ca);
-
-		for(InventorySlot is : InventorySlot.values())
-			api.addInventorySlot(is.toString(), is);
+		for(AbstractWeaponType weaponType : WeaponType.getAllWeapons()) {
+			api.put("WEAPON_"+WeaponType.getIdFromWeaponType(weaponType), weaponType);
+		}
+		for(AbstractClothingType clothingType : ClothingType.getAllClothing()) {
+			api.put("CLOTHING_"+ClothingType.getIdFromClothingType(clothingType), clothingType);
+			api.put("CT_"+ClothingType.getIdFromClothingType(clothingType), clothingType);
+		}
+		for(AbstractItemType itemType : ItemType.getAllItems()) {
+			api.put("ITEM_"+ItemType.getIdFromItemType(itemType), itemType);
+		}
+		for(AbstractSetBonus setBonus : SetBonus.getAllSetBonuses()) {
+			api.put("SET_BONUS_"+SetBonus.getIdFromSetBonus(setBonus), setBonus);
+		}
+		for(ItemTag it : ItemTag.values()) {
+			api.put("ITEM_TAG_"+it.toString(), it);
+		}
+		for(CoverableArea ca : CoverableArea.values()) {
+			api.put("CA_"+ca.toString(), ca);
+		}
+		for(InventorySlot is : InventorySlot.values()) {
+			api.put("IS_"+is.toString(), is);
+		}
 
 		// Misc.:
-		for(Colour colour : PresetColour.getAllPresetColours())
-			api.addColour(PresetColour.getIdFromColour(colour), colour);
+		for(Colour colour : PresetColour.getAllPresetColours()) {
+			api.put("COLOUR_"+PresetColour.getIdFromColour(colour), colour);
+		}
 
 		// Bodies:
-		for(AbstractRace race : Race.getAllRaces())
-			api.addRace(Race.getIdFromRace(race), race);
-
-		for(AbstractRacialBody racialBody : RacialBody.getAllRacialBodies())
-			api.addRacialBody(RacialBody.getIdFromRacialBody(racialBody), racialBody);
-
-		for(RaceStage raceStage : RaceStage.values())
-			api.addRaceStage(raceStage.toString(), raceStage);
-
-		for(AbstractSubspecies subspecies : Subspecies.getAllSubspecies())
-			api.addSubspecies(Subspecies.getIdFromSubspecies(subspecies), subspecies);
-
-		for(LegConfiguration legConf : LegConfiguration.values())
-			api.addLegConfiguration(legConf.toString(), legConf);
-
-		for(FootStructure footStructure : FootStructure.values())
-			api.addFootStructure(footStructure.toString(), footStructure);
-
-		for(GenitalArrangement genArrangement : GenitalArrangement.values())
-			api.addGenitalArrangement(genArrangement.toString(), genArrangement);
-
-		for(BodyMaterial material : BodyMaterial.values())
-			api.addBodyMaterial(material.toString(), material);
-
-		for(AbstractBodyCoveringType bct : BodyCoveringType.getAllBodyCoveringTypes())
-			api.addBodyCoveringType(BodyCoveringType.getIdFromBodyCoveringType(bct), bct);
-
-		for(BodyCoveringCategory coveringCategory : BodyCoveringCategory.values())
-			api.addBodyCoveringCategory(coveringCategory.toString(), coveringCategory);
-
-		for(CoveringPattern pattern : CoveringPattern.values())
-			api.addCoveringPattern(pattern.toString(), pattern);
-
-		for(CoveringModifier modifier : CoveringModifier.values())
-			api.addCoveringModifier(modifier.toString(), modifier);
-
-		for(NippleShape nippleShape : NippleShape.values())
-			api.addNippleShape(nippleShape.toString(), nippleShape);
-
-		for(CumProduction cumProduction : CumProduction.values())
-			api.addCumProduction(cumProduction.toString(), cumProduction);
-
-		for(BodyPartTag bpt : BodyPartTag.values())
-			api.addBodyPartTag(bpt.toString(), bpt);
-
-		for(PenetrationModifier penMod : PenetrationModifier.values())
-			api.addPenetrationModifier(penMod.toString(), penMod);
-
-		for(OrificeModifier orificeMod : OrificeModifier.values())
-			api.addOrificeModifier(orificeMod.toString(), orificeMod);
-
-		for(TongueModifier tongueMod : TongueModifier.values())
-			api.addTongueModifier(tongueMod.toString(), tongueMod);
-
-		for(Muscle muscle : Muscle.values())
-			api.addMuscle(muscle.toString(), muscle);
-
-		for(BodySize bodySize : BodySize.values())
-			api.addBodySize(bodySize.toString(), bodySize);
-
-		for(BodyShape bodyShape : BodyShape.values())
-			api.addBodyShape(bodyShape.toString(), bodyShape);
-
+		for(AbstractRace race : Race.getAllRaces()) {
+			api.put("RACE_"+Race.getIdFromRace(race), race);
+		}
+		for(AbstractRacialBody racialBody : RacialBody.getAllRacialBodies()) {
+			api.put("RACIAL_BODY_"+RacialBody.getIdFromRacialBody(racialBody), racialBody);
+		}
+		for(RaceStage raceStage : RaceStage.values()) {
+			api.put("RACE_STAGE_"+raceStage.toString(), raceStage);
+		}
+		for(AbstractSubspecies subspecies : Subspecies.getAllSubspecies()) {
+			api.put("SUBSPECIES_"+Subspecies.getIdFromSubspecies(subspecies), subspecies);
+		}
+		for(LegConfiguration legConf : LegConfiguration.values()) {
+			api.put("LEG_CONFIGURATION_"+legConf.toString(), legConf);
+		}
+		for(FootStructure footStructure : FootStructure.values()) {
+			api.put("FOOT_STRUCTURE_"+footStructure.toString(), footStructure);
+		}
+		for(GenitalArrangement genArrangement : GenitalArrangement.values()) {
+			api.put("GENITALS_"+genArrangement.toString(), genArrangement);
+		}
+		for(BodyMaterial material : BodyMaterial.values()) {
+			api.put("BODY_MATERIAL_"+material.toString(), material);
+		}
+		for(AbstractBodyCoveringType bct : BodyCoveringType.getAllBodyCoveringTypes()) {
+			api.put("BODY_COVERING_TYPE_"+BodyCoveringType.getIdFromBodyCoveringType(bct), bct);
+		}
+		for(BodyCoveringCategory coveringCategory : BodyCoveringCategory.values()) {
+			api.put("BODY_COVERING_CATEGORY_"+coveringCategory, coveringCategory);
+		}
+		for(CoveringPattern pattern : CoveringPattern.values()) {
+			api.put("COVERING_PATTERN_"+pattern.toString(), pattern);
+		}
+		for(CoveringModifier modifier : CoveringModifier.values()) {
+			api.put("COVERING_MODIFIER_"+modifier.toString(), modifier);
+		}
+		for(NippleShape nippleShape : NippleShape.values()) {
+			api.put("NIPPLE_SHAPE_"+nippleShape.toString(), nippleShape);
+		}
+		for(CumProduction cumProduction : CumProduction.values()) {
+			api.put("CUM_PRODUCTION_"+cumProduction.toString(), cumProduction);
+		}
+		for(BodyPartTag bpt : BodyPartTag.values()) {
+			api.put("BODY_PART_TAG_"+bpt.toString(), bpt);
+		}
+		for(PenetrationModifier penMod : PenetrationModifier.values()) {
+			api.put("PENETRATION_MODIFIER_"+penMod.toString(), penMod);
+		}
+		for(OrificeModifier orificeMod : OrificeModifier.values()) {
+			api.put("ORIFICE_MODIFIER_"+orificeMod.toString(), orificeMod);
+		}
+		for(TongueModifier tongueMod : TongueModifier.values()) {
+			api.put("TONGUE_MODIFIER_"+tongueMod.toString(), tongueMod);
+		}
+		for(Muscle muscle : Muscle.values()) {
+			api.put("MUSCLE_"+muscle.toString(), muscle);
+		}
+		for(BodySize bodySize : BodySize.values()) {
+			api.put("BODY_SIZE_"+bodySize.toString(), bodySize);
+		}
+		for(BodyShape bodyShape : BodyShape.values()) {
+			api.put("BODY_SHAPE_"+bodyShape.toString(), bodyShape);
+		}
 		// Types:
-		for(AbstractFluidType fluidType : FluidType.getAllFluidTypes())
-			api.addFluidType(FluidType.getIdFromFluidType(fluidType), fluidType);
+		for(AbstractFluidType fluidType : FluidType.getAllFluidTypes()) {
+			api.put("FLUID_TYPE_"+FluidType.getIdFromFluidType(fluidType), fluidType);
+		}
+		for(AbstractAntennaType type : AntennaType.getAllAntennaTypes()) {
+			api.put("ANTENNA_TYPE_"+AntennaType.getIdFromAntennaType(type), type);
+		}
+		for(AbstractAnusType type : AnusType.getAllAnusTypes()) {
+			api.put("ANUS_TYPE_"+AnusType.getIdFromAnusType(type), type);
+		}
+		for(AbstractArmType type : ArmType.getAllArmTypes()) {
+			api.put("ARM_TYPE_"+ArmType.getIdFromArmType(type), type);
+		}
+		for(AbstractAssType type : AssType.getAllAssTypes()) {
+			api.put("ASS_TYPE_"+AssType.getIdFromAssType(type), type);
+		}
+		for(AbstractBreastType type : BreastType.getAllBreastTypes()) {
+			api.put("BREAST_TYPE_"+BreastType.getIdFromBreastType(type), type);
+		}
+		for(AbstractEarType type : EarType.getAllEarTypes()) {
+			api.put("EAR_TYPE_"+EarType.getIdFromEarType(type), type);
+		}
+		for(AbstractEyeType type : EyeType.getAllEyeTypes()) {
+			api.put("EYE_TYPE_"+EyeType.getIdFromEyeType(type), type);
+		}
+		for(AbstractFaceType type : FaceType.getAllFaceTypes()) {
+			api.put("FACE_TYPE_"+FaceType.getIdFromFaceType(type), type);
+		}
+		for(AbstractFootType type : FootType.getAllFootTypes()) {
+			api.put("FOOT_TYPE_"+FootType.getIdFromFootType(type), type);
+		}
+		for(AbstractHairType type : HairType.getAllHairTypes()) {
+			api.put("HAIR_TYPE_"+HairType.getIdFromHairType(type), type);
+		}
+		for(AbstractHornType type : HornType.getAllHornTypes()) {
+			api.put("HORN_TYPE_"+HornType.getIdFromHornType(type), type);
+		}
+		for(AbstractLegType type : LegType.getAllLegTypes()) {
+			api.put("LEG_TYPE_"+LegType.getIdFromLegType(type), type);
+		}
+		for(AbstractMouthType type : MouthType.getAllMouthTypes()) {
+			api.put("MOUTH_TYPE_"+MouthType.getIdFromMouthType(type), type);
+		}
+		for(AbstractNippleType type : NippleType.getAllNippleTypes()) {
+			api.put("NIPPLE_TYPE_"+NippleType.getIdFromNippleType(type), type);
+		}
+		for(AbstractPenisType type : PenisType.getAllPenisTypes()) {
+			api.put("PENIS_TYPE_"+PenisType.getIdFromPenisType(type), type);
+		}
+		for(AbstractTorsoType type : TorsoType.getAllTorsoTypes()) {
+			api.put("TORSO_TYPE_"+TorsoType.getIdFromTorsoType(type), type);
+		}
+		for(AbstractTailType type : TailType.getAllTailTypes()) {
+			api.put("TAIL_TYPE_"+TailType.getIdFromTailType(type), type);
+		}
+		for(AbstractTentacleType type : TentacleType.getAllTentacleTypes()) {
+			api.put("TENTACLE_TYPE_"+TentacleType.getIdFromTentacleType(type), type);
+		}
+		for(AbstractTesticleType type : TesticleType.getAllTesticleTypes()) {
+			api.put("TESTICLE_TYPE_"+TesticleType.getIdFromTesticleType(type), type);
+		}
+		for(AbstractTongueType type : TongueType.getAllTongueTypes()) {
+			api.put("TONGUE_TYPE_"+TongueType.getIdFromTongueType(type), type);
+		}
+		for(AbstractVaginaType type : VaginaType.getAllVaginaTypes()) {
+			api.put("VAGINA_TYPE_"+VaginaType.getIdFromVaginaType(type), type);
+		}
+		for(AbstractWingType type : WingType.getAllWingTypes()) {
+			api.put("WING_TYPE_"+WingType.getIdFromWingType(type), type);
+		}
+		for(WingSize size : WingSize.values()) {
+			api.put("WING_SIZE_"+size.toString(), size.getValue());
+		}
 
-		for(AbstractAntennaType type : AntennaType.getAllAntennaTypes())
-			api.addAntennaType(AntennaType.getIdFromAntennaType(type), type);
 
-		for(AbstractAnusType type : AnusType.getAllAnusTypes())
-			api.addAnusType(AnusType.getIdFromAnusType(type), type);
-
-		for(AbstractArmType type : ArmType.getAllArmTypes())
-			api.addArmType(ArmType.getIdFromArmType(type), type);
-
-		for(AbstractAssType type : AssType.getAllAssTypes())
-			api.addAssType(AssType.getIdFromAssType(type), type);
-
-		for(AbstractBreastType type : BreastType.getAllBreastTypes())
-			api.addBreastType(BreastType.getIdFromBreastType(type), type);
-
-		for(AbstractEarType type : EarType.getAllEarTypes())
-			api.addEarType(EarType.getIdFromEarType(type), type);
-
-		for(AbstractEyeType type : EyeType.getAllEyeTypes())
-			api.addEyeType(EyeType.getIdFromEyeType(type), type);
-
-		for(AbstractFaceType type : FaceType.getAllFaceTypes())
-			api.addFaceType(FaceType.getIdFromFaceType(type), type);
-
-		for(AbstractFootType type : FootType.getAllFootTypes())
-			api.addFootType(FootType.getIdFromFootType(type), type);
-
-		for(AbstractHairType type : HairType.getAllHairTypes())
-			api.addHairType(HairType.getIdFromHairType(type), type);
-
-		for(AbstractHornType type : HornType.getAllHornTypes())
-			api.addHornType(HornType.getIdFromHornType(type), type);
-
-		for(AbstractLegType type : LegType.getAllLegTypes())
-			api.addLegType(LegType.getIdFromLegType(type), type);
-
-		for(AbstractMouthType type : MouthType.getAllMouthTypes())
-			api.addMouthType(MouthType.getIdFromMouthType(type), type);
-
-		for(AbstractNippleType type : NippleType.getAllNippleTypes())
-			api.addNippleType(NippleType.getIdFromNippleType(type), type);
-
-		for(AbstractPenisType type : PenisType.getAllPenisTypes())
-			api.addPenisType(PenisType.getIdFromPenisType(type), type);
-
-		for(AbstractTorsoType type : TorsoType.getAllTorsoTypes())
-			api.addTorsoType(TorsoType.getIdFromTorsoType(type), type);
-
-		for(AbstractTailType type : TailType.getAllTailTypes())
-			api.addTailType(TailType.getIdFromTailType(type), type);
-
-		for(AbstractTentacleType type : TentacleType.getAllTentacleTypes())
-			api.addTentacleType(TentacleType.getIdFromTentacleType(type), type);
-
-		for(AbstractTesticleType type : TesticleType.getAllTesticleTypes())
-			api.addTesticleType(TesticleType.getIdFromTesticleType(type), type);
-
-		for(AbstractTongueType type : TongueType.getAllTongueTypes())
-			api.addTongueType(TongueType.getIdFromTongueType(type), type);
-
-		for(AbstractVaginaType type : VaginaType.getAllVaginaTypes())
-			api.addVaginaType(VaginaType.getIdFromVaginaType(type), type);
-
-		for(AbstractWingType type : WingType.getAllWingTypes())
-			api.addWingType(WingType.getIdFromWingType(type), type);
-
-		for(WingSize size : WingSize.values())
-			api.addWingSize(size.toString(), size);
-		
 		// Effects & persona:
-		for(Fetish f : Fetish.values())
-			api.addFetish(f.toString(), f);
-
-		for(FetishDesire fetishDesire : FetishDesire.values())
-			api.addFetishDesire(fetishDesire.toString(), fetishDesire);
-
-		for(PersonalityTrait personalityTrait : PersonalityTrait.values())
-			api.addPersonalityTrait(personalityTrait.toString(), personalityTrait);
-
-		for(Occupation occ : Occupation.values())
-			api.addOccupation(occ.toString(), occ);
-
-		for (OccupationTag occupationTag : OccupationTag.values())
-			api.addOccupationTag(occupationTag.toString(), occupationTag);
-
-		for(AbstractPerk p : Perk.getAllPerks())
-			api.addPerk(Perk.getIdFromPerk(p), p);
-
-		for(AbstractStatusEffect sa : StatusEffect.getAllStatusEffects())
-			api.addStatusEffect(StatusEffect.getIdFromStatusEffect(sa), sa);
-
-		for(AbstractAttribute att : Attribute.getAllAttributes())
-			api.addAttribute(Attribute.getIdFromAttribute(att), att);
+		for(Fetish f : Fetish.values()) {
+			api.put(f.toString(), f);
+		}
+		for(FetishDesire fetishDesire : FetishDesire.values()) {
+			api.put("FETISH_DESIRE_"+fetishDesire.toString(), fetishDesire);
+		}
+		for(PersonalityTrait personalityTrait : PersonalityTrait.values()) {
+			api.put("PERSONALITY_TRAIT_"+personalityTrait.toString(), personalityTrait);
+		}
+		for(Occupation occ : Occupation.values()) {
+			api.put("OCCUPATION_"+occ.toString(), occ);
+		}
+		for (OccupationTag occupationTag : OccupationTag.values()) {
+			api.put("OCCUPATION_TAG_" + occupationTag.toString(), occupationTag);
+		}
+		for(AbstractPerk p : Perk.getAllPerks()) {
+			api.put("PERK_"+Perk.getIdFromPerk(p), p);
+		}
+		for(AbstractStatusEffect sa : StatusEffect.getAllStatusEffects()) {
+			api.put("SE_"+StatusEffect.getIdFromStatusEffect(sa), sa);
+		}
+		for(AbstractAttribute att : Attribute.getAllAttributes()) {
+			api.put("ATTRIBUTE_"+Attribute.getIdFromAttribute(att), att);
+		}
 
 		// Combat:
-		for(DamageType damageType : DamageType.values())
-			api.addDamageType(damageType.toString(), damageType);
-
-		for(SpellSchool spellSchool : SpellSchool.values())
-			api.addSpellSchool(spellSchool.toString(), spellSchool);
-
-		for(Spell spell: Spell.values())
-			api.addSpell(spell.toString(), spell);
-
-		for(SpellUpgrade spellUpgrade: SpellUpgrade.values())
-			api.addSpellUpgrade(spellUpgrade.toString(), spellUpgrade);
-
-		for(CombatBehaviour behaviour: CombatBehaviour.values())
-			api.addCombatBehaviour(behaviour.toString(), behaviour);
+		for(DamageType damageType : DamageType.values()) {
+			api.put("DAMAGE_TYPE_"+damageType.toString(), damageType);
+		}
+		for(SpellSchool spellSchool : SpellSchool.values()) {
+			api.put("SPELL_SCHOOL_"+spellSchool.toString(), spellSchool);
+		}
+		for(Spell spell: Spell.values()) {
+			api.put("SPELL_"+spell.toString(), spell);
+		}
+		for(SpellUpgrade spellUpgrade: SpellUpgrade.values()) {
+			api.put("SPELL_UPGRADE_"+spellUpgrade.toString(), spellUpgrade);
+		}
+		for(CombatBehaviour behaviour: CombatBehaviour.values()) {
+			api.put("COMBAT_BEHAVIOUR_"+behaviour.toString(), behaviour);
+		}
 
 		// Sex:
-		for(SexParticipantType participantType : SexParticipantType.values())
-			api.addSexParticipantType(participantType.toString(), participantType);
-
-		for(SexAreaOrifice orifice : SexAreaOrifice.values())
-			api.addSexAreaOrifice(orifice.toString(), orifice);
-
-		for(SexAreaPenetration penetration : SexAreaPenetration.values())
-			api.addSexAreaPenetration(penetration.toString(), penetration);
-
-		for(GenericSexFlag flag : GenericSexFlag.values())
-			api.addGenericSexFlag(flag.toString(), flag);
+		for(SexParticipantType particiantType : SexParticipantType.values()) {
+			api.put("SEX_PT_"+particiantType.toString(), particiantType);
+		}
+		for(SexAreaOrifice orifice : SexAreaOrifice.values()) {
+			api.put("ORIFICE_"+orifice.toString(), orifice);
+		}
+		for(SexAreaPenetration penetration : SexAreaPenetration.values()) {
+			api.put("PENETRATION_"+penetration.toString(), penetration);
+		}
+		for(GenericSexFlag flag : GenericSexFlag.values()) {
+			api.put("SEX_FLAG_"+flag.toString(), flag);
+		}
 
 		// Other:
-		for(Season season : Season.values())
-			api.addSeason(season.toString(), season);
-
-		for(Weather w : Weather.values())
-			api.addWeather(w.toString(), w);
-
-		for(DayPeriod dayPeriod : DayPeriod.values())
-			api.addDayPeriod(dayPeriod.toString(), dayPeriod);
-
-		for(DialogueFlagValue flag : DialogueFlagValue.values())
-			api.addDialogueFlagValue(flag.toString(), flag);
-
-		for(NPCFlagValue flag : NPCFlagValue.values())
-			api.addNPCFlagValue(flag.toString(), flag);
-
-		for(SlavePermissionSetting permission : SlavePermissionSetting.values())
-			api.addSlavePermissionSetting(permission.toString(), permission);
-
-		for(QuestLine questLine : QuestLine.values())
-			api.addQuestLine(questLine.toString(), questLine);
-
-		for(Quest quest : Quest.values())
-			api.addQuest(quest.toString(), quest);
-
-		for(SexualOrientation orientation : SexualOrientation.values())
-			api.addSexualOrientation(orientation.toString(), orientation);
-
-		for(Femininity femininity : Femininity.values())
-			api.addFemininity(femininity.toString(), femininity);
-
-		for(AffectionLevel affectionLevel : AffectionLevel.values())
-			api.addAffectionLevel(affectionLevel.toString(), affectionLevel);
-
-		for(AffectionLevelBasic affectionLevelBasic : AffectionLevelBasic.values())
-			api.addAffectionLevelBasic(affectionLevelBasic.toString(), affectionLevelBasic);
-
-		for(ObedienceLevel obedienceLevel : ObedienceLevel.values())
-			api.addObedienceLevel(obedienceLevel.toString(), obedienceLevel);
-
-		for(ObedienceLevelBasic obedienceLevelBasic : ObedienceLevelBasic.values())
-			api.addObedienceLevelBasic(obedienceLevelBasic.toString(), obedienceLevelBasic);
-
-		for(Relationship relationship : Relationship.values())
-			api.addRelationship(relationship.toString(), relationship);
-
-		for(FurryPreference furryPreference : FurryPreference.values())
-			api.addFurryPreference(furryPreference.toString(), furryPreference);
-
-		for(ForcedTFTendency tfTendency : ForcedTFTendency.values())
-			api.addForcedTFTendency(tfTendency.toString(), tfTendency);
-
-		for(ForcedFetishTendency fetishTendency : ForcedFetishTendency.values())
-			api.addForcedFetishTendency(fetishTendency.toString(), fetishTendency);
-
-		for(AbstractWorldType worldType : WorldType.getAllWorldTypes())
-			api.addWorldType(WorldType.getIdFromWorldType(worldType), worldType);
-
-		for(AbstractPlaceType placeType : PlaceType.getAllPlaceTypes())
-			api.addPlaceType(PlaceType.getIdFromPlaceType(placeType), placeType);
-
-		for(AbstractPlaceUpgrade upgrade : PlaceUpgrade.getAllPlaceUpgrades())
-			api.addPlaceUpgrade(PlaceUpgrade.getIdFromPlaceUpgrade(upgrade), upgrade);
+		for(Season season : Season.values()) {
+			api.put("SEASON_"+season.toString(), season);
+		}
+		for(Weather w : Weather.values()) {
+			api.put("WEATHER_"+w.toString(), w);
+		}
+		for(DayPeriod dayPeriod : DayPeriod.values()) {
+			api.put("DAY_PERIOD_"+dayPeriod.toString(), dayPeriod);
+		}
+		for(DialogueFlagValue flag : DialogueFlagValue.values()) {
+			api.put("FLAG_"+flag.toString(), flag);
+		}
+		for(NPCFlagValue flag : NPCFlagValue.values()) {
+			api.put("NPC_FLAG_"+flag.toString(), flag);
+		}
+		for(SlavePermissionSetting permission : SlavePermissionSetting.values()) {
+			api.put("SLAVE_PERMISSION_SETTING_"+permission.toString(), permission);
+		}
+		for(QuestLine questLine : QuestLine.values()) {
+			api.put("QUEST_LINE_"+questLine.toString(), questLine);
+		}
+		for(Quest quest : Quest.values()) {
+			api.put("QUEST_"+quest.toString(), quest);
+		}
+		for(SexualOrientation orientation : SexualOrientation.values()) {
+			api.put("ORIENTATION_"+orientation.toString(), orientation);
+		}
+		for(Femininity femininity : Femininity.values()) {
+			api.put("FEMININITY_"+femininity.toString(), femininity);
+		}
+		for(AffectionLevel affectionLevel : AffectionLevel.values()) {
+			api.put("AFFECTION_"+affectionLevel.toString(), affectionLevel);
+		}
+		for(AffectionLevelBasic affectionLevelBasic : AffectionLevelBasic.values()) {
+			api.put("AFFECTION_BASIC_"+affectionLevelBasic.toString(), affectionLevelBasic);
+		}
+		for(ObedienceLevel obedienceLevel : ObedienceLevel.values()) {
+			api.put("OBEDIENCE_"+obedienceLevel.toString(), obedienceLevel);
+		}
+		for(ObedienceLevelBasic obedienceLevelBasic : ObedienceLevelBasic.values()) {
+			api.put("OBEDIENCE_BASIC_"+obedienceLevelBasic.toString(), obedienceLevelBasic);
+		}
+		for(Relationship relationship : Relationship.values()) {
+			api.put("RELATIONSHIP_"+relationship.toString(), relationship);
+		}
+		for(FurryPreference furryPreference : FurryPreference.values()) {
+			api.put("FURRY_PREF_"+furryPreference.toString(), furryPreference);
+		}
+		for(ForcedTFTendency tfTendency : ForcedTFTendency.values()) {
+			api.put("FORCED_TF_"+tfTendency.toString(), tfTendency);
+		}
+		for(ForcedFetishTendency fetishTendency : ForcedFetishTendency.values()) {
+			api.put("FORCED_FETISH_"+fetishTendency.toString(), fetishTendency);
+		}
+		for(AbstractWorldType worldType : WorldType.getAllWorldTypes()) {
+			api.put("WORLD_TYPE_"+WorldType.getIdFromWorldType(worldType), worldType);
+		}
+		for(AbstractPlaceType placeType : PlaceType.getAllPlaceTypes()) {
+			api.put("PLACE_TYPE_"+PlaceType.getIdFromPlaceType(placeType), placeType);
+		}
+		for(AbstractPlaceUpgrade upgrade : PlaceUpgrade.getAllPlaceUpgrades()) {
+			api.put("PLACE_UPGRADE_"+PlaceUpgrade.getIdFromPlaceUpgrade(upgrade), upgrade);
+		}
 
 		jsObjectLoadComplete = true;
 	}
@@ -9512,19 +9569,44 @@ public class UtilText {
 		}
 
 		if(Main.game.isStarted()) {
-			api.npcs = specialNPCs;
-			if(Main.game.getPlayer().hasCompanions())
-				api.coms = Main.game.getPlayer().getCompanions();
+			if(!specialNPCs.isEmpty()) {
+				//			System.out.println("List size: "+specialNPCList.size());
+				for(int i = 0; i<specialNPCs.size(); i++) {
+					if(i==0) {
+						api.put("npc", specialNPCs.get(i));
+					}
+					api.put("npc"+(i+1), specialNPCs.get(i));
+					//				System.out.println("Added: npc"+(i+1));
+				}
+
+			} else {
+				try { // Getting the target NPC can throw a NullPointerException, so if it does (i.e., there's no NPC suitable for parsing), just catch it and carry on.
+					api.put("npc", ParserTarget.NPC.getCharacter("npc", specialNPCs));
+					//				System.out.println("specialNPCList is empty");
+				} catch(Exception ex) {
+					//				System.err.println("Parsing error 2: Could not initialise npc");
+				}
+			}
+
+			if(Main.game.getPlayer().hasCompanions()) {
+				for(int i = 0; i<Main.game.getPlayer().getCompanions().size(); i++) {
+					if(i==0) {
+						api.put("com", Main.game.getPlayer().getCompanions().get(i));
+					}
+					api.put("com"+(i+1), Main.game.getPlayer().getCompanions().get(i));
+				}
+			}
+
 		}
 		
 		if(hasXmlVariables) {
 			for(String s : parserVariableCalls) {
 				// HACK: This should probably go into the parser.
-				parser.parseExpression(s).getValue(ctx);
+				parser.parseExpression(s).getValue(ctx, api);
 			}
 		}
 
-		return parser.parseExpression(conditionalStatement).getValue(ctx, Boolean.class);
+		return parser.parseExpression(conditionalStatement).getValue(ctx, api, Boolean.class);
 	}
 	
 	
@@ -10080,31 +10162,31 @@ public class UtilText {
 		if(parser ==null) {
 			initScriptEngine();
 		}
-		api.clothing = getClothingTypeForParsing();
+		api.put("clothing", getClothingTypeForParsing());
 	}
 
 	public static Body getBodyForParsing() {
 		return body;
 	}
 	
-	public static void setBodyForParsing(Body body) {
+	public static void setBodyForParsing(String tag, Body body) {
 		UtilText.body = body;
 		if(parser ==null) {
 			initScriptEngine();
 		}
-		api.targetedBody = getBodyForParsing();
+		api.put(tag, getBodyForParsing());
 	}
 
 	public static AbstractRace getRaceForParsing() {
 		return race;
 	}
 	
-	public static void setRaceForParsing(AbstractRace race) {
+	public static void setRaceForParsing(String tag, AbstractRace race) {
 		UtilText.race = race;
 		if(parser ==null) {
 			initScriptEngine();
 		}
-		api.targetedRace = getRaceForParsing();
+		api.put(tag, getRaceForParsing());
 	}
 	
 }

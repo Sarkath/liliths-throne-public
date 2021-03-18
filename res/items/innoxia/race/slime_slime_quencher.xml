@@ -30,7 +30,7 @@
 		<effectTooltipLines>
 			<line><![CDATA[[style.boldSex(+1)] [style.boldWetness(Vagina Wetness)]]]></line>
 			<line><![CDATA[[style.boldSex(+1)] [style.boldWetness(Anal Wetness)]]]></line>
-			<line><![CDATA[[#attribute("DAMAGE_LUST").getFormattedValue(5)] to 'potion effects']]></line>
+			<line><![CDATA[[#ATTRIBUTE_DAMAGE_LUST.getFormattedValue(5)] to 'potion effects']]></line>
 		</effectTooltipLines>
 		
 		<applyEffects><![CDATA[
@@ -39,13 +39,13 @@
 			</p>
 			[#npc.incrementVaginaWetness(1)]
 			[#npc.incrementAssWetness(1)]
-			[#npc.addPotionEffect(attribute("DAMAGE_LUST"), 5)]
+			[#npc.addPotionEffect(ATTRIBUTE_DAMAGE_LUST, 5)]
 		]]></applyEffects>
 		
 		<itemTags>
 			<tag>BAT_CAVERNS_SPAWN</tag>
 			<tag>SUBMISSION_TUNNEL_SPAWN</tag>
-			<tag>attribute("TF_ITEM")</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
 			<tag>SOLD_BY_RALPH</tag>
 		</itemTags>
 	</coreAttributes>

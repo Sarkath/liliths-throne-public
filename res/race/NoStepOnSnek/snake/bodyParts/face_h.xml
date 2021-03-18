@@ -27,7 +27,7 @@
 	<noseDescriptorsFeminine/>
 	<transformationDescription><![CDATA[
 		[npc.Her] nose and mouth twitch and transform as they push out into an anthropomorphic, snake-like muzzle. [npc.Her] teeth grow out into a pair of long fangs, which can thankfully be folded up within [npc.her] mouth in order to tuck them out of the way. With the transformation not having yet run its course, [npc.namePos] neck suddenly stretches out and [npc.her] tongue narrows and splits, leaving [npc.herHim] with a distinctly snake-like head. Meanwhile, the back and sides of [npc.her] neck begin to flare out, and within moments [npc.she] [npc.has] a very distinctive, cobra-like hood.
-		#IF(npc.getBodyMaterial()==bodyMaterial("FLESH"))
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
 			 A layer of [npc.faceSkin+] quickly grows to cover [npc.her] new face, 
 		#ELSE
 			 Just like the rest of [npc.her] body, [npc.her] new face is [npc.materialDescriptor] [npc.faceSkin+], 

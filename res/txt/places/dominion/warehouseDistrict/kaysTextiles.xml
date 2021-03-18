@@ -3,7 +3,7 @@
 
 	<!-- WAREHOUSE_DISTRICT -->
 
-	<htmlContent tag="WAREHOUSE_DISTRIclothing("KAYS_TEXTILES")"><![CDATA[
+	<htmlContent tag="WAREHOUSE_DISTRICT_KAYS_TEXTILES"><![CDATA[
 	<p>
 		[style.boldArcane(Kay's Textiles)]<br/>
 		Tucked away in one corner of the district, there's a modestly-sized, wooden warehouse with the words 'Kay's Textiles' painted in large pink lettering across the frontage. Nailed into the wall beside the front entrance, there's a sign which declares this warehouse to be open from
@@ -15,9 +15,9 @@
 	</p>
 	#IF(game.isExtendedWorkTime())
 		<p>
-			#IF(pc.getQuest(questLine("relationship("NYAN_HELP")"))==quest("relationship("NYAN_3_STOCK_ISSUES_DOBERMANNS")"))
+			#IF(pc.getQuest(QUEST_LINE_RELATIONSHIP_NYAN_HELP)==QUEST_RELATIONSHIP_NYAN_3_STOCK_ISSUES_DOBERMANNS)
 				Although you've managed to discover that Wolfgang and Karl have seized control of Kay's business, you've yet to resolve the situation. Sooner or later, you're going to have to confront the two dobermanns again and convince them to leave Kay alone... 
-			#ELSEIF(pc.isQuestProgressGreaterThan(questLine("relationship("NYAN_HELP")"), quest("relationship("NYAN_3_STOCK_ISSUES_DOBERMANNS")")))
+			#ELSEIF(pc.isQuestProgressGreaterThan(QUEST_LINE_RELATIONSHIP_NYAN_HELP, QUEST_RELATIONSHIP_NYAN_3_STOCK_ISSUES_DOBERMANNS))
 				Having rescued [kay.namePos] business from Wolfgang and Karl, you've been given permission to come and go from the premises as you please. What's more, the thankful [kay.race] said that you could pay [kay.herHim] a personal visit whenever you feel like it...
 			#ELSE
 				Having told Nyan that you'd discover why Kay has suddenly stopped doing business with her, you're going to have to head inside the warehouse and find out what's going on...
@@ -28,7 +28,7 @@
 	</htmlContent>
 	
 	<htmlContent tag="INITIAL_ENTRY"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("supplierDepotDoorUnlocked")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_supplierDepotDoorUnlocked))
 		<p>
 			Pushing open the front door, you [pc.step] inside the warehouse and once again take stock of your surroundings. Just like the last time you were here, the series of arcane-powered lights secured to the high ceiling are casting the entire interior in a bright, slightly off-white light, which, combined with the steady mechanical hum that's coming from within the building, gives this place a very industrial feel.
 		</p>
@@ -37,7 +37,7 @@
 		</p>
 		<p>
 			Over to your left, there's a small waiting area consisting of a few sofas arranged around a glass coffee table, while to your right, the same smartly-dressed rabbit-girl who was here the last time you visited is sitting behind her wooden desk.
-			#IF(pc.isQuestProgressGreaterThan(questLine("relationship("NYAN_HELP")"), quest("relationship("NYAN_3_STOCK_ISSUES_DOBERMANNS")")))
+			#IF(pc.isQuestProgressGreaterThan(QUEST_LINE_RELATIONSHIP_NYAN_HELP, QUEST_RELATIONSHIP_NYAN_3_STOCK_ISSUES_DOBERMANNS))
 				 As she catches sight of you, this receptionist flashes you a happy smile and waves you on, signalling that you're free to come and go from here whenever you please.
 			#ELSE
 				 As she catches sight of you, this receptionist lets out a sorrowful sigh and waves you on, signalling that she really doesn't care how many times you come and go from here.
@@ -77,7 +77,7 @@
 	<!-- RECEPTION -->
 	
 	<htmlContent tag="RECEPTION"><![CDATA[
-	#IF(pc.isQuestProgressGreaterThan(questLine("relationship("NYAN_HELP")"), quest("relationship("NYAN_3_STOCK_ISSUES_DOBERMANNS")")))
+	#IF(pc.isQuestProgressGreaterThan(QUEST_LINE_RELATIONSHIP_NYAN_HELP, QUEST_RELATIONSHIP_NYAN_3_STOCK_ISSUES_DOBERMANNS))
 		<p>
 			The reception area of Kay's Textiles consists of a small waiting area and a wooden desk, behind which the familiar, smartly-dressed rabbit-girl is currently sitting. With the expulsion of Wolfgang and Karl, the receptionist's attitude has completely changed, and without the slightest hint of boredom on her face, she flashes you a happy smile and gives you a little wave.
 		</p>
@@ -112,10 +112,10 @@
 	<p>
 		At the end of the corridor closest to the warehouse's entrance, a large, open-sided annex has been constructed to serve as a storage area. Numerous metal shelving units, stacked full of countless wooden crates, are arranged in rows throughout the expansive area. The vast majority of these crates are labelled as containing either raw materials for the arcane weaving machines or fulfilled orders for export all around Lilith's Realm.
 	</p>
-	#IF(pc.isQuestProgressGreaterThan(questLine("relationship("NYAN_HELP")"), quest("relationship("NYAN_3_STOCK_ISSUES_DOBERMANNS")")))
+	#IF(pc.isQuestProgressGreaterThan(QUEST_LINE_RELATIONSHIP_NYAN_HELP, QUEST_RELATIONSHIP_NYAN_3_STOCK_ISSUES_DOBERMANNS))
 		<p>
 			A weathered, open-topped crate positioned near to the front of this storage area is noticeably larger than all the others, and has the words 'Surplus Disposal' painted in large black letters across its side.
-			#IF(game.getDialogueFlags().hasFlag(flag("kayCratesSearched")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_kayCratesSearched))
 				 With [kay.namePos] permission, [style.colourMinorBad(you've already taken today's clothing surplus)], and so there's nothing else for you to do except [pc.step] away from the crate and prepare to head elsewhere...
 			#ELSE
 				 Having been given permission by [kay.name], you could always take a look inside the crate and [style.colourMinorGood(help yourself to the items of clothing)] which would otherwise be discarded...
@@ -157,7 +157,7 @@
 		Taking a closer look at some of this newly-made clothing, you immediately recognise the fact that each one of them is enchanted in some way. From dresses and skirts to caps and gloves, each piece of clothing that you take a look at has undoubtedly been infused with arcane essence, which draws you back into taking another look at the machines themselves. Sure enough, as you watch the textile workers busily continue operating their machines, you occasionally see one of them stop to open a small hatch, before extracting empty essence bottles and then inserting dozens of full ones.
 	</p>
 	<p>
-		#IF(pc.isQuestProgressGreaterThan(questLine("relationship("NYAN_HELP")"), quest("relationship("NYAN_3_STOCK_ISSUES_DOBERMANNS")")))
+		#IF(pc.isQuestProgressGreaterThan(QUEST_LINE_RELATIONSHIP_NYAN_HELP, QUEST_RELATIONSHIP_NYAN_3_STOCK_ISSUES_DOBERMANNS))
 			Although the workers seem to be taking regular breaks to chat with one another, the rate at which they're pumping out new items of clothing is nothing short of astounding. With Wolfgang and Karl having been driven off, there's a happy, almost festive, mood in the air. Clearly having been told by [kay.name] that you're the one who saved them from the dobermann's tyranny, the textile workers offer you their jovial thanks and delightful smiles as you pass them by.
 		#ELSE
 			Although the workers are carrying out their tasks with an impressive level of efficiency, you can't help but notice how they all seem to look rather downcast. None of them ever stop to say anything to one another, and you can't help but notice how they sometimes cast a worried glance up at the overseer's station. The sooner that you're able to deal with the two dobermanns who've set up camp in there, the better it will be for everyone...
@@ -174,11 +174,11 @@
 		Here at the far end of the warehouse, a mezzanine floor has been constructed, complete with a wide, metal staircase which links it to the ground floor. A modestly-sized room has been built upon this raised platform, and above its mirrored-glass windows, the words 'Overseer's Station & Kay's Office' have been painted in large, white letters.
 	</p>
 	<p>
-		#IF(pc.isQuestProgressGreaterThan(questLine("relationship("NYAN_HELP")"), quest("relationship("NYAN_3_STOCK_ISSUES_DOBERMANNS")")))
+		#IF(pc.isQuestProgressGreaterThan(QUEST_LINE_RELATIONSHIP_NYAN_HELP, QUEST_RELATIONSHIP_NYAN_3_STOCK_ISSUES_DOBERMANNS))
 			As you've driven off Wolfgang and Karl, this overseer's station is now rightfully staffed by an experienced textile worker. All of the mirrored windows have been fully opened, allowing you to see that the fox-boy on duty is keep a careful watch over the factory floor, ready to respond to any issue which may suddenly arise down there. Seeing you approach, he flashes you a smile and gives you a friendly wave, letting you know that you're more than welcome to head upstairs and through to [kay.namePos] office, if you should want to do so.
 		#ELSE
 			Although the door at the top of the stairs is closed, there's nothing stopping you from heading up and attempting to open it.
-			#IF(game.getDialogueFlags().hasFlag(flag("suppliersEncountered")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_suppliersEncountered))
 				 If you do decide to climb the stairs and head inside the overseer's station, you know that you'll be sure to encounter Wolfgang and Karl once again...
 			#ELSE
 				 If you do decide to climb the stairs and head inside the overseer's station, you know that you'll be sure to find the two dobermanns which the rabbit-girl receptionist warned you about...
@@ -192,7 +192,7 @@
 	<!-- DOBERMANNS -->
 	
 	<htmlContent tag="DOBERMANNS"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("suppliersEncountered")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_suppliersEncountered))
 		<p>
 			Although your last encounter with the dobermanns failed to result in the saving of Kay's business, you tell yourself that this time will be different. Climbing the stairs to the mezzanine floor, you once again deliver
 			#IF(pc.isCowardly())
@@ -208,7 +208,7 @@
 			Seemingly not at all bothered by the mess nor the choking atmosphere, the two dobermanns, who are once again sitting opposite one another in the middle of the circular arrangement of furniture, turn to look at you as you enter.
 			#IF(pc.hasAnyEnforcerStatusEffect())
 				 Throwing down his hand of cards, Wolfgang looks you up and down, clearly taking note of the fact that you're wearing an Enforcer's uniform, before grunting, [wolfgang.speech(I don't give a shit if you're an Enforcer; you can't touch us! We've got a legally-binding contract to be here, so why don't you turn around and fuck off?)]
-			#ELSEIF(pc.getRace()==race("DEMON"))
+			#ELSEIF(pc.getRace()==RACE_DEMON)
 				 Throwing down his hand of cards, Wolfgang looks you up and down, clearly taking note of the fact that you're a demon, before grunting, [wolfgang.speech(I don't give a shit if you're a demon; you can't touch us! We've got a legally-binding contract to be here, so why don't you turn around and fuck off?)]
 			#ELSE
 				 Throwing down his hand of cards, Wolfgang sneers at you and grunts, [wolfgang.speech(You're not going to be able to get rid of us! We've got a legally-binding contract to be here, so why don't you turn around and fuck off?)]
@@ -239,7 +239,7 @@
 			<p>
 				Despite Wolfgang's claim that what they're doing is legal, you can tell from the slightly worried look on Karl's face that it's nothing but a bluff. You're sure that it wouldn't be too hard to succeed with a bluff of your own, and by exploiting the fact that these dobermanns have mistaken you for an Enforcer, you could scare them off with the threat of arrest and potential enslavement...
 			</p>
-		#ELSEIF(pc.getRace()==race("DEMON"))
+		#ELSEIF(pc.getRace()==RACE_DEMON)
 			<p>
 				It's Wolfgang who's first to speak, and after throwing his cards down on the table in front of him, he suddenly notices that you're a demon and grunts in surprise, [wolfgang.speech(A demon, huh? If you're here to try and get rid of us, then you ain't going to get far; we're hired here on a contract that's going to run for at least another few months. Everything's totally legal, so why don't you turn around and fuck off back to Demon Home or wherever you've come from?)]
 			</p>
@@ -399,7 +399,7 @@
 		Deciding that the most fun way of resolving this conflict would be to seduce and fuck this hot pair of bounty hunters, you put on your most alluring look and slowly [pc.walk] towards where they're sitting.
 		#IF(pc.hasAnyEnforcerStatusEffect())
 			 Reassuring the two dobermanns that you're off-duty for the rest of today, you suggestively tease them by saying that Enforcers like to let themselves go just as much as anybody else.
-		#ELSEIF(pc.getRace()==race("DEMON"))
+		#ELSEIF(pc.getRace()==RACE_DEMON)
 			 Reassuring the two dobermanns that you're not going to make use of your demonic status to get them in trouble, you suggestively tease them by saying how your demonic body is always horny and hungry for a good fuck.
 		#ELSE
 			 Reassuring the two dobermanns that you've abandoned your plans of trying to get them to leave Kay alone, you start to suggestively tease and flirt with them.
@@ -555,8 +555,8 @@
 	<!-- OFFERING SEX RESPONSES -->
 	
 	<htmlContent tag="DOBERMANNS_SEX_OFFER_ORAL"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatPaid")) || game.getDialogueFlags().hasFlag(flag("dobermannDefeatEnforcer")) || game.getDialogueFlags().hasFlag(flag("dobermannDefeatSeduced")))
-		#IF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatSeduced")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatPaid) || game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatEnforcer) || game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatSeduced))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatSeduced))
 			<p>
 				Deciding that you'd enjoy using your mouth, you inform the dobermanns that you were really hoping to get a good taste of their cocks. This desire of yours proves to be warmly received by the two bounty hunters, who, after getting you to slide off the sofa and drop down onto your knees, both pull out their huge, throbbing dog-cocks and sit down in front of you.
 			</p>
@@ -574,7 +574,7 @@
 		<p>
 			Doing as you're told, you reach over and start jerking off Karl's huge, knotted dog-cock. Having got exactly what you wanted, you focus on getting these two dobermanns to cum for you...
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatDemon")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatDemon))
 		<p>
 			Not wanting to miss your chance to have some fun with these two big, strong dobermanns, you quickly [pc.step] forwards and tease them by asking if they've ever had their cocks sucked by a horny demon. After exchanging quick glances with one another, the bounty hunters turn to face you, before Wolfgang grunts, [wolfgang.speech(This isn't some kind of trick, is it?)]
 		</p>
@@ -587,7 +587,7 @@
 		<p>
 			Taking the hint, you reach over and start happily jerking off Karl's huge, knotted dog-cock. Having got exactly what you wanted, you focus on getting these two dobermanns to cum for you...
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatCombat")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatCombat))
 		<p>
 			Wanting to have some fun by letting these defeated dobermanns take the dominant role, you inform them that you were really hoping to get a good taste of their cocks before they left. This desire of yours proves to be warmly received by the two bounty hunters, who quickly lead you over to the nearby sofa, and after getting you to drop down onto your knees, they both pull out their huge, throbbing dog-cocks and sit down in front of you.
 		</p>
@@ -602,8 +602,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="DOBERMANNS_SEX_OFFER_SPITROAST"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatPaid")) || game.getDialogueFlags().hasFlag(flag("dobermannDefeatEnforcer")) || game.getDialogueFlags().hasFlag(flag("dobermannDefeatSeduced")))
-		#IF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatSeduced")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatPaid) || game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatEnforcer) || game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatSeduced))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatSeduced))
 			<p>
 				Deciding that you'd enjoy being penetrated at both ends, you inform the dobermanns that you were really hoping to get spit-roasted by them. This desire of yours proves to be warmly received by the two bounty hunters, who quickly push you down onto all fours and pull out their huge, throbbing dog-cocks. Wolfgang then immediately steps around to drop down onto his knees behind you, while Karl similarly sinks down onto the ground in front of your face.
 			</p>
@@ -617,7 +617,7 @@
 		#ENDIF
 		<p>
 			[wolfgang.speech(Want a good double-stuffing of dog-cum, do you, slut?)] Wolfgang asks, before quickly gaining access to your
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 				 [pc.pussy+] and impatiently spreading your [pc.labia+] with both hands. Grunting in approval at what he sees, the dominant dobermann wastes no further time and immediately thrusts forwards, slamming his hot dog-cock deep into your [pc.pussy+].
 			#ELSE
 				 [pc.asshole+] and impatiently spreading your [pc.assSize] ass cheeks with both hands. Grunting in approval at what he sees, the dominant dobermann wastes no further time and immediately thrusts forwards, slamming his hot dog-cock deep into your [pc.asshole+].
@@ -629,7 +629,7 @@
 		<p>
 			Having got exactly what you wanted, you focus on the pleasure of being spit-roasted by these two dobermanns, eagerly anticipating the part where they fill each of your ends with their hot dog-cum...
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatDemon")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatDemon))
 		<p>
 			Not wanting to miss your chance to have some fun with these two big, strong dobermanns, you quickly [pc.step] forwards and tease them by asking if they've ever spit-roasted a horny demon before. After exchanging quick glances with one another, the bounty hunters turn to face you, before Wolfgang grunts, [wolfgang.speech(This isn't some kind of trick, is it?)]
 		</p>
@@ -638,7 +638,7 @@
 		</p>
 		<p>
 			[wolfgang.speech(Even demons enjoy a good double-stuffing of dog-cum, huh?)] Wolfgang grunts, before quickly gaining access to your
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 				 [pc.pussy+] and impatiently spreading your [pc.labia+] with both hands. Clearly having never seen a demon's pussy up close before, he spends a moment using his thick, paw-like fingers to experimentally prod and stroke your clit and inner walls. Grunting in approval both at what he sees and at the horny noises you're making, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], he violently thrusts forwards and slams his hot dog-cock deep into your [pc.pussy+].
 			#ELSE
 				 [pc.asshole+] and impatiently spreading your [pc.assSize] ass cheeks with both hands. Clearly having never seen a demon's asshole up close before, he spends a moment using his thick, paw-like fingers to experimentally prod and and stroke your rear-entrance. Grunting in approval both at what he sees and at the horny noises you're making, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], he violently thrusts forwards and slams his hot dog-cock deep into your [pc.asshole+].
@@ -650,12 +650,12 @@
 		<p>
 			Having got exactly what you wanted, you focus on the pleasure of being spit-roasted by these two dobermanns, eagerly anticipating the part where they fill each of your ends with their hot dog-cum...
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatCombat")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatCombat))
 		<p>
 			Wanting to have some fun by letting these defeated dobermanns take the dominant role, you inform them that you were really hoping to get spit-roasted before they left. This desire of yours proves to be warmly received by the two bounty hunters, who quickly push you down onto all fours and pull out their huge, throbbing dog-cocks. Wolfgang then immediately steps around to drop down onto his knees behind you, while Karl similarly sinks down onto the ground in front of your face.
 		</p>
 		<p>
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 				[wolfgang.speech(Want to apologise by letting me shoot my dog-cum into your hungry little cunt, huh, slut?)] Wolfgang grunts, before quickly gaining access to your [pc.pussy+] and impatiently spreading your [pc.labia+] with both hands. Grunting in approval at what he sees, the dominant dobermann wastes no further time and immediately thrusts forwards, slamming his hot dog-cock deep into your [pc.pussy+].
 			#ELSE
 				[wolfgang.speech(Want to apologise by letting me shoot my dog-cum into your hungry little asshole, huh, slut?)] Wolfgang grunts, before quickly gaining access to your [pc.asshole+] and impatiently spreading your [pc.assSize] ass cheeks with both hands. Grunting in approval at what he sees, the dominant dobermann wastes no further time and immediately thrusts forwards, slamming his hot dog-cock deep into your [pc.asshole+].
@@ -672,8 +672,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="DOBERMANNS_SEX_OFFER_RIDE"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatPaid")) || game.getDialogueFlags().hasFlag(flag("dobermannDefeatEnforcer")) || game.getDialogueFlags().hasFlag(flag("dobermannDefeatSeduced")))
-		#IF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatSeduced")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatPaid) || game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatEnforcer) || game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatSeduced))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatSeduced))
 			<p>
 				Deciding that you'd enjoy getting stuffed with their cocks, you inform the dobermanns that you were really hoping to ride them. This desire of yours proves to be warmly received by the two bounty hunters, who quickly pull out their huge, throbbing dog-cocks. Wolfgang then immediately lies down on the sofa, pulling you down on top of him into the cowgirl position, while Karl sinks down behind you.
 			</p>
@@ -687,16 +687,16 @@
 		#ENDIF
 		<p>
 			[wolfgang.speech(Want a good double-stuffing of dog-cum, do you, slut?)] Wolfgang asks, before quickly gaining access to your
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 				 [pc.pussy+] and impatiently spreading your [pc.labia+] with both hands. Grunting in approval at what he sees, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], forcefully pulls you down and sinks his hot dog-cock deep into your [pc.pussy+].
 			#ELSE
 				 [pc.asshole+] and impatiently spreading your [pc.assSize] ass cheeks with both hands. Grunting in approval, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], forcefully pulls you down and sinks his hot dog-cock deep into your [pc.asshole+].
 			#ENDIF
 		</p>
 		<p>
-			#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+			#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 				Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes his cock up against Wolfgang's, and on his companion's next thrust, forces his cock into your asshole. The sensation of having your back-door stuffed full of two huge dog-cocks causes you to let out [pc.a_moan+], which is met by a synchronised pair of deep, amused grunts from the two dobermanns. Leaning into your back, Karl dominantly growls, [karl.speech(That's right, bitch, keep moaning like a whore!)]
-			#ELSEIF(!pc.isAbleToAccessCoverableArea(ca("ANUS"), true))
+			#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_ANUS, true))
 				Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes his cock up against Wolfgang's, and on his companion's next thrust, forces his cock into your [pc.pussy+]. The sensation of having your cunt stuffed full of two huge dog-cocks causes you to let out [pc.a_moan+], which is met by a synchronised pair of deep, amused grunts from the two dobermanns. Leaning into your back, Karl dominantly growls, [karl.speech(That's right, bitch, keep moaning like a whore!)]
 			#ELSE
 				Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes the [karl.cockHead+] of his cock up against your [pc.asshole+]. On his companion's next thrust, he suddenly forces his cock into your asshole, causing you to let out [pc.a_moan+]. Leaning into your back, Karl dominantly growls, [karl.speech(That's right, bitch, keep moaning like a whore!)]
@@ -705,7 +705,7 @@
 		<p>
 			Having got exactly what you wanted, you focus on the pleasure of taking both of the two dobermanns' cocks at once, eagerly anticipating the part where they fill you with their hot dog-cum...
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatDemon")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatDemon))
 		<p>
 			Not wanting to miss your chance to have some fun with these two big, strong dobermanns, you quickly [pc.step] forwards and tease them by asking if they've ever spit-roasted a horny demon before. After exchanging quick glances with one another, the bounty hunters turn to face you, before Wolfgang grunts, [wolfgang.speech(This isn't some kind of trick, is it?)]
 		</p>
@@ -714,16 +714,16 @@
 		</p>
 		<p>
 			[wolfgang.speech(Even demons enjoy a good double-stuffing of dog-cum, huh?)] Wolfgang grunts, before quickly gaining access to your
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 				 [pc.pussy+] and impatiently spreading your [pc.labia+] with both hands. Clearly having never seen a demon's pussy up close before, he spends a moment using his thick, paw-like fingers to experimentally prod and stroke your clit and inner walls. Grunting in approval both at what he sees and at the horny noises you're making, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], he violently pulls you down and sinks his hot dog-cock deep into your [pc.pussy+].
 			#ELSE
 				 [pc.asshole+] and impatiently spreading your [pc.assSize] ass cheeks with both hands. Clearly having never fucked demon's asshole before, he spends a moment using his thick, paw-like fingers to experimentally prod and and stroke your rear-entrance. Grunting in approval both at what he feels and at the horny noises you're making, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], he violently pulls you down and sinks his hot dog-cock deep into your [pc.asshole+].
 			#ENDIF
 		</p>
 		<p>
-			#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+			#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 				Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes his cock up against Wolfgang's, and on his companion's next thrust, forces his cock into your asshole. The sensation of having your back-door stuffed full of two huge dog-cocks causes you to let out [pc.a_moan+], which is met by a synchronised pair of deep, amused grunts from the two dobermanns. Leaning into your back, Karl dominantly growls, [karl.speech(It's good to know that my cock can make even demons moan like a whore!)]
-			#ELSEIF(!pc.isAbleToAccessCoverableArea(ca("ANUS"), true))
+			#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_ANUS, true))
 				Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes his cock up against Wolfgang's, and on his companion's next thrust, forces his cock into your [pc.pussy+]. The sensation of having your cunt stuffed full of two huge dog-cocks causes you to let out [pc.a_moan+], which is met by a synchronised pair of deep, amused grunts from the two dobermanns. Leaning into your back, Karl dominantly growls, [karl.speech(It's good to know that my cock can make even demons moan like a whore!)]
 			#ELSE
 				Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes the [karl.cockHead+] of his cock up against your [pc.asshole+]. On his companion's next thrust, he suddenly forces his cock into your asshole, causing you to let out [pc.a_moan+]. Leaning into your back, Karl dominantly growls, [karl.speech(It's good to know that my cock can make even demons moan like a whore!)]
@@ -732,21 +732,21 @@
 		<p>
 			Having got exactly what you wanted, you focus on the pleasure of taking both of the two dobermanns' cocks at once, eagerly anticipating the part where they fill you with their hot dog-cum...
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatCombat")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatCombat))
 		<p>
 			Wanting to have some fun by letting these defeated dobermanns take the dominant role, you inform them that you were really hoping to ride their cocks before they left. This desire of yours proves to be warmly received by the two bounty hunters, who quickly pull out their huge, throbbing dog-cocks. Wolfgang then immediately lies down on the sofa, pulling you down on top of him into the cowgirl position, while Karl sinks down behind you.
 		</p>
 		<p>
-			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 				[wolfgang.speech(Want to apologise by letting me shoot my dog-cum into your hungry little cunt, huh, slut?)] Wolfgang grunts, before quickly gaining access to your [pc.pussy+] and impatiently spreading your [pc.labia+] with both hands. Grunting in approval at what he sees, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], forcefully pulls you down and sinks his hot dog-cock deep into your [pc.pussy+].
 			#ELSE
 				[wolfgang.speech(Want to apologise by letting me shoot my dog-cum into your hungry little asshole, huh, slut?)] Wolfgang grunts, before quickly gaining access to your [pc.asshole+] and impatiently spreading your [pc.assSize] ass cheeks with both hands. Grunting in approval, the dominant dobermann wastes no further time, and after grabbing hold of your [pc.hips+], forcefully pulls you down and sinks his hot dog-cock deep into your [pc.asshole+].
 			#ENDIF
 		</p>
 		<p>
-			#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+			#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 				Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes his cock up against Wolfgang's, and on his companion's next thrust, forces his cock into your asshole. The sensation of having your back-door stuffed full of two huge dog-cocks causes you to let out [pc.a_moan+], which is met by a synchronised pair of deep, amused grunts from the two dobermanns. Leaning into your back, Karl dominantly growls, [karl.speech(That's right, bitch, keep moaning like a whore!)]
-			#ELSEIF(!pc.isAbleToAccessCoverableArea(ca("ANUS"), true))
+			#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_ANUS, true))
 				Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes his cock up against Wolfgang's, and on his companion's next thrust, forces his cock into your [pc.pussy+]. The sensation of having your cunt stuffed full of two huge dog-cocks causes you to let out [pc.a_moan+], which is met by a synchronised pair of deep, amused grunts from the two dobermanns. Leaning into your back, Karl dominantly growls, [karl.speech(That's right, bitch, keep moaning like a whore!)]
 			#ELSE
 				Not wanting to miss out on the fun, Karl shuffles up close behind you, and after giving your [pc.ass+] a good grope, he pushes the [karl.cockHead+] of his cock up against your [pc.asshole+]. On his companion's next thrust, he suddenly forces his cock into your asshole, causing you to let out [pc.a_moan+]. Leaning into your back, Karl dominantly growls, [karl.speech(That's right, bitch, keep moaning like a whore!)]
@@ -760,8 +760,8 @@
 	</htmlContent>
 	
 	<htmlContent tag="DOBERMANNS_SEX_OFFER_NIPPLES"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatPaid")) || game.getDialogueFlags().hasFlag(flag("dobermannDefeatEnforcer")) || game.getDialogueFlags().hasFlag(flag("dobermannDefeatSeduced")))
-		#IF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatSeduced")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatPaid) || game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatEnforcer) || game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatSeduced))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatSeduced))
 			<p>
 				Deciding that you'd like to give the dobermanns something a little different, you tell them that you were really hoping to have them fuck your nipples. Glancing at one another for a moment, Wolfgang muses, [wolfgang.speech(I've never fucked someone's nipples before... Sure, why not?)]
 			</p>
@@ -785,7 +785,7 @@
 		<p>
 			Following his companion's lead, Karl grabs your right breast, and after taking a moment to experimentally push his paw-like fingers into your fuckable nipple, he lines his cock up to it and thrusts forwards. [pc.Moaning] in delight as the two dobermanns fuck your tits, you once again push out your chest and try to focus on getting them to cum for you...
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatDemon")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatDemon))
 		<p>
 			Not wanting to miss your chance to have some fun with these two big, strong dobermanns, you quickly [pc.step] forwards and tease them by asking if they've ever fucked a horny demon's tits before. After exchanging quick glances with one another, the bounty hunters turn to face you, before Wolfgang grunts, [wolfgang.speech(This isn't some kind of trick, is it?)]
 		</p>
@@ -801,7 +801,7 @@
 		<p>
 			Following his companion's lead, Karl grabs your right breast, and after taking a moment to experimentally push his paw-like fingers into your fuckable nipple, he lines his cock up to it and thrusts forwards. [pc.Moaning] in delight as the two dobermanns fuck your tits, you once again push out your chest and try to focus on getting them to cum for you...
 		</p>
-	#ELSEIF(game.getDialogueFlags().hasFlag(flag("dobermannDefeatCombat")))
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_dobermannDefeatCombat))
 		<p>
 			Wanting to have some fun by letting these defeated dobermanns take the dominant role, you inform them that you were really hoping to have them fuck your nipples before they left. Glancing at one another for a moment, Wolfgang muses, [wolfgang.speech(I've never fucked someone's nipples before... Sure, why not?)]
 		</p>
@@ -942,7 +942,7 @@
 	</p>
 	<p>
 		Pushing open the door, you [pc.step] into the office and offer your greetings to the white-furred [kay.race] who's sitting behind [kay.her] desk.
-		#IF(game.getDialogueFlags().hasFlag(flag("kaySubmitted")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_kaySubmitted))
 			 Upon seeing that it's you, there's a sudden flash of excitement in [kay.namePos] big, blue eyes, and [kay.she] coyly bites [kay.her] lip before teasing, [kay.speech(It's good to see you again, [pc.Name]. Are you here to have some more fun with me?)]
 		#ELSE
 			 Upon seeing that it's you, [kay.name] happily claps [kay.her] delicate hands together and exclaims, [kay.speech([pc.Name]! It's so good to see you again! What can I do for you today?)]
@@ -987,7 +987,7 @@
 	<htmlContent tag="OFFICE_LEAVE"><![CDATA[
 	<p>
 		Deciding that now's the time to take your leave, you tell [kay.name] that you're going to head off. Visibly upset by the news of your imminent departure, the [kay.race] pouts a little and whines,
-		#IF(game.getDialogueFlags().hasFlag(flag("kaySubmitted")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_kaySubmitted))
 			 [kay.speech(Ok, [pc.name]... If you want to have some more fun, you know where to find me... Please come back soon...)]
 		#ELSE
 			 [kay.speech(Oh, ok... Well, goodbye then, [pc.name]! Please do come back and see me again as soon as you can!)]
@@ -1000,10 +1000,10 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFICE_TALK"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("kaySubmitted")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_kaySubmitted))
 		<p>
 			Wanting to spend a short while catching up with [kay.name] and finding out what [kay.sheHas] been up to today, you set about engaging [kay.herHim] in small talk.
-			#IF(game.getDialogueFlags().hasFlag(flag("kayDommed")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_kayDommed))
 				 From the happy tone of [kay.her] voice, it's obvious that [kay.sheIs] thrilled to have been given this opportunity to get to talk to you, and despite the fact that you've already worn [kay.herHim] out by dominating [kay.herHim] today, [kay.sheIs] still able to summon enough energy to enthusiastically engage you in conversation.
 			#ELSE
 				 From the happy tone of [kay.her] voice, it's obvious that [kay.sheIs] thrilled to have been given this opportunity to get to talk to you, but from the hungry look in [kay.her] eyes, you can tell that [kay.sheIs] wanting more than to just talk. Thinking that it's best to make [kay.herHim] wait a little while before giving [kay.herHim] what [kay.she] wants, you continue to engage the clearly-horny [kay.race] in conversation.
@@ -1069,19 +1069,19 @@
 	</htmlContent>
 	
 	<htmlContent tag="OFFICE_FLIRT"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("kaySubmitted")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_kaySubmitted))
 		<p>
 			Wanting to have some fun with this cute [kay.race], you start to flirt with [kay.name] and tell [kay.herHim] what a good little sub [kay.she] is. Almost immediately, [kay.namePos] white-furred ears start to happily twitch, and after just five minutes of being teased, the horny [kay.race] is excitedly biting [kay.her] lip and twisting [kay.her] tail around the legs of [kay.her] chair. 
 		</p>
 		<p>
-			#IF(game.getDialogueFlags().hasFlag(flag("kayFeminised")))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_kayFeminised))
 				Pleased to see how easy it is to get your cute little sub turned on, you continue to play with [kay.herHim] by telling [kay.herHim] how sexy [kay.she] looks wearing a feminine suit.
 			#ELSE
 				Pleased to see how easy it is to get your cute little sub turned on, you continue to play with [kay.herHim] by telling [kay.herHim] how sexy [kay.she] looks.
 			#ENDIF
 			 Putting on your most seductive voice, you tell [kay.herHim] that [kay.she] makes you horny every time you see [kay.herHim], which causes [kay.herHim] to get overcome with excitement and let out a short, high-pitched moan.
 		</p>
-		#IF(game.getDialogueFlags().hasFlag(flag("kayDommed")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_kayDommed))
 			<p>
 				After twenty minutes spent playing with [kay.name] in this manner, you see that despite [kay.her] horniness, there's a clear look of fatigue in [kay.her] big blue eyes. Knowing that your earlier session of dominating [kay.herHim] has totally exhausted the delicate little [kay.race] for the day, you bring an end to your flirting and tell [kay.herHim] that you'll leave [kay.herHim] to rest for the remainder of today.
 			</p>
@@ -1111,7 +1111,7 @@
 	<!-- KAY_OFFICE_DOMINATE -->
 	
 	<htmlContent tag="KAY_OFFICE_DOMINATE"><![CDATA[
-	#IF(game.getDialogueFlags().hasFlag(flag("kaySubmitted")))
+	#IF(game.getDialogueFlags().hasFlag(FLAG_kaySubmitted))
 		<p>
 			Deciding to have another session of dominant fun with [kay.name], you confidently [pc.step] around to the other side of [kay.her] desk and take hold of [kay.her] soft chin. Tilting [kay.her] androgynous face up so that you're looking down into [kay.her] big, blue eyes, you tell [kay.herHim] to show you what a good, submissive pet [kay.she] is. Unable to contain a desperately-horny whine, [kay.she] happily replies, [kay.speech(Yes, [pc.name]!)]
 		</p>
@@ -1216,22 +1216,22 @@
 		Having had enough fun for now, you order [kay.name] to step back, and as [kay.she] does so, you stand up and let out a deeply-satisfied sigh.
 	</p>
 	<p>
-		#IF(sex.getSexTypeCount(kay, pc, sex.newSexType(penetration("PENIS"), orifice("VAGINA")))>0)
-			#IF(sex.getTimesCummedInside(kay, pc, orifice("VAGINA"))>0)
+		#IF(sex.getSexTypeCount(kay, pc, sex.newSexType(PENETRATION_PENIS, ORIFICE_VAGINA))>0)
+			#IF(sex.getTimesCummedInside(kay, pc, ORIFICE_VAGINA)>0)
 				Having let [kay.name] cum in your pussy, you feel like you need to reinforce the fact that you're still the one in charge.
 			#ELSE
 				Having let [kay.name] fuck your pussy, you feel like you need to reinforce the fact that you're still the one in charge.
 			#ENDIF
 			 Pinning the panting [kay.race] to the floor, you dominantly slide your [pc.pussy+] up and down over [kay.her] cock while telling [kay.herHim] that [kay.sheIs] your good, submissive pet.
-		#ELSEIF(sex.getSexTypeCount(kay, pc, sex.newSexType(penetration("PENIS"), orifice("ANUS")))>0)
-			#IF(sex.getTimesCummedInside(kay, pc, orifice("ANUS"))>0)
+		#ELSEIF(sex.getSexTypeCount(kay, pc, sex.newSexType(PENETRATION_PENIS, ORIFICE_ANUS))>0)
+			#IF(sex.getTimesCummedInside(kay, pc, ORIFICE_ANUS)>0)
 				Having let [kay.name] cum in your ass, you feel like you need to reinforce the fact that you're still the one in charge.
 			#ELSE
 				Having let [kay.name] fuck your ass, you feel like you need to reinforce the fact that you're still the one in charge.
 			#ENDIF
 			 Pinning the panting [kay.race] to the floor, you dominantly slide your [pc.asshole+] up and down over [kay.her] cock while telling [kay.herHim] that [kay.sheIs] your good, submissive pet.
-		#ELSEIF(sex.getSexTypeCount(kay, pc, sex.newSexType(penetration("PENIS"), orifice("MOUTH")))>0)
-			#IF(sex.getTimesCummedInside(kay, pc, orifice("ANUS"))>0)
+		#ELSEIF(sex.getSexTypeCount(kay, pc, sex.newSexType(PENETRATION_PENIS, ORIFICE_MOUTH))>0)
+			#IF(sex.getTimesCummedInside(kay, pc, ORIFICE_ANUS)>0)
 				Having sucked [kay.namePos] cock and swallowed [kay.her] cum, you feel like you need to reinforce the fact that you're still the one in charge.
 			#ELSE
 				Having sucked [kay.namePos] cock, you feel like you need to reinforce the fact that you're still the one in charge.
@@ -1282,7 +1282,7 @@
 	#IF(pc.isTaur())
 		<p>
 			With [kay.name] already kneeling down in a suitable position, you can't resist the temptation of getting [kay.herHim] to perform oral on you.
-			#IF(pc.isAbleToAccessCoverableArea(ca("PENIS"), false))
+			#IF(pc.isAbleToAccessCoverableArea(CA_PENIS, false))
 				 Standing up and stepping over the top of [kay.herHim] with your [pc.legRace]'s lower body, you present your submissive pet with your rapidly-hardening cock.
 			#ELSE
 				 Exposing your groin, you stand up and step over the top of your submissive pet with your [pc.legRace]'s lower body, presenting [kay.her] with your rapidly-hardening cock.
@@ -1297,7 +1297,7 @@
 	#ELSE
 		<p>
 			With [kay.namePos] head so close to your groin, you can't resist the temptation of getting [kay.herHim] to perform oral on you.
-			#IF(pc.isAbleToAccessCoverableArea(ca("PENIS"), false))
+			#IF(pc.isAbleToAccessCoverableArea(CA_PENIS, false))
 				 Spinning your chair to one side, you spread your [pc.legs] and present your submissive pet with your rapidly-hardening cock.
 			#ELSE
 				 Pulling out your rapidly-hardening cock, you spin your chair to one side and present it to your submissive pet.
@@ -1317,7 +1317,7 @@
 	#IF(pc.isTaur())
 		<p>
 			With [kay.name] already kneeling down in a suitable position, you can't resist the temptation of getting [kay.herHim] to perform oral on you.
-			#IF(pc.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(pc.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 Standing up and turning the rear of your [pc.legRace]'s lower body towards [kay.herHim], you present your submissive pet with your [pc.pussy+].
 			#ELSE
 				 Exposing your groin, you stand up and turn the rear of your [pc.legRace]'s lower body towards [kay.herHim], thereby presenting your submissive pet with your [pc.pussy+].
@@ -1332,7 +1332,7 @@
 	#ELSE
 		<p>
 			With [kay.namePos] head so close to your groin, you can't resist the temptation of getting [kay.herHim] to perform oral on you.
-			#IF(pc.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(pc.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 Spinning your chair to one side, you spread your [pc.legs] and present your submissive pet with your [pc.pussy+].
 			#ELSE
 				 Quickly exposing your [pc.pussy+], you spin your chair to one side and present yourself to your submissive pet.
@@ -1352,7 +1352,7 @@
 	#IF(pc.isTaur())
 		<p>
 			With [kay.name] already kneeling down in a suitable position, you can't resist the temptation of getting [kay.herHim] to perform oral on you.
-			#IF(pc.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(pc.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 Standing up and turning the rear of your [pc.legRace]'s lower body towards [kay.herHim], you present your submissive pet with your [pc.pussy+].
 			#ELSE
 				 Exposing your groin, you stand up and turn the rear of your [pc.legRace]'s lower body towards [kay.herHim], thereby presenting your submissive pet with your [pc.pussy+].
@@ -1367,7 +1367,7 @@
 	#ELSE
 		<p>
 			With [kay.namePos] head so close to your groin, you can't resist the temptation of getting [kay.herHim] to perform oral on you.
-			#IF(pc.isAbleToAccessCoverableArea(ca("VAGINA"), false))
+			#IF(pc.isAbleToAccessCoverableArea(CA_VAGINA, false))
 				 Spinning your chair to one side, you spread your [pc.legs] and present your submissive pet with your [pc.pussy+].
 			#ELSE
 				 Quickly exposing your [pc.pussy+], you spin your chair to one side and present yourself to your submissive pet.
@@ -1429,8 +1429,8 @@
 			 upper body on the desk.
 		#ENDIF
 	</p>
-	#IF(pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(ca("PENIS"), true))
-		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(ca("VAGINA"), true))
+	#IF(pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
 			<p>
 				Almost immediately, you feel [kay.name] start to stroke your [pc.labia+], which causes you to let out an erotic [pc.moan]. Spurred on by your reaction, the [kay.race] slides [kay.her] [kay.fingers+] into your [pc.pussy+], before starting to enthusiastically finger you.
 			<p>
@@ -1582,7 +1582,7 @@
 	#IF(pc.isTaur())
 		<p>
 			Smiling at [kay.namePos] response, you drop down onto all fours and rest your [pc.legRace]'s body on the floor, before stretching out your forelegs and telling your submissive pet to get started.
-			#IF(pc.isAbleToAccessCoverableArea(ca("FEET"), false))
+			#IF(pc.isAbleToAccessCoverableArea(CA_FEET, false))
 				 Quickly
 			#ELSE
 				 Quickly removing your footwear and
@@ -1598,7 +1598,7 @@
 	#ELSE
 		<p>
 			Smiling at [kay.namePos] response, you turn your chair to face [kay.herHim], before stretching out your [pc.legs] and telling your submissive pet to get started.
-			#IF(pc.isAbleToAccessCoverableArea(ca("FEET"), false))
+			#IF(pc.isAbleToAccessCoverableArea(CA_FEET, false))
 				 Quickly
 			#ELSE
 				 Quickly removing your footwear and
@@ -1901,9 +1901,9 @@
 	</htmlContent>
 	
 	
-	<!-- KAY_OFFICE_DOMINATE_clothing("FIRST_TIME") -->
+	<!-- KAY_OFFICE_DOMINATE_CLOTHING_FIRST_TIME -->
 	
-	<htmlContent tag="KAY_OFFICE_DOMINATE_clothing("FIRST_TIME")"><![CDATA[
+	<htmlContent tag="KAY_OFFICE_DOMINATE_CLOTHING_FIRST_TIME"><![CDATA[
 	<p>
 		Looking down at the cute cat-boy by your side, you can't help but feel as though his androgynous features tend more towards appearing feminine than masculine. With this thought in your mind, you ask Kay why he chooses to wear a masculine suit instead of a feminine one.
 	</p>
@@ -1940,7 +1940,7 @@
 	
 	<!-- KAY_OFFICE_DOMINATE_CLOTHING -->
 	
-	<htmlContent tag="KAY_OFFICE_DOMINATE_clothing("MASCULINE")"><![CDATA[
+	<htmlContent tag="KAY_OFFICE_DOMINATE_CLOTHING_MASCULINE"><![CDATA[
 	<p>
 		Thinking that [kay.name] has spent enough time wearing [kay.her] feminine outfit, you tell [kay.herHim] that you want to see [kay.herHim] in [kay.her] old suit again. Looking up at you with [kay.her] big, blue eyes, the cute [kay.race] obediently replies, [kay.speech(Yes, [pc.name]! It'll just take me a few minutes to change...)]
 	</p>
@@ -1967,9 +1967,9 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="KAY_OFFICE_DOMINATE_clothing("FEMININE")"><![CDATA[
+	<htmlContent tag="KAY_OFFICE_DOMINATE_CLOTHING_FEMININE"><![CDATA[
 	<p>
-		#IF(game.getDialogueFlags().hasFlag(flag("kayPreviouslyFeminised")))
+		#IF(game.getDialogueFlags().hasFlag(FLAG_kayPreviouslyFeminised))
 			Thinking that [kay.name] looked better when wearing [kay.her] feminine suit, you tell [kay.herHim] that you want to see [kay.herHim] get changed into [kay.her] feminine attire. Looking up at you with [kay.her] big, blue eyes, the cute [kay.race] obediently replies, [kay.speech(Yes, [pc.name]! It'll just take me a few minutes to change...)]
 		#ELSE
 			Motioning towards the suit and lingerie which the receptionist has left on the desk, you dominantly tell Kay to get changed. Biting his lip letting out an excited whine, the cat-boy looks at you with [kay.her] big, blue eyes, and obediently replies, [kay.speech(Yes, [pc.name]! It'll just take me a few minutes...)]
@@ -1998,44 +1998,44 @@
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="KAY_OFFICE_DOMINATE_clothing("NAME_START")"><![CDATA[
+	<htmlContent tag="KAY_OFFICE_DOMINATE_CLOTHING_NAME_START"><![CDATA[
 	<p>
 		[pc.Stepping] up in front of the cute cat-girl, you tell her that she looks very pretty, and that her outfit makes her look irresistible. Flashing you a delighted smile, Kay claps her hands and squeals, [kay.speech(Thank you, [pc.name]! You know, I actually feel really comfortable wearing this! Thanks for giving me the push and getting me to try this out!)]
 	</p>
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="KAY_OFFICE_DOMINATE_clothing("NAME_MID")"><![CDATA[
+	<htmlContent tag="KAY_OFFICE_DOMINATE_CLOTHING_NAME_MID"><![CDATA[
 	<p>
 		Feeling as though her old name isn't quite suitable for her any more, you tell your pet that she should have a suitably feminine name to match her appearance. Coyly swishing her tail from side to side and locking her big, blue eyes onto yours, she submits to your will and replies, [kay.speech(Of course, [pc.name]! I'll happily use whatever name you give me...)]
 	</p>
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="KAY_OFFICE_DOMINATE_clothing("NAME_JACKIE")"><![CDATA[
+	<htmlContent tag="KAY_OFFICE_DOMINATE_CLOTHING_NAME_JACKIE"><![CDATA[
 	<p>
 		Wanting to keep her name as similar as possible to her old name of 'Jack', you tell Kay that she'll no longer be called by her surname, and instead she'll use the name 'Jackie'. Gasping in delight at the name you've given her, Jackie claps her hands together and squeals, [kay.speech(Thank you, [pc.name]! I love it!)] 
 	</p>
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="KAY_OFFICE_DOMINATE_clothing("NAME_KAYTIE")"><![CDATA[
+	<htmlContent tag="KAY_OFFICE_DOMINATE_CLOTHING_NAME_KAYTIE"><![CDATA[
 	<p>
 		Wanting to play on the sound of her surname, you tell Kay that she'll no longer be called by her surname, and instead she'll use the name 'Kaytie'. Gasping in delight at the name you've given her, Kaytie claps her hands together and squeals, [kay.speech(Thank you, [pc.name]! I love it!)] 
 	</p>
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="KAY_OFFICE_DOMINATE_clothing("NAME_MIKAYLA")"><![CDATA[
+	<htmlContent tag="KAY_OFFICE_DOMINATE_CLOTHING_NAME_MIKAYLA"><![CDATA[
 	<p>
 		Wanting to play on the sound of her surname, you tell Kay that she'll no longer be called by her surname, and instead she'll use the name 'Mikayla'. Gasping in delight at the name you've given her, Mikayla claps her hands together and squeals, [kay.speech(Thank you, [pc.name]! I love it!)] 
 	</p>
 	]]>
 	</htmlContent>
 	
-	<htmlContent tag="KAY_OFFICE_DOMINATE_clothing("NAME_END")"><![CDATA[
+	<htmlContent tag="KAY_OFFICE_DOMINATE_CLOTHING_NAME_END"><![CDATA[
 	<p>
-		#IF(pc.isAbleToAccessCoverableArea(ca("MOUTH"), true))
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
 			Happy to hear that [kay.name] is pleased with your suggestion, you [pc.step] forwards and dominantly pull her into your embrace, before planting a deep, passionate kiss on her lips. Excitedly pressing her body against yours, [kay.name] desperately thrusts her tongue into your mouth. After spending a minute lustfully making out with one another in this manner, you finally pull back, before telling your cute pet to resume her previous position at your side.
 		#ELSE
 			Happy to hear that [kay.name] is pleased with your suggestion, you [pc.step] forwards and dominantly pull her into your embrace, before stroking her soft, cat-like ears and telling her what a good girl she is. Excitedly pressing her body against yours, [kay.name] happily smiles and gazes longingly into your [pc.eyes+]. After spending a minute petting [kay.name] this manner, you finally pull back, before telling her to resume her previous position at your side.
