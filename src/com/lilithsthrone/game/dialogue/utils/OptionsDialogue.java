@@ -87,7 +87,7 @@ public class OptionsDialogue {
 		public String getContent(){
 			return "<h1 class='special-text' style='font-size:48px; line-height:52px; text-align:center;'>" + Main.GAME_NAME + ": <span class='mod-text'>" + Main.MOD_NAME + "</span></h1>"
 					+ "<p>"
-					    + "<b>Note:</b> " + Main.GAME_NAME + ": Transformed! is an unofficial modified version of " + Main.GAME_NAME + ". This mod was not developed by nor is endorsed by <span class='special-text'>" + Main.ORIG_AUTHOR + "</span>. "
+					    + "<b>Note:</b> " + Main.GAME_NAME + ": Transformed! is an unofficial modified version of " + Main.GAME_NAME + ". This mod was not developed or endorsed by <span class='special-text'>" + Main.ORIG_AUTHOR + "</span>. "
 					    + "Please visit <span class='special-text'>" + Main.ORIG_AUTHOR + "</span>'s blog (<span class='url-text'>https://lilithsthrone.blogspot.co.uk</span>) for updates on the official version of " + Main.GAME_NAME + "."
 					+ "</p>"
 					+ "<p>"
