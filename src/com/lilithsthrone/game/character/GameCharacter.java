@@ -6707,13 +6707,11 @@ public abstract class GameCharacter implements XMLSaving {
 		requiresInventoryStatusEffectCheck = false;
 		requiresAttributeStatusEffectCheck = false;
 
-		if(updatePriority == StatusEffectUpdatePriority.ALWAYS)
-		    return;
-
-		// TODO: Added update priorities to clothing/tattoo effects.
 		// Clothing effects:
 		for(AbstractClothing c : this.getClothingCurrentlyEquipped()) {
 			for(ItemEffect ie : c.getEffects()) {
+			    if(ie.getUpdatePriority() != updatePriority) continue;
+
 				String clothingEffectDescription = ie.applyEffect(this, this, delta);
 				if(!clothingEffectDescription.isEmpty()) {
 					addStatusEffectDescription(StatusEffect.CLOTHING_EFFECT,
@@ -6726,6 +6724,8 @@ public abstract class GameCharacter implements XMLSaving {
 		// Tattoo effects:
 		for(Tattoo tattoo : tattoos.values()) {
 			for(ItemEffect ie : tattoo.getEffects()) {
+			    if(ie.getUpdatePriority() != updatePriority) continue;
+
 				String tattooEffectDescription = ie.applyEffect(this, this, delta);
 				if (!tattooEffectDescription.isEmpty()) {
 					addStatusEffectDescription(StatusEffect.CLOTHING_EFFECT,
@@ -6734,7 +6734,10 @@ public abstract class GameCharacter implements XMLSaving {
 				}
 			}
 		}
-		
+
+        if(updatePriority == StatusEffectUpdatePriority.ALWAYS)
+            return;
+
 		float healthGain = this.getHealth() - startHealth;
 		float manaGain = this.getMana() - startMana;
 
