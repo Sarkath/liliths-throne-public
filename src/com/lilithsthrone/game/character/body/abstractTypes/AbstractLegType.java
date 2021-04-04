@@ -469,7 +469,7 @@ public abstract class AbstractLegType implements BodyPartTypeInterface {
 			character.getBody().getLeg().setLegConfigurationForced(this, legConfiguration);
 		}
 		
-		character.calculateStatusEffects(0);
+		character.statusUpdateAll(0);
 		
 		feralStringBuilder.append("<p>"
 									+ character.postTransformationCalculation()

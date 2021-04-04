@@ -13,7 +13,7 @@ public enum SlaveEvent {
 		public void applyEffects(GameCharacter character) {
 			character.washAllOrifices(true);
 			character.cleanAllDirtySlots(true);
-			character.calculateStatusEffects(0);
+			character.statusUpdateAll(0);
 		}
 	},
 	
@@ -21,7 +21,7 @@ public enum SlaveEvent {
 		public void applyEffects(GameCharacter character) {
 			character.cleanAllDirtySlots(false); //TODO should they be cleaning slots?
 			character.cleanAllClothing(true, false);
-			character.calculateStatusEffects(0);
+			character.statusUpdateAll(0);
 		}
 	},
 	

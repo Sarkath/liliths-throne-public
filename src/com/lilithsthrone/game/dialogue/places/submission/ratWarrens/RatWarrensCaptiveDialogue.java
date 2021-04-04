@@ -2545,7 +2545,7 @@ public class RatWarrensCaptiveDialogue {
 						player.setMana(player.getAttributeValue(Attribute.MANA_MAXIMUM));
 						
 						sb.append(player.washAllOrifices(false));
-						player.calculateStatusEffects(0);
+						player.statusUpdateAll(0);
 						player.cleanAllDirtySlots(true);
 						player.cleanAllClothing(false, true);
 						Main.game.getTextStartStringBuilder().append(UtilText.parseFromXMLFile("places/submission/ratWarrens/captive", "CAPTIVE_NIGHT_WASH", getCharacters(false)));

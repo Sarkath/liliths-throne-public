@@ -31,6 +31,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
+import com.lilithsthrone.game.character.effects.*;
 import org.w3c.dom.Comment;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -149,15 +150,6 @@ import com.lilithsthrone.game.character.body.valueEnums.TongueLength;
 import com.lilithsthrone.game.character.body.valueEnums.TongueModifier;
 import com.lilithsthrone.game.character.body.valueEnums.Wetness;
 import com.lilithsthrone.game.character.body.valueEnums.WingSize;
-import com.lilithsthrone.game.character.effects.AbstractPerk;
-import com.lilithsthrone.game.character.effects.AbstractStatusEffect;
-import com.lilithsthrone.game.character.effects.Addiction;
-import com.lilithsthrone.game.character.effects.AppliedStatusEffect;
-import com.lilithsthrone.game.character.effects.Perk;
-import com.lilithsthrone.game.character.effects.PerkCategory;
-import com.lilithsthrone.game.character.effects.PerkManager;
-import com.lilithsthrone.game.character.effects.StatusEffect;
-import com.lilithsthrone.game.character.effects.StatusEffectCategory;
 import com.lilithsthrone.game.character.fetishes.Fetish;
 import com.lilithsthrone.game.character.fetishes.FetishDesire;
 import com.lilithsthrone.game.character.fetishes.FetishLevel;
@@ -340,6 +332,8 @@ public abstract class GameCharacter implements XMLSaving {
 	protected List<Artwork> artworkList;
 	private int artworkIndex = -1;
 	private String artworkFolderName = "";
+
+	private int lastOnDemandStatusUpdate = 0;
 	
 	
 	// Location:
@@ -725,7 +719,7 @@ public abstract class GameCharacter implements XMLSaving {
 		dice = null;
 		
 		if(startingSubspecies!=null) {
-			calculateStatusEffects(0);
+			statusUpdateAll();
 		}
 		initPerkTreeAndBackgroundPerks();
 
@@ -758,6 +752,7 @@ public abstract class GameCharacter implements XMLSaving {
 		
 		XMLUtil.createXMLElementWithValue(doc, characterCoreInfo, "id", this.getId());
 		XMLUtil.createXMLElementWithValue(doc, characterCoreInfo, "pathName", this.getClass().getCanonicalName());
+		XMLUtil.createXMLElementWithValue(doc, characterCoreInfo, "lastOnDemandStatusUpdate", String.valueOf(this.getLastOnDemandStatusUpdate()));
 		
 		Element name = doc.createElement("name");
 		characterCoreInfo.appendChild(name);
@@ -786,7 +781,7 @@ public abstract class GameCharacter implements XMLSaving {
 		XMLUtil.createXMLElementWithValue(doc, characterCoreInfo, "combatBehaviour", this.getCombatBehaviour().toString());
 		XMLUtil.createXMLElementWithValue(doc, characterCoreInfo, "lastTimeHadSex", String.valueOf(lastTimeHadSex));
 		XMLUtil.createXMLElementWithValue(doc, characterCoreInfo, "lastTimeOrgasmed", String.valueOf(lastTimeOrgasmed));
-		
+
 		Element desiredJobsElement = doc.createElement("desiredJobs");
 		characterCoreInfo.appendChild(desiredJobsElement);
 		for(Occupation job : getDesiredJobs()){
@@ -1430,6 +1425,10 @@ public abstract class GameCharacter implements XMLSaving {
 			character.setId(loadedCharacterId);
 			Main.game.getCharacterUtils().appendToImportLog(log, "<br/>Set id: " + character.getId());
 		}
+		String loadedLastOnDemandUpdate = getValueFromElementWithTagName(element, "lastOnDemandUpdate");
+		if(loadedLastOnDemandUpdate != null) {
+		    character.setLastOnDemandStatusUpdate(Integer.valueOf(loadedLastOnDemandUpdate));
+        }
 		
 		// Name:
 		Element nameElement = (Element) element.getElementsByTagName("name").item(0);
@@ -3147,7 +3146,7 @@ public abstract class GameCharacter implements XMLSaving {
 			}
 		}
 		
-		character.calculateStatusEffects(0);
+		character.statusUpdateAll();
 		for(String moveId : movesToEquip) { // Equip moves after status effects have been calculated:
 			character.equipMove(moveId);
 		}
@@ -3249,6 +3248,14 @@ public abstract class GameCharacter implements XMLSaving {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	public int getLastOnDemandStatusUpdate() {
+	    return lastOnDemandStatusUpdate;
+    }
+
+    public void setLastOnDemandStatusUpdate(int value) {
+	    this.lastOnDemandStatusUpdate = value;
+    }
 	
 	public String getMapIcon() {
 		if(isRaceConcealed()) {
@@ -6610,8 +6617,27 @@ public abstract class GameCharacter implements XMLSaving {
 	
 
 	// Status effects:
+    public void statusUpdateRequired(int delta) {
+	    lastOnDemandStatusUpdate += delta;
+	    calculateStatusEffects(StatusEffectUpdatePriority.ALWAYS, delta);
+    }
 
-	public void calculateStatusEffects(int secondsPassed) {
+    public void statusUpdateOnDemand() {
+        calculateStatusEffects(StatusEffectUpdatePriority.ONDEMAND, lastOnDemandStatusUpdate);
+	    lastOnDemandStatusUpdate = 0;
+    }
+
+    public void statusUpdateAll() {
+        statusUpdateAll(0);
+    }
+
+    public void statusUpdateAll(int delta) {
+        calculateStatusEffects(StatusEffectUpdatePriority.ALWAYS, delta);
+	    calculateStatusEffects(StatusEffectUpdatePriority.ONDEMAND, lastOnDemandStatusUpdate + delta);
+	    lastOnDemandStatusUpdate = 0;
+    }
+
+	private void calculateStatusEffects(StatusEffectUpdatePriority updatePriority, int delta) {
 		// Count down status effects:
 		float healthPercentage = this.getHealthPercentage();
 		float manaPercentage = this.getManaPercentage();
@@ -6623,21 +6649,23 @@ public abstract class GameCharacter implements XMLSaving {
 		float startMana = this.getMana();
 		
 		List<AbstractStatusEffect> tempListStatusEffects = new ArrayList<>();
-		
+
 		for(AppliedStatusEffect appliedSe : new ArrayList<>(statusEffects)) {
-			AbstractStatusEffect se = appliedSe.getEffect();
-			appliedSe.setSecondsPassed(appliedSe.getSecondsPassed() + secondsPassed);
+            if(appliedSe.getUpdatePriority() != updatePriority) continue;
+
+            AbstractStatusEffect se = appliedSe.getEffect();
+			appliedSe.setSecondsPassed(appliedSe.getSecondsPassed() + delta);
 			StringBuilder sb = new StringBuilder();
 			if (!se.isCombatEffect()) {
 				if(appliedSe.getEffect().getEffectInterval()<=0 || ((Main.game.getSecondsPassed()-appliedSe.getLastTimeAppliedEffect())>appliedSe.getEffect().getEffectInterval())) {
 					if(appliedSe.getEffect().getEffectInterval()<=0) {
-						sb.append(se.applyEffect(this, secondsPassed, appliedSe.getSecondsPassed()));
+						sb.append(se.applyEffect(this, delta, appliedSe.getSecondsPassed()));
 					} else {
 						for(int i=0; i<((Main.game.getSecondsPassed()-appliedSe.getLastTimeAppliedEffect())/appliedSe.getEffect().getEffectInterval()); i++) {
 							if(sb.length()>0) {
 								sb.append("<br/>");
 							}
-							sb.append(se.applyEffect(this, secondsPassed, appliedSe.getSecondsPassed()));
+							sb.append(se.applyEffect(this, delta, appliedSe.getSecondsPassed()));
 						}
 					}
 					
@@ -6648,7 +6676,7 @@ public abstract class GameCharacter implements XMLSaving {
 				}
 			}
 			
-			incrementStatusEffectDuration(se, -secondsPassed);
+			incrementStatusEffectDuration(se, -delta);
 			
 			if(appliedSe.getSecondsRemaining()<0
 					&& (!se.isConditionsMet(this) || se.getApplicationLength()>0)) { // If getApplicationLength() is not -1, then this status effect should be removed and re-checked, even if isConditionsMet() is returning true.
@@ -6664,6 +6692,8 @@ public abstract class GameCharacter implements XMLSaving {
 		
 		// Add all status effects that are applicable:
 		for (AbstractStatusEffect se : StatusEffect.getAllStatusEffects()) {
+            if(se.getUpdatePriority() != updatePriority) continue;
+
 			if((se.getCategory()==StatusEffectCategory.DEFAULT && (!se.isFromExternalFile() || se.isMod())) // Modded SEs probably won't have taken into account category, so let them always be checked.
 					|| (se.getCategory()==StatusEffectCategory.INVENTORY && requiresInventoryStatusEffectCheck)
 					|| (se.getCategory()==StatusEffectCategory.ATTRIBUTE && requiresAttributeStatusEffectCheck)) {
@@ -6676,11 +6706,15 @@ public abstract class GameCharacter implements XMLSaving {
 		}
 		requiresInventoryStatusEffectCheck = false;
 		requiresAttributeStatusEffectCheck = false;
-		
+
+		if(updatePriority == StatusEffectUpdatePriority.ALWAYS)
+		    return;
+
+		// TODO: Added update priorities to clothing/tattoo effects.
 		// Clothing effects:
 		for(AbstractClothing c : this.getClothingCurrentlyEquipped()) {
 			for(ItemEffect ie : c.getEffects()) {
-				String clothingEffectDescription = ie.applyEffect(this, this, secondsPassed);
+				String clothingEffectDescription = ie.applyEffect(this, this, delta);
 				if(!clothingEffectDescription.isEmpty()) {
 					addStatusEffectDescription(StatusEffect.CLOTHING_EFFECT,
 							"<p style='margin:0 auto;padding:0 auto;color:"+c.getRarity().getColour().toWebHexString()+";'><b>"+ Util.capitaliseSentence(c.getName())+":</b></p>"
@@ -6692,7 +6726,7 @@ public abstract class GameCharacter implements XMLSaving {
 		// Tattoo effects:
 		for(Tattoo tattoo : tattoos.values()) {
 			for(ItemEffect ie : tattoo.getEffects()) {
-				String tattooEffectDescription = ie.applyEffect(this, this, secondsPassed);
+				String tattooEffectDescription = ie.applyEffect(this, this, delta);
 				if (!tattooEffectDescription.isEmpty()) {
 					addStatusEffectDescription(StatusEffect.CLOTHING_EFFECT,
 							"<p style='margin:0 auto;padding:0 auto;'><b>"+ Util.capitaliseSentence(tattoo.getName())+" tattoo:</b></p>"
@@ -18660,8 +18694,8 @@ public abstract class GameCharacter implements XMLSaving {
 	
 	public void initHealthAndManaToMax() {
 		// Have to call this twice, as the method removes status effects before adding new ones:
-		this.calculateStatusEffects(0); // First calculation adds subspecies bonus (after checking and failing to remove low arcane status effect)
-		this.calculateStatusEffects(0); // Second calculation removes low intelligence effect
+		this.statusUpdateAll(); // First calculation adds subspecies bonus (after checking and failing to remove low arcane status effect)
+		this.statusUpdateAll(); // Second calculation removes low intelligence effect
 		setMana(getAttributeValue(Attribute.MANA_MAXIMUM));
 		setHealth(getAttributeValue(Attribute.HEALTH_MAXIMUM));
 	}
@@ -19894,7 +19928,7 @@ public abstract class GameCharacter implements XMLSaving {
 		this.setMana(this.getAttributeValue(Attribute.MANA_MAXIMUM));
 		
 		sb.append(this.washAllOrifices(washAllOrifices));
-		this.calculateStatusEffects(0);
+		this.statusUpdateAll();
 		this.cleanAllDirtySlots(true);
 		sb.append(this.cleanAllClothing(cleanAllClothing, true));
 		
