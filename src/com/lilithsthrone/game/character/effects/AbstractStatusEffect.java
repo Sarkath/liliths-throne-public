@@ -5,14 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Objects;
-import java.util.Set;
 
 import javax.script.ScriptException;
 
@@ -54,6 +48,7 @@ public abstract class AbstractStatusEffect {
 	private boolean mod;
 	private boolean fromExternalFile;
 	private int renderingPriority;
+	private StatusEffectUpdatePriority updatePriority = StatusEffectUpdatePriority.ONDEMAND;
 	
 	private StatusEffectCategory category;
 	private EffectBenefit beneficial;
@@ -96,6 +91,17 @@ public abstract class AbstractStatusEffect {
 			List<String> extraEffects) {
 		this(renderingPriority, name, pathName, colourShade, colourShade, colourShade, beneficial, attributeModifiers, extraEffects);
 	}
+
+	public AbstractStatusEffect(int renderingPriority,
+			String name,
+			String pathName,
+			Colour colourShade,
+			boolean beneficial,
+			Map<AbstractAttribute, Float> attributeModifiers,
+			List<String> extraEffects,
+			StatusEffectUpdatePriority updatePriority) {
+		this(renderingPriority, name, pathName, colourShade, colourShade, colourShade, beneficial, attributeModifiers, extraEffects, updatePriority);
+	}
 	
 	public AbstractStatusEffect(int renderingPriority,
 			String name,
@@ -108,6 +114,17 @@ public abstract class AbstractStatusEffect {
 		this(renderingPriority, name, pathName, colourShade, colourShadeSecondary, colourShade, beneficial, attributeModifiers, extraEffects);
 	}
 
+	public AbstractStatusEffect(int renderingPriority,
+			String name,
+			String pathName,
+			Colour colourShade,
+			Colour colourShadeSecondary,
+			boolean beneficial,
+			Map<AbstractAttribute, Float> attributeModifiers,
+			List<String> extraEffects,
+			StatusEffectUpdatePriority updatePriority) {
+		this(renderingPriority, name, pathName, colourShade, colourShadeSecondary, colourShade, beneficial, attributeModifiers, extraEffects, updatePriority);
+	}
 	
 	public AbstractStatusEffect(int renderingPriority,
 			String name,
@@ -120,7 +137,20 @@ public abstract class AbstractStatusEffect {
 			List<String> extraEffects) {
 		this(StatusEffectCategory.DEFAULT, renderingPriority, name, pathName, colourShade, colourShadeSecondary, colourShadeTertiary, beneficial, attributeModifiers, extraEffects);
 	}
-	
+
+	public AbstractStatusEffect(int renderingPriority,
+			String name,
+			String pathName,
+			Colour colourShade,
+			Colour colourShadeSecondary,
+			Colour colourShadeTertiary,
+			boolean beneficial,
+			Map<AbstractAttribute, Float> attributeModifiers,
+			List<String> extraEffects,
+			StatusEffectUpdatePriority updatePriority) {
+		this(StatusEffectCategory.DEFAULT, renderingPriority, name, pathName, colourShade, colourShadeSecondary, colourShadeTertiary, beneficial, attributeModifiers, extraEffects, updatePriority);
+	}
+
 	public AbstractStatusEffect(StatusEffectCategory category,
 			int renderingPriority,
 			String name,
@@ -131,6 +161,20 @@ public abstract class AbstractStatusEffect {
 			boolean beneficial,
 			Map<AbstractAttribute, Float> attributeModifiers,
 			List<String> extraEffects) {
+		this(category, renderingPriority, name, pathName, colourShade, colourShadeSecondary, colourShadeTertiary, beneficial, attributeModifiers, extraEffects, StatusEffectUpdatePriority.ONDEMAND);
+	}
+	
+	public AbstractStatusEffect(StatusEffectCategory category,
+			int renderingPriority,
+			String name,
+			String pathName,
+			Colour colourShade,
+			Colour colourShadeSecondary,
+			Colour colourShadeTertiary,
+			boolean beneficial,
+			Map<AbstractAttribute, Float> attributeModifiers,
+			List<String> extraEffects,
+			StatusEffectUpdatePriority updatePriority) {
 		
 		this.mod = false;
 		this.fromExternalFile = false;
@@ -140,6 +184,7 @@ public abstract class AbstractStatusEffect {
 		this.renderingPriority = renderingPriority;
 		this.name = name;
 		this.description = ""; // As all new status effects should be added via xml files, this shouldn't be an issue.
+		this.updatePriority = updatePriority;
 		
 		this.pathName = pathName;
 		SVGString = null;
@@ -204,11 +249,14 @@ public abstract class AbstractStatusEffect {
 				this.fromExternalFile = true;
 				
 				this.renderingPriority = Integer.valueOf(coreElement.getMandatoryFirstOf("renderingPriority").getTextContent());
-				
+
 				this.beneficial = EffectBenefit.valueOf(coreElement.getMandatoryFirstOf("beneficial").getTextContent());
 				this.renderInEffectsPanel = Boolean.valueOf(coreElement.getMandatoryFirstOf("renderInEffectsPanel").getTextContent());
 				this.combatEffect = Boolean.valueOf(coreElement.getMandatoryFirstOf("combatEffect").getTextContent());
 				this.sexEffect = Boolean.valueOf(coreElement.getMandatoryFirstOf("sexEffect").getTextContent());
+
+				Optional<Element> loadedPriority = coreElement.getOptionalFirstOf("updatePriority");
+				loadedPriority.ifPresent(element -> this.updatePriority = StatusEffectUpdatePriority.valueOf(element.getTextContent()));
 
 				this.tags = new ArrayList<>();
 				if(coreElement.getOptionalFirstOf("tags").isPresent()) {
@@ -453,6 +501,8 @@ public abstract class AbstractStatusEffect {
 		}
 		return "";
 	}
+
+	public StatusEffectUpdatePriority getUpdatePriority() { return updatePriority; }
 
 	/**
 	 * Used to display extra effects in its own description box, such as ongoing sex descriptions.

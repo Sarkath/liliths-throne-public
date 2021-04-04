@@ -140,7 +140,7 @@ public class RatWarrensDialogue {
 					Main.game.getNpc(Murk.class).calculateGenericSexEffects(true, true, human, new SexType(SexParticipantType.NORMAL, SexAreaPenetration.PENIS, SexAreaOrifice.VAGINA), GenericSexFlag.NO_DESCRIPTION_NEEDED);
 					Main.game.getNpc(Murk.class).fillCumToMaxStorage();
 					human.clearFluidsStored(SexAreaOrifice.VAGINA);
-					human.calculateStatusEffects(1);
+					human.statusUpdateAll(1);
 					AbstractItem milk = Main.game.getItemGen().generateItem(ItemType.MOTHERS_MILK);
 					human.useItem(milk, human, false);
 					if(human.isPregnant()) {

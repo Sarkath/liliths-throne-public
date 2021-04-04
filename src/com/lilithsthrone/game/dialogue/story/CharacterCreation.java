@@ -193,7 +193,7 @@ public class CharacterCreation {
 						Main.getProperties().setValue(PropertyValue.newWeaponDiscovered, false);
 						Main.getProperties().setValue(PropertyValue.newClothingDiscovered, false);
 						Main.getProperties().setValue(PropertyValue.newItemDiscovered, false);
-						Main.game.getPlayer().calculateStatusEffects(0);
+						Main.game.getPlayer().statusUpdateAll(0);
 						Main.game.getPlayer().setHealthPercentage(1);
 						Main.game.getPlayer().setManaPercentage(1);
 						getDressed();

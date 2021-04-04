@@ -61,7 +61,7 @@ public class LodgerImport extends NPC {
 		this.endPregnancy(false);
 
 		this.washAllOrifices(true);
-		this.calculateStatusEffects(0);
+		this.statusUpdateAll(0);
 		this.cleanAllDirtySlots(true);
 		this.cleanAllClothing(true, false);
 		

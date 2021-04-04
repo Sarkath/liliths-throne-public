@@ -1600,11 +1600,11 @@ public class Game implements XMLSaving {
 		for(NPC npc : Main.game.getAllNPCs()) {
 			npc.updateInventoryListeners();
 			npc.updateAttributeListeners(true);
-			npc.calculateStatusEffects(0);
+			npc.statusUpdateAll();
 		}
 		Main.game.getPlayer().updateInventoryListeners();
 		Main.game.getPlayer().updateAttributeListeners(true);
-		Main.game.getPlayer().calculateStatusEffects(0);
+		Main.game.getPlayer().statusUpdateAll();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -2059,14 +2059,14 @@ public class Game implements XMLSaving {
 				occupancyUtil.performHourlyUpdate(this.getDayNumber((startHour*60*60) + (i*60)), (hourStartTo24+i)%24);
 				for(String slaveId : Main.game.getPlayer().getSlavesOwned()) { // Update slaves' status effects per hour to give them a chance to refill fluids and such.
 					try {
-						Main.game.getNPCById(slaveId).calculateStatusEffects(3600);
+						Main.game.getNPCById(slaveId).statusUpdateRequired(3600);
 					} catch (Exception e) {
 					}
 				}
 			}
 			for(String slaveId : Main.game.getPlayer().getSlavesOwned()) {// Update slaves' status effects by whatever time is remaining.
 				try {
-					Main.game.getNPCById(slaveId).calculateStatusEffects(secondsPassedThisTurn%3600);
+					Main.game.getNPCById(slaveId).statusUpdateRequired(secondsPassedThisTurn%3600);
 				} catch (Exception e) {
 				}
 			}
@@ -2078,6 +2078,11 @@ public class Game implements XMLSaving {
 
 		if(loopDebug) {
 			System.out.println("occupancy done");
+		}
+
+		// Do a full update on NPCs that are sharing a tile with the PC.
+		for(NPC npc : Main.game.getCharactersPresent()) {
+			npc.statusUpdateOnDemand();
 		}
 		
 		// If the time has passed midnight on this turn:
@@ -2164,7 +2169,7 @@ public class Game implements XMLSaving {
 					}
 				}
 				if(!slavesUpdated || !npc.isSlave() || !npc.getOwner().isPlayer()) { // Player-owned slaves already had their status effects updated in the slavery events update loop
-					npc.calculateStatusEffects(secondsPassedThisTurn);
+					npc.statusUpdateRequired(secondsPassedThisTurn);
 				}
 			}
 			
@@ -2192,7 +2197,7 @@ public class Game implements XMLSaving {
 								 && hoursPassed>0) {
 							npc.replaceAllClothing();
 							
-							npc.calculateStatusEffects(0);
+							npc.statusUpdateRequired(0);
 							// If still exposed after this, get new clothes:
 							if(npc.hasStatusEffect(StatusEffect.EXPOSED) || npc.hasStatusEffect(StatusEffect.EXPOSED_BREASTS) || npc.hasStatusEffect(StatusEffect.EXPOSED_PLUS_BREASTS)) {
 								npc.equipClothing(Util.newArrayListOfValues(EquipClothingSetting.REPLACE_CLOTHING, EquipClothingSetting.ADD_WEAPONS));
@@ -2407,7 +2412,7 @@ public class Game implements XMLSaving {
 				Main.game.getPlayer().alignLustToRestingLust(secondsPassedThisTurn);
 			}
 			if(Main.game.getCurrentDialogueNode()!=MiscDialogue.STATUS_EFFECTS) { // Handle status effects:
-				Main.game.getPlayer().calculateStatusEffects(secondsPassedThisTurn);
+				Main.game.getPlayer().statusUpdateAll(secondsPassedThisTurn);
 			}
 		}
 		

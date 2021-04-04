@@ -1402,7 +1402,7 @@ public class Main extends Application {
 				Main.getProperties().setValue(PropertyValue.newWeaponDiscovered, false);
 				Main.getProperties().setValue(PropertyValue.newClothingDiscovered, false);
 				Main.getProperties().setValue(PropertyValue.newItemDiscovered, false);
-				Main.game.getPlayer().calculateStatusEffects(0);
+				Main.game.getPlayer().statusUpdateAll(0);
 
 				Main.game.initNewGame(CharacterCreation.START_GAME_WITH_IMPORT);
 				

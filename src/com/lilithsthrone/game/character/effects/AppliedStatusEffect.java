@@ -11,7 +11,7 @@ public class AppliedStatusEffect {
 	private long lastTimeAppliedEffect;
 	private long secondsPassed;
 	private int secondsRemaining;
-	
+
 	public AppliedStatusEffect(AbstractStatusEffect effect, long lastTimeAppliedEffect, long secondsPassed, int secondsRemaining) {
 		this.effect = effect;
 		this.lastTimeAppliedEffect = lastTimeAppliedEffect;
@@ -46,5 +46,5 @@ public class AppliedStatusEffect {
 		this.secondsRemaining = secondsRemaining;
 	}
 
-	
+	public StatusEffectUpdatePriority getUpdatePriority() { return effect.getUpdatePriority(); }
 }

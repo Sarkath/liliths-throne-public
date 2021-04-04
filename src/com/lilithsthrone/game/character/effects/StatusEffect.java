@@ -3609,7 +3609,8 @@ public class StatusEffect {
 			PresetColour.GENERIC_ARCANE,
 			true,
 			null,
-			null) {
+			null,
+			StatusEffectUpdatePriority.ALWAYS) {
 		@Override
 		public String getDescription(GameCharacter target) {
 			if(Main.game.isInNewWorld()) {
@@ -3806,7 +3807,8 @@ public class StatusEffect {
 			PresetColour.GENERIC_ARCANE,
 			true,
 			Util.newHashMapOfValues(new Value<>(Attribute.ENERGY_SHIELDING, 2f)),
-			Util.newArrayListOfValues("-5% [style.colourHealth(Maximum "+Attribute.HEALTH_MAXIMUM.getName()+")]")) {
+			Util.newArrayListOfValues("-5% [style.colourHealth(Maximum "+Attribute.HEALTH_MAXIMUM.getName()+")]"),
+			StatusEffectUpdatePriority.ALWAYS) {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
@@ -3818,7 +3820,6 @@ public class StatusEffect {
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
-
 			target.addStatusEffect(PREGNANT_2, 60 * 60 * (72 + Util.random.nextInt(13)));
 			
 			boolean breastGrowth = false;
@@ -3921,7 +3922,8 @@ public class StatusEffect {
 			PresetColour.GENERIC_ARCANE,
 			true,
 			Util.newHashMapOfValues(new Value<>(Attribute.ENERGY_SHIELDING, 4f)),
-			Util.newArrayListOfValues("-10% [style.colourHealth(Maximum "+Attribute.HEALTH_MAXIMUM.getName()+")]")) {
+			Util.newArrayListOfValues("-10% [style.colourHealth(Maximum "+Attribute.HEALTH_MAXIMUM.getName()+")]"),
+			StatusEffectUpdatePriority.ALWAYS) {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
@@ -3933,7 +3935,6 @@ public class StatusEffect {
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
-
 			target.setTimeProgressedToFinalPregnancyStage(Main.game.getSecondsPassed());
 
 			boolean lactationIncrease = false;
@@ -4044,7 +4045,8 @@ public class StatusEffect {
 			PresetColour.GENERIC_ARCANE,
 			true,
 			Util.newHashMapOfValues(new Value<>(Attribute.ENERGY_SHIELDING, 6f)),
-			Util.newArrayListOfValues("-15% [style.colourHealth(Maximum "+Attribute.HEALTH_MAXIMUM.getName()+")]")) {
+			Util.newArrayListOfValues("-15% [style.colourHealth(Maximum "+Attribute.HEALTH_MAXIMUM.getName()+")]"),
+			StatusEffectUpdatePriority.ALWAYS) {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
@@ -4060,9 +4062,7 @@ public class StatusEffect {
 								:""));
 		}
 		@Override
-		public String extraRemovalEffects(GameCharacter target) {
-			return "";
-		}
+		public String extraRemovalEffects(GameCharacter target) { return ""; }
 		@Override
 		public boolean isConditionsMet(GameCharacter target) {
 			return target.isPregnant()
