@@ -2084,6 +2084,15 @@ public class Game implements XMLSaving {
 		for(NPC npc : Main.game.getCharactersPresent()) {
 			npc.statusUpdateOnDemand();
 		}
+
+		// Update NPCs that were left waiting for a hilariously long time.
+		for(GameCharacter gc : GameCharacter.forceUpdateList)
+			gc.statusUpdateOnDemand();
+
+		GameCharacter.forceUpdateList.clear();
+
+		if(loopDebug)
+			System.out.println("on-demand status updates done");
 		
 		// If the time has passed midnight on this turn:
 		boolean newDay = getDayNumber(getSecondsPassed()) != getDayNumber(getSecondsPassed() - secondsPassedThisTurn);

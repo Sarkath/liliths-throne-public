@@ -303,6 +303,9 @@ public abstract class GameCharacter implements XMLSaving {
 	public static final int MINIMUM_AGE = 18;
 	
 	public static final int DEFAULT_TIME_START_VALUE = -1;
+
+	public static List<GameCharacter> forceUpdateList;
+	static { forceUpdateList = new ArrayList<>(); }
 	
 	// Core variables:
 	protected String id;
@@ -6620,6 +6623,11 @@ public abstract class GameCharacter implements XMLSaving {
     public void statusUpdateRequired(int delta) {
 	    lastOnDemandStatusUpdate += delta;
 	    calculateStatusEffects(StatusEffectUpdatePriority.ALWAYS, delta);
+
+	    // If the on-demand update time becomes unreasonably long (like, over 63.4196 in-game years), force an update
+        // to prevent an overflow from occurring.
+        if(lastOnDemandStatusUpdate >= 2000000000)
+            forceUpdateList.add(this);
     }
 
     public void statusUpdateOnDemand() {
