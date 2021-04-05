@@ -29,6 +29,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.stream.Collectors;
 
 import com.lilithsthrone.game.character.effects.*;
@@ -5343,20 +5344,20 @@ public abstract class GameCharacter implements XMLSaving {
 
 	protected Set<GameCharacter> getChildren() {
 		HashSet<GameCharacter> result = new HashSet<>();
-		getLittersBirthed().stream()
-			.flatMap(l -> l.getOffspring().stream().map(o -> {
-				try { return Main.game.getNPCById(o); }
-				catch(Exception e) { return null; }
-			}))
-			.filter(Objects::nonNull)
-			.forEach(result::add);
-		getLittersFathered().stream()
-			.flatMap(l -> l.getOffspring().stream().map(o -> {
-				try { return Main.game.getNPCById(o); }
-				catch(Exception e) { return null; }
-			}))
-			.filter(Objects::nonNull)
-			.forEach(result::add);
+        for(Litter litter : getLittersBirthed()) {
+		    for(String id : litter.getOffspring()) {
+		        GameCharacter gc = Main.game.getNPCById(id);
+		        if(gc == null) continue;
+		        result.add(gc);
+            }
+        }
+		for(Litter litter : getLittersFathered()) {
+		    for(String id : litter.getOffspring()) {
+		        GameCharacter gc = Main.game.getNPCById(id);
+		        if(gc == null) continue;
+		        result.add(gc);
+            }
+        }
 		return result;
 	}
 
@@ -5397,13 +5398,15 @@ public abstract class GameCharacter implements XMLSaving {
 	}
 
 	private Set<GameCharacter> getNonCommonNodes(int up, int down) {
-		HashSet<GameCharacter> result = new HashSet<>();
-		HashSet<GameCharacter> trace = new HashSet<>();
-		getParents(up, trace).stream()
-				.flatMap(p -> p.getChildren(down, trace).stream())
-				.filter(s -> !s.equals(this))
-				.forEach(result::add);
-		return result;
+        HashSet<GameCharacter> result = new HashSet<>();
+        HashSet<GameCharacter> trace = new HashSet<>();
+        for(GameCharacter parent : getParents(up, trace)) {
+            for(GameCharacter child : getChildren(down, trace)) {
+                if(!child.equals(parent)) continue;
+                result.add(child);
+            }
+        }
+        return result;
 	}
 
 	public Set<Relationship> getRelationshipsTo(GameCharacter character, Relationship... excludedRelationships) {
