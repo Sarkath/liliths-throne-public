@@ -1427,6 +1427,7 @@ public class Game implements XMLSaving {
 				if(Main.isVersionOlderThan(loadingVersion, "0.3.8.2") && Main.game.getPlayer().isQuestCompleted(QuestLine.ROMANCE_NATALYA)) {
 					try {
 						GameCharacter thunder = Main.game.getNPCById(Main.game.getDialogueFlags().getSadistNatalyaSlave());
+						if(thunder == null) throw new NullPointerException();
 						thunder.setHomeLocation(WorldType.DOMINION_EXPRESS, PlaceType.DOMINION_EXPRESS_STABLES);
 					} catch (Exception e) {
 						Main.game.getNpc(Natalya.class).getSlavesOwned().remove(Main.game.getDialogueFlags().getSadistNatalyaSlave()); // Make sure that she doesn't still count the deleted slave as hers.
@@ -2090,6 +2091,7 @@ public class Game implements XMLSaving {
 			for(String id : Main.game.getPlayer().getFriendlyOccupants()) {
 				try {
 					NPC occupant = (NPC) Main.game.getNPCById(id);
+					if(occupant == null) throw new NullPointerException();
 					Main.game.getOccupancyUtil().dailyOccupantUpdate(occupant);
 				} catch(Exception e) {
 					Util.logGetNpcByIdError("endTurn()", id);
@@ -3727,6 +3729,7 @@ public class Game implements XMLSaving {
 			for(String id : ids) {
 				try {
 					GameCharacter character = getNPCById(id);
+					if(character == null) throw new NullPointerException();
 					if(character instanceof NPC) {
 						charactersHome.add((NPC) character);
 					}
@@ -3766,6 +3769,7 @@ public class Game implements XMLSaving {
 			for(String id : ids) {
 				try {
 					GameCharacter character = getNPCById(id);
+					if(character == null) throw new NullPointerException();
 					if(character instanceof NPC) {
 						charactersPresent.add((NPC) character);
 					}
@@ -4079,7 +4083,9 @@ public class Game implements XMLSaving {
 	
 	public NPC getNpc(Class<? extends NPC> npcClass) {
 		try {
-			return (NPC) this.getNPCById(getUniqueNPCId(npcClass));
+			NPC npc = (NPC)this.getNPCById(getUniqueNPCId(npcClass));
+			if(npc == null) throw new NullPointerException();
+			return npc;
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("getNpc("+npcClass.getName()+") returning null!");
@@ -4147,28 +4153,12 @@ public class Game implements XMLSaving {
 		return NPCMap.containsKey(id);
 	}
 	
-	public GameCharacter getNPCById(String id) throws Exception {
+	public GameCharacter getNPCById(String id) {
 		if(id==null || id.isEmpty()) {
-			throw new NullPointerException();
-//			return null;
+			return null;
 		}
-		
 		if(id.equals(Main.game.getPlayer().getId())) {
 			return Main.game.getPlayer();
-		}
-		if(!NPCMap.containsKey(id)) {
-			throw new NullPointerException();
-			
-//			if(!nullCharacterIds.contains(id)) {
-//				System.err.println("!WARNING! getNPC("+id+") is returning null! GenericAndrogynousNPC will be returned for all instances of this!");
-//				nullCharacterIds.add(id);
-//			}
-//			
-//			if(Main.DEBUG) {
-//				new NullPointerException().printStackTrace();
-//			}
-//			
-//			return Main.game.getNpc(GenericAndrogynousNPC.class);
 		}
 		return NPCMap.get(id);
 	}
@@ -4294,6 +4284,7 @@ public class Game implements XMLSaving {
 	public boolean banishNPC(String id) {
 		try {
 			NPC npc = (NPC) getNPCById(id);
+			if(npc == null) throw new NullPointerException();
 			if(npc.equals(Main.game.getNpc(GenericAndrogynousNPC.class))) {
 				return false; // This is the npc returned if there's a problem in getNPCById().
 			}

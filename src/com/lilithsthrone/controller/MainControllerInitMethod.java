@@ -1585,7 +1585,9 @@ public class MainControllerInitMethod {
 									public void effects() {
 										for(String id: Main.game.getPlayer().getSlavesOwned()) {
 											try {
-												Main.game.getNPCById(id).setPetName(Main.game.getPlayer(), Main.mainController.getWebEngine().getDocument().getElementById("hiddenFieldName").getTextContent());
+												GameCharacter gc = Main.game.getNPCById(id);
+												if(gc == null) throw new NullPointerException();
+												gc.setPetName(Main.game.getPlayer(), Main.mainController.getWebEngine().getDocument().getElementById("hiddenFieldName").getTextContent());
 											} catch (Exception e) {
 												Util.logGetNpcByIdError("initMainControllerListeners(), instance 1.", id);
 											}
@@ -1813,7 +1815,8 @@ public class MainControllerInitMethod {
 					NPC slave;
 					
 					try {
-						slave = (NPC) Main.game.getNPCById(slaveId);
+						slave = (NPC)Main.game.getNPCById(slaveId);
+						if(slave == null) throw new NullPointerException();
 					} catch (Exception e) {
 						Util.logGetNpcByIdError("initMainControllerListeners(), instance 2.", slaveId);
 						continue;
@@ -2000,6 +2003,7 @@ public class MainControllerInitMethod {
 	
 					try {
 						occupant = (NPC) Main.game.getNPCById(occupantId);
+						if(occupant == null) throw new NullPointerException();
 					} catch (Exception e) {
 						Util.logGetNpcByIdError("initMainControllerListeners(), instance 3.", occupantId);
 						continue;
@@ -2123,6 +2127,7 @@ public class MainControllerInitMethod {
 						NPC slave;
 						try {
 							slave = (NPC) Main.game.getNPCById(slaveId);
+							if(slave == null) throw new NullPointerException();
 						} catch (Exception e) {
 							Util.logGetNpcByIdError("initMainControllerListeners(), instance 4.", slaveId);
 							continue;

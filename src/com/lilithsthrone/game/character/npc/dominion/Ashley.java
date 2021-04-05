@@ -212,6 +212,7 @@ public class Ashley extends NPC {
 		for(Entry<String, Float> entry : this.getAffectionMap().entrySet()) {
 			try {
 				GameCharacter target = Main.game.getNPCById(entry.getKey());
+				if(target == null) throw new NullPointerException();
 				if(!target.isPlayer()) {
 					infoScreenSB.append("<br/>" + AffectionLevel.getDescription(this, target, AffectionLevel.getAffectionLevelFromValue(this.getAffection(target)), true));
 				}
