@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.nio.file.Paths;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -1255,13 +1254,9 @@ public class Main extends Application {
 	}
 	
 	public static void loadGame(String name) {
-		long startTime = System.currentTimeMillis();
 		if (isLoadGameAvailable(name)) {
 			Game.importGame(name);
 		}
-		long endTime = System.currentTimeMillis();
-		double sec = (double)(endTime - startTime) / 1000;
-		System.out.println("Load complete. Elapsed time: " + new DecimalFormat("#.###").format(sec) + " seconds");
 
 		MainController.updateUIButtons();
 	}
