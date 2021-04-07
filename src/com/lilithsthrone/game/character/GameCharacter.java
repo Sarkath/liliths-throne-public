@@ -5358,6 +5358,7 @@ public abstract class GameCharacter implements XMLSaving {
 		        result.add(gc);
             }
         }
+		
 		return result;
 	}
 
@@ -5398,6 +5399,7 @@ public abstract class GameCharacter implements XMLSaving {
 	}
 
 	private Set<GameCharacter> getNonCommonNodes(int up, int down) {
+<<<<<<< HEAD
         HashSet<GameCharacter> result = new HashSet<>();
         HashSet<GameCharacter> trace = new HashSet<>();
         for(GameCharacter parent : getParents(up, trace)) {
@@ -5406,6 +5408,18 @@ public abstract class GameCharacter implements XMLSaving {
                 result.add(child);
             }
         }
+=======
+		HashSet<GameCharacter> result = new HashSet<>();
+		HashSet<GameCharacter> trace = new HashSet<>();
+
+		for(GameCharacter parent : getParents(up, trace)) {
+		    for(GameCharacter child : parent.getChildren(down, trace)) {
+		        if(child.equals(this)) continue;
+		        result.add(child);
+            }
+        }
+
+>>>>>>> feature/save-perf-improvement
         return result;
 	}
 
