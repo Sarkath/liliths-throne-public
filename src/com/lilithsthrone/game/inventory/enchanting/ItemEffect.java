@@ -11,6 +11,7 @@ import com.lilithsthrone.game.character.GameCharacter;
 import com.lilithsthrone.game.character.body.abstractTypes.AbstractTailType;
 import com.lilithsthrone.game.character.body.types.TailType;
 import com.lilithsthrone.game.character.body.valueEnums.LegConfiguration;
+import com.lilithsthrone.game.character.effects.StatusEffectUpdatePriority;
 import com.lilithsthrone.game.character.race.AbstractSubspecies;
 import com.lilithsthrone.game.character.race.Race;
 import com.lilithsthrone.game.character.race.RacialBody;
@@ -36,25 +37,30 @@ public class ItemEffect implements XMLSaving {
 	private TFPotency potency;
 	private int limit;
 	private ItemEffectTimer timer;
-	
+	private StatusEffectUpdatePriority updatePriority = StatusEffectUpdatePriority.ONDEMAND;
+
 	public ItemEffect(AbstractItemEffectType itemEffectType) {
-		this.itemEffectType = itemEffectType;
-		this.primaryModifier = null;
-		this.secondaryModifier = null;
-		this.potency = null;
-		this.limit = 0;
-		this.timer = new ItemEffectTimer();
+		this(itemEffectType, null, null, null, 0, StatusEffectUpdatePriority.ONDEMAND);
 	}
-	
+
+	public ItemEffect(AbstractItemEffectType itemEffectType, StatusEffectUpdatePriority updatePriority) {
+		this(itemEffectType, null, null, null, 0, updatePriority);
+	}
+
 	public ItemEffect(AbstractItemEffectType itemEffectType, TFModifier primaryModifier, TFModifier secondaryModifier, TFPotency potency, int limit) {
+		this(itemEffectType, primaryModifier, secondaryModifier, potency, limit, StatusEffectUpdatePriority.ONDEMAND);
+	}
+
+	public ItemEffect(AbstractItemEffectType itemEffectType, TFModifier primaryModifier, TFModifier secondaryModifier, TFPotency potency, int limit, StatusEffectUpdatePriority updatePriority) {
 		this.itemEffectType = itemEffectType;
 		this.primaryModifier = primaryModifier;
 		this.secondaryModifier = secondaryModifier;
 		this.potency = potency;
 		this.limit = limit;
 		this.timer = new ItemEffectTimer();
+		this.updatePriority = updatePriority;
 	}
-	
+
 	public String getId() {
 		return (itemEffectType==null?"n":itemEffectType.toString())
 				+ (primaryModifier==null?"n":primaryModifier.toString())
@@ -62,6 +68,8 @@ public class ItemEffect implements XMLSaving {
 				+ (potency==null?"n":potency.toString())
 				+ limit;
 	}
+
+	public StatusEffectUpdatePriority getUpdatePriority() { return updatePriority; }
 	
 	@Override
 	public boolean equals(Object o) {
@@ -107,6 +115,7 @@ public class ItemEffect implements XMLSaving {
 		XMLUtil.addAttribute(doc, effect, "potency", (getPotency()==null?"null":getPotency().toString()));
 		XMLUtil.addAttribute(doc, effect, "limit", String.valueOf(getLimit()));
 		XMLUtil.addAttribute(doc, effect, "timer", String.valueOf(getTimer().getSecondsPassed()));
+		XMLUtil.addAttribute(doc, effect, "updatePriority", String.valueOf(updatePriority));
 		
 		return effect;
 	}
@@ -126,6 +135,10 @@ public class ItemEffect implements XMLSaving {
 		if(secondaryMod.isEmpty()) {
 			secondaryMod = parentElement.getAttribute("secondaryModifier"); // Support for effects prior to 0.3.1.5
 		}
+
+		StatusEffectUpdatePriority updatePriority = StatusEffectUpdatePriority.ONDEMAND;
+		if(parentElement.hasAttribute("updatePriority"))
+			updatePriority = StatusEffectUpdatePriority.valueOf(parentElement.getAttribute("updatePriority"));
 		
 //		if(itemEffectType.equals("RACE_DEMON")) {
 //			throw new NullPointerException();
@@ -204,7 +217,8 @@ public class ItemEffect implements XMLSaving {
 					primary,
 					secondary,
 					(parentElement.getAttribute("potency").equals("null")?null:TFPotency.valueOf(parentElement.getAttribute("potency"))),
-					Integer.valueOf(parentElement.getAttribute("limit")));
+					Integer.valueOf(parentElement.getAttribute("limit")),
+					updatePriority);
 			
 		} catch(Exception ex) {
 			System.err.println("(Minor error, can ignore.) Unable to import ItemEffect (" + primaryMod + ", " + secondaryMod + ") from" + doc.getDocumentURI());

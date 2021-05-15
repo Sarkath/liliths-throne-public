@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.lilithsthrone.game.character.effects.StatusEffectUpdatePriority;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -725,7 +726,11 @@ public abstract class AbstractClothing extends AbstractCoreItem implements XMLSa
 						try {
 							AbstractAttribute att = Attribute.getAttributeFromId(e.getAttribute("attribute"));
 							int value = Integer.valueOf(e.getAttribute("value"));
-							
+
+							StatusEffectUpdatePriority updatePriority = StatusEffectUpdatePriority.ONDEMAND;
+							if(e.hasAttribute("updatePriority"))
+								updatePriority = StatusEffectUpdatePriority.valueOf(e.getAttribute("updatePriority"));
+
 							TFPotency pot = TFPotency.BOOST;
 							if(value <= -5) {
 								pot = TFPotency.MAJOR_DRAIN;
@@ -743,14 +748,14 @@ public abstract class AbstractClothing extends AbstractCoreItem implements XMLSa
 							
 							for(TFModifier mod : TFModifier.getClothingAttributeList()) {
 								if(mod.getAssociatedAttribute()==att) {
-									clothing.addEffect(new ItemEffect(ItemEffectType.CLOTHING, TFModifier.CLOTHING_ATTRIBUTE, mod, pot, 0));
+									clothing.addEffect(new ItemEffect(ItemEffectType.CLOTHING, TFModifier.CLOTHING_ATTRIBUTE, mod, pot, 0, updatePriority));
 									break;
 								}
 							}
 							
 							for(TFModifier mod : TFModifier.getClothingMajorAttributeList()) {
 								if(mod.getAssociatedAttribute()==att) {
-									clothing.addEffect(new ItemEffect(ItemEffectType.CLOTHING, TFModifier.CLOTHING_MAJOR_ATTRIBUTE, mod, pot, 0));
+									clothing.addEffect(new ItemEffect(ItemEffectType.CLOTHING, TFModifier.CLOTHING_MAJOR_ATTRIBUTE, mod, pot, 0, updatePriority));
 									break;
 								}
 							}

@@ -304,6 +304,9 @@ public abstract class GameCharacter implements XMLSaving {
 	public static final int MINIMUM_AGE = 18;
 	
 	public static final int DEFAULT_TIME_START_VALUE = -1;
+
+	public static List<GameCharacter> forceUpdateList;
+	static { forceUpdateList = new ArrayList<>(); }
 	
 	// Core variables:
 	protected String id;
@@ -6624,6 +6627,11 @@ public abstract class GameCharacter implements XMLSaving {
     public void statusUpdateRequired(int delta) {
 	    lastOnDemandStatusUpdate += delta;
 	    calculateStatusEffects(StatusEffectUpdatePriority.ALWAYS, delta);
+
+	    // If the on-demand update time becomes unreasonably long (like, over 63.4196 in-game years), force an update
+        // to prevent an overflow from occurring.
+        if(lastOnDemandStatusUpdate >= 2000000000)
+            forceUpdateList.add(this);
     }
 
     public void statusUpdateOnDemand() {
@@ -6711,13 +6719,11 @@ public abstract class GameCharacter implements XMLSaving {
 		requiresInventoryStatusEffectCheck = false;
 		requiresAttributeStatusEffectCheck = false;
 
-		if(updatePriority == StatusEffectUpdatePriority.ALWAYS)
-		    return;
-
-		// TODO: Added update priorities to clothing/tattoo effects.
 		// Clothing effects:
 		for(AbstractClothing c : this.getClothingCurrentlyEquipped()) {
 			for(ItemEffect ie : c.getEffects()) {
+			    if(ie.getUpdatePriority() != updatePriority) continue;
+
 				String clothingEffectDescription = ie.applyEffect(this, this, delta);
 				if(!clothingEffectDescription.isEmpty()) {
 					addStatusEffectDescription(StatusEffect.CLOTHING_EFFECT,
@@ -6730,6 +6736,8 @@ public abstract class GameCharacter implements XMLSaving {
 		// Tattoo effects:
 		for(Tattoo tattoo : tattoos.values()) {
 			for(ItemEffect ie : tattoo.getEffects()) {
+			    if(ie.getUpdatePriority() != updatePriority) continue;
+
 				String tattooEffectDescription = ie.applyEffect(this, this, delta);
 				if (!tattooEffectDescription.isEmpty()) {
 					addStatusEffectDescription(StatusEffect.CLOTHING_EFFECT,
@@ -6738,7 +6746,10 @@ public abstract class GameCharacter implements XMLSaving {
 				}
 			}
 		}
-		
+
+        if(updatePriority == StatusEffectUpdatePriority.ALWAYS)
+            return;
+
 		float healthGain = this.getHealth() - startHealth;
 		float manaGain = this.getMana() - startMana;
 
