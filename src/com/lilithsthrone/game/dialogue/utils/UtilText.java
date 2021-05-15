@@ -9163,9 +9163,6 @@ public class UtilText {
 				return String.valueOf(parser.parseExpression(command).getValue(ctx, api));
 			} catch(ExpressionException e) {
 				System.err.println("Parsing error: "+command);
-			} catch (ScriptException e) {
-				System.err.println("Scripting parsing error: "+command);
->>>>>>> upstream/dev
 				System.err.println(e.getMessage());
 //				e.printStackTrace();
 				return "<i style='color:"+PresetColour.GENERIC_BAD.toWebHexString()+";'>(Error in script parsing!)</i>";
@@ -9583,8 +9580,8 @@ public class UtilText {
 		for(DayPeriod dayPeriod : DayPeriod.values()) {
 			api.put("DAY_PERIOD_"+dayPeriod.toString(), dayPeriod);
 		}
-		for(DialogueFlagValue flag : DialogueFlagValue.values()) {
-			api.put("FLAG_"+flag.getId(), flag);
+		for(AbstractDialogueFlagValue flag : DialogueFlagValue.getAllDialogueFlagValues()) {
+			api.put("FLAG_"+flag.toString(), flag);
 		}
 		for(NPCFlagValue flag : NPCFlagValue.values()) {
 			api.put("NPC_FLAG_"+flag.toString(), flag);
@@ -9638,7 +9635,7 @@ public class UtilText {
 			api.put("PLACE_UPGRADE_"+PlaceUpgrade.getIdFromPlaceUpgrade(upgrade), upgrade);
 		}
 		for(AbstractEncounter encounter : Encounter.getAllEncounters()) {
-			engine.put("ENCOUNTER_"+Encounter.getIdFromEncounter(encounter), encounter);
+			api.put("ENCOUNTER_"+Encounter.getIdFromEncounter(encounter), encounter);
 		}
 
 		jsObjectLoadComplete = true;
@@ -10279,7 +10276,7 @@ public class UtilText {
 	
 	public static void setRaceForParsing(String tag, AbstractRace race) {
 		UtilText.race = race;
-		if(parser ==null) {
+		if(parser == null) {
 			initScriptEngine();
 		}
 		api.put(tag, getRaceForParsing());
@@ -10291,39 +10288,9 @@ public class UtilText {
 	
 	public static void setInventoryForParsing(String tag, CharacterInventory inventory) {
 		UtilText.inventory = inventory;
-		if(engine==null) {
+		if(parser == null) {
 			initScriptEngine();
 		}
-		engine.put(tag, getInventoryForParsing());
-	}
-	
-//	private static final Map<String, CompiledScript> memo = new HashMap<>();
-//	private static final int memo_limit = 500;
-	// NOTE: This was causing a bug where upon loading a saved game, the player's race wasn't being recalculated properly for some reason. I commented it out to fix it and will come back and investigate at another time.
-	// TODO when fixed, add as patchnotes: "Increased script performance by adding a memoization cache to compile scripting engine scripts. (PR#1442 by CognitiveMist)"
-	/**
-	 * Added in PR#1442 to increase performance by adding a memoization cache to compile scripting engine scripts.
-	 * <br/>- Adds a cache intended to hold compiled forms of script engine scripts.
-	 * <br/>- Cache capacity set to 500, and will stop adding new entries at that limit (tests did not exceed 100, but mods affect this).
-	 * <br/>- Tests showed scripting engine calls take 50% less time on average.
-	 * <br/>- WARNING: adds one more nashorn warning.
-	 * @param command
-	 * @return
-	 * @throws ScriptException
-	 */
-	private static Object evaluate(String command) throws ScriptException {
-		CompiledScript script;
-//		if (!memo.containsKey(command)) {
-			script = ((NashornScriptEngine)engine).compile(command);
-//			if (memo.size() < memo_limit) {
-//				memo.put(command, script);
-//				if (memo.size() == memo_limit) {
-//					System.err.println("Memo has reached capacity! Additional script commands will not be memoized.");
-//				}
-//			}
-//		} else {
-//			script = memo.get(command);
-//		}
-		return script.eval();
+		api.put(tag, getInventoryForParsing());
 	}
 }
