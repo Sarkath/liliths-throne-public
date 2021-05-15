@@ -223,17 +223,6 @@
 				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
 	#VAR companions = pc.hasCompanions();
 
-	<p>Canal: [#canal]</p>
-	#IF(!canal)
-		<p><b>Non-canal message set.</b></p>
-		#VAR message = "NOT IN THE CANAL; LOL";
-	#ELSE
-		<p><b>Canal message set.</b></p>
-		#VAR message = "TOTALLY IN THE CANAL; LOL";
-	#ENDIF
-
-	<p>[#message]</p>
-
 	#IF(canal)
 		<p>
 			Knowing that [npc.name] calls this area [npc.her] home, you make sure to stay on the lookout for [npc.herHim] as you wander down the track that runs alongside Dominion's canal. Just as you suspected, as you pass a collection of leafy bushes growing on one side of the path, you see a familiar figure leaning against a brick wall up ahead.
