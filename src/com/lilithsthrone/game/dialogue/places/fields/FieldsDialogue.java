@@ -160,9 +160,9 @@ public class FieldsDialogue {
 			if(Main.game.getDialogueFlags().hasFlag(DialogueFlagValue.hasSnowedThisWinter)
 					&& Main.game.getSeason()==Season.WINTER
 					&& !Main.game.getDialogueFlags().hasFlag(DialogueFlagValue.lunetteTerrorEnded)) {
-				return 90 * 60;
+				return 60 * 60;
 			}
-			return 60 * 60;
+			return 30 * 60;
 		}
 		@Override
 		public String getContent() {
@@ -171,10 +171,24 @@ public class FieldsDialogue {
 			sb.append(UtilText.parseFromXMLFile("places/global/globalPlaces", "FOLOI_FIELDS"));
 			sb.append(getUnavailableAreaText());
 			
+			if(Main.game.getPlayer().getLocation().increment(0, -1).equals(Main.game.getWorlds().get(WorldType.WORLD_MAP).getCell(PlaceType.WORLD_MAP_DOMINION).getLocation())) {
+				sb.append(UtilText.parseFromXMLFile("places/fields/centaur_transport", "UNEXPLORED"));
+			}
+			
 			return sb.toString();
 		}
 		@Override
 		public Response getResponse(int responseTab, int index) {
+			if(Main.game.getPlayer().getLocation().increment(0, -1).equals(Main.game.getWorlds().get(WorldType.WORLD_MAP).getCell(PlaceType.WORLD_MAP_DOMINION).getLocation())) {
+				if (index == 1) {
+					return new Response("Depot", "Approach the 'Centaur Carriage Depot' and see if any businesses are still operating out of it.", DialogueManager.getDialogueFromId("innoxia_places_fields_centaur_transport_approach")) {
+						@Override
+						public void effects() {
+							Main.game.getPlayerCell().getPlace().setPlaceType(PlaceType.getPlaceTypeFromId("innoxia_fields_centaur_transport"));
+						}
+					};
+				}
+			}
 			return null;
 		}
 	};
@@ -182,7 +196,7 @@ public class FieldsDialogue {
 	public static final DialogueNode FOLOI_FOREST = new DialogueNode("Foloi Forest", "", false) {
 		@Override
 		public int getSecondsPassed() {
-			return 90 * 60;
+			return 60 * 60;
 		}
 		
 		@Override
@@ -212,9 +226,8 @@ public class FieldsDialogue {
 	public static final DialogueNode GRASSLAND_WILDERNESS = new DialogueNode("Grassland Wilderness", "", false) {
 		@Override
 		public int getSecondsPassed() {
-			return 2 * 60 * 60;
+			return 60 * 60;
 		}
-		
 		@Override
 		public String getContent() {
 			StringBuilder sb = new StringBuilder();
@@ -244,7 +257,7 @@ public class FieldsDialogue {
 	public static final DialogueNode RIVER_HUBUR = new DialogueNode("River Hubur", "", false) {
 		@Override
 		public int getSecondsPassed() {
-			return 60 * 60;
+			return 30 * 60;
 		}
 		
 		@Override
@@ -276,7 +289,7 @@ public class FieldsDialogue {
 	public static final DialogueNode ELIS = new DialogueNode("Elis", "", false) {
 		@Override
 		public int getSecondsPassed() {
-			return 60 * 60;
+			return 30 * 60;
 		}
 		
 		@Override
@@ -292,7 +305,7 @@ public class FieldsDialogue {
 		@Override
 		public Response getResponse(int responseTab, int index) {
 			if (index == 1) {
-				return new Response("Enter (East)", "Approach Elis from the East.", DialogueManager.getDialogueFromId("innoxia_places_fields_elis_generic_road_east")) {
+				return new Response("Enter (main)", "Approach Elis from the East so that you can enter the town via its main gatehouse.", DialogueManager.getDialogueFromId("innoxia_places_fields_elis_generic_road_east")) {
 					@Override
 					public void effects() {
 						Main.game.getPlayer().setLocation(WorldType.getWorldTypeFromId("innoxia_fields_elis_town"), PlaceType.getPlaceTypeFromId("innoxia_fields_elis_town_entry_east"));
@@ -305,7 +318,7 @@ public class FieldsDialogue {
 				};
 				
 			} else if (index == 2) {
-				return new Response("Enter (West)", "Approach Elis from the West.", DialogueManager.getDialogueFromId("innoxia_places_fields_elis_generic_road_west")) {
+				return new Response("Enter (rear)", "Approach Elis from the West so that you can enter the town via its rear gatehouse.", DialogueManager.getDialogueFromId("innoxia_places_fields_elis_generic_road_west")) {
 					@Override
 					public void effects() {
 						Main.game.getPlayer().setLocation(WorldType.getWorldTypeFromId("innoxia_fields_elis_town"), PlaceType.getPlaceTypeFromId("innoxia_fields_elis_town_entry_west"));
